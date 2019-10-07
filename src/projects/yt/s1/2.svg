@@ -1,0 +1,7 @@
+<svg version="1.1" id="bg_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 750 1208" style="enable-background:new 0 0 750 1208;" xml:space="preserve">
+<g>
+<image overflow="visible" width="81" height="85" xlink:href="./s1/bee2.png">
+<animateMotion dur="12s" keyPoints="0;0.4;0.4;1" keyTimes="0;0.2;0.6;1" path="M1440.045,1096.854c-409.627-404.032-752.763,203.265-981.072-246.498 C329.136,594.58-73.31,942.847-262.582,837.212c-166.859-93.127-69.989-479.395-454.247-454.201" repeatCount="indefinite" rotate="auto" calcMode="linear"></animateMotion></image>
+<image overflow="visible" width="81" height="85" xlink:href="./s1/bee1.png"><animateMotion dur="12s" keyPoints="0;0.5;0.5;1" keyTimes="0;0.3;0.7;1" path="M-634.157,742.737c64.602-180.63,232.091-282.137,393.708-283.745 c410.652-4.085,492.204-364.598,764.951-263.944c289.875,106.975,338.221-302.914,447.865-316.837" repeatCount="indefinite" rotate="auto" begin="-3s" calcMode="linear"></animateMotion></image>
+</g>
+</svg>

@@ -1,0 +1,35 @@
+@charset "utf-8";
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: "Segoe UI", Arial, Helvetica,"noto sans cjk tc", "Microsoft JhengHei Correct", 'Microsoft JhengHei', PMingLiU, sans-serif;vertical-align:baseline;
+}
+body {
+	font-size: 16px;
+	color: #333;
+	line-height:1.5
+}
+#wrapper{width:100%;max-width:750px;margin:0 auto;overflow: hidden;position: relative;}
+
+.box1{position: relative;z-index: 2}
+img{ width: 100%;}
+.box2{position: relative;height:96vw;}
+.pic{animation:pic 10s linear infinite alternate;width: 192vw;height: 108vw;top:-16vw;left:0;transition: all 0.2s; position:absolute;}
+.pic img{animation:img 20s linear infinite;position:absolute;top: 0;left: 0;width: 100%;opacity: 0;}
+.pic img:first-child{animation-delay:10s}
+.box2 > img{z-index: 2;position:absolute;bottom: 0;left: 0;}
+@keyframes img{
+4% {opacity: 1;}
+50%{opacity: 1;}
+54%{opacity: 0;}
+}
+@keyframes pic{
+from{left:0;}
+to{left:-92vw;}
+}
+@media(max-width: 767px) and (max-height: 450px) {
+	
+}
+@media(max-width:500px)  {}
