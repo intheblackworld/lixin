@@ -6,8 +6,8 @@ function resolve(dir) {
 }
 
 module.exports = {
+  publicPath: '',
   configureWebpack: {
-    baseUrl: '',
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src')
