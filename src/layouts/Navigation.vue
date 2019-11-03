@@ -3,7 +3,8 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <img class="logo" src="@/assets/img/nav-logo.png" alt />
+          <icon class="logo" :data="logo" />
+          <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
           <div class="menu" @click="toggleSidebar">
             <font-awesome-icon icon="bars" />
           </div>
@@ -19,7 +20,7 @@
               <span class="link">
                 <img v-if="item.imgSrc" :src="item.imgSrc" alt />
                 <span>
-                  <h3 class="title">{{item.name}}</h3>
+                  <div class="title">{{item.name}}</div>
                   <span class="subTitle">{{item.subTitle}}</span>
                 </span>
               </span>
@@ -34,6 +35,7 @@
 <script>
 import { isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
+import logo from '@/assets/svg/logo-w.svg'
 
 export default {
   name: 'navigation',
@@ -44,6 +46,7 @@ export default {
       isMobile,
       isTablet,
       list: navList,
+      logo
     }
   },
 
@@ -83,8 +86,9 @@ export default {
   top: 0;
   width: 100vw;
   display: flex !important;
+  border-bottom: 1px solid #fff;
   align-items: center;
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {
@@ -113,8 +117,9 @@ export default {
   position: absolute;
   left: 0;
   display: block;
-  top: 0px;
-  transform: translateY(0%);
+  top: 50%;
+  transform: translateY(-50%);
+  fill: #fff;
 }
 
 .mask {

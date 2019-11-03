@@ -16,6 +16,8 @@ import VueLazyload from 'vue-lazyload' // 圖片 lazy load
 import VueScrollReveal from 'vue-scroll-reveal'
 import VuePhotoZoomPro from 'vue-photo-zoom-pro'
 
+import VueParticles from 'vue-particles'
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faBars,
@@ -59,6 +61,8 @@ Vue.use(ElementUI)
 Vue.use(VueScrollTo)
 Vue.use(VueLazyload)
 Vue.use(VueScrollReveal)
+
+Vue.use(VueParticles)
 
 new Vue({
   router,
