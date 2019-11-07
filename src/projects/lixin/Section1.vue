@@ -3,11 +3,12 @@
     <!-- img="./bg.jpg" -->
     <div class="fullscreen">
       <div class="mask">
-        <div class="title">用對的策略</div>
+        <div class="title typing" v-show="showFirst">用對的策略</div>
+        <div class="title typing" v-show="showSecond">做對的行銷</div>
         <div class="type">LIXIN DIGITAL</div>
       </div>
 
-      <video-bg autoplay="autoplay" :sources="[require('./s1/video.mp4')]"></video-bg>
+      <video-bg autoplay="autoplay" :sources="[require('./s1/video.mp4')]" :isFix="true"></video-bg>
     </div>
   </div>
 </template>
@@ -18,7 +19,7 @@
   background-size: cover;
   position: relative;
   overflow: hidden;
-  position: relative;
+  position: fixed;
 }
 
 .VideoBg {
@@ -38,6 +39,7 @@
   box-shadow: -2.1px 3.4px 8px 0 rgba(0, 0, 0, 0.08);
   background-color: rgb(228, 81, 18);
   mix-blend-mode: screen;
+  position: fixed;
 }
 
 .title {
@@ -52,13 +54,13 @@
   letter-spacing: 2.32px;
   text-align: center;
   color: #ffffff;
+  height: 67px;
+  display: flex;
+  align-items: center;
 }
 
 .type {
-  width: 1300px;
-  overflow: hidden;
   white-space: nowrap;
-  animation: typing 4s steps(35) infinite alternate, caret 1s steps(1) infinite;
   z-index: 2;
   position: absolute;
   left: 0;
@@ -69,10 +71,17 @@
   font-size: 180px;
   line-height: 180px;
   font-weight: bold;
-  letter-spacing: 7.32px;
+  letter-spacing: 1px;
   text-align: center;
   color: #000;
-  border-right: 0.02em solid;
+}
+
+.typing {
+  width: 360px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.04em solid;
+  animation: typing 2s steps(6) infinite alternate, caret 1s steps(1) infinite;
 }
 
 @keyframes typing {
@@ -102,6 +111,7 @@
 // @ is an alias to /src
 import { isMobile } from '@/utils'
 import VideoBg from '@/components/VideoBg.vue'
+import { setInterval } from 'timers'
 export default {
   name: 'section1',
 
@@ -112,9 +122,18 @@ export default {
   data() {
     return {
       isMobile,
+      showFirst: true,
+      showSecond: false
     }
   },
 
   methods: {},
+
+  mounted() {
+    setInterval(() => {
+      this.showFirst = !this.showFirst
+      this.showSecond = !this.showSecond
+    }, 4000)
+  }
 }
 </script>

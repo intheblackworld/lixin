@@ -203,6 +203,7 @@
   position: relative;
   overflow: hidden;
   position: relative;
+  z-index: 2;
 }
 
 .page-title {

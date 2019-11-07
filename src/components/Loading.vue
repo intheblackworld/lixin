@@ -1,6 +1,6 @@
 <template>
   <div :class="`loading-bg ${loading ? '' : 'hide'} ${remove ? 'none' : ''}`">
-    <img src="~@/assets/img/loading.gif" alt class="loading-icon" />
+    <img src="~@/assets/img/loading_w.gif" alt class="loading-icon" />
   </div>
 </template>
 

@@ -1,11 +1,11 @@
 <template>
   <div class="section4">
     <!-- img="./bg.jpg" -->
-    <div class="fullscreen">
+    <div class="bg fullscreen">
       <div class="bg-top"></div>
       <div class="bg-bottom"></div>
       <div class="title">響應式設計</div>
-      <swiper :options="swiperOption" swiper-no-swiping class="mac-container">
+      <swiper :options="swiperOption" swiper-no-swiping class="mac-container" @slideChangeTransitionEnd="slideChanged" ref="mySwiper">
         <swiper-slide
           v-for="(slide, index) in slideList"
           :index="index"
@@ -35,6 +35,9 @@
           <img :src="slide.src_phone" :class="`item-img`" />
         </swiper-slide>
       </swiper>
+      <div class="indigator">
+        <li v-for="(slide, index) in slideList" :class="`${slideIndex === index ? 'active' : ''}`" :key="`indigator-${index}`"></li>
+      </div>
       <img src="./s4/rwd-mac.png" alt class="mac" />
       <img src="./s4/rwd-tablet.png" alt class="tablet" />
       <img src="./s4/rwd-phone.png" alt class="phone" />
@@ -49,6 +52,21 @@
   position: relative;
   overflow: hidden;
   position: relative;
+  z-index: 2;
+}
+
+.title {
+  position: absolute;
+  top: 8%;
+  left: 8%;
+  font-size: 45.5px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: 4.55px;
+  text-align: center;
+  color: #000000;
 }
 
 .bg-top {
@@ -136,6 +154,28 @@
   }
 }
 
+.indigator {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 30px;
+  width: 100px;
+  li {
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color: #9f9a98;
+    margin: 0 8px;
+
+    &.active {
+      background-color: #e17b1f;
+    }
+  }
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
 }
 
@@ -183,6 +223,9 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+        pagination: {
+          el: '.swiper-pagination',
+        },
       },
 
       slideList: [
@@ -212,6 +255,18 @@ export default {
     }
   },
 
-  methods: {},
+  methods: {
+    slideChanged(e) {
+      const swiper = this.$refs.mySwiper.swiper
+      console.log(this.slideIndex)
+      if (swiper.isEnd) {
+        this.slideIndex = 0
+      } else if (swiper.isBeginning) {
+        this.slideIndex = swiper.slides.length - 3
+      } else {
+        this.slideIndex = swiper.activeIndex - 1
+      }
+    },
+  },
 }
 </script>
