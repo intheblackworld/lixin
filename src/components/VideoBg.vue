@@ -1,15 +1,18 @@
 <template>
   <section class="VideoBg">
-    <video autoplay playsinline loop :muted="muted" ref="video" :class="isFix ? 'isFix' : ''">
-      <source
-        :key="`source-${index}`"
-        v-for="(source, index) in sources"
-        :src="source"
-        :type="getMediaType(source)"
-      />
+    <video
+      id="video"
+      playsinline
+      loop
+      controls
+      :muted="muted"
+      ref="video"
+      :class="isFix ? 'isFix' : ''"
+    >
+      <source :src="sources[slideIndex]" :type="getMediaType(sources[slideIndex])" />
     </video>
     <div class="VideoBg__content">
-      <slot></slot>
+      <slot style="background-color: #fff;"></slot>
     </div>
   </section>
 </template>
@@ -32,7 +35,12 @@ export default {
     isFix: {
       type: Boolean,
       default: false,
-    }
+    },
+
+    slideIndex: {
+      type: Number,
+      default: 0,
+    },
   },
   data() {
     return {
@@ -52,11 +60,24 @@ export default {
       }
     }
     window.addEventListener('resize', this.resize)
+    this.$refs.video.play()
+  },
+
+  watch: {
+    slideIndex() {
+      this.$refs.video.src = this.sources[this.slideIndex]
+      this.$refs.video.play()
+    },
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.resize)
   },
   methods: {
+    // playNext() {
+    //   console.log('next', 123)
+    //   this.$refs.video.src = this.sources[(this.slideIndex + 1) % this.sources.length]
+    //   this.$refs.video.play()
+    // },
     resize() {
       this.setContainerHeight()
       if (this.videoCanPlay()) {

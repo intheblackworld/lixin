@@ -258,7 +258,6 @@ export default {
   methods: {
     slideChanged(e) {
       const swiper = this.$refs.mySwiper.swiper
-      console.log(this.slideIndex)
       if (swiper.isEnd) {
         this.slideIndex = 0
       } else if (swiper.isBeginning) {

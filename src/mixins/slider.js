@@ -31,6 +31,7 @@ export default {
     addIndex() {
       this.slideIndex =
         this.slideIndex === this.slideList.length - 1 ? 0 : this.slideIndex + 1
+        console.log(this.slideIndex)
     },
 
     decIndex() {

@@ -192,7 +192,7 @@ export default {
       }
 
       [
-        '01',
+        // '01',
         'apple',
         'cn',
         'ebc',

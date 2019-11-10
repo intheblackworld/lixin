@@ -19,10 +19,10 @@
     <div id="section5">
       <Section5 />
     </div>
-    <!-- <div id="section6">
+     <div id="section6">
       <Section6 />
     </div>
-    <div id="section7">
+    <!-- <div id="section7">
       <Section7 />
     </div>
     <div id="section8">
@@ -54,7 +54,7 @@ import Section2 from '@/projects/lixin/Section2.vue'
 import Section3 from '@/projects/lixin/Section3.vue'
 import Section4 from '@/projects/lixin/Section4.vue'
 import Section5 from '@/projects/lixin/Section5.vue'
-import Section6 from '@/projects/yt/Section6.vue'
+import Section6 from '@/projects/lixin/Section6.vue'
 import Section7 from '@/projects/yt/Section7.vue'
 import Section8 from '@/projects/yt/Section8.vue'
 import Section9 from '@/projects/yt/Section9.vue'
