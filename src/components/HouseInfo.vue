@@ -9,17 +9,16 @@
         </div>
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
 import info from '@/info'
-import Footer from '@/layouts/Footer.vue'
+// import Footer from '@/layouts/Footer.vue'
 export default {
   name: 'houseInfo',
   components: {
-    Footer,
+    // Footer,
   },
   data() {
     return {

@@ -1,14 +1,34 @@
 <template>
   <div class="section6">
+    <div class="dialog" v-show="isShowDialog">
+        <div class="close" @click="closeDialog(slideIndex)">
+          <img src="./s5/close.png" alt />
+        </div>
+        <div class="dialog-content">
+          <video playsinline loop controls :muted="true" :ref="`dialogVideo${slideIndex}`">
+            <source :src="slideList[slideIndex].video" />
+          </video>
+        </div>
+      </div>
     <div class="bg fullscreen">
       <div class="left-bg">
-        <img
-          v-for="(slide, index) in slideList"
-          :src="slide.img"
+        <!-- <img
+          :src="slideList[slideIndex === 0 ? slideList.length - 1 : slideIndex - 1].img"
           alt
-          :class="`item-img ${slideIndex === index ? 'active' : ''}`"
+          class="img-bg"
+        />-->
+        <div
+          v-for="(slide, index) in slideList"
           :key="`img-${index}`"
-        />
+          :class="`item-img ${slideIndex === index ? 'active' : ''}`"
+        >
+          <img v-if="slide.img" :src="slide.img" alt />
+          <video v-else-if="slide.video" :src="slide.video"></video>
+          <div v-if="slide.video" class="play-group">
+            <icon class="play" :data="play" @click="playVideo(index)" />
+          </div>
+          <iframe v-else-if="slide.iframe" :src="slide.iframe" frameborder="0"></iframe>
+        </div>
       </div>
       <div :class="`right ${isShowDetail ? 'showDetail' : ''}`">
         <div class="content">
@@ -136,7 +156,33 @@
     </div>
   </div>
 </template>
+<style lang="scss">
+.left-bg .play-group {
+  cursor: pointer;
+  .st0 {
+    fill: #fff;
+    transition: all 0.3s;
+  }
 
+  .st1 {
+    fill: #ed6d34;
+  }
+
+  .st2 {
+    display: none;
+  }
+
+  .st3 {
+    display: inline;
+  }
+
+  &:hover {
+    .st0 {
+      fill: #000;
+    }
+  }
+}
+</style>
 <style lang="scss" scoped>
 .bg {
   background-size: cover;
@@ -157,17 +203,66 @@
   background: url('./s6/work_bg.jpg');
   background-size: 100% 100%;
   position: relative;
+  > * {
+    transform: scale(1);
+    transition: transform 1.5s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 }
 
-.item-img {
+.img-bg {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  // transform: translateY(0%);
-  transition: all 0.8s ease-in-out;
   position: absolute;
   top: 0;
   left: 0;
+  object-fit: cover;
+}
+
+.item-img {
+  // transform: translateY(0%);
+  width: 100%;
+  height: 100%;
+  transition: all 1.5s ease-in-out;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > img,
+  > video {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  > iframe {
+    display: block;
+    width: 300px;
+    height: 600px;
+  }
+
+  .play-group {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90px;
+    height: 90px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
 
   &:nth-child(1) {
     z-index: 1;
@@ -197,11 +292,11 @@
 
 @keyframes up {
   0% {
-    transform: translateY(100%);
+    top: 100%;
   }
 
   100% {
-    transform: translateY(0);
+    top: 0;
   }
 }
 .content {
@@ -448,6 +543,47 @@
   }
 }
 
+.dialog {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  z-index: 90;
+
+  .dialog-content {
+    width: 90vw;
+    height: 90vh;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    background: transparent;
+
+    video {
+      outline:  none;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .close {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+
+    position: fixed;
+    top: 30px;
+    right: 30px;
+  }
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
 }
 
@@ -464,6 +600,7 @@
 import { isMobile } from '@/utils'
 import slider from '@/mixins/slider.js'
 import 'swiper/dist/css/swiper.css'
+import play from '@/assets/svg/icon-play.svg'
 import { setTimeout } from 'timers'
 export default {
   name: 'section6',
@@ -473,9 +610,11 @@ export default {
 
   data() {
     return {
+      play,
       isMobile,
       isChange: false,
       isShowDetail: false,
+      isShowDialog: false,
       detailIndex: 0,
       slideList: [
         {
@@ -494,21 +633,21 @@ export default {
           title: '打造超吸晴的網站 — 博悅',
           subtitle: '興富發建設-博悅',
           desc: '藉由動態影片塑造品牌形象，呈現產品風格，打造吸睛的網站。',
-          img: require('./s6/item-img-1.jpg'),
+          video: require('./s6/item-img-3.mp4'),
         },
         {
           title: '用影音傳遞對的訊息 — 金城舞2',
           subtitle: '甲山林機構-金城舞2',
           desc:
             '用影音達到深度溝通，打造全面式的行銷體驗。即使是廣告影片，也要讓民眾看得舒服且有趣，發揮影音的高互動特性。',
-          img: require('./s6/item-img-2.jpg'),
+          img: require('./s6/item-img-4.jpg'),
         },
         {
           title: '四個月完銷的秘密 — 欣璞綻',
           subtitle: '海沃創意行銷-欣璞綻',
           desc:
             '網路素材交叉測試、精準廣告投放、追蹤數據並即時優化、調整行銷方向。',
-          img: require('./s6/item-img-1.jpg'),
+          iframe: 'http://localhost:9000/300x600.html',
         },
       ],
     }
@@ -540,6 +679,17 @@ export default {
     closeDetail() {
       this.isShowDetail = false
     },
+
+    playVideo(index) {
+      this.$refs[`dialogVideo${index}`].src = this.slideList[this.slideIndex].video
+      this.$refs[`dialogVideo${index}`].play()
+      this.isShowDialog = true
+    },
+
+    closeDialog(index) {
+      this.isShowDialog = false
+      this.$refs[`dialogVideo${index}`].pause()
+    }
   },
 
   watch: {

@@ -319,6 +319,7 @@
     background: #fff;
 
     video {
+      outline:  none;
       width: 100%;
       height: 100%;
     }

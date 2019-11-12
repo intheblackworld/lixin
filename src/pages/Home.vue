@@ -22,17 +22,18 @@
      <div id="section6">
       <Section6 />
     </div>
-    <!-- <div id="section7">
+    <div id="section7">
       <Section7 />
     </div>
-    <div id="section8">
+    <!-- <div id="section8">
       <Section8 />
     </div>
     <div id="section9">
       <Section9 />
-    </div>
+    </div> -->
     <ContactSection />
-    <MobileNav /> -->
+    <Footer />
+    <!-- <MobileNav /> -->
   </div>
 </template>
 
@@ -55,9 +56,10 @@ import Section3 from '@/projects/lixin/Section3.vue'
 import Section4 from '@/projects/lixin/Section4.vue'
 import Section5 from '@/projects/lixin/Section5.vue'
 import Section6 from '@/projects/lixin/Section6.vue'
-import Section7 from '@/projects/yt/Section7.vue'
+import Section7 from '@/projects/lixin/Section7.vue'
 import Section8 from '@/projects/yt/Section8.vue'
 import Section9 from '@/projects/yt/Section9.vue'
+import Footer from '@/layouts/Footer.vue'
 
 export default {
   name: 'home',
@@ -77,6 +79,7 @@ export default {
     Section7,
     Section8,
     Section9,
+    Footer,
   },
 
   data() {
