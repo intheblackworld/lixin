@@ -22,6 +22,7 @@
   .footer-bg {
     width: 100vw;
     height: auto;
+    margin-top: -200px;
   }
 
   .link {
