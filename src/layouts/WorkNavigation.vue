@@ -3,14 +3,27 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <icon v-if="theme === 'white'" class="logoC" :data="logoC" />
-          <icon v-else class="logo" :data="logo" />
+          <icon class="logoC" :data="logoC" />
           <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
           <div class="menu" @click="toggleSidebar">
             <font-awesome-icon icon="bars" />
           </div>
           <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
           <ul :class="`navlist ${isOpen ? 'open': ''}`">
+            <li
+              v-show="item.link"
+              :key="`link-${item.name}`"
+              v-for="item in list"
+              class="flex-ac link-item"
+              @click="$router.push(item.link)"
+            >
+              <span class="link">
+                <span>
+                  <div class="title">{{item.name}}</div>
+                  <span class="subTitle">{{item.subTitle}}</span>
+                </span>
+              </span>
+            </li>
             <li
               v-show="item.section"
               :key="item.name"
@@ -19,23 +32,8 @@
               class="flex-ac"
               @click="toggleSidebar"
             >
-              <span :class="`link ${theme === 'white' ? 'color' : ''}`">
+              <span :class="`link color`">
                 <img v-if="item.imgSrc" :src="item.imgSrc" alt />
-                <span>
-                  <div class="title">{{item.name}}</div>
-                  <span class="subTitle">{{item.subTitle}}</span>
-                </span>
-              </span>
-            </li>
-
-            <li
-              v-show="item.link"
-              :key="`link-${item.name}`"
-              v-for="item in list"
-              class="flex-ac"
-              @click="$router.push(item.link)"
-            >
-              <span class="link">
                 <span>
                   <div class="title">{{item.name}}</div>
                   <span class="subTitle">{{item.subTitle}}</span>
@@ -51,7 +49,6 @@
 
 <script>
 import { isMobile, isTablet } from '@/utils'
-import navList from '@/info/navList'
 import logo from '@/assets/svg/logo-w.svg'
 import logoC from '@/assets/svg/logo.svg'
 
@@ -63,10 +60,40 @@ export default {
       isOpen: false,
       isMobile,
       isTablet,
-      list: navList,
       logo,
       logoC,
       isFix: false,
+      list: [
+        {
+          name: '回首頁',
+          imgSrc: '',
+          subTitle: '',
+          section: '',
+          svgSrc: '',
+          link: '/',
+        },
+        {
+          name: '作品集',
+          imgSrc: '',
+          subTitle: '',
+          section: '1',
+          svgSrc: '',
+        },
+        {
+          name: '聯絡我們',
+          imgSrc: '',
+          subTitle: '',
+          section: '2',
+          svgSrc: '',
+        },
+        {
+          name: '加入立炘',
+          imgSrc: '',
+          subTitle: '',
+          section: '3',
+          svgSrc: '',
+        },
+      ],
     }
   },
 
@@ -159,6 +186,11 @@ export default {
     fill: url(#SVGID_14_);
   }
 }
+@media only screen and (max-width: 767px) {
+  .logoC {
+    width: 150px;
+  }
+}
 </style>
 
 <style lang="scss" scoped>
@@ -178,11 +210,13 @@ export default {
   border-bottom: 1px solid #fff;
   align-items: center;
   transition: all 0.3s;
+  background: #fff;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 
   &.fix {
     border-bottom: none;
-    background-color: #ed6d34;
+    background-color: #fff;
+    border-bottom: 1px solid #333;
     height: 60px;
   }
 }
@@ -236,10 +270,15 @@ export default {
   height: 100%;
   li {
     height: 100%;
+    transition: all 0.8s;
+    &:hover {
+      color: #ec6d34;
+      list-style-type: disc;
+    }
   }
 
   .link {
-    color: $nav_link_color;
+    color: #585858;
     height: 100%;
     text-align: center;
     display: block;
@@ -258,7 +297,8 @@ export default {
     }
 
     &:hover {
-      color: $nav_link_hover_color;
+      color: #ec6d34;
+      list-style-type: circle;
       img {
         animation: r5 0.5s infinite alternate;
       }
@@ -385,7 +425,7 @@ export default {
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
   .navigation {
-    height: $nav_phone_height;
+    height: 60px;
     z-index: 110;
   }
 
@@ -401,7 +441,7 @@ export default {
 
   .nav {
     position: static;
-    height: $nav_phone_height;
+    height: 60px;
   }
 
   .menu {
@@ -411,7 +451,7 @@ export default {
     width: 18px;
 
     svg {
-      color: $nav_btn_color;
+      color: #333;
     }
   }
 
@@ -465,6 +505,7 @@ export default {
       .link {
         display: flex;
         justify-content: center;
+        color: #fff;
         span {
           white-space: nowrap;
         }
@@ -477,12 +518,12 @@ export default {
 
   .mask {
     width: 100vw;
-    top: $nav_phone_height;
+    top: 60px;
     right: 0;
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
     z-index: 110;
-    height: calc(100vh - #{$nav_phone_height});
+    height: calc(100vh - #{60px});
     opacity: 0;
     transition: all 0.3s ease-in;
     &.open {

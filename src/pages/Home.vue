@@ -1,7 +1,6 @@
 <template>
   <div class="home no-padding-top">
     <div ref="gtmNoScript" />
-    <Loading :loading="load" />
     <SideNavigation v-if="isSide" />
     <Navigation v-else />
     <div id="section1">
@@ -85,15 +84,8 @@ export default {
   data() {
     return {
       isSide: false,
-      load: true,
     }
   },
-  created() {
-    window.addEventListener('load', (event) => {
-      this.load = false
-    })
-  },
-
   methods: {
     onDone() {
       console.log('done')

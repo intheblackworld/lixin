@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Loading :loading="load" />
     <AstrictMask />
     <router-view />
   </div>
@@ -12,11 +13,25 @@
 
 <script>
 import AstrictMask from '@/components/AstrictMask'
+import Loading from '@/components/Loading.vue'
 
 export default {
   name: 'App',
   components: {
     AstrictMask,
+    Loading
+  },
+
+  data() {
+    return {
+      load: true,
+    }
+  },
+
+  created() {
+    window.addEventListener('load', (event) => {
+      this.load = false
+    })
   },
 }
 </script>

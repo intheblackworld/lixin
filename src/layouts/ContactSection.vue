@@ -24,17 +24,25 @@
       <div>
         <div class="form">
           <div class="row flex">
-            <el-input placeholder="姓名*"></el-input>
-            <el-input placeholder="公司"></el-input>
+            <el-input v-model="form.name">
+              <template slot="append">姓名*</template>
+            </el-input>
+            <el-input v-model="form.company">
+              <template slot="append">公司</template>
+            </el-input>
           </div>
 
           <div class="row flex">
-            <el-input placeholder="信箱*"></el-input>
-            <el-input placeholder="電話"></el-input>
+            <el-input v-model="form.email">
+              <template slot="append">信箱*</template>
+            </el-input>
+            <el-input v-model="form.phone">
+              <template slot="append">電話</template>
+            </el-input>
           </div>
 
-          <el-input type="textarea" :rows="1" placeholder="我想詢問廣告內容"></el-input>
-          <el-input type="textarea" :rows="4" placeholder="詢問內容"></el-input>
+          <el-input v-model="form.title" type="textarea" :rows="1" placeholder="我想詢問廣告內容"></el-input>
+          <el-input v-model="form.msg" type="textarea" :rows="4" placeholder="詢問內容"></el-input>
         </div>
         <div class="button">GO!</div>
       </div>
@@ -153,6 +161,7 @@
 <script>
 import Order from '@/components/Order.vue'
 import HouseInfo from '@/components/HouseInfo.vue'
+import info from '@/info'
 
 export default {
   name: 'contactSection',
@@ -161,6 +170,84 @@ export default {
     HouseInfo,
   },
 
-  methods: {},
+  data() {
+    return {
+      form: {
+        name: '',
+        phone: '',
+        email: '',
+        city: '',
+        area: '',
+        msg: '',
+      },
+      isSubmit: false,
+    }
+  },
+
+  methods: {
+    alertValidate() {
+      const h = this.$createElement
+      this.$notify({
+        title: '請填寫必填欄位',
+        message: h(
+          'i',
+          { style: 'color: #82191d' },
+          '「姓名、 信箱」是必填欄位',
+        ),
+      })
+    },
+
+    submit() {
+      if (this.isSubmit) return
+      if (!this.checked) return
+      this.isSubmit = true
+      if (!this.form.name || !this.form.email) {
+        this.alertValidate()
+        this.isSubmit = false
+        return
+      }
+      const urlParams = new URLSearchParams(window.location.search)
+      const utmSource = urlParams.get('utm_source')
+      const utmMedium = urlParams.get('utm_medium')
+      const utmContent = urlParams.get('utm_content')
+      const utmCampaign = urlParams.get('utm_campaign')
+      const formData = new FormData()
+      formData.append('name', this.form.name)
+      formData.append('company', this.form.company)
+      formData.append('phone', this.form.phone)
+      formData.append('email', this.form.email)
+      formData.append('title', this.form.title)
+      formData.append('msg', this.form.msg)
+      formData.append('utm_source', utmSource)
+      formData.append('utm_medium', utmMedium)
+      formData.append('utm_content', utmContent)
+      formData.append('utm_campaign', utmCampaign)
+      const time = new Date()
+      const year = time.getFullYear()
+      const month = time.getMonth() + 1
+      const day = time.getDate()
+      const hour = time.getHours()
+      const min = time.getMinutes()
+      const sec = time.getSeconds()
+      const date = `${year}-${month}-${day} ${hour}:${min}:${sec}`
+      fetch(
+        `https://script.google.com/macros/s/AKfycbyQKCOhxPqCrLXWdxsAaAH06Zwz_p6mZ5swK80USQ/exec?name=${this.form.name}&company=${this.form.company}&phone=${this.form.phone}&email=${this.form.email}&title=${this.form.title}&msg=${this.form.msg}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_campaign=${utmCampaign}&date=${date}&campaign_name=${info.caseName}
+      `,
+        {
+          method: 'GET',
+        },
+      ).then(() => {
+        fetch('contact-form.php', {
+          method: 'POST',
+          body: formData,
+        }).then(response => {
+          this.isSubmit = false
+          if (response.status === 200) {
+            window.location.href = 'formThanks'
+          }
+        })
+      })
+    },
+  },
 }
 </script>

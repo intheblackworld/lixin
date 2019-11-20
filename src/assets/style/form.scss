@@ -4,6 +4,13 @@
 //   margin-left: 21px;
 // }
 
+.label {
+  position: absolute;
+  left: 0;
+  top: 15px;
+  color: #9f9a98;
+  font-size: 16px;
+}
 .el-input__inner {
   border: none !important;
   border-bottom: 1px solid #585858 !important;
@@ -13,6 +20,30 @@
   font-size: 16px !important;
   line-height: 45px !important;
   padding: 0 !important;
+
+  &::-webkit-input-placeholder {
+    transition: all 0.3s;
+  }
+
+  &:focus {
+    & ~ .el-input-group__append {
+      /* Chrome/Opera/Safari */
+      color: #ed6d34 !important;
+      font-size: 12px !important;
+      transform: translate(0px, -20px) !important;
+    }
+  }
+}
+
+.el-input-group__append {
+  position: absolute !important;
+  background: transparent !important;
+  border: none !important;
+  font-size: 16px !important;
+  padding: 0 !important;
+  top: 15px !important;
+  color: #9f9a98 !important;
+  transition: all 0.3s !important;
 }
 
 .el-input {
@@ -25,10 +56,10 @@
 }
 
 .el-textarea__inner {
-   border-radius: 0 !important;
-   margin-bottom: 23px;
-   border-color: #585858 !important;
-   line-height: 36px !important;
+  border-radius: 0 !important;
+  margin-bottom: 23px;
+  border-color: #585858 !important;
+  line-height: 36px !important;
 }
 
 // .el-input__inner {
@@ -62,7 +93,7 @@
 //     background: $order_input_bg;
 
 //     &::placeholder {
-//       color: $order_input_placeholder;  
+//       color: $order_input_placeholder;
 //     }
 //   }
 // }
@@ -103,7 +134,6 @@
 //     margin-right: 15px;
 //   }
 // }
-
 
 // /* 螢幕尺寸標準 */
 // /* 手機尺寸 */

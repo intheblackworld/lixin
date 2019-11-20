@@ -154,6 +154,7 @@ export default {
     return {
       play,
       isMobile,
+      isShowDetail: false,
       logoList: [
         require('./s7/logo/logo1.png'),
         require('./s7/logo/logo2.png'),
