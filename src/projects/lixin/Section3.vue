@@ -4,23 +4,23 @@
     <div class="bg">
       <div class="title">媒體購買</div>
       <canvas id="canvas" ref="canvas" :width="window.width" :height="window.width * (625 / 1440)"></canvas>
-      <vue-particles
+      <!-- <vue-particles
         color="#999"
         :particleOpacity="0.7"
         :particlesNumber="120"
         shapeType="circle"
         :particleSize="2"
         linesColor="#999"
-        :linesWidth="1"
-        :lineLinked="true"
-        :lineOpacity="0.4"
-        :linesDistance="50"
+        :linesWidth="0"
+        :lineLinked="false"
+        :lineOpacity="0"
+        :linesDistance="0"
         :moveSpeed="4"
         :hoverEffect="true"
         hoverMode="grab"
         :clickEffect="true"
         clickMode="push"
-      ></vue-particles>
+      ></vue-particles> -->
     </div>
   </div>
 </template>
@@ -162,7 +162,7 @@ export default {
         x: void 0,
         y: void 0,
       }
-      let maxRadius = 25
+      let maxRadius = 3
       let imgMaxRadius = 150
       let colorArray = [
         'rgba(99, 84, 75, 0.61)',

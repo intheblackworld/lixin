@@ -16,8 +16,7 @@
             <span>CONTACT</span>
           </div>
           <div class="desc">
-            電話
-            <br />02-2500-0818
+            02-2500-0818
           </div>
         </div>
       </div>

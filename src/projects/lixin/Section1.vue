@@ -5,7 +5,7 @@
       <div class="mask">
         <div class="title typing" v-show="showFirst">用對的策略</div>
         <div class="title typing" v-show="showSecond">做對的行銷</div>
-        <div class="type">LIXIN DIGITAL</div>
+        <!-- <div class="type">LIXIN DIGITAL</div> -->
       </div>
 
       <video-bg autoplay="autoplay" :sources="[require('./s1/video.mp4')]" :isFix="true"></video-bg>
@@ -19,7 +19,7 @@
   background-size: cover;
   position: relative;
   overflow: hidden;
-  position: fixed;
+  // position: fixed;
 }
 
 .VideoBg {
@@ -33,13 +33,15 @@
 
 .mask {
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   z-index: 1;
   box-shadow: -2.1px 3.4px 8px 0 rgba(0, 0, 0, 0.08);
-  background-color: rgb(228, 81, 18);
-  mix-blend-mode: screen;
-  position: fixed;
+  background: url('./s1/bg.png');
+  background-size: cover;
+  background-position: center center;
+  // mix-blend-mode: screen;
+  // position: fixed;
 }
 
 .title {

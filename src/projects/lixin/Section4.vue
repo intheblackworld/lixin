@@ -1,11 +1,16 @@
 <template>
   <div class="section4">
-    <!-- img="./bg.jpg" -->
-    <div class="bg fullscreen">
-      <div class="bg-top"></div>
-      <div class="bg-bottom"></div>
+    <div class="bg">
+      <img src="./s4/bg.jpg" alt class="bg-img" />
+      <img src="./s4/device.png" alt class="bg-img device" />
       <div class="title">響應式設計</div>
-      <swiper :options="swiperOption" swiper-no-swiping class="mac-container" @slideChangeTransitionEnd="slideChanged" ref="mySwiper">
+      <swiper
+        :options="swiperOption"
+        swiper-no-swiping
+        class="mac-container"
+        @slideChangeTransitionEnd="slideChanged"
+        ref="mySwiper"
+      >
         <swiper-slide
           v-for="(slide, index) in slideList"
           :index="index"
@@ -36,11 +41,15 @@
         </swiper-slide>
       </swiper>
       <div class="indigator">
-        <li v-for="(slide, index) in slideList" :class="`${slideIndex === index ? 'active' : ''}`" :key="`indigator-${index}`"></li>
+        <li
+          v-for="(slide, index) in slideList"
+          :class="`${slideIndex === index ? 'active' : ''}`"
+          :key="`indigator-${index}`"
+        ></li>
       </div>
-      <img src="./s4/rwd-mac.png" alt class="mac" />
+      <!-- <img src="./s4/rwd-mac.png" alt class="mac" />
       <img src="./s4/rwd-tablet.png" alt class="tablet" />
-      <img src="./s4/rwd-phone.png" alt class="phone" />
+      <img src="./s4/rwd-phone.png" alt class="phone" />-->
     </div>
   </div>
 </template>
@@ -53,6 +62,28 @@
   overflow: hidden;
   position: relative;
   z-index: 2;
+  width: 100vw;
+  height: 100vw * (1080 /2400);
+}
+
+.bg-img {
+  width: 100vw;
+  height: 100vw * (1080 /2400);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  z-index: 0;
+
+  // &:nth-child(1) {
+  //   position: relative;
+  // }
+
+  &.device {
+    z-index: 3;
+  }
 }
 
 .title {
@@ -89,7 +120,7 @@
 
 .mac {
   position: absolute;
-  width: calc(100vw * 1240 / 1440);
+  width: calc(100vw * 640 / 2400);
   right: calc(100vw * -104 / 1440);
   bottom: calc(100vw * 85 / 900);
   z-index: 2;
@@ -97,60 +128,50 @@
 
 .mac-container {
   position: absolute;
-  width: calc(100vw * 749 / 1440);
-  right: calc(100vw * 28 / 1440);
-  bottom: calc(100vw * 142 / 900);
+  width: calc(100vw * 1105 / 2400);
+  height: calc(100vw * 700 / 2400);
+  right: calc(100vw * 215 / 2400);
+  bottom: calc(100vw * 235 / 2400);
   overflow: hidden;
   z-index: 1;
 
   .item-img {
-    width: calc(100vw * 749 / 1440);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-}
-
-.tablet {
-  position: absolute;
-  width: calc(100vw * 697 / 1440);
-  left: calc(100vw * 200 / 1440);
-  bottom: calc(100vw * 64 / 900);
-  z-index: 4;
 }
 
 .tablet-container {
   position: absolute;
-  width: calc(100vw * 504 / 1440);
-  height: calc(100vw * 379 / 1440);
-  left: calc(100vw * 277 / 1440);
-  bottom: calc(100vw * 110 / 900);
+  width: calc(100vw * 650 / 2400);
+  height: calc(100vw * 500 / 2400);
+  left: calc(100vw * 625 / 2400);
+  bottom: calc(100vw * 115 / 2400);
   overflow: hidden;
-  z-index: 3;
+  object-fit: cover;
+  z-index: 1;
 
   .item-img {
-    width: calc(100vw * 504 / 1440);
-    height: calc(100vw * 379 / 1440);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-}
-
-.phone {
-  position: absolute;
-  width: calc(100vw * 170 / 1440);
-  left: calc(100vw * 98 / 1440);
-  bottom: calc(100vw * 64 / 900);
-  z-index: 6;
 }
 
 .phone-container {
   position: absolute;
-  width: calc(100vw * 118 / 1440);
-  height: calc(100vw * 265 / 1440);
-  left: calc(100vw * 118 / 1440);
-  bottom: calc(100vw * 85 / 900);
+  width: calc(100vw * 200 / 2400);
+  height: calc(100vw * 440 / 2400);
+  left: calc(100vw * 385 / 2400);
+  bottom: calc(100vw * 95 / 2400);
   overflow: hidden;
-  z-index: 5;
+  z-index: 1;
 
   .item-img {
-    width: calc(100vw * 118 / 1440);
-    height: calc(100vw * 265 / 1440);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 

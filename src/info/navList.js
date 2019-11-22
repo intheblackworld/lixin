@@ -19,7 +19,7 @@ export default [
     name: '加入立炘',
     imgSrc: '',
     subTitle: '',
-    section: 'section5',
+    link: ' https://www.104.com.tw/company/1a2x6bkhg2',
     svgSrc: ''
   }
 ]

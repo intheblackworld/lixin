@@ -442,10 +442,10 @@
 }
 
 .title {
-  font-family: 'noto_regular';
+  // font-family: 'noto_regular';
   font-size: 2.8em;
   line-height: 1.5em;
-  font-weight: 300;
+  font-weight: 200;
   margin-bottom: -0.4em;
   color: #ed6d34;
   transition: all 0.3s ease-in;
@@ -454,7 +454,7 @@
 }
 
 .subtitle {
-  font-family: 'noto_regular';
+  // font-family: 'noto_regular';
   font-size: 0.9em;
   font-weight: 900;
   margin: 1.8em 0;

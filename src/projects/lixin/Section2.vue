@@ -2,12 +2,27 @@
   <div class="section2">
     <!-- img="./bg.jpg" -->
     <div class="fullscreen bg">
+      <img
+        src="./s2/bg.jpg"
+        alt
+        class="bg-img"
+        data-aos="fade"
+        data-aos-delay="400"
+        data-aos-duration="1500"
+      />
       <div class="page-title">服務內容</div>
-      <div class="star comet"></div>
       <div class="pie-chart">
-        <div class="overlay"></div>
+        <img src="./s2/pie.png" alt="" class="pie-bg" ref="pie">
+        <div class="overlay">
+          <div class="web" @mouseenter="handlePie(0)"></div>
+          <div class="video" @mouseenter="handlePie(1)"></div>
+          <div class="social" @mouseenter="handlePie(2)"></div>
+          <div class="digital" @mouseenter="handlePie(3)"></div>
+          <div class="ad" @mouseenter="handlePie(4)"></div>
+          <div class="media" @mouseenter="handlePie(5)"></div>
+        </div>
         <!-- <icon class="logo" :data="logo" /> -->
-        <div @mouseenter="handlePie(0)">
+        <!-- <div @mouseenter="handlePie(0)">
           <icon class="web" :data="web" />
         </div>
         <div @mouseenter="handlePie(1)">
@@ -26,8 +41,8 @@
           <icon class="media" :data="media" />
         </div>
 
-        <icon class="house" :data="house" />
-        <div class="line line1">
+        <icon class="house" :data="house" />-->
+        <!-- <div class="line line1">
           <hr />
         </div>
         <div class="line line2">
@@ -44,10 +59,10 @@
         </div>
         <div class="line line6">
           <hr />
-        </div>
-        <div class="pie" ref="pie1"></div>
+        </div>-->
+        <!-- <div class="pie" ref="pie1"></div>
         <div class="pie" ref="pie2"></div>
-        <div class="pie" ref="pie3"></div>
+        <div class="pie" ref="pie3"></div>-->
       </div>
       <transition-group name="slide-fade" mode="out-in">
         <div
@@ -71,6 +86,7 @@
           :key="`content-icon-${index}`"
         />
       </transition-group>
+      <div class="star comet"></div>
     </div>
   </div>
 </template>
@@ -190,7 +206,7 @@
 }
 
 .slide-fade-delay-enter-active {
-  animation: fadedelay .8s ease 0s;
+  animation: fadedelay 0.8s ease 0s;
 }
 .slide-fade-delay-leave-active {
   // animation: fadedelay .1s ease 0s reverse;
@@ -198,12 +214,27 @@
 </style>
 <style lang="scss" scoped>
 .bg {
-  background: url('./s2/area2_bg.jpg');
+  background: #000;
+  // background: url('./s2/area2_bg.jpg');
   background-size: cover;
   position: relative;
   overflow: hidden;
   position: relative;
   z-index: 2;
+}
+
+.bg-img {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  display: block;
+  object-fit: cover;
+
+  // &:nth-child(1) {
+  //   position: relative;
+  // }
 }
 
 .page-title {
@@ -231,66 +262,11 @@ svg {
   fill: #fff;
   z-index: 10;
   // position: absolute;
-
-  &.web {
-    position: absolute;
-    left: auto;
-    top: 57px;
-    right: 130px;
-  }
-
-  &.video {
-    position: absolute;
-    left: auto;
-    top: 216px;
-    right: 30px;
-  }
-
-  &.social {
-    position: absolute;
-    left: auto;
-    bottom: 46px;
-    right: 110px;
-  }
-
-  &.digital {
-    position: absolute;
-    right: auto;
-    bottom: 46px;
-    left: 110px;
-  }
-
-  &.ad {
-    position: absolute;
-    right: auto;
-    top: 216px;
-    left: 30px;
-  }
-
-  &.media {
-    position: absolute;
-    left: auto;
-    top: 57px;
-    left: 130px;
-  }
-
-  &.house {
-    position: absolute;
-    width: 280px;
-    height: 258px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 112px;
-    fill: #000;
-  }
 }
 
 .pie-chart {
   width: 489px;
   height: 489px;
-  border: 2px solid #fff;
-  background: rgb(87, 80, 80);
   border-radius: 999px;
   position: relative;
   left: 0;
@@ -298,81 +274,81 @@ svg {
   margin: 0 auto;
   top: 50%;
   transform: translateY(-50%);
-  mix-blend-mode: lighten;
+  z-index: 2;
+
+  .pie-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    transition: all .3s;
+  }
   .overlay {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 485px;
-    height: 485px;
+    width: 488px;
+    height: 488px;
     border-radius: 999px;
-    background: #999;
-  }
+    background: url('./s2/cirlce.png');
 
-  .line {
-    width: 243px;
-    height: 2px;
-    // background: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-origin: left;
-    hr {
-      margin: 0;
-      position: relative;
-      border-top: 1px solid #fff;
-    }
-
-    &.line1 {
-      transform: rotate(30deg);
-      hr {
-        left: 116px;
-        width: 126px;
+    > div {
+      width: 100px;
+      height: 100px;
+      // background: #fff;
+      &.web {
+        position: absolute;
+        left: auto;
+        top: 57px;
+        right: 130px;
       }
-    }
 
-    &.line2 {
-      transform: rotate(90deg);
-
-      hr {
-        left: 126px;
-        width: 116px;
+      &.video {
+        position: absolute;
+        left: auto;
+        top: 216px;
+        right: 30px;
       }
-    }
 
-    &.line3 {
-      transform: rotate(150deg);
-
-      hr {
-        left: 116px;
-        width: 126px;
+      &.social {
+        position: absolute;
+        left: auto;
+        bottom: 46px;
+        right: 110px;
       }
-    }
 
-    &.line4 {
-      transform: rotate(210deg);
-
-      hr {
+      &.digital {
+        position: absolute;
+        right: auto;
+        bottom: 46px;
         left: 110px;
-        width: 132px;
       }
-    }
 
-    &.line5 {
-      transform: rotate(270deg);
-
-      hr {
-        left: 132px;
-        width: 112px;
+      &.ad {
+        position: absolute;
+        right: auto;
+        top: 216px;
+        left: 30px;
       }
-    }
 
-    &.line6 {
-      transform: rotate(330deg);
+      &.media {
+        position: absolute;
+        left: auto;
+        top: 57px;
+        left: 130px;
+      }
 
-      hr {
-        left: 110px;
-        width: 133px;
+      &.house {
+        position: absolute;
+        width: 280px;
+        height: 258px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 112px;
+        fill: #000;
       }
     }
   }
@@ -386,6 +362,7 @@ svg {
   margin: 0 auto;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 3;
 
   .icon {
     margin: 0 auto;
@@ -429,8 +406,9 @@ svg {
 
 .icon-bg {
   width: 350px;
-  opacity: 0.4;
+  opacity: 0.1;
   position: absolute;
+  z-index: 1;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -438,47 +416,47 @@ svg {
   transform: translate(-350px, -100%);
 }
 
-.pie {
-  position: absolute;
-  width: 244.5px;
-  height: 244.5px;
-  overflow: hidden;
-  left: 50%;
-  top: 0;
-  mix-blend-mode: overlay;
-  z-index: 3;
-  transform-origin: left bottom;
-  // animation: a 5s infinite linear;
-  transition: all 0.3s ease;
-  transform: rotate(0deg);
+// .pie {
+//   position: absolute;
+//   width: 244.5px;
+//   height: 244.5px;
+//   overflow: hidden;
+//   left: 50%;
+//   top: 0;
+//   // mix-blend-mode: overlay;
+//   z-index: 3;
+//   transform-origin: left bottom;
+//   // animation: a 5s infinite linear;
+//   transition: all 0.3s ease;
+//   transform: rotate(0deg);
 
-  &:before,
-  &:after {
-    content: '';
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 489px;
-    height: 244.5px;
-    background: #ed6d34;
-    border-radius: 999px 999px 0 0;
-    transform-origin: 244.5px 244.5px;
-  }
+//   &:before,
+//   &:after {
+//     content: '';
+//     box-sizing: border-box;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     width: 489px;
+//     height: 244.5px;
+//     background: #ed6d34;
+//     border-radius: 999px 999px 0 0;
+//     transform-origin: 244.5px 244.5px;
+//   }
 
-  &:after {
-    opacity: 0;
-    z-index: 2;
-    transform: rotate(0deg);
-    // animation: a2 5s infinite linear;
-  }
+//   &:after {
+//     opacity: 0;
+//     z-index: 2;
+//     transform: rotate(0deg);
+//     // animation: a2 5s infinite linear;
+//   }
 
-  &:before {
-    z-index: 1;
-    // animation: a1 5s infinite linear;
-    transform: rotate(-30deg);
-  }
-}
+//   &:before {
+//     z-index: 1;
+//     // animation: a1 5s infinite linear;
+//     transform: rotate(-30deg);
+//   }
+// }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
 }
@@ -563,25 +541,12 @@ export default {
       let currentIndex = this.pieIndex % 6
       let handleIndex
       handleIndex = index - currentIndex
-      console.log(index, currentIndex, handleIndex)
       this.pieIndex = this.pieIndex + handleIndex
       this.rotatePie()
     },
 
     rotatePie() {
-      this.$refs.pie1.style.transform = `rotate(${this.pieIndex * 60}deg)`
-      this.$refs.pie2.style.transform = `rotate(${this.pieIndex * 60}deg)`
-      this.$refs.pie3.style.transform = `rotate(${this.pieIndex * 60}deg)`
-      // setTimeout(() => {
-      //   this.$refs.pie1.style.transform = `rotate(${(this.pieIndex * 60) - 3}deg)`
-      //   this.$refs.pie2.style.transform = `rotate(${(this.pieIndex * 60) - 3}deg)`
-      //   this.$refs.pie3.style.transform = `rotate(${(this.pieIndex * 60) - 3}deg)`
-      // }, 300)
-      // setTimeout(() => {
-      //   this.$refs.pie1.style.transform = `rotate(${(this.pieIndex * 60) + 0}deg)`
-      //   this.$refs.pie2.style.transform = `rotate(${(this.pieIndex * 60) + 0}deg)`
-      //   this.$refs.pie3.style.transform = `rotate(${(this.pieIndex * 60) + 0}deg)`
-      // }, 600)
+      this.$refs.pie.style.transform = `rotate(${this.pieIndex * 60}deg)`
     },
   },
 
