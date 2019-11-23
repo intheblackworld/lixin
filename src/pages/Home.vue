@@ -40,6 +40,13 @@
 @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
 </style>
 
+<style lang="scss" scoped>
+// #section1 {
+//   position: relative;
+//   z-index: 3;
+// }
+</style>
+
 <script>
 // @ is an alias to /src
 import Navigation from '@/layouts/Navigation.vue'

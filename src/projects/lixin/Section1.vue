@@ -1,14 +1,14 @@
 <template>
   <div class="section1">
     <!-- img="./bg.jpg" -->
-    <div class="fullscreen">
+    <div class="fullscreen bg">
       <div class="mask">
         <div class="title typing" v-show="showFirst">用對的策略</div>
         <div class="title typing" v-show="showSecond">做對的行銷</div>
         <!-- <div class="type">LIXIN DIGITAL</div> -->
       </div>
 
-      <video-bg autoplay="autoplay" :sources="[require('./s1/video.mp4')]" :isFix="true"></video-bg>
+      <video-bg autoplay="autoplay" :sources="[require('./s1/video.mp4')]" :isFix="false"></video-bg>
     </div>
   </div>
 </template>
@@ -19,6 +19,7 @@
   background-size: cover;
   position: relative;
   overflow: hidden;
+  z-index: 3;
   // position: fixed;
 }
 
@@ -27,7 +28,7 @@
   height: 100% !important;
   video {
     // position: fixed;
-    z-index: 0;
+    z-index: 2;
   }
 }
 
@@ -35,7 +36,7 @@
   width: 100vw;
   height: 100vh;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   box-shadow: -2.1px 3.4px 8px 0 rgba(0, 0, 0, 0.08);
   background: url('./s1/bg.png');
   background-size: cover;
