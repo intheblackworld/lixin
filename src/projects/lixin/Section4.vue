@@ -47,9 +47,6 @@
           :key="`indigator-${index}`"
         ></li>
       </div>
-      <!-- <img src="./s4/rwd-mac.png" alt class="mac" />
-      <img src="./s4/rwd-tablet.png" alt class="tablet" />
-      <img src="./s4/rwd-phone.png" alt class="phone" />-->
     </div>
   </div>
 </template>
@@ -203,6 +200,9 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .indigator {
+    bottom: 10px;
+  }
 }
 
 @media screen and (max-width: 767px) {

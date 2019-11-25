@@ -357,6 +357,7 @@ export default {
 
   .navlist {
     width: 85%;
+    justify-content: flex-end;
   }
 
   .navlist .link {

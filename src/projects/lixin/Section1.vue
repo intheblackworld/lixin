@@ -100,11 +100,21 @@
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    min-height: 750px;
+  }
+
+  .mask {
+    height: 100%;
+  }
 }
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .mask {
+    background-image: url('./s1/tbg.png');
+  }
 }
 
 @media screen and (max-width: 767px) {

@@ -348,6 +348,19 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .content {
+    width: 567px;
+    height: 450px;
+  }
+
+  .play-group {
+    margin-top: 10px;
+    margin-left: 53px;
+  }
+
+  .work-title {
+    margin-top: 30px;
+  }
 }
 
 @media screen and (max-width: 767px) {

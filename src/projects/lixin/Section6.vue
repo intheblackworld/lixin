@@ -443,7 +443,7 @@
 
 .title {
   // font-family: 'noto_regular';
-  font-size: 2.8em;
+  font-size: calc(100vw * (44 / 1920));
   line-height: 1.5em;
   font-weight: 200;
   margin-bottom: -0.4em;
@@ -590,6 +590,13 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .title {
+    font-size: calc(100vw * (28 / 1024));
+  }
+
+  .desc {
+    font-size: .9em;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -647,7 +654,7 @@ export default {
           subtitle: '海沃創意行銷-欣璞綻',
           desc:
             '網路素材交叉測試、精準廣告投放、追蹤數據並即時優化、調整行銷方向。',
-          iframe: 'http://localhost:9000/300x600.html',
+          iframe: `${window.location.href}300x600.html`,
         },
       ],
     }

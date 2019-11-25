@@ -241,7 +241,6 @@
 }
 .bg {
   background: #000;
-  // background: url('./s2/area2_bg.jpg');
   background-size: cover;
   position: relative;
   overflow: hidden;
@@ -457,7 +456,7 @@ svg {
 }
 
 .carousel-3d-container {
-  position: absolute;
+  position: absolute !important;
   bottom: calc(-100vw * (88 / 1920));
   left: 0;
   right: 0;
@@ -714,11 +713,29 @@ svg {
 }
 
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
+  .fullscreen {
+    min-height: 880px;
+  }
+
+  .pie-chart {
+    position: absolute;
+  }
 }
 
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .bg-img {
+    min-height: 100vh;
+  }
+  .icon-bg {
+    width: 289px;
+    height: auto;
+  }
+
+  .page-title {
+    top: 6%;
+  }
 }
 
 @media screen and (max-width: 767px) {

@@ -107,6 +107,7 @@ export default {
       c.backingStorePixelRatio ||
       1
     let ratio = (window.devicePixelRatio || 1) / quality
+    console.log(ratio)
     canvas.width = window.innerWidth * ratio
     canvas.height = (isMobile.phone ? window.innerHeight : 625) * ratio
     canvas.style.width = window.innerWidth + 'px'
