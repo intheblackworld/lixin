@@ -408,10 +408,12 @@ export default {
   .menu {
     display: block;
     position: absolute;
-    right: 15px;
+    right: 35px;
     width: 18px;
 
     svg {
+      width: 25px;
+      height: auto;
       color: $nav_btn_color;
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <img src="../assets/img/footer_bg.jpg" alt class="footer-bg" />
+    <img src="../assets/img/footer_bg.png" alt class="footer-bg" />
     <!-- <img src="../assets/img/footerLogo.png" alt="心天畝的圖片" /> -->
     <div class="footer-bottom">
       <a
@@ -66,13 +66,19 @@
 
 @media screen and (max-width: 767px) {
   .footer {
-    margin-bottom: 63px;
+    // margin-bottom: 63px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .footer {
-    margin-bottom: 63px;
+    // margin-bottom: 63px;
+    .footer-bg {
+      width: 100vw;
+      height: 414px;
+      object-fit: cover;
+      margin-top: -50px;
+    }
   }
 }
 </style>

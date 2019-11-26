@@ -1,7 +1,7 @@
 <template>
   <div class="section4">
     <div class="bg">
-      <img src="./s4/bg.jpg" alt class="bg-img" />
+      <img src="./s4/bg.jpg" alt class="bg-img mobile-bg" />
       <img src="./s4/device.png" alt class="bg-img device" />
       <div class="title">響應式設計</div>
       <swiper
@@ -206,6 +206,40 @@
 }
 
 @media screen and (max-width: 767px) {
+  .mobile-bg {
+    width: 100vw;
+    height: 100vh;
+  }
+  .bg {
+    height: 100vh;
+  }
+
+  .device {
+    top: auto;
+    bottom: 12vh;
+  }
+
+  .phone-container {
+    bottom: calc(100vh * (95 / 675));
+  }
+
+  .tablet-container {
+    bottom: calc(100vh * (100 / 675));
+  }
+
+  .mac-container {
+    bottom: calc(100vh * (118 / 675));
+  }
+
+  .title {
+    font-size: 45.5px;
+    left: auto;
+    right: auto;
+    margin: 0 auto;
+    width: 100vw;
+    text-align: center;
+    top: 25%;
+  }
 }
 </style>
 <script>

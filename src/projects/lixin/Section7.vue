@@ -1,9 +1,16 @@
 <template>
-  <div class="section6">
+  <div class="section7">
+    <div class="title" v-if="isMobile">服務客戶</div>
     <div class="bg fullscreen">
       <div class="container">
         <div class="logo" v-for="(logo, index) in logoList" :key="`logo${index}`">
-          <img :src="logo" alt="" data-aos="flip-left" :data-aos-delay="0 + 100 * index" data-aos-duration="1200">
+          <img
+            :src="logo"
+            alt
+            data-aos="flip-left"
+            :data-aos-delay="0 + 100 * index"
+            data-aos-duration="1200"
+          />
         </div>
       </div>
       <div :class="`slide-next ${isShowDetail ? 'hide' : ''}`" @click="slideNext">
@@ -106,7 +113,7 @@
     background: transparent;
 
     video {
-      outline:  none;
+      outline: none;
       width: 100%;
       height: 100%;
     }
@@ -143,6 +150,47 @@
 }
 
 @media screen and (max-width: 767px) {
+  .container {
+    width: 100vw;
+    justify-content: center;
+    .logo {
+      width: 50%;
+    }
+  }
+
+  .section7 {
+    position: relative;
+    > .fullscreen {
+      height: calc(100vw * (432 / 375)) !important;
+    }
+  }
+
+  .title {
+    color: #ed6d34;
+    font-size: 31px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.94;
+    letter-spacing: 3.1px;
+    text-align: center;
+    position: absolute;
+    z-index: 3;
+    top: 3vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100vw;
+  }
+
+  .slide-next,
+  .slide-prev {
+    width: 40px;
+    height: 40px;
+    img {
+      width: 40%;
+    }
+  }
 }
 </style>
 <script>
@@ -153,7 +201,7 @@ import 'swiper/dist/css/swiper.css'
 import play from '@/assets/svg/icon-play.svg'
 import { setTimeout } from 'timers'
 export default {
-  name: 'section6',
+  name: 'section7',
   mixins: [slider],
 
   components: {},
@@ -170,7 +218,7 @@ export default {
         require('./s7/logo/logo4.png'),
         require('./s7/logo/logo5.png'),
         require('./s7/logo/logo6.png'),
-      ]
+      ],
     }
   },
 

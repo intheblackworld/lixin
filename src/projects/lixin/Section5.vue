@@ -1,7 +1,7 @@
 <template>
   <div class="section5">
     <!-- img="./bg.jpg" -->
-    <div class="bg fullscreen">
+    <div class="bg fullscreen" v-if="!isMobile">
       <div class="content">
         <div class="title">我們的作品</div>
         <swiper
@@ -51,6 +51,51 @@
           class="bar"
           :style="`left: ${(100 / slideList.length) * slideIndex}%;width: ${100 / slideList.length}%`"
         ></div>
+      </div>
+    </div>
+    <div class="bg fullscreen" v-if="isMobile">
+      <video-bg
+        autoplay="autoplay"
+        :sources="[slideList[0].video, slideList[1].video, slideList[2].video, slideList[3].video, slideList[4].video, slideList[5].video, slideList[6].video]"
+        :slideIndex="slideIndex"
+      ></video-bg>
+      <div class="content">
+        <div class="title">我們的作品</div>
+        <swiper
+          :options="swiperOption"
+          swiper-no-swiping
+          class="mac-container"
+          ref="mySwiper"
+          @slideChangeTransitionEnd="slideChanged"
+        >
+          <swiper-slide
+            v-for="(slide, index) in slideList"
+            :index="index"
+            :key="slide.src_mac"
+            class="item"
+          >
+            <div class="subtitle">{{slide.name}}</div>
+            <div class="work-title">{{slide.title}}</div>
+            <div class="work-desc" v-html="slide.desc"></div>
+            <div class="play-group">
+              <icon class="play" :data="play" @click="showVideoDialog(index)" />
+              <div>觀看影片</div>
+            </div>
+          </swiper-slide>
+        </swiper>
+
+        <div class="slide-btn">
+          <div class="left-btn" slot="button-prev">
+            <img src="./s5/next.png" alt class="prev" />
+          </div>
+          <div class="right-btn" slot="button-next">
+            <img src="./s5/next.png" alt class="next" />
+          </div>
+        </div>
+        <div class="link">
+          <span>看更多影片</span>
+          <span class="line-arrow"></span>
+        </div>
       </div>
     </div>
     <div class="dialog" v-show="isDialogShow">
@@ -364,6 +409,17 @@
 }
 
 @media screen and (max-width: 767px) {
+  .VideoBg {
+    height: auto;
+    video {
+      width: 100vw;
+      height: auto;
+    }
+  }
+
+  .content {
+    width: 100vw;
+  }
 }
 </style>
 <script>

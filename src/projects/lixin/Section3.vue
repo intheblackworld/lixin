@@ -75,6 +75,9 @@
 }
 
 @media screen and (max-width: 767px) {
+  .title {
+    text-shadow: 0 0 3px #444;
+  }
 }
 </style>
 <script>

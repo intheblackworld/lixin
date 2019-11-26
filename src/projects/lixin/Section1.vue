@@ -62,23 +62,6 @@
   align-items: center;
 }
 
-.type {
-  white-space: nowrap;
-  z-index: 2;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 180px;
-  line-height: 180px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-align: center;
-  color: #000;
-}
-
 .typing {
   width: 360px;
   white-space: nowrap;
@@ -118,6 +101,18 @@
 }
 
 @media screen and (max-width: 767px) {
+  .mask {
+    background-image: url('./s1/mobg.png');
+  }
+
+  .title {
+    font-size: 45.5px;
+    top: 25%;
+  }
+
+  .typing {
+    width: 290px;
+  }
 }
 </style>
 <script>

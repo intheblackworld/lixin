@@ -32,7 +32,7 @@
             :key="`content-${index}`"
           >
             <div class="title">{{content.title}}</div>
-            <icon class="icon" :data="content.icon" />
+            <!-- <icon class="icon" :data="content.icon" /> -->
             <div class="subtitle" v-html="content.subtitle"></div>
             <div class="desc" v-html="content.desc"></div>
           </div>
@@ -49,6 +49,7 @@
       </div>
       <!-- 區塊2 -->
       <div class="container">
+        <img src="./s2/s2-2/mo_bg.jpg" alt class="mobile-bg" />
         <div class="animate-block">
           <div class="animate-icon-bing">
             <img src="./s2/s2-2/icon/bing.png" alt />
@@ -83,12 +84,12 @@
         </div>
         <carousel-3d
           ref="mycarousel"
-          :width="isMobile ? window.innerWidth : window.innerWidth * (width / 1920)"
-          :height="isMobile ?window.innerWidth * (240 / 375) : window.innerWidth * (height / 1920)"
+          :width="isMobile ? window.innerWidth * (638 / 750) : window.innerWidth * (width / 1920)"
+          :height="isMobile ?window.innerWidth * (468 / 750) : window.innerWidth * (height / 1920)"
           :perspective="0"
           :disable3d="isMobile ? true : false"
           :border="0"
-          :display="isMobile ? 1 : 3"
+          :display="3"
           :space="isMobile ? 'auto' : 'auto'"
           data-aos="fade"
           data-aos-delay="200"
@@ -487,7 +488,7 @@ svg {
   }
 
   img {
-    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.15);
     border-radius: 12px;
     width: calc(100vw * (70 / 1980));
     height: calc(100vw * (70 / 1980));
@@ -496,7 +497,6 @@ svg {
     right: calc(100vw * (482 / 1980));
     top: 0px;
   }
-  
 
   @keyframes bing-float {
     from {
@@ -672,7 +672,6 @@ svg {
     transform: scale(0.65);
   }
 
-
   .animate-icon-ga {
     animation: ga-float 3s 1s infinite ease-in-out;
     transform: scale(0.8);
@@ -739,6 +738,110 @@ svg {
 }
 
 @media screen and (max-width: 767px) {
+  .bg-img {
+    min-height: 100vh;
+  }
+  .page-title {
+    font-size: 32px;
+  }
+
+  .pie-chart {
+    width: 90vw;
+    height: 90vw;
+    .overlay {
+      width: 90vw;
+      height: 90vw;
+      background-size: cover;
+    }
+  }
+
+  .icon-bg {
+    width: 166px;
+    height: 166px;
+    transform: translate(-100px, 100px);
+  }
+
+  .container {
+    width: 100vw;
+    border-radius: 0;
+    height: calc(100vw * (822 / 750));
+    background-image: none;
+  }
+
+  .mobile-bg {
+    width: 100vw;
+    transform: skewY(20deg);
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+
+  .animate-block {
+    z-index: 2;
+
+    img {
+      box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      width: calc(100vw * (70 / 750));
+      height: calc(100vw * (70 / 750));
+    }
+
+    .animate-icon-bing {
+      right: calc(100vw * (375 / 750));
+      bottom: calc(100vw * (1300 / 1300));
+    }
+    .animate-icon-fb {
+      right: calc(100vw * (200 / 750));
+      bottom: calc(100vw * (800 / 1300));
+    }
+    .animate-icon-ga {
+      right: calc(100vw * (384 / 750));
+      bottom: calc(100vw * (700 / 1300));
+    }
+    .animate-icon-gmb {
+      right: calc(100vw * (50 / 750));
+      bottom: calc(100vw * (680 / 1300));
+    }
+
+    .animate-icon-gtm {
+      right: calc(100vw * (222 / 750));
+      bottom: calc(100vw * (650 / 1300));
+    }
+    .animate-icon-ig {
+      right: calc(100vw * (150 / 750));
+      bottom: calc(100vw * (900 / 1300));
+    }
+    .animate-icon-line {
+      left: calc(100vw * (150 / 750));
+      bottom: calc(100vw * (350 / 1300));
+      z-index: 12;
+    }
+    .animate-icon-stripe {
+      left: calc(100vw * (100 / 750));
+      bottom: calc(100vw * (750 / 1300));
+    }
+    .animate-icon-yahoo {
+      right: calc(100vw * (352 / 750));
+      top: calc(100vw * (160 / 1300));
+    }
+    .animate-icon-yt {
+      left: auto;
+      right: calc(100vw * (30 / 750));
+      top: calc(100vw * (22 / 1300));
+    }
+  }
+
+  .carousel-3d-container {
+    z-index: 3;
+  }
+
+  .carousel-3d-slide {
+    margin-top: 0;
+    top: 50px !important;
+    &.current {
+      top: 10px !important;
+    }
+  }
 }
 </style>
 <script>

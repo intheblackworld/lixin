@@ -155,6 +155,20 @@
   color: #ffffff;
   cursor: pointer;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 100vw;
+    flex-wrap: wrap;
+    > div {
+      width: 85%;
+      margin: 0 auto;
+    }
+    .title {
+      font-size: 45.5px;
+    }
+  }
+}
 </style>
 
 <script>
