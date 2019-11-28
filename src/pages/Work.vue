@@ -139,6 +139,25 @@
     margin-top: 20px;
   }
 }
+
+/* 螢幕尺寸標準 */
+/* 手機尺寸 */
+@media only screen and (max-width: 767px) {
+  .work-info {
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 1px;
+  }
+  .info-row {
+    display: block;
+  }
+  .info-item {
+    width: 100vw;
+    margin-bottom: 30px;
+  }
+}
 </style>
 
 <script>

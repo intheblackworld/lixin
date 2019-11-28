@@ -54,11 +54,13 @@
       </div>
     </div>
     <div class="bg fullscreen" v-if="isMobile">
-      <video-bg
+      <img :src="slideList[slideIndex].img" alt class="mobile-video-img" />
+      <img src="./s5/img/icon.png" alt class="play-icon" @click="showVideoDialog(slideIndex)" />
+      <!-- <video-bg
         autoplay="autoplay"
         :sources="[slideList[0].video, slideList[1].video, slideList[2].video, slideList[3].video, slideList[4].video, slideList[5].video, slideList[6].video]"
         :slideIndex="slideIndex"
-      ></video-bg>
+      ></video-bg>-->
       <div class="content">
         <div class="title">我們的作品</div>
         <swiper
@@ -77,24 +79,22 @@
             <div class="subtitle">{{slide.name}}</div>
             <div class="work-title">{{slide.title}}</div>
             <div class="work-desc" v-html="slide.desc"></div>
-            <div class="play-group">
-              <icon class="play" :data="play" @click="showVideoDialog(index)" />
-              <div>觀看影片</div>
-            </div>
           </swiper-slide>
         </swiper>
 
-        <div class="slide-btn">
-          <div class="left-btn" slot="button-prev">
-            <img src="./s5/next.png" alt class="prev" />
+        <div class="flex">
+          <div class="slide-btn">
+            <div class="left-btn" slot="button-prev">
+              <img src="./s5/next.png" alt class="prev" />
+            </div>
+            <div class="right-btn" slot="button-next">
+              <img src="./s5/next.png" alt class="next" />
+            </div>
           </div>
-          <div class="right-btn" slot="button-next">
-            <img src="./s5/next.png" alt class="next" />
+          <div class="link">
+            <span>看更多影片</span>
+            <span class="line-arrow"></span>
           </div>
-        </div>
-        <div class="link">
-          <span>看更多影片</span>
-          <span class="line-arrow"></span>
         </div>
       </div>
     </div>
@@ -364,7 +364,7 @@
     background: #fff;
 
     video {
-      outline:  none;
+      outline: none;
       width: 100%;
       height: 100%;
     }
@@ -409,6 +409,9 @@
 }
 
 @media screen and (max-width: 767px) {
+  .bg.fullscreen {
+    height: auto !important;
+  }
   .VideoBg {
     height: auto;
     video {
@@ -416,9 +419,84 @@
       height: auto;
     }
   }
-
-  .content {
+  .mobile-video-img {
     width: 100vw;
+  }
+
+  .play-icon {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+    cursor: pointer;
+    z-index: 4;
+  }
+  .content {
+    position: relative;
+    width: 100vw;
+    height: auto;
+    right: auto;
+    top: 0;
+    padding-bottom: 30px;
+
+    .title {
+      font-size: 31px;
+      margin-top: 30px;
+      margin-left: calc(100vw * (30 / 375));
+    }
+
+    .subtitle {
+      margin-left: calc(100vw * (30 / 375));
+    }
+
+    .work-title {
+      margin-top: 30px;
+      margin-left: calc(100vw * (30 / 375));
+    }
+
+    .work-desc {
+      margin-left: calc(100vw * (30 / 375));
+    }
+
+    .slide-btn {
+      margin-left: calc(100vw * (30 / 375));
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .link {
+      right: auto;
+      bottom: auto;
+      position: relative;
+      margin-left: calc(100vw * (30 / 375));
+      margin-top: 15px;
+    }
+  }
+
+  .dialog {
+    z-index: 100;
+    .dialog-content {
+      width: 100vw;
+      height: auto;
+      z-index: 100;
+      background: transparent;
+    }
+
+    .close {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      img {
+        width: 100%;
+      }
+
+      position: fixed;
+      top: 25vh;
+      right: 10px;
+      z-index: 100;
+    }
   }
 }
 </style>
@@ -472,6 +550,7 @@ export default {
           name: '新聯陽實業股份有限公司',
           desc: '傳承百年的感動<br />延續家族的幸福',
           video: require('./s5/video/1新碩鼎和.mp4'),
+          img: require('./s5/img/1.jpg'),
         },
         {
           title: '房地產｜新板巨星｜不再搬家',
@@ -479,6 +558,7 @@ export default {
           desc:
             '小熊多多為什麼不開心？<br />他說：常常在搬家，搬來搬去都是別人的家‥',
           video: require('./s5/video/2不再搬家.mp4'),
+          img: require('./s5/img/2.jpg'),
         },
         {
           title: '房地產｜幸福莊園｜寄人籬下',
@@ -486,6 +566,7 @@ export default {
           desc:
             '用一樣的錢換一個屬於自己的窩<br />大台北門牌，這次買得起<br />開除房東做自己!!',
           video: require('./s5/video/3幸福莊園-寄人籬下0716.mp4'),
+          img: require('./s5/img/3.jpg'),
         },
         {
           title: '房地產｜新板巨星｜汪星人',
@@ -493,18 +574,21 @@ export default {
           desc:
             '汪星人不說，但汪星人都懂。<br />金窩銀窩，都不如有自己溫馨的窩，來聽聽汪星人怎麼說',
           video: require('./s5/video/4狗.mp4'),
+          img: require('./s5/img/4.jpg'),
         },
         {
           title: '房地產｜金城舞2｜百變型男',
           name: '甲山林機構',
           desc: '給爸媽最即時的溫暖',
           video: require('./s5/video/6愛要即時.mp4'),
+          img: require('./s5/img/5.jpg'),
         },
         {
           title: '房地產｜新板巨星｜愛要及時',
           name: '海沃創意行銷',
           desc: '最熱銷的百變型男<br />都住最熱銷的金城舞2',
           video: require('./s5/video/5金城舞2.mp4'),
+          img: require('./s5/img/6.jpg'),
         },
         {
           title: '房地產｜新板巨星｜競選',
@@ -512,6 +596,7 @@ export default {
           desc:
             '我們有多久，不敢擁抱成家的夢想<br />其實夢想，不一定要到很遠的地方<br />支持努力圓夢的你',
           video: require('./s5/video/7林板新.mp4'),
+          img: require('./s5/img/7.jpg'),
         },
       ],
     }
