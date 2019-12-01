@@ -6,19 +6,35 @@
         <img v-else src="@/assets/img/menu-btn.png" alt />
       </div>
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
-      <ul :class="`navlist ${isOpen ? 'open': ''}`">
+      <ul :class="`navlist ${isOpen ? 'open' : ''}`">
         <li
+          v-show="item.link"
+          :key="`link-${item.name}`"
+          v-for="item in list"
+          class="flex-ac link-item"
+          @click="$router.push(item.link)"
+        >
+          <span class="link">
+            <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+            <span>
+              <div class="title">{{ item.name }}</div>
+              <span class="subTitle">{{ item.subTitle }}</span>
+            </span>
+          </span>
+        </li>
+        <li
+          v-show="item.section"
           :key="item.name"
           v-scroll-to="{ element: `#${item.section}`, offset: offset }"
           v-for="item in list"
           class="flex-ac"
           @click="toggleSidebar"
         >
-          <span class="link">
+          <span :class="`link`">
             <img v-if="item.imgSrc" :src="item.imgSrc" alt />
             <span>
-              <p class="title">{{item.name}}</p>
-              <span class="subTitle">{{item.subTitle}}</span>
+              <div class="title">{{ item.name }}</div>
+              <span class="subTitle">{{ item.subTitle }}</span>
             </span>
           </span>
         </li>
@@ -28,38 +44,38 @@
 </template>
 
 <script>
-import { isMobile, isTablet } from '@/utils'
-import navList from '@/info/navList'
+import { isMobile, isTablet } from "@/utils";
+import navList from "@/info/navList";
 
 export default {
-  name: 'sideNavigation',
+  name: "sideNavigation",
   components: {},
   data() {
     return {
       isOpen: false,
       isMobile,
       isTablet,
-      list: navList,
-    }
+      list: navList
+    };
   },
 
   computed: {
     offset() {
-      return 0
-    },
+      return 0;
+    }
   },
 
   methods: {
     toggleSidebar() {
-      this.isOpen = !this.isOpen
-    },
-  },
-}
+      this.isOpen = !this.isOpen;
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/style/variableColor.scss';
-@import '../assets/style/variableDefault.scss';
+@import "../assets/style/variableColor.scss";
+@import "../assets/style/variableDefault.scss";
 
 .navigation {
   height: $nav_phone_height;
@@ -113,7 +129,7 @@ export default {
   transition: all 0.3s ease-in;
   display: block;
   transform: translateX(40%);
-  background-image: url('./nav_bg.png');
+  background-image: url("./nav_bg.png");
 
   li {
     height: 60px;

@@ -10,7 +10,7 @@
             <font-awesome-icon icon="bars" />
           </div>
           <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
-          <ul :class="`navlist ${isOpen ? 'open': ''}`">
+          <ul :class="`navlist ${isOpen ? 'open' : ''}`">
             <li
               v-show="item.section"
               :key="item.name"
@@ -22,8 +22,8 @@
               <span :class="`link ${theme === 'white' ? 'color' : ''}`">
                 <img v-if="item.imgSrc" :src="item.imgSrc" alt />
                 <span>
-                  <div class="title">{{item.name}}</div>
-                  <span class="subTitle">{{item.subTitle}}</span>
+                  <div class="title">{{ item.name }}</div>
+                  <span class="subTitle">{{ item.subTitle }}</span>
                 </span>
               </span>
             </li>
@@ -33,12 +33,17 @@
               :key="`link-${item.name}`"
               v-for="item in list"
               class="flex-ac"
-              @click="$router.push(item.link)"
+              @click="
+                item.outLink
+                  ? (window.location.href = item.outLink)
+                  : $router.push(item.link)
+              "
             >
               <span class="link">
+                <img v-if="item.imgSrc" :src="item.imgSrc" alt />
                 <span>
-                  <div class="title">{{item.name}}</div>
-                  <span class="subTitle">{{item.subTitle}}</span>
+                  <div class="title">{{ item.name }}</div>
+                  <span class="subTitle">{{ item.subTitle }}</span>
                 </span>
               </span>
             </li>
@@ -67,6 +72,7 @@ export default {
       logo,
       logoC,
       isFix: false,
+      window,
     }
   },
 

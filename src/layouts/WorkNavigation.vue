@@ -9,21 +9,7 @@
             <font-awesome-icon icon="bars" />
           </div>
           <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
-          <ul :class="`navlist ${isOpen ? 'open': ''}`">
-            <li
-              v-show="item.link"
-              :key="`link-${item.name}`"
-              v-for="item in list"
-              class="flex-ac link-item"
-              @click="$router.push(item.link)"
-            >
-              <span class="link">
-                <span>
-                  <div class="title">{{item.name}}</div>
-                  <span class="subTitle">{{item.subTitle}}</span>
-                </span>
-              </span>
-            </li>
+          <ul :class="`navlist ${isOpen ? 'open' : ''}`">
             <li
               v-show="item.section"
               :key="item.name"
@@ -33,10 +19,28 @@
               @click="toggleSidebar"
             >
               <span :class="`link color`">
-                <img v-if="item.imgSrc" :src="item.imgSrc" alt />
                 <span>
-                  <div class="title">{{item.name}}</div>
-                  <span class="subTitle">{{item.subTitle}}</span>
+                  <div class="title">{{ item.name }}</div>
+                  <span class="subTitle">{{ item.subTitle }}</span>
+                </span>
+              </span>
+            </li>
+            <li
+              v-show="item.link"
+              :key="`link-${item.name}`"
+              v-for="item in list"
+              class="flex-ac link-item"
+              @click="
+                item.outLink
+                  ? (window.location.href = item.outLink)
+                  : $router.push(item.link)
+              "
+            >
+              <span class="link">
+                <img v-if="item.reverseImgSrc" :src="item.reverseImgSrc" alt />
+                <span>
+                  <div class="title">{{ item.name }}</div>
+                  <span class="subTitle">{{ item.subTitle }}</span>
                 </span>
               </span>
             </li>
@@ -63,6 +67,7 @@ export default {
       logo,
       logoC,
       isFix: false,
+      window,
       list: [
         {
           name: '回首頁',
@@ -71,13 +76,6 @@ export default {
           section: '',
           svgSrc: '',
           link: '/',
-        },
-        {
-          name: '作品集',
-          imgSrc: '',
-          subTitle: '',
-          section: '1',
-          svgSrc: '',
         },
         {
           name: '聯絡我們',
@@ -91,6 +89,24 @@ export default {
           imgSrc: '',
           subTitle: '',
           link: ' https://www.104.com.tw/company/1a2x6bkhg2',
+          svgSrc: '',
+        },
+        {
+          name: '',
+          imgSrc: require('../assets/img/nav/fb_w.png'),
+          reverseImgSrc: require('../assets/img/nav/fb_b.png'),
+          subTitle: '',
+          link: 'https://www.facebook.com/lixin.com.tw/',
+          outLink: 'https://www.facebook.com/lixin.com.tw/',
+          svgSrc: '',
+        },
+        {
+          name: '',
+          imgSrc: require('../assets/img/nav/youtube_w.png'),
+          reverseImgSrc: require('../assets/img/nav/youtube_b.png'),
+          subTitle: '',
+          link: 'https://www.youtube.com/channel/UChwYvwlnfXs_PTJMUdyR2Eg',
+          outLink: 'https://www.youtube.com/channel/UChwYvwlnfXs_PTJMUdyR2Eg',
           svgSrc: '',
         },
       ],
