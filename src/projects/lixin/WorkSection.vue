@@ -6,22 +6,18 @@
       <div class="line"></div>
       <div class="filter-btns">
         <div
-          :class="`${filterType === 'video' ? 'active' : ''} btn`"
+          :class="`${filterType === 'video' ? 'active' : ''} btn video`"
           @click="changeFilterType('video')"
-        >video</div>
+        ></div>
         <div
-          :class="`${filterType === 'web' ? 'active' : ''} btn`"
+          :class="`${filterType === 'web' ? 'active' : ''} btn web`"
           @click="changeFilterType('web')"
-        >web</div>
+        ></div>
       </div>
     </div>
     <div class="work-container">
       <div class="work-row flex" v-for="(row, rowIndex) in workRow" :key="`row-${rowIndex}`">
-        <div
-          :class="`work-item relative no-padding`"
-          v-for="item in row"
-          :key="`item-${item.img}`"
-        >
+        <div :class="`work-item relative no-padding`" v-for="item in row" :key="`item-${item.img}`">
           <div v-if="item.type === 'video'" class="video-item">
             <div class="play-group reverse">
               <icon class="play" :data="play" @click="showDialog(item.type, item.link)" />
@@ -93,6 +89,8 @@
 .work-section {
   margin-top: 190px;
   margin-bottom: 120px;
+  background-image: url('./work/bg.png');
+  background-attachment: fixed;
 }
 
 .work-top {
@@ -134,10 +132,24 @@
       color: #666;
       cursor: pointer;
 
-      &.active {
-        background: #ed6d34;
-        fill: #fff;
-        color: #fff;
+      &.video {
+        background-image: url('./work/icon11.png');
+        background-size: cover;
+        &.active {
+          background-image: url('./work/icon1.png');
+          fill: #fff;
+          color: #fff;
+        }
+      }
+
+      &.web {
+        background-image: url('./work/icon21.png');
+        background-size: cover;
+        &.active {
+          background-image: url('./work/icon2.png');
+          fill: #fff;
+          color: #fff;
+        }
       }
     }
   }
@@ -486,71 +498,139 @@ export default {
       iframeLink: '',
       filterType: 'web',
       workList: [
+        // web
         {
-          img: require('./work/video/早知道.jpg'),
-          type: 'video',
-          link: 'https://www.youtube.com/embed/gghgcTwO3Qg',
+          img: require('./work/web/1.博悅.jpg'),
+          type: 'web',
+          link: 'https://by.h35.tw/',
+          title: '博悅',
         },
         {
-          img: require('./work/video/百年家族.png'),
-          type: 'video',
-          link: 'https://www.youtube.com/embed/g7MKeVT_RuI',
+          img: require('./work/web/2.德友藏.png'),
+          type: 'web',
+          link: 'https://dyc.h35.tw/',
+          title: '德友藏',
         },
+
         {
-          img: require('./work/video/百年家族.png'),
-          type: 'video',
-          link: 'https://www.youtube.com/embed/g7MKeVT_RuI',
+          img: require('./work/web/3.大學墅.jpg'),
+          type: 'web',
+          link: 'https://dss.h35.tw/',
+          title: '大學墅',
         },
+
         {
-          img: require('./work/video/百年家族.png'),
-          type: 'video',
-          link: 'https://www.youtube.com/embed/g7MKeVT_RuI',
+          img: require('./work/web/4.一日林板新.png'),
+          type: 'web',
+          link: 'https://star.h35.tw/',
+          title: '一日林板新活動官網',
         },
+
         {
-          img: require('./work/video/百年家族.png'),
-          type: 'video',
-          link: 'https://www.youtube.com/embed/g7MKeVT_RuI',
+          img: require('./work/web/5.幸福大院.png'),
+          type: 'web',
+          link: 'https://sfdy.h35.tw/',
+          title: '幸福大院',
         },
-        {
-          img: require('./work/video/百年家族.png'),
-          type: 'video',
-          link: 'https://www.youtube.com/embed/g7MKeVT_RuI',
-        },
+
         {
           img: require('./work/web/6.築禾交響院.png'),
           type: 'web',
           link: 'https://jh.h35.tw/',
           title: '築禾交響院',
         },
+
         {
-          img: require('./work/web/13.越那山.png'),
+          img: require('./work/web/7.越那山.png'),
           type: 'web',
           link: 'https://yns.h35.tw/',
           title: '越那山',
         },
+
         {
-          img: require('./work/web/14.悅成功活動官網.png'),
+          img: require('./work/web/8.立瑾醞.jpg'),
+          type: 'web',
+          link: 'https://stm.h35.tw/',
+          title: '立謹醞',
+        },
+
+        {
+          img: require('./work/web/9.蘭桂坊.png'),
+          type: 'web',
+          link: 'https://lkf.h35.tw/',
+          title: '蘭桂坊',
+        },
+
+        {
+          img: require('./work/web/10.心天畝.png'),
+          type: 'web',
+          link: 'https://stm.h35.tw/',
+          title: '心天畝',
+        },
+
+        {
+          img: require('./work/web/11.三發丰悅.png'),
+          type: 'web',
+          link: 'https://fy.h35.tw/',
+          title: '三發丰悅',
+        },
+
+        {
+          img: require('./work/web/12.吾界.png'),
+          type: 'web',
+          link: 'https://wj.h35.tw/',
+          title: '吾界',
+        },
+
+        {
+          img: require('./work/web/13.新碩鼎和.png'),
+          type: 'web',
+          link: 'https://xs.h35.tw/',
+          title: '新碩鼎和',
+        },
+
+        {
+          img: require('./work/web/14.帝璽.jpg'),
+          type: 'web',
+          link: 'https://ds.h35.tw/',
+          title: '帝璽',
+        },
+
+        {
+          img: require('./work/web/15.png'),
+          type: 'web',
+          link: 'https://cht.h35.tw/',
+          title: '長虹天際',
+        },
+
+        {
+          img: require('./work/web/16.悅成功活動官網.png'),
           type: 'web',
           link: 'https://ycg.h35.tw/event/',
-          title: '悅成功活動官網',
+          title: '悅成功活動官網 ',
+        },
+
+        // video
+        {
+          img: require('./work/video/1.百變型男(原圖).jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/ymVSwCt__MQ',
         },
         {
-          img: require('./work/web/14.悅成功活動官網.png'),
-          type: 'web',
-          link: 'https://ycg.h35.tw/event/',
-          title: '悅成功活動官網',
+          img: require('./work/video/2.愛要及時.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/xLdvfhpks0c',
         },
         {
-          img: require('./work/web/14.悅成功活動官網.png'),
-          type: 'web',
-          link: 'https://ycg.h35.tw/event/',
-          title: '悅成功活動官網',
+          img: require('./work/video/3.競選造勢大會.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/uMDcyCV3qgQ',
         },
+
         {
-          img: require('./work/web/14.悅成功活動官網.png'),
-          type: 'web',
-          link: 'https://ycg.h35.tw/event/',
-          title: '悅成功活動官網',
+          img: require('./work/video/4.寄人籬下.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/FXFaryfVMLM',
         },
       ],
     }

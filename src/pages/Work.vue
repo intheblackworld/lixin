@@ -5,6 +5,7 @@
     <WorkNavigation v-else theme="white" />
     <WorkSection />
     <div class="work-footer">
+      <img src="../projects/lixin/work/背景角圖.jpg" alt="" class="corner-img" v-if="!isMobile">
       <div class="work-info">
         <div class="info-row">
           <div class="info-item">
@@ -55,6 +56,16 @@
 .work-footer {
   width: 1484px;
   margin: auto;
+  position: relative;
+}
+
+.corner-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  width: calc(100vw * (700 / 1440));
+  height: calc(100vw * (430 / 1440));
 }
 
 .work-info {
@@ -63,6 +74,8 @@
   background: #ed6d34;
   color: #fff;
   padding: 169px 30px 169px 114px;
+  position: relative;
+  z-index: 2;
 }
 
 .info-row {
@@ -169,6 +182,7 @@ import SideNavigation from '@/layouts/SideNavigation.vue'
 import gtm from '@/mixins/gtm.js'
 import WorkSection from '@/projects/lixin/WorkSection.vue'
 import logo from '@/assets/svg/logo-w.svg'
+import { isMobile, isTablet } from '@/utils'
 // import Section1 from '@/projects/lixin/Section1.vue'
 // import Section2 from '@/projects/lixin/Section2.vue'
 // import Section3 from '@/projects/lixin/Section3.vue'
@@ -204,6 +218,7 @@ export default {
   data() {
     return {
       isSide: false,
+      isMobile,
       logo,
     }
   },
