@@ -1,6 +1,5 @@
 <template>
   <div :class="`section6 ${isShowDetail ? 'showDetail' : ''}`">
-    >
     <div class="dialog" v-show="isShowDialog">
       <div class="close" @click="closeDialog(slideIndex)">
         <img src="./s5/close.png" alt />

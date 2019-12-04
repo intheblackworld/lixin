@@ -100,7 +100,6 @@ export default {
 
   methods: {
     handleScroll() {
-      console.log('window height', window.innerHeight)
       if (window.scrollY > (window.innerHeight - 100)) {
         this.isFix = true
       } else {

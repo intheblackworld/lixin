@@ -1,6 +1,5 @@
 <template>
   <div class="section5">
-    <!-- img="./bg.jpg" -->
     <div class="bg fullscreen" v-if="!isMobile">
       <div class="content">
         <div class="title">我們的作品</div>
@@ -45,7 +44,7 @@
         :sources="[slideList[0].video, slideList[1].video, slideList[2].video, slideList[3].video, slideList[4].video, slideList[5].video, slideList[6].video]"
         :slideIndex="slideIndex"
       ></video-bg>
-
+      <div class="line-bg"></div>
       <div class="progress-bar">
         <div
           class="bar"
@@ -155,6 +154,15 @@
     // position: fixed;
     z-index: 0;
   }
+}
+
+.line-bg {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('./s5/bg.png');
 }
 
 .content {

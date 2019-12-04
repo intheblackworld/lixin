@@ -21,19 +21,19 @@
       <div>
         <div class="form">
           <div class="row flex">
-            <el-input v-model="form.name">
+            <el-input v-model="form.name" @input="handleName" :class="`${hasName ? 'hasValue' : ''}`">
               <template slot="append">姓名*</template>
             </el-input>
-            <el-input v-model="form.company">
+            <el-input v-model="form.company" @input="handleCompany" :class="`${hasCompany ? 'hasValue' : ''}`">
               <template slot="append">公司</template>
             </el-input>
           </div>
 
           <div class="row flex">
-            <el-input v-model="form.email">
+            <el-input v-model="form.email" @input="handleEmail" :class="`${hasEmail ? 'hasValue' : ''}`">
               <template slot="append">信箱*</template>
             </el-input>
-            <el-input v-model="form.phone">
+            <el-input v-model="form.phone" @input="handlePhone" :class="`${hasPhone ? 'hasValue' : ''}`">
               <template slot="append">電話</template>
             </el-input>
           </div>
@@ -41,7 +41,7 @@
           <el-input v-model="form.title" type="textarea" :rows="1" placeholder="我想詢問廣告內容"></el-input>
           <el-input v-model="form.msg" type="textarea" :rows="4" placeholder="詢問內容"></el-input>
         </div>
-        <div class="button">GO!</div>
+        <div class="button" @click="submit">GO!</div>
       </div>
     </div>
     <!-- <Order /> -->
@@ -203,6 +203,7 @@
 import Order from '@/components/Order.vue'
 import HouseInfo from '@/components/HouseInfo.vue'
 import CallDialog from '@/components/Dialog/Call'
+import { isMobile, isTablet } from '@/utils'
 import info from '@/info'
 
 export default {
@@ -215,6 +216,7 @@ export default {
 
   data() {
     return {
+      isMobile,
       form: {
         name: '',
         phone: '',
@@ -226,6 +228,10 @@ export default {
       isSubmit: false,
       isShowCallDialog: false,
       info,
+      hasName: false,
+      hasCompany: false,
+      hasEmail: false,
+      hasPhone: false,
     }
   },
 
@@ -246,9 +252,37 @@ export default {
       this.isShowCallDialog = true
     },
 
+    handleName(string) {
+      if (string.length > 0) {
+        this.hasName = true
+      } else {
+        this.hasName = false
+      }
+    },
+    handleCompany(string) {
+      if (string.length > 0) {
+        this.hasCompany = true
+      } else {
+        this.hasCompany = false
+      }
+    },
+    handleEmail(string) {
+      if (string.length > 0) {
+        this.hasEmail = true
+      } else {
+        this.hasEmail = false
+      }
+    },
+    handlePhone(string) {
+      if (string.length > 0) {
+        this.hasPhone = true
+      } else {
+        this.hasPhone = false
+      }
+    },
+
     submit() {
       if (this.isSubmit) return
-      if (!this.checked) return
       this.isSubmit = true
       if (!this.form.name || !this.form.email) {
         this.alertValidate()
