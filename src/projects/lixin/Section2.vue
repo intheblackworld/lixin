@@ -49,7 +49,8 @@
       </div>
       <!-- 區塊2 -->
       <div class="container">
-        <img src="./s2/s2-2/mo_bg.jpg" alt class="mobile-bg" />
+        <div class="page-title white">立炘數位</div>
+        <!-- <img src="./s2/s2-2/mo_bg.jpg" alt class="mobile-bg" v-if="isMobile" /> -->
         <div class="animate-block">
           <div class="animate-icon-bing">
             <img src="./s2/s2-2/icon/bing.png" alt />
@@ -87,6 +88,8 @@
           :width="isMobile ? window.innerWidth * (638 / 750) : window.innerWidth * (width / 1920)"
           :height="isMobile ?window.innerWidth * (468 / 750) : window.innerWidth * (height / 1920)"
           :perspective="0"
+          :autoplay="true"
+          :autoplayTimeout="4000"
           :disable3d="isMobile ? true : false"
           :border="0"
           :display="3"
@@ -149,6 +152,7 @@
   opacity: 0.3;
   transform: rotate(-45deg) translate(0, -50px);
   animation: comet 6s infinite;
+  z-index: 1;
 }
 /* 尾巴 */
 .comet:after {
@@ -280,6 +284,10 @@
   text-align: center;
   top: 15%;
   z-index: 2;
+
+  &.white {
+    color: #fff;
+  }
 }
 
 svg {
@@ -445,8 +453,8 @@ svg {
 }
 
 .container {
-  background-image: url('./s2/s2-2/bg.jpg');
-  border-radius: 50% 50% 0 0;
+  // background-image: url('./s2/s2-2/bg.jpg');
+  // border-radius: 50% 50% 0 0;
   transition: all 1s;
   width: 100vw;
   height: 100vw * (831 / 1920);
@@ -458,7 +466,7 @@ svg {
 
 .carousel-3d-container {
   position: absolute !important;
-  bottom: calc(-100vw * (88 / 1920));
+  bottom: 20px;
   left: 0;
   right: 0;
   margin: 0 auto;

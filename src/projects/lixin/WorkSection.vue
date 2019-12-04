@@ -18,7 +18,7 @@
     <div class="work-container">
       <div class="work-row flex" v-for="(row, rowIndex) in workRow" :key="`row-${rowIndex}`">
         <div
-          :class="`work-item relative ${filterType === 'web' ? 'no-padding' : ''}`"
+          :class="`work-item relative no-padding`"
           v-for="item in row"
           :key="`item-${item.img}`"
         >
@@ -161,23 +161,23 @@
   }
 }
 .work-container {
-  width: 1200px;
+  width: 1440px;
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 67px;
 
   .work-row {
-    margin-left: -15px;
-    margin-right: -15px;
+    margin-left: -5px;
+    margin-right: -5px;
   }
 
   .work-item {
-    box-shadow: 0 0 2px 1px #666;
-    border-radius: 5px;
-    margin: 15px;
+    // box-shadow: 0 0 2px 1px #666;
+    // border-radius: 5px;
+    margin: 15px 5px;
     padding: 15px;
     overflow: hidden;
-    max-width: calc(25% - 30px);
+    max-width: calc(20% - 10px);
     transition: all 0.3s;
 
     &.no-padding {
@@ -383,7 +383,7 @@
     }
   }
   .work-container {
-    width: 1040px;
+    width: 1280px;
   }
 }
 
@@ -396,7 +396,7 @@
   }
 
   .work-container {
-    width: 900px;
+    width: 1024px;
   }
 }
 
@@ -497,6 +497,26 @@ export default {
           link: 'https://www.youtube.com/embed/g7MKeVT_RuI',
         },
         {
+          img: require('./work/video/百年家族.png'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/g7MKeVT_RuI',
+        },
+        {
+          img: require('./work/video/百年家族.png'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/g7MKeVT_RuI',
+        },
+        {
+          img: require('./work/video/百年家族.png'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/g7MKeVT_RuI',
+        },
+        {
+          img: require('./work/video/百年家族.png'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/g7MKeVT_RuI',
+        },
+        {
           img: require('./work/web/6.築禾交響院.png'),
           type: 'web',
           link: 'https://jh.h35.tw/',
@@ -507,6 +527,18 @@ export default {
           type: 'web',
           link: 'https://yns.h35.tw/',
           title: '越那山',
+        },
+        {
+          img: require('./work/web/14.悅成功活動官網.png'),
+          type: 'web',
+          link: 'https://ycg.h35.tw/event/',
+          title: '悅成功活動官網',
+        },
+        {
+          img: require('./work/web/14.悅成功活動官網.png'),
+          type: 'web',
+          link: 'https://ycg.h35.tw/event/',
+          title: '悅成功活動官網',
         },
         {
           img: require('./work/web/14.悅成功活動官網.png'),
@@ -532,7 +564,7 @@ export default {
       } else if (this.isMobile) {
         count = 1
       } else {
-        count = 4
+        count = 5
       }
       return _.chunk(this.filterWorkList, count)
     },

@@ -160,11 +160,16 @@
 .content {
   width: calc(100vw * 567 / 1440);
   height: calc(100vh * 450 / 796);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.3);
   right: calc(100vw * 112 / 1440);
   top: calc(100vw * 136 / 796);
   position: absolute;
   z-index: 2;
+  transition: all .3s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .title {
@@ -440,6 +445,10 @@
     right: auto;
     top: 0;
     padding-bottom: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
 
     .title {
       font-size: 31px;

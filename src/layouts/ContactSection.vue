@@ -15,9 +15,7 @@
             <div class="line"></div>
             <span>CONTACT</span>
           </div>
-          <div class="desc">
-            02-2500-0818
-          </div>
+          <div class="desc" @click="showCallDialog">02-2500-0818</div>
         </div>
       </div>
       <div>
@@ -48,6 +46,9 @@
     </div>
     <!-- <Order /> -->
     <!-- <HouseInfo /> -->
+    <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '480px'" :modal-append-to-body="false">
+        <CallDialog :phone="info.phone" />
+      </el-dialog>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -137,11 +138,17 @@
   text-align: left;
   color: rgba(88, 88, 88, 0.83);
   padding-left: 60px;
+  cursor: pointer;
+
+  &:hover {
+    color: #ed6d34;
+  }
 }
 
 .button {
   width: 223px;
   height: 68px;
+  position: relative;
   background-color: #ed6d34;
   margin: 0 auto;
   margin-top: 15px;
@@ -154,6 +161,27 @@
   text-align: center;
   color: #ffffff;
   cursor: pointer;
+  overflow: hidden;
+  &::before {
+    content: '';
+    width: 40%;
+    height: 100%;
+    display: block;
+    background: #fff;
+    position: absolute;
+    transform: skewX(-20deg);
+    left: -10%;
+    opacity: 0;
+    top: 0;
+    z-index: 5;
+    transition: all 0.5s cubic-bezier(0.2, 0.95, 0.57, 0.99);
+  }
+
+  &:hover::before {
+    opacity: 1;
+    width: 90%;
+    left: 140%;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -174,6 +202,7 @@
 <script>
 import Order from '@/components/Order.vue'
 import HouseInfo from '@/components/HouseInfo.vue'
+import CallDialog from '@/components/Dialog/Call'
 import info from '@/info'
 
 export default {
@@ -181,6 +210,7 @@ export default {
   components: {
     Order,
     HouseInfo,
+    CallDialog,
   },
 
   data() {
@@ -194,6 +224,8 @@ export default {
         msg: '',
       },
       isSubmit: false,
+      isShowCallDialog: false,
+      info,
     }
   },
 
@@ -208,6 +240,10 @@ export default {
           '「姓名、 信箱」是必填欄位',
         ),
       })
+    },
+
+    showCallDialog() {
+      this.isShowCallDialog = true
     },
 
     submit() {

@@ -1,5 +1,6 @@
 <template>
-  <div class="section6">
+  <div :class="`section6 ${isShowDetail ? 'showDetail' : ''}`">
+    >
     <div class="dialog" v-show="isShowDialog">
       <div class="close" @click="closeDialog(slideIndex)">
         <img src="./s5/close.png" alt />
@@ -321,6 +322,12 @@
 }
 </style>
 <style lang="scss" scoped>
+.section6 {
+  &.showDetail {
+    position: relative;
+    z-index: 100;
+  }
+}
 .bg {
   background-size: cover;
   position: relative;
@@ -458,6 +465,8 @@
   }
   &.showDetail {
     left: 0;
+    position: fixed;
+    z-index: 10;
 
     .content {
       width: 35%;
@@ -806,7 +815,7 @@
     top: 0;
     animation: none;
     left: 100vw;
-    transition: all .5s;
+    transition: all 0.5s;
     padding: 60px 20px;
     overflow: scroll;
     height: 100%;
@@ -927,6 +936,10 @@ export default {
       setTimeout(() => {
         this.isChange = false
       }, 500)
+    },
+
+    isShowDetail() {
+      // document.querySelector('body')
     },
   },
 

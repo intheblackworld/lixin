@@ -22,7 +22,7 @@
 // import gtm from '@/mixins/gtm.js'
 
 export default {
-  name: '404',
+  name: 'error',
   // mixins: [gtm],
   components: {},
 

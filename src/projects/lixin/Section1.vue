@@ -2,9 +2,14 @@
   <div class="section1">
     <!-- img="./bg.jpg" -->
     <div class="fullscreen bg">
-      <div class="mask">
+      <div class="mask" v-if="isMobile">
         <div class="title typing" v-show="showFirst">用對的策略</div>
         <div class="title typing" v-show="showSecond">做對的行銷</div>
+        <!-- <div class="type">LIXIN DIGITAL</div> -->
+      </div>
+
+      <div class="mask" v-else>
+        <div class="title typing">用對的策略 做對的行銷</div>
         <!-- <div class="type">LIXIN DIGITAL</div> -->
       </div>
 
@@ -63,16 +68,24 @@
 }
 
 .typing {
-  width: 360px;
+  width: 680px;
   white-space: nowrap;
   overflow: hidden;
   border-right: 0.04em solid;
-  animation: typing 2s steps(6) infinite alternate, caret 1s steps(1) infinite;
+  animation: typing 5s steps(10) infinite, caret 1s steps(1) infinite;
 }
 
 @keyframes typing {
-  from {
+  0% {
     width: 0;
+  }
+
+  60% {
+    width: 620px;
+  }
+
+  100% {
+    width: 620px;
   }
 }
 
@@ -113,6 +126,34 @@
   .typing {
     width: 290px;
   }
+
+  .typing {
+    width: 290px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.04em solid;
+    animation: typing 4s steps(5) infinite, caret 1s steps(1) infinite;
+  }
+
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+
+    60% {
+      width: 240px;
+    }
+
+    100% {
+      width: 240px;
+    }
+  }
+
+  @keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+  }
 }
 </style>
 <script>
@@ -131,7 +172,7 @@ export default {
     return {
       isMobile,
       showFirst: true,
-      showSecond: false
+      showSecond: false,
     }
   },
 
@@ -142,6 +183,6 @@ export default {
       this.showFirst = !this.showFirst
       this.showSecond = !this.showSecond
     }, 4000)
-  }
+  },
 }
 </script>

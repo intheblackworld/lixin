@@ -101,7 +101,7 @@ export default {
   methods: {
     handleScroll() {
       console.log('window height', window.innerHeight)
-      if (window.scrollY > window.innerHeight + 50) {
+      if (window.scrollY > (window.innerHeight - 100)) {
         this.isFix = true
       } else {
         this.isFix = false
@@ -183,7 +183,7 @@ export default {
   display: flex !important;
   border-bottom: 1px solid #fff;
   align-items: center;
-  transition: all 0.3s;
+  transition: all 0.3s, top 0.5s;
   // box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
 
   &.fix {

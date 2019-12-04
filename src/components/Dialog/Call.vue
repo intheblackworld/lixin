@@ -1,7 +1,7 @@
 <template>
   <div class="dialog-content">
     <font-awesome-icon icon="phone" />
-    <div class="dialog-desc">賞屋專線</div>
+    <div class="dialog-desc"></div>
     <div class="info">{{phone}}</div>
     <div class="cta" @click="redirectToPhoneThanks">撥打電話</div>
   </div>
