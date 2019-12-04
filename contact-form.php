@@ -163,8 +163,10 @@
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $user_email = $_POST['email'];
+    $company = $_POST['company'];
     $city = $_POST['city'];
     $area = $_POST['area'];
+    $title = $_POST['title'];
     $msg = $_POST['msg'];
     $datetime = date ("Y-m-d H:i:s" , mktime(date('H'), date('i'), date('s'), date('m'), date('d'), date('Y'))) ;
     $utm_source = $_POST['utm_source'];
@@ -190,7 +192,7 @@
     $mail->FromName = $case_name." - 官網網站"; //設定寄件者姓名
 
     $mail->Subject = $case_name." - 官網網站"; //設定郵件標題
-    $mail->Body = "網站：https://lixin.com.tw/<BR>姓名：".$name."<BR>電話：".$phone."<BR>信箱：".$user_email."<BR>城市：".$city.$area."<BR>留言：".$msg."<BR><BR>填表日期：".$datetime."<BR>廣告來源：".$utm_source."<BR>廣告媒介：".$utm_medium."<BR>廣告名稱：".$utm_campaign."<BR>廣告內容：".$utm_content; //設定郵件內容
+    $mail->Body = "網站：https://lixin.com.tw/<BR>姓名：".$name."<BR>電話：".$phone."<BR>公司：".$company."<BR>信箱：".$user_email."<BR>標題：".$title."<BR>留言：".$msg."<BR><BR>填表日期：".$datetime."<BR>廣告來源：".$utm_source."<BR>廣告媒介：".$utm_medium."<BR>廣告名稱：".$utm_campaign."<BR>廣告內容：".$utm_content; //設定郵件內容
     $mail->IsHTML(true); //設定郵件內容為HTML
 
     $tomail_arr = explode(",",$tomail);
