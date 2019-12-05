@@ -41,7 +41,13 @@
           <el-input v-model="form.title" type="textarea" :rows="1" placeholder="我想詢問廣告內容"></el-input>
           <el-input v-model="form.msg" type="textarea" :rows="4" placeholder="詢問內容"></el-input>
         </div>
-        <div class="button" @click="submit">GO!</div>
+        <div style="margin: 0 auto 15px">
+          <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
+          @verify="isVerify = true"
+          style="display:flex;justify-content: center;"
+          ></vue-recaptcha>
+        </div>
+        <div :class="`button ${isVerify ? '' : 'disabled'}`" @click="submit">GO!</div>
       </div>
     </div>
     <!-- <Order /> -->
@@ -177,6 +183,10 @@
     transition: all 0.5s cubic-bezier(0.2, 0.95, 0.57, 0.99);
   }
 
+  &.disabled {
+    opacity: .7;
+  }
+
   &:hover::before {
     opacity: 1;
     width: 90%;
@@ -204,6 +214,7 @@ import Order from '@/components/Order.vue'
 import HouseInfo from '@/components/HouseInfo.vue'
 import CallDialog from '@/components/Dialog/Call'
 import { isMobile, isTablet } from '@/utils'
+import VueRecaptcha from 'vue-recaptcha'
 import info from '@/info'
 
 export default {
@@ -212,6 +223,7 @@ export default {
     Order,
     HouseInfo,
     CallDialog,
+    VueRecaptcha,
   },
 
   data() {
@@ -227,6 +239,7 @@ export default {
       },
       isSubmit: false,
       isShowCallDialog: false,
+      isVerify: false, // google 機器人驗證
       info,
       hasName: false,
       hasCompany: false,
@@ -283,6 +296,7 @@ export default {
 
     submit() {
       if (this.isSubmit) return
+      if (!this.isVerify) return
       this.isSubmit = true
       if (!this.form.name || !this.form.email) {
         this.alertValidate()
