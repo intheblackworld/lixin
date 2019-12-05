@@ -142,7 +142,7 @@
         $tomail = $row[0];
     }
 
-    $query_admin = "SELECT admin_email FROM admin WHERE email = 'admin'";
+    $query_admin = "SELECT admin_email FROM lixin_admin WHERE email = 'admin'";
     $result_admin = mysql_query($query_admin, $con);
     $row_admin = mysql_fetch_row($result_admin);
 
@@ -153,8 +153,8 @@
 ?>
 <!DOCTYPE html>
 <html lang="zh-tw">
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
 </head>
 <body>
 <?php
