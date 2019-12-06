@@ -265,60 +265,9 @@ export default {
     &:hover {
       color: $nav_link_hover_color;
       img {
-        animation: r5 0.5s infinite alternate;
+        // animation: r5 0.5s infinite alternate;
       }
     }
-
-    @keyframes r5 {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(5deg);
-      }
-    }
-
-    // &::before {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: $nav_link_hover_bg; // second bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 1;
-    //   top: 0;
-    //   z-index: 2;
-    //   transition: all 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
-
-    // &::after {
-    //   content: '';
-    //   width: 0%;
-    //   height: 100%;
-    //   display: block;
-    //   background: #fff; // first bg
-    //   position: absolute;
-    //   transform: skewX(-20deg);
-    //   left: -10%;
-    //   opacity: 0;
-    //   top: 0;
-    //   z-index: 1;
-    //   transition: all 0.4s cubic-bezier(0.2, 0.95, 0.57, 0.99);
-    //   // box-shadow: 2px 0px 14px rgba(0, 0, 0, 0.6);
-    // }
-    // &:hover::before,
-    // &:hover::before {
-    //   opacity: 1;
-    //   width: 116%;
-    // }
-    // &:hover::after,
-    // &:hover::after {
-    //   opacity: 1;
-    //   width: 120%;
-    // }
 
     .title {
       font-size: 16px !important;
@@ -334,7 +283,7 @@ export default {
     img {
       width: calc(100vw * 50 / 1920);
       height: auto;
-      margin-right: 10px;
+      margin-right: -10px;
     }
   }
 }
@@ -462,7 +411,7 @@ export default {
       img {
         width: calc(100vw * 200 / 1920);
         height: auto;
-        margin-right: 10px;
+        // margin-right: -10px;
       }
     }
 

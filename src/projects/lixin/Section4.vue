@@ -2,8 +2,8 @@
   <div class="section4">
     <div class="bg">
       <img src="./s4/bg.jpg" alt class="bg-img mobile-bg" />
-      <img src="./s4/device.png" alt class="bg-img device" />
       <div class="title">響應式設計</div>
+      <div class="mobile-scale"><img src="./s4/device.png" alt class="bg-img device" />
       <swiper
         :options="swiperOption"
         swiper-no-swiping
@@ -40,6 +40,7 @@
           <img :src="slide.src_phone" :class="`item-img`" />
         </swiper-slide>
       </swiper>
+      </div>
       <div class="indigator">
         <li
           v-for="(slide, index) in slideList"
@@ -239,6 +240,16 @@
     width: 100vw;
     text-align: center;
     top: 25%;
+  }
+
+  .mobile-scale {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(1.17);
+    transform-origin: bottom;
   }
 }
 </style>
