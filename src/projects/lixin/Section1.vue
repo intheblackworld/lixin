@@ -7,12 +7,10 @@
         <div class="title typing" v-show="showSecond">做對的行銷</div>
         <!-- <div class="type">LIXIN DIGITAL</div> -->
       </div>
-
       <div class="mask" v-else>
         <div class="title typing">用對的策略 做對的行銷</div>
         <!-- <div class="type">LIXIN DIGITAL</div> -->
       </div>
-
       <video-bg autoplay="autoplay" :sources="[require('./s1/video.mp4')]" :isFix="false"></video-bg>
     </div>
   </div>
