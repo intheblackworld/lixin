@@ -19,8 +19,8 @@
             <div class="subtitle">{{slide.name}}</div>
             <div class="work-title">{{slide.title}}</div>
             <div class="work-desc" v-html="slide.desc"></div>
-            <div class="play-group">
-              <icon class="play" :data="play" @click="showVideoDialog(index)" />
+            <div class="play-group" @click="showVideoDialog(index)" >
+              <icon class="play" :data="play"/>
               <div>觀看影片</div>
             </div>
           </swiper-slide>
@@ -34,7 +34,7 @@
             <img src="./s5/next.png" alt class="next" />
           </div>
         </div>
-        <div class="link">
+        <div class="link" @click="$router.push('/works?type=video')">
           <span>看更多影片</span>
           <span class="line-arrow"></span>
         </div>
@@ -90,7 +90,7 @@
               <img src="./s5/next.png" alt class="next" />
             </div>
           </div>
-          <div class="link">
+          <div class="link" @click="$router.push('works?type=video')">
             <span>看更多影片</span>
             <span class="line-arrow"></span>
           </div>

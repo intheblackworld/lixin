@@ -497,12 +497,13 @@ export default {
       isShowDialog: false,
       iframeLink: '',
       filterType: 'web',
+      window,
       workList: [
         // web
         {
           img: require('./work/web/1.博悅.jpg'),
           type: 'web',
-          link: 'https://by.h35.tw/',
+          link: 'https://by1.h35.tw/',
           title: '博悅',
         },
         {
@@ -654,6 +655,14 @@ export default {
     },
   },
 
+  mounted() {
+    if (this.$route.query.type === 'video') {
+      this.filterType = 'video'
+    }
+
+    this.window.scrollTo(0, 0) 
+  },
+
   methods: {
     showDialog(type, link) {
       // this.$refs[`dialogVideo${index}`].src = this.slideList[this.slideIndex].video
@@ -671,7 +680,5 @@ export default {
       this.filterType = type
     },
   },
-
-  mounted() {},
 }
 </script>
