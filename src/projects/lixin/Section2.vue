@@ -48,9 +48,8 @@
         </transition-group>
       </div>
       <!-- 區塊2 -->
-      <div class="container">
+      <!-- <div class="container">
         <div class="page-title white">立炘數位</div>
-        <!-- <img src="./s2/s2-2/mo_bg.jpg" alt class="mobile-bg" v-if="isMobile" /> -->
         <div class="animate-block">
           <div class="animate-icon-bing">
             <img src="./s2/s2-2/icon/bing.png" alt />
@@ -103,98 +102,87 @@
             :key="slide.img"
             class="video-slide"
           >
-            <!-- <img
+            <img
             src="./s3/play_btn.png"
             alt
             :class="`play-btn absolute-c ${slide.isPlay ? 'hide' : ''}`"
             @click="handlePlay(index)"
-            />-->
+            />
             <img :src="slide.img" :class="`video-img ${slide.isPlay ? 'hide' : ''}`" />
           </slide>
         </carousel-3d>
+      -->
       </div>
-      <div class="star comet"></div>
+      <div class="star1 comet"></div>
+      <div class="star2 comet"></div>
+      <div class="star3 comet"></div>
     </div>
   </div>
 </template>
 <style lang="scss">
-.star {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  position: absolute;
-  background-color: rgba(0, 204, 255, 0.8);
-  box-shadow: 0 0 40px 0 rgba(0, 204, 255, 0.8), 0 0 20px 0 #ffffff;
-  animation: glow 5s infinite;
-}
-
-/*  小星*/
-.star--medium {
-  width: 3px;
-  height: 3px;
-}
-
-/*  大星 */
-.star--big {
-  width: 6px;
-  height: 6px;
-  box-shadow: 0 0 40px 0 #0cf, 0 0 20px 0 #ffffff, inset 0 0 4px #ffffff;
-}
 /* 流星大小 */
 .comet {
-  width: 7px;
-  height: 7px;
-  background-color: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 40px 0 #0cf, 0 0 20px 0 #ffffff,
-    inset 0 0 8px rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(200, 200, 255, 0.6);
+  box-shadow: 0 0 40px 0 #0CF, 0 0 20px 0 #FFFFFF, inset 0 0 8px rgba(200, 255, 255, 0.5);
   top: 0;
-  left: 80%;
+  left: 90%;
   opacity: 0.3;
   transform: rotate(-45deg) translate(0, -50px);
-  animation: comet 6s infinite;
+  animation: comet 20s infinite;
   z-index: 1;
 }
+
 /* 尾巴 */
 .comet:after {
   content: '';
   width: 20vw;
   height: 6px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 20px rgba(0, 204, 255, 0.4);
+  background-color: rgba(150, 200, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 154, 255, 0.4);
   position: absolute;
   top: 0;
   left: 0;
 }
 
-@keyframes glow {
-  0% {
-    opacity: 0.9;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 0.9;
-  }
+.star1 {
+  top: 0;
+  left: 40%;
+  animation-delay: 10s;
 }
+
+.star2 {
+  top: 0;
+  left: 80%;
+  animation-delay: 5s;
+}
+
 @keyframes comet {
   0% {
     transform: rotate(-45deg) translateX(0);
     opacity: 0.3;
   }
-  10% {
+
+  5% {
     opacity: 1;
   }
-  30% {
+
+  10% {
     transform: rotate(-45deg) translateX(-50vw);
     opacity: 0;
   }
+
   100% {
     transform: rotate(-45deg) translateX(-50vw);
     opacity: 0;
   }
 }
+
+
 
 // begin
 .slide-fade-leave-to
@@ -250,7 +238,6 @@
   position: relative;
   overflow: hidden;
   position: relative;
-  z-index: 2;
 }
 
 .bg-img {
@@ -282,7 +269,7 @@
   right: 0;
   margin: 0 auto;
   text-align: center;
-  top: 15%;
+  top: 20%;
   z-index: 2;
 
   &.white {
@@ -308,7 +295,7 @@ svg {
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 50%;
+  top: 55%;
   transform: translateY(-50%);
   z-index: 2;
 
@@ -396,7 +383,7 @@ svg {
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 50%;
+  top: 55%;
   transform: translateY(-50%);
   z-index: 3;
 
@@ -448,7 +435,7 @@ svg {
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 50%;
+  top: 55%;
   transform: translate(-350px, -100%);
 }
 
@@ -944,7 +931,6 @@ export default {
       ],
     }
   },
-
   methods: {
     handlePie(index) {
       let currentIndex = this.pieIndex % 6
@@ -970,6 +956,7 @@ export default {
     },
   },
 
+/*
   mounted() {
     const wH = window.innerHeight
     const wW = window.innerWidth
@@ -995,12 +982,13 @@ export default {
         document.querySelector('.bg').appendChild(div)
       }
     }
-    /* 數量 */
+    // 數量 
     generateStars(100)
 
     setInterval(() => {
       this.pieIndex++
     }, 6000)
   },
+  */
 }
 </script>

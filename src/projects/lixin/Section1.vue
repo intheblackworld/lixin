@@ -53,7 +53,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 30%;
+  top: 35%;
   font-size: 58px;
   font-weight: bold;
   line-height: 1.88;
@@ -66,24 +66,26 @@
 }
 
 .typing {
-  width: 680px;
+  width: 11.4em;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 0.04em solid;
-  animation: typing 5s steps(10) infinite, caret 1s steps(1) infinite;
+  animation: typing 5s steps(12) infinite;
 }
 
 @keyframes typing {
   0% {
-    width: 0;
+    width: 0;opacity: 1;
   }
 
-  60% {
-    width: 620px;
+  40% {
+    width: 11.4em;
   }
 
+  95% {
+    width: 11.4em;opacity: 1;
+  }
   100% {
-    width: 620px;
+    width: 11.4em;opacity: 0;
   }
 }
 

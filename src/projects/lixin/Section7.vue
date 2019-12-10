@@ -48,7 +48,7 @@
     margin-bottom: 5%;
 
     img {
-      width: 50%;
+      width: 100%;
       height: auto;
       max-height: 100%;
       display: block;

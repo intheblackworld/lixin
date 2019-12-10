@@ -4,17 +4,15 @@
       <div>
         <div class="title">聯絡我們</div>
         <div class="info-item">
-          <div class="subtitle">
-            <div class="line"></div>
-            <span>ADDRESS</span>
-          </div>
-          <div class="desc">台北市中山區建國北路二段65號4樓</div>
+            <div class="map_icon"></div>
+          <div class="desc" @click="showMAP">台北市中山區建國北路二段65號4樓</div>
         </div>
         <div class="info-item">
-          <div class="subtitle">
-            <div class="line"></div>
-            <span>CONTACT</span>
-          </div>
+            <div class="mail_icon"></div>
+          <div class="desc" @click="showEmail">service@lixin.com.tw</div>
+        </div>
+        <div class="info-item">
+            <div class="phone_icon"></div>
           <div class="desc" @click="showCallDialog">02-2500-0818</div>
         </div>
       </div>
@@ -31,10 +29,10 @@
 
           <div class="row flex">
             <el-input v-model="form.email" @input="handleEmail" :class="`${hasEmail ? 'hasValue' : ''}`">
-              <template slot="append">信箱*</template>
+              <template slot="append">信箱</template>
             </el-input>
             <el-input v-model="form.phone" @input="handlePhone" :class="`${hasPhone ? 'hasValue' : ''}`">
-              <template slot="append">電話</template>
+              <template slot="append">電話*</template>
             </el-input>
           </div>
 
@@ -60,23 +58,23 @@
 <style lang="scss" scoped>
 .contact {
   &:before {
-    content: '';
+    content:"";
+    background:url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50' fill='%23FFF' preserveAspectRatio='none'><polygon points='50,50 0,50 0,0'/></svg>");
     width: 100%;
-    height: 205px;
-    background: #fff;
-    -webkit-transform: skewY(5deg);
-    transform: skewY(5deg);
+    height: 90px;
     position: absolute;
-    top: -75px;
+    top: -90px;
     left: 0;
     z-index: -1;
+    background-size: 100% 100%;
   }
 
-  background: #fff;
+  background: #fff url(../assets/img/footer_bg.png) repeat-x 50% 100%;
+  background-size: 100% auto;
   min-height: 500px;
-  padding-top: 0px;
   z-index: 3;
   position: relative;
+  padding: 0 0 90px 0;
   // transform: translateY(-200px);
 }
 
@@ -110,12 +108,13 @@
 
 .info-item {
   margin-bottom: 55px;
+  text-align: left;
 }
 
 .subtitle {
   display: flex;
   align-items: center;
-  margin-bottom: 22px;
+  margin-bottom:0;
   span {
     font-size: 14px;
     font-weight: bold;
@@ -127,14 +126,25 @@
     color: #000000;
   }
 }
-.line {
-  width: 44px;
-  height: 2px;
-  background: #000;
-  margin-right: 15px;
+.map_icon,
+.mail_icon,
+.phone_icon{
+  width: 1.2em;
+  height: 1.2em;
+  margin: 0 0.5em -0.2em 0;
+  display: inline-block;
 }
-
+.map_icon{
+  background:url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' fill='%23000'><path d='M757.47 537.473c32.419-47.473 52.104-105.368 52.104-167.894 0-164.418-133.156-297.576-297.576-297.576s-297.576 133.156-297.576 297.576c0 62.526 19.684 120.418 52.104 167.894l245.47 414.521 245.47-414.521zM512 191.266c98.418 0 178.313 79.895 178.313 178.313s-79.895 178.313-178.313 178.313c-98.418 0-178.313-79.895-178.313-178.313s79.895-178.313 178.313-178.313z'></path></svg>");
+}
+.mail_icon{
+  background:url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' fill='%23000'><path d='M73.143 146.285c-40.521 0-73.143 32.622-73.143 73.143v585.143c0 40.521 32.622 73.143 73.143 73.143h877.714c40.521 0 73.143-32.622 73.143-73.143v-585.143c0-40.521-32.622-73.143-73.143-73.143zM915.419 218.513c20.187 0 36.571 16.384 36.571 36.571 0 11.886-5.669 22.491-14.482 29.147l-402.359 329.216c-6.254 5.157-14.336 8.265-23.15 8.265s-16.896-3.109-23.223-8.302l-402.213-329.106c-8.448-6.766-13.824-17.079-13.824-28.635 0-20.187 16.347-36.535 36.535-36.571 9.033 0 17.262 3.255 23.662 8.667l379.063 310.089 379.136-310.126c7.696-6.597 18.437-8.985 24.283-9.216zM252.928 603.281l57.783 47.214-177.847 145.518c-37.815 31.232-84.443-25.819-46.299-56.649zM771.072 603.281l166.363 136.082c38.144 30.83-8.485 87.881-46.299 56.649l-177.847-145.518z'></path></svg>");
+}
+.phone_icon{
+  background:url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' fill='%23000'><path d='M716.8 599.77c-58.514 58.514-58.514 117.029-117.029 117.029s-117.029-58.514-175.543-117.029-117.029-117.029-117.029-175.543 58.514-58.514 117.029-117.029c58.514-58.514-117.029-234.057-175.543-234.057s-175.543 175.543-175.543 175.543c0 117.029 120.247 354.304 234.057 468.114s351.086 234.057 468.114 234.057c0 0 175.543-117.029 175.543-175.543s-175.543-234.057-234.057-175.543z'></path></svg>");
+}
 .desc {
+  display: inline-block;
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
@@ -143,7 +153,6 @@
   letter-spacing: 1.76px;
   text-align: left;
   color: rgba(88, 88, 88, 0.83);
-  padding-left: 60px;
   cursor: pointer;
 
   &:hover {

@@ -86,8 +86,9 @@
 
 .title {
   position: absolute;
-  top: 8%;
-  left: 8%;
+  top: 15%;
+  left: 30%;
+  margin: 0px 0 0 -4em;
   font-size: 45.5px;
   font-weight: bold;
   font-stretch: normal;
@@ -144,7 +145,7 @@
   position: absolute;
   width: calc(100vw * 650 / 2400);
   height: calc(100vw * 500 / 2400);
-  left: calc(100vw * 625 / 2400);
+  left: calc(100vw * 626 / 2400);
   bottom: calc(100vw * 115 / 2400);
   overflow: hidden;
   object-fit: cover;
@@ -316,6 +317,11 @@ export default {
           src_mac: require('./s4/rwd/mac4.jpg'),
           src_tablet: require('./s4/rwd/tablet4.jpg'),
           src_phone: require('./s4/rwd/phone4.jpg'),
+        },
+        {
+          src_mac: require('./s4/rwd/mac5.jpg'),
+          src_tablet: require('./s4/rwd/tablet5.jpg'),
+          src_phone: require('./s4/rwd/phone5.jpg'),
         },
       ],
     }

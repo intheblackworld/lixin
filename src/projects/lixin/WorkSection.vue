@@ -95,7 +95,7 @@
 
 .work-top {
   margin: 0 auto;
-  width: 1440px;
+  width: 1336px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -173,7 +173,7 @@
   }
 }
 .work-container {
-  width: 1440px;
+  width: 1336px;
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 67px;

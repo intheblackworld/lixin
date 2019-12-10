@@ -30,7 +30,7 @@
           </div>
           <div class="info-item">
             <div class="info-name">
-              © 2019 立炘數位行銷有限公司.  ALL RIGHTS RESERVED.
+              © 2019 立炘數位行銷有限公司
             </div>
           </div>
         </div>

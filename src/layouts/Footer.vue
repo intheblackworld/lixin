@@ -1,13 +1,13 @@
 <template>
   <div class="footer">
-    <img src="../assets/img/footer_bg.png" alt class="footer-bg" />
-    <!-- <img src="../assets/img/footerLogo.png" alt="心天畝的圖片" /> -->
+    <!--  <img src="../assets/img/footer_bg.png" alt class="footer-bg" />
+    <img src="../assets/img/footerLogo.png" alt="心天畝的圖片" /> -->
     <div class="footer-bottom">
       <a
         class="link"
         href=" https://www.h35.tw/admin/test/login.php"
         target="_blank"
-      >© 2019 立炘數位行銷有限公司. ALL RIGHTS RESERVED.</a>
+      >© 2019 立炘數位行銷有限公司</a>
     </div>
   </div>
 </template>
@@ -38,7 +38,7 @@
   }
 
   .footer-bottom {
-    height: 82px;
+    height:45px;
     background-color: #ed6d34;
     display: flex;
     align-items: center;

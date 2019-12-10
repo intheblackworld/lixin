@@ -343,7 +343,8 @@
 }
 
 .left-bg {
-  background: url('./s6/work_bg.jpg');
+  background:#444;
+  /* background: url('./s6/work_bg.jpg'); */
   background-size: 100% 100%;
   position: relative;
   > * {
@@ -479,6 +480,9 @@
 
 .detail {
   width: 50%;
+  line-height: 1.6;
+  font-size: 16px;
+  letter-spacing: 1.2px;
   overflow-y: scroll;
   padding-right: 65px;
   padding-top: 166px;
@@ -504,39 +508,32 @@
   .detail-img {
     width: 100%;
     margin: 0 auto;
-    margin-bottom: 35px;
+    margin:1em 0 1.2em 0;
   }
   .detail-title {
     font-size: 30px;
     font-weight: 300;
     font-stretch: normal;
     font-style: normal;
-    line-height: 0.83;
     letter-spacing: 2.4px;
     text-align: left;
     color: #000000;
-    margin-bottom: 45px;
   }
 
   .detail-subtitle {
-    font-size: 15px;
     font-weight: bold;
     text-align: left;
-    letter-spacing: 1.2px;
     color: #000000;
-    margin-bottom: 10px;
+    margin-bottom: 0.5em;
   }
 
   .detail-desc {
-    font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.56;
-    letter-spacing: 1.28px;
     text-align: left;
     color: #444444;
-    margin-bottom: 45px;
+    margin-bottom: 1.2em;
   }
 
   .close {
@@ -559,7 +556,7 @@
 
 .text {
   width: 80%;
-  height: 25%;
+  height: 40%;
   overflow: hidden;
   margin: 0 auto;
   margin-top: 166px;
@@ -575,8 +572,12 @@
 
   .text-item {
     height: 100%;
+    line-height: 1.6;position: relative;
     &.active {
-      .title,
+      .title{
+        opacity: 1;
+        transform: translateY(0);
+      }
       .subtitle,
       .desc {
         opacity: 1;
@@ -588,10 +589,12 @@
 
 .title {
   // font-family: 'noto_regular';
-  font-size: calc(100vw * (44 / 1920));
+  /* font-size: calc(100vw * (44 / 1920)); */ 
+  font-size:45.5px;
   line-height: 1.5em;
-  font-weight: 200;
-  margin-bottom: -0.4em;
+  letter-spacing: 3px;
+  font-weight:bold;
+  margin-bottom:0;
   color: #ed6d34;
   transition: all 0.3s ease-in;
   opacity: 0;
@@ -600,9 +603,9 @@
 
 .subtitle {
   // font-family: 'noto_regular';
-  font-size: 0.9em;
-  font-weight: 900;
-  margin: 1.8em 0;
+  font-size: 20px;
+  font-weight:bold;
+  margin:1em 0 0.4em;
   color: #000;
   transition: all 0.7s ease-in;
   opacity: 0;
@@ -610,7 +613,6 @@
 }
 
 .desc {
-  font-family: 'noto_thin';
   font-size: 1em;
   line-height: 2em;
   letter-spacing: 3px;
@@ -632,7 +634,7 @@
   text-align: center;
   box-sizing: border-box;
   padding-top: 1.5em;
-  font-family: 'AvantGarde_Thin';
+  /* font-family: 'AvantGarde_Thin'; */
   /* font-weight: bold; */
   letter-spacing: 2px;
   transition: box-shadow 0.5s, color 0.5s, opacity 1s, border-color 0s;

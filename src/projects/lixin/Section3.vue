@@ -54,6 +54,7 @@
   text-align: center;
   color: #ffffff;
   z-index: 10;
+  text-shadow: 0px 0px 0.3em #121c29,-1px -1px 0.3em #121c29,-1px 1px 0.3em #121c29,1px 1px 0.3em #121c29,1px -1px 0.3em #121c29;
 }
 
 #canvas {

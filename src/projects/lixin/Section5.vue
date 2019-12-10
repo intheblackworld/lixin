@@ -132,7 +132,7 @@
 
   &:hover {
     .st0 {
-      fill: #000;
+      fill: #c00;
     }
   }
 }
@@ -168,12 +168,15 @@
 .content {
   width: calc(100vw * 567 / 1440);
   height: calc(100vh * 450 / 796);
-  background: rgba(255, 255, 255, 0.3);
+  /* background: rgba(255, 255, 255, 0.3); */
+  
+  background: url('./s5/bg.png') 0 2px,url('./s5/bg.png') 0 3px;
   right: calc(100vw * 112 / 1440);
   top: calc(100vw * 136 / 796);
   position: absolute;
   z-index: 2;
   transition: all .3s;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);;
 
   &:hover {
     background: rgba(255, 255, 255, 0.8);
@@ -194,7 +197,7 @@
 }
 
 .subtitle {
-  margin-top: -10px;
+  margin-top: 0px;
   margin-left: 57px;
   font-size: 16px;
   font-weight: normal;
@@ -207,7 +210,7 @@
 }
 
 .work-title {
-  margin-top: 50px;
+  margin-top: 10px;
   margin-left: 57px;
   font-size: 20px;
   font-weight: bold;
@@ -220,7 +223,7 @@
 }
 
 .work-desc {
-  margin-left: 57px;
+  margin:10px 0 0 57px;
   font-size: 13.5px;
   font-weight: normal;
   font-stretch: normal;
@@ -253,7 +256,11 @@
     width: 60px;
     height: 60px;
     border-right: 1px solid #000;
-    outline: none;
+    outline: none;  
+    transition: all .3s;
+    &:hover {
+      background:rgb(237, 109, 52,0.3) 
+    }
 
     img {
       transform: rotate(180deg);
@@ -265,6 +272,10 @@
     width: 60px;
     height: 60px;
     outline: none;
+    transition: all .3s;
+    &:hover {
+      background:rgb(237, 109, 52,0.3) 
+    }
     img {
       width: 30px;
     }
@@ -273,8 +284,9 @@
 
 .play-group {
   margin-left: 57px;
-  margin-top: 37px;
-  font-size: 14px;
+  margin-top: 17px;
+  padding: 20px 0;
+  font-size: 15px;
   color: #000;
   display: flex;
   align-items: center;
@@ -282,8 +294,7 @@
   transition: all 0.3s;
 
   &:hover {
-    color: #ed6d34;
-    font-weight: bold;
+    color: #c00;
   }
 }
 
@@ -300,8 +311,9 @@
   color: #000;
   transition: all 0.5s;
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
   cursor: pointer;
 
   &:hover {
@@ -398,7 +410,8 @@
 }
 
 .swiper-container {
-  padding-top: 5px;
+   margin: -160px auto;
+  padding: 165px 0 0 0;
 }
 @media only screen and (max-width: 1280px) and (min-width: 1025px) {
 }
