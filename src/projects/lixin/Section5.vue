@@ -168,9 +168,7 @@
 .content {
   width: calc(100vw * 567 / 1440);
   height: calc(100vh * 450 / 796);
-  /* background: rgba(255, 255, 255, 0.3); */
-  
-  background: url('./s5/bg.png') 0 2px,url('./s5/bg.png') 0 3px;
+ background: rgba(255, 255, 255, 0.8);
   right: calc(100vw * 112 / 1440);
   top: calc(100vw * 136 / 796);
   position: absolute;
@@ -179,7 +177,7 @@
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 1);
   }
 }
 
@@ -527,6 +525,10 @@
       right: 10px;
       z-index: 100;
     }
+  }
+  .swiper-container {
+    margin: -160px auto;
+    padding: 165px 0 150px 0;
   }
 }
 </style>

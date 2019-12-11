@@ -89,12 +89,12 @@
   top: 15%;
   left: 30%;
   margin: 0px 0 0 -4em;
-  font-size: 45.5px;
+  font-size: 45px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing: 4.55px;
+  letter-spacing: 0.11em;
   text-align: center;
   color: #000000;
 }
@@ -210,10 +210,10 @@
 @media screen and (max-width: 767px) {
   .mobile-bg {
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 63px);
   }
   .bg {
-    height: 100vh;
+    height: calc(100vh - 63px);
   }
 
   .device {
@@ -249,7 +249,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: scale(1.17);
+    transform: scale(1.6) translate(7%, 3%);
     transform-origin: bottom;
   }
 }

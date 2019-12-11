@@ -87,7 +87,7 @@
 
 <style lang="scss" scoped>
 .work-section {
-  margin-top: 190px;
+  margin-top: 90px;
   margin-bottom: 120px;
   background-image: url('./work/bg.png');
   background-attachment: fixed;
@@ -100,18 +100,18 @@
   align-items: center;
   justify-content: space-between;
   .title {
-    font-size: 132.5px;
+    font-size: 110px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
-    line-height: 1.07;
+    line-height: 1.6;
     letter-spacing: normal;
     text-align: left;
     color: #ed6d34;
   }
 
   .line {
-    width: 203px;
+    width: 400px;
     height: 1px;
     background: #ed6d34;
   }
@@ -179,17 +179,14 @@
   margin-bottom: 67px;
 
   .work-row {
-    margin-left: -5px;
-    margin-right: -5px;
+    margin-left: -30px;
   }
 
   .work-item {
     // box-shadow: 0 0 2px 1px #666;
     // border-radius: 5px;
-    margin: 15px 5px;
-    padding: 15px;
+    margin: 15px 0 15px 30px;
     overflow: hidden;
-    max-width: calc(20% - 10px);
     transition: all 0.3s;
 
     &.no-padding {
@@ -645,7 +642,7 @@ export default {
       } else if (this.isMobile) {
         count = 1
       } else {
-        count = 5
+        count = 4
       }
       return _.chunk(this.filterWorkList, count)
     },

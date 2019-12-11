@@ -43,18 +43,18 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
-  font-size: 45.5px;
+  font-size: 45px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
   line-height: 2;
-  letter-spacing: 4.55px;
+  letter-spacing: 0.11em;
   text-align: center;
-  color: #ffffff;
+  color: #ed6d34;
   z-index: 10;
-  text-shadow: 0px 0px 0.3em #121c29,-1px -1px 0.3em #121c29,-1px 1px 0.3em #121c29,1px 1px 0.3em #121c29,1px -1px 0.3em #121c29;
+  text-shadow: 0px 0px 0.3em #13212e,-1px -1px 0.3em #13212e,-1px 1px 0.3em #13212e,1px 1px 0.3em #13212e,1px -1px 0.3em #13212e;
 }
 
 #canvas {
@@ -76,9 +76,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  .title {
-    text-shadow: 0 0 3px #444;
-  }
+
 }
 </style>
 <script>

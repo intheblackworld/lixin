@@ -66,10 +66,10 @@
 }
 
 .typing {
-  width: 11.4em;
+  width: 5.2em;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 5s steps(12) infinite;
+ animation: typing 5s steps(5) infinite;
 }
 
 @keyframes typing {
@@ -77,15 +77,24 @@
     width: 0;opacity: 1;
   }
 
+  20% {
+    width: 5.2em;
+  }
+  23% {
+    width: 5.2em;
+  }
+  23.1% {
+    width: 5.4em;
+  }
   40% {
-    width: 11.4em;
+    width: 10.6em;
   }
 
   95% {
-    width: 11.4em;opacity: 1;
+    width: 10.6em;opacity: 1;
   }
   100% {
-    width: 11.4em;opacity: 0;
+    width: 10.6em;opacity: 0;
   }
 }
 
@@ -114,6 +123,13 @@
 }
 
 @media screen and (max-width: 767px) {
+ .no-padding-top {
+    padding-top: 0;
+
+    .fullscreen {
+      height: 100vh  !important;
+    }
+  }
   .mask {
     background-image: url('./s1/mobg.png');
   }
@@ -131,8 +147,7 @@
     width: 290px;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 0.04em solid;
-    animation: typing 4s steps(5) infinite, caret 1s steps(1) infinite;
+    animation: typing 2s steps(5) infinite;
   }
 
   @keyframes typing {
@@ -149,11 +164,6 @@
     }
   }
 
-  @keyframes caret {
-    50% {
-      border-color: transparent;
-    }
-  }
 }
 </style>
 <script>
@@ -182,7 +192,7 @@ export default {
     setInterval(() => {
       this.showFirst = !this.showFirst
       this.showSecond = !this.showSecond
-    }, 4000)
+    }, 2000)
   },
 }
 </script>

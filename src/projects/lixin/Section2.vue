@@ -242,10 +242,10 @@
 
 .bg-img {
   width: 100vw;
+  height:100vh;
   position: fixed;
   top: 0;
   left: 0;
-  height: auto;
   display: block;
   object-fit: cover;
   z-index: 1;
@@ -260,8 +260,7 @@
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 0.58;
-  letter-spacing: 4.95px;
+  letter-spacing: 0.11em;
   text-align: left;
   color: #ed6d34;
   position: absolute;
@@ -269,8 +268,9 @@
   right: 0;
   margin: 0 auto;
   text-align: center;
-  top: 20%;
+  top: 55%;
   z-index: 2;
+  margin:-7.77em 0 0 0;
 
   &.white {
     color: #fff;

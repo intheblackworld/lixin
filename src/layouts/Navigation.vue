@@ -2,12 +2,12 @@
   <div :class="`navigation ${isFix ? 'fix' : ''}`">
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
-        <div class="nav">
-          <icon v-if="theme === 'white'" class="logoC" :data="logoC" />
-          <icon v-else class="logo" :data="logo" />
+        <div :class="`nav ${isOpen ? 'open' : ''}`">
+          <icon class="logo" :data="logo" />
           <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
           <div class="menu" @click="toggleSidebar">
-            <font-awesome-icon icon="bars" />
+            <!--<font-awesome-icon icon="bars" />-->
+            <span class="menu_icon"></span>
           </div>
           <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
           <ul :class="`navlist ${isOpen ? 'open' : ''}`">
@@ -57,7 +57,7 @@
 <script>
 import { isMobile, isTablet } from '@/utils'
 import navList from '@/info/navList'
-import logo from '@/assets/svg/logo-w.svg'
+import logo from '@/assets/svg/logo-top.svg'
 import logoC from '@/assets/svg/logo.svg'
 
 export default {
@@ -125,7 +125,7 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.3s;
-  fill: #fff;
+  fill: #000;
   .st0 {
     fill: #9d9997;
   }
@@ -163,6 +163,41 @@ export default {
     clip-path: url(#SVGID_13_);
     fill: url(#SVGID_14_);
   }
+}
+.logo {
+  width: $logo_pc_width;
+  height: auto;
+  position: absolute;
+  left: 0;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s;
+  fill: #FFF;
+  .st0{
+    fill: #ffffff77;
+    transition: all 0.3s;
+  }
+  .st1{
+    fill: #fff;
+    transition: all 0.3s;
+  }
+}
+
+/* 螢幕尺寸標準 */
+/* 手機尺寸 */
+@media only screen and (max-width: 767px) {
+.open{
+  .logo {
+  fill: #999;
+  .st0{
+      fill: #999;
+    }
+  .st1{
+      fill: #ec6d34;
+    }
+}
+}
 }
 </style>
 
@@ -218,17 +253,6 @@ export default {
   }
 }
 
-.logo {
-  width: $logo_pc_width;
-  height: auto;
-  position: absolute;
-  left: 0;
-  display: block;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: all 0.3s;
-  fill: #fff;
-}
 
 .mask {
   display: none;
@@ -244,7 +268,8 @@ export default {
   }
 
   .link {
-    color: $nav_link_color;
+    font-size: 16px !important;
+    color: #FFF;
     height: 100%;
     text-align: center;
     display: block;
@@ -256,6 +281,7 @@ export default {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    line-height: 1.6;
     // border-right: 1px solid $nav_link_hover_bg;
 
     &.color {
@@ -263,14 +289,13 @@ export default {
     }
 
     &:hover {
-      color: $nav_link_hover_color;
+      color: #FC0;
       img {
         // animation: r5 0.5s infinite alternate;
       }
     }
 
     .title {
-      font-size: 16px !important;
       position: relative;
       z-index: 3;
     }
@@ -363,12 +388,58 @@ export default {
     display: block;
     position: absolute;
     right: 35px;
-    width: 18px;
+    width: 25px;
 
     svg {
       width: 25px;
       height: auto;
       color: $nav_btn_color;
+    }
+  }
+
+  .menu_icon,
+  .menu_icon::before,
+  .menu_icon::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    background-color: #fff;
+    content: "";
+    transition-duration: 0.3s,0.3s;
+    transition-delay: 0.3s,0s;
+    transition-property: top,transform;
+    top: 0
+  }
+  .menu_icon {
+    transition: all 0s 0.3s;
+    text-indent: -9999px;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+    margin-top: -2px;
+  }
+  .menu_icon::before {
+   transform: translate(0,200%);
+  }
+
+  .menu_icon::after {
+   transform: translate(0,-200%);
+  }
+  .open{
+    .logo{}
+    .menu_icon{
+      background: none
+    }
+    .menu_icon::before{
+      background-color: #999;
+      transform: translate(0,0)rotate(45deg)     
+    }
+
+    .menu_icon::after {
+      background-color: #999;
+      transform: translate(0,0)rotate(-45deg)      
     }
   }
 
@@ -384,28 +455,26 @@ export default {
     transition: all 0.3s ease-in;
     display: block;
     transform: translateX(40%);
+    border-top: 1px solid #DDD;
 
     li {
-      height: 50px;
-      margin-bottom: 5px;
+      height: 70px;
     }
 
     .link {
-      height: 50px;
+      color: #666;
       width: 100%;
-      font-size: 17px;
-      margin-top: 10px;
+      font-size: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
       display: none;
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #DDD;
 
       img,
       span {
         display: block;
-      }
-      span {
-        line-height: 16px;
       }
 
       img {
@@ -413,6 +482,10 @@ export default {
         height: auto;
         // margin-right: -10px;
       }
+    &:hover {
+      color:#000;
+      background-color: rgba(0, 0, 0, 0.1)
+    }
     }
 
     &.open {
@@ -431,19 +504,24 @@ export default {
       }
     }
   }
-
+.fix {
+  .navlist {
+    top:60px;
+  }
+}
   .mask {
-    width: 100vw;
-    top: $nav_phone_height;
+    display: block;
+    width: 0;
+    top:0;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: #f2f2f2;
     position: fixed;
     z-index: 110;
-    height: calc(100vh - #{$nav_phone_height});
+    height:100vh;
     opacity: 0;
     transition: all 0.3s ease-in;
+    z-index: -1;
     &.open {
-      display: block;
       width: 100vw;
       opacity: 1;
     }

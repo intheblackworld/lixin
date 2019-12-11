@@ -163,7 +163,7 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.3s;
-  fill: #fff;
+  fill: #9d9997;
   .st0 {
     fill: #9d9997;
   }
@@ -385,7 +385,7 @@ export default {
     img {
       width: calc(100vw * 50 / 1920);
       height: auto;
-      margin-right: 10px;
+      margin-right: -10px;
     }
   }
 }
@@ -491,6 +491,7 @@ export default {
     }
 
     .link {
+      color: #666;
       height: 50px;
       width: 100%;
       font-size: 17px;
@@ -511,7 +512,7 @@ export default {
       img {
         width: calc(100vw * 200 / 1920);
         height: auto;
-        margin-right: 10px;
+        margin-right: -10px;
       }
     }
 
