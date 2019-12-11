@@ -3,8 +3,10 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <icon v-if="theme === 'white'" class="logoC" :data="logoC" />
-          <icon v-else class="logo" :data="logo" />
+          <div @click="$router.push('/')">
+            <icon v-if="theme === 'white'" class="logoC" :data="logoC" />
+            <icon v-else class="logo" :data="logo"  />
+          </div>
           <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
           <div class="menu" @click="toggleSidebar">
             <font-awesome-icon icon="bars" />
