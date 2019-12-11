@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div class="nav">
-          <icon class="logoC" :data="logoC" />
+          <icon class="logoC" :data="logoC" @click="$router.push('/')" />
           <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
           <div class="menu" @click="toggleSidebar">
             <font-awesome-icon icon="bars" />
@@ -163,7 +163,12 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.3s;
+<<<<<<< HEAD
   fill: #9d9997;
+=======
+  fill: #fff;
+  cursor: pointer;
+>>>>>>> f5730b8ae66bcfb42b8f4bc2caaa39e3d22c72f5
   .st0 {
     fill: #9d9997;
   }
