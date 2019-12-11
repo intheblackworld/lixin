@@ -2,13 +2,13 @@
   <div :class="`navigation ${isFix ? 'fix' : ''}`">
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
-
         <div :class="`nav ${isOpen ? 'open' : ''}`">
           <icon class="logo" :data="logo" />
+        </div>
         <div class="nav">
           <div @click="$router.push('/')">
             <icon v-if="theme === 'white'" class="logoC" :data="logoC" />
-            <icon v-else class="logo" :data="logo"  />
+            <icon v-else class="logo" :data="logo" />
           </div>
           <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
           <div class="menu" @click="toggleSidebar">
@@ -106,7 +106,7 @@ export default {
 
   methods: {
     handleScroll() {
-      if (window.scrollY > (window.innerHeight - 100)) {
+      if (window.scrollY > window.innerHeight - 100) {
         this.isFix = true
       } else {
         this.isFix = false
@@ -179,12 +179,12 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.3s;
-  fill: #FFF;
-  .st0{
+  fill: #fff;
+  .st0 {
     fill: #ffffff77;
     transition: all 0.3s;
   }
-  .st1{
+  .st1 {
     fill: #fff;
     transition: all 0.3s;
   }
@@ -193,17 +193,17 @@ export default {
 /* 螢幕尺寸標準 */
 /* 手機尺寸 */
 @media only screen and (max-width: 767px) {
-.open{
-  .logo {
-  fill: #999;
-  .st0{
+  .open {
+    .logo {
       fill: #999;
+      .st0 {
+        fill: #999;
+      }
+      .st1 {
+        fill: #ec6d34;
+      }
     }
-  .st1{
-      fill: #ec6d34;
-    }
-}
-}
+  }
 }
 </style>
 
@@ -259,7 +259,6 @@ export default {
   }
 }
 
-
 .mask {
   display: none;
 }
@@ -275,7 +274,7 @@ export default {
 
   .link {
     font-size: 16px !important;
-    color: #FFF;
+    color: #fff;
     height: 100%;
     text-align: center;
     display: block;
@@ -295,7 +294,7 @@ export default {
     }
 
     &:hover {
-      color: #FC0;
+      color: #fc0;
       img {
         // animation: r5 0.5s infinite alternate;
       }
@@ -412,11 +411,11 @@ export default {
     height: 4px;
     left: 0;
     background-color: #fff;
-    content: "";
-    transition-duration: 0.3s,0.3s;
-    transition-delay: 0.3s,0s;
-    transition-property: top,transform;
-    top: 0
+    content: '';
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s;
+    transition-property: top, transform;
+    top: 0;
   }
   .menu_icon {
     transition: all 0s 0.3s;
@@ -427,25 +426,26 @@ export default {
     margin-top: -2px;
   }
   .menu_icon::before {
-   transform: translate(0,200%);
+    transform: translate(0, 200%);
   }
 
   .menu_icon::after {
-   transform: translate(0,-200%);
+    transform: translate(0, -200%);
   }
-  .open{
-    .logo{}
-    .menu_icon{
-      background: none
+  .open {
+    .logo {
     }
-    .menu_icon::before{
+    .menu_icon {
+      background: none;
+    }
+    .menu_icon::before {
       background-color: #999;
-      transform: translate(0,0)rotate(45deg)     
+      transform: translate(0, 0) rotate(45deg);
     }
 
     .menu_icon::after {
       background-color: #999;
-      transform: translate(0,0)rotate(-45deg)      
+      transform: translate(0, 0) rotate(-45deg);
     }
   }
 
@@ -461,7 +461,7 @@ export default {
     transition: all 0.3s ease-in;
     display: block;
     transform: translateX(40%);
-    border-top: 1px solid #DDD;
+    border-top: 1px solid #ddd;
 
     li {
       height: 70px;
@@ -476,7 +476,7 @@ export default {
       justify-content: center;
       display: none;
       border-top: 1px solid #fff;
-      border-bottom: 1px solid #DDD;
+      border-bottom: 1px solid #ddd;
 
       img,
       span {
@@ -488,10 +488,10 @@ export default {
         height: auto;
         // margin-right: -10px;
       }
-    &:hover {
-      color:#000;
-      background-color: rgba(0, 0, 0, 0.1)
-    }
+      &:hover {
+        color: #000;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
     }
 
     &.open {
@@ -510,20 +510,20 @@ export default {
       }
     }
   }
-.fix {
-  .navlist {
-    top:60px;
+  .fix {
+    .navlist {
+      top: 60px;
+    }
   }
-}
   .mask {
     display: block;
     width: 0;
-    top:0;
+    top: 0;
     right: 0;
     background: #f2f2f2;
     position: fixed;
     z-index: 110;
-    height:100vh;
+    height: 100vh;
     opacity: 0;
     transition: all 0.3s ease-in;
     z-index: -1;

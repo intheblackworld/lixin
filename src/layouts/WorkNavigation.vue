@@ -163,12 +163,8 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.3s;
-<<<<<<< HEAD
   fill: #9d9997;
-=======
-  fill: #fff;
   cursor: pointer;
->>>>>>> f5730b8ae66bcfb42b8f4bc2caaa39e3d22c72f5
   .st0 {
     fill: #9d9997;
   }
