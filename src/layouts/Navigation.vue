@@ -171,15 +171,6 @@ export default {
   }
 }
 .logo {
-  width: $logo_pc_width;
-  height: auto;
-  position: absolute;
-  left: 0;
-  display: block;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: all 0.3s;
-  fill: #fff;
   .st0 {
     fill: #ffffff77;
     transition: all 0.3s;
@@ -210,6 +201,18 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
 @import '../assets/style/variableDefault.scss';
+
+.logo {
+  width: $logo_pc_width;
+  height: auto;
+  position: absolute;
+  left: 0;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s;
+  fill: #fff;
+}
 
 .navigation {
   background-color: $nav_bg;
