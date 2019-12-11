@@ -527,8 +527,8 @@
     }
   }
   .swiper-container {
-    margin: -160px auto;
-    padding: 165px 0 150px 0;
+    margin: -160px auto 0 auto;
+    padding: 165px 0 0 0;
   }
 }
 </style>
