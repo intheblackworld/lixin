@@ -597,7 +597,7 @@
   letter-spacing: 3px;
   font-weight:bold;
   margin-bottom:0;
-  color: #ed6d34;
+  color: #666;
   transition: all 0.3s ease-in;
   opacity: 0;
   transform: translateY(10px);
@@ -607,19 +607,21 @@
   // font-family: 'noto_regular';
   font-weight:bold;
   margin:1em 0 0.4em;
-  color: #000;
+  color: #ec6d34;
   transition: all 0.7s ease-in;
   opacity: 0;
   transform: translateY(15px);
+  letter-spacing: 0.02em;
 }
 
 .desc {
   line-height: 2em;
-  letter-spacing: 3px;
+  letter-spacing: 0.02em;
   color: #585858;
   transition: all 0.9s ease-in;
   opacity: 0;
   transform: translateY(20px);
+  font-size: 0.9em;
 }
 
 .button {
@@ -791,7 +793,7 @@
 
     .subtitle {
       font-size: 20px;
-      margin-bottom: 1em;
+      margin:0.5em 0 0.5em;
       opacity: 1;
     }
 
@@ -861,7 +863,7 @@ export default {
           img: require('./s6/item-img-1.jpg'),
         },
         {
-          title: '善用網紅行銷，帶動網路聲量 — 一個屋簷下 - 木曜四超玩',
+          title: '善用網紅行銷 — 一個屋簷下 - 木曜四超玩',
           subtitle: '海沃創意行銷-一個屋簷下',
           desc: '與網紅合作並舉辦線上抽獎，替活動創造高度關注。',
           img: require('./s6/item-img-2.jpg'),

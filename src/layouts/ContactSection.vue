@@ -3,17 +3,17 @@
     <div class="container">
       <div>
         <div class="title">聯絡我們</div>
-        <div class="info-item">
-            <div class="map_icon"></div>
-          <div class="desc" @click="showMAP">台北市中山區建國北路二段65號4樓</div>
+        <div class="info-item" @click="showMAP">
+            <div class="icon"></div>
+          <div class="desc">台北市中山區建國北路二段65號4樓</div>
         </div>
-        <div class="info-item">
-            <div class="mail_icon"></div>
-          <div class="desc" @click="showEmail">service@lixin.com.tw</div>
+        <div class="info-item" @click="showEmail">
+            <div class="icon"></div>
+          <div class="desc">service@lixin.com.tw</div>
         </div>
-        <div class="info-item">
-            <div class="phone_icon"></div>
-          <div class="desc" @click="showCallDialog">02-2500-0818</div>
+        <div class="info-item" @click="showCallDialog">
+            <div class="icon"></div>
+          <div class="desc">02-2500-0818</div>
         </div>
       </div>
       <div>
@@ -105,10 +105,28 @@
   color: #ed6d34;
   margin-bottom: 50px;
 }
-
 .info-item {
   margin-bottom: 30px;
-  text-align: left;
+  text-align: left; 
+  display: flex;
+  align-items: center;
+  transition:all 0.3s; 
+  color:#666;
+  .icon{
+    display: block;
+    width: 1.2em;
+    height: 1px;
+    background: currentcolor;
+    vertical-align: middle;
+    margin: 0 0.5em 0 0;
+  transition:all 0.3s; 
+  }
+  &:hover {
+    color: #ed6d34;
+  .icon{
+    width: 1.5em;
+  }
+  }
 }
 
 .subtitle {
@@ -126,6 +144,7 @@
     color: #000000;
   }
 }
+/*
 .map_icon,
 .mail_icon,
 .phone_icon{
@@ -143,6 +162,7 @@
 .phone_icon{
   background:url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' fill='%23000'><path d='M716.8 599.77c-58.514 58.514-58.514 117.029-117.029 117.029s-117.029-58.514-175.543-117.029-117.029-117.029-117.029-175.543 58.514-58.514 117.029-117.029c58.514-58.514-117.029-234.057-175.543-234.057s-175.543 175.543-175.543 175.543c0 117.029 120.247 354.304 234.057 468.114s351.086 234.057 468.114 234.057c0 0 175.543-117.029 175.543-175.543s-175.543-234.057-234.057-175.543z'></path></svg>");
 }
+*/
 .desc {
   display: inline-block;
   font-size: 16px;

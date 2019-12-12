@@ -191,13 +191,13 @@
   line-height: 2;
   letter-spacing: 4.55px;
   text-align: left;
-  color: #ed6d34;
+  color: #666;
 }
 
 .subtitle {
   margin-top: 0px;
   margin-left: 57px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -217,12 +217,12 @@
   line-height: 1.6;
   letter-spacing: 2px;
   text-align: left;
-  color: #000000;
+  color: #ec6d34;
 }
 
 .work-desc {
   margin:10px 0 0 57px;
-  font-size: 13.5px;
+  font-size: 15px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -480,10 +480,14 @@
 
     .work-title {
       margin-left: calc(100vw * (30 / 375));
+      letter-spacing:0;
     }
 
     .work-desc {
       margin-left: calc(100vw * (30 / 375));
+      margin-right:6vw;
+      line-height: 1.6;
+      letter-spacing:0;
     }
 
     .slide-btn {
@@ -498,9 +502,19 @@
       position: relative;
       margin-left: calc(100vw * (30 / 375));
       margin-top: 15px;
+      &:hover {
+        .line-arrow {
+          width: 25px;
+        }
+      }
     }
   }
-
+  .flex{
+    justify-content:space-between;
+  }
+  .line-arrow{
+    width: 25px;
+  }
   .dialog {
     z-index: 100;
     .dialog-content {
@@ -576,14 +590,14 @@ export default {
       },
       slideList: [
         {
-          title: '房地產｜新碩鼎和｜百年家族',
+          title: '新碩鼎和｜百年家族',
           name: '新聯陽實業股份有限公司',
           desc: '傳承百年的感動<br />延續家族的幸福',
           video: require('./s5/video/1新碩鼎和.mp4'),
           img: require('./s5/img/1.jpg'),
         },
         {
-          title: '房地產｜新板巨星｜不再搬家',
+          title: '新板巨星｜不再搬家',
           name: '海沃創意行銷',
           desc:
             '小熊多多為什麼不開心？<br />他說：常常在搬家，搬來搬去都是別人的家‥',
@@ -591,7 +605,7 @@ export default {
           img: require('./s5/img/2.jpg'),
         },
         {
-          title: '房地產｜幸福莊園｜寄人籬下',
+          title: '幸福莊園｜寄人籬下',
           name: '海悅廣告股份有限公司',
           desc:
             '用一樣的錢換一個屬於自己的窩<br />大台北門牌，這次買得起<br />開除房東做自己!!',
@@ -599,7 +613,7 @@ export default {
           img: require('./s5/img/3.jpg'),
         },
         {
-          title: '房地產｜新板巨星｜汪星人',
+          title: '新板巨星｜汪星人',
           name: '海沃創意行銷',
           desc:
             '汪星人不說，但汪星人都懂。<br />金窩銀窩，都不如有自己溫馨的窩，來聽聽汪星人怎麼說',
@@ -607,21 +621,21 @@ export default {
           img: require('./s5/img/4.jpg'),
         },
         {
-          title: '房地產｜金城舞2｜百變型男',
-          name: '甲山林機構',
+          title: '新板巨星｜愛要及時',
+          name: '海沃創意行銷',
           desc: '給爸媽最即時的溫暖',
           video: require('./s5/video/6愛要即時.mp4'),
           img: require('./s5/img/5.jpg'),
         },
         {
-          title: '房地產｜新板巨星｜愛要及時',
-          name: '海沃創意行銷',
+          title: '金城舞2｜百變型男',
+          name: '甲山林機構',
           desc: '最熱銷的百變型男<br />都住最熱銷的金城舞2',
           video: require('./s5/video/5金城舞2.mp4'),
           img: require('./s5/img/6.jpg'),
         },
         {
-          title: '房地產｜新板巨星｜競選',
+          title: '新板巨星｜競選',
           name: '海沃創意行銷',
           desc:
             '我們有多久，不敢擁抱成家的夢想<br />其實夢想，不一定要到很遠的地方<br />支持努力圓夢的你',

@@ -9,15 +9,15 @@
       <div class="work-info">
         <div class="info-row">
         <div class="info-item">
-            <div class="map_icon"></div>
+            <div class="icon"></div>
           <div class="desc" @click="showMAP">台北市中山區建國北路二段65號4樓</div>
         </div>
         <div class="info-item">
-            <div class="mail_icon"></div>
+            <div class="icon"></div>
           <div class="desc" @click="showEmail">service@lixin.com.tw</div>
         </div>
         <div class="info-item">
-            <div class="phone_icon"></div>
+            <div class="icon"></div>
           <div class="desc" @click="showCallDialog">02-2500-0818</div>
         </div>
         </div>
@@ -77,6 +77,7 @@
   align-items:stretch;
   flex-wrap: wrap;
   line-height: 1.6;
+  justify-content:space-between;
 }
 
 .info-row {
@@ -88,8 +89,23 @@
 
 .info-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   width: 430px;
+  .icon{
+    display: block;
+    width: 1.2em;
+    height: 1px;
+    background: currentcolor;
+    vertical-align: middle;
+    margin: 0 0.5em 0 0;
+  transition:all 0.3s; 
+  }
+  &:hover {
+    color: #FC0;
+  .icon{
+    width: 1.5em;
+  }
+  }
 }
 
 .info-line {
@@ -109,6 +125,7 @@
   text-align: left;
   color: #fff;
 }
+/*
 .map_icon,
 .mail_icon,
 .phone_icon{
@@ -126,6 +143,7 @@
 .phone_icon{
   background:url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' fill='%23fff'><path d='M716.8 599.77c-58.514 58.514-58.514 117.029-117.029 117.029s-117.029-58.514-175.543-117.029-117.029-117.029-117.029-175.543 58.514-58.514 117.029-117.029c58.514-58.514-117.029-234.057-175.543-234.057s-175.543 175.543-175.543 175.543c0 117.029 120.247 354.304 234.057 468.114s351.086 234.057 468.114 234.057c0 0 175.543-117.029 175.543-175.543s-175.543-234.057-234.057-175.543z'></path></svg>");
 }
+*/
 .info-desc {
   font-size: 16px;
   font-weight: normal;

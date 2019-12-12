@@ -524,11 +524,12 @@ export default {
         },
 
         {
-          img: require('./work/web/3.大學墅.jpg'),
+          img: require('./work/web/5.幸福大院.png'),
           type: 'web',
-          link: 'https://dss.h35.tw/',
-          title: '大學墅',
+          link: 'https://sfdy.h35.tw/',
+          title: '幸福大院',
         },
+
 
         {
           img: require('./work/web/4.一日林板新.png'),
@@ -536,12 +537,11 @@ export default {
           link: 'https://star.h35.tw/',
           title: '一日林板新活動官網',
         },
-
         {
-          img: require('./work/web/5.幸福大院.png'),
+          img: require('./work/web/3.大學墅.jpg'),
           type: 'web',
-          link: 'https://sfdy.h35.tw/',
-          title: '幸福大院',
+          link: 'https://dss.h35.tw/',
+          title: '大學墅',
         },
 
         {
@@ -556,6 +556,12 @@ export default {
           type: 'web',
           link: 'https://yns.h35.tw/',
           title: '越那山',
+        },
+        {
+          img: require('./work/web/12.吾界.png'),
+          type: 'web',
+          link: 'https://wj.h35.tw/',
+          title: '吾界',
         },
 
         {
@@ -586,12 +592,6 @@ export default {
           title: '三發丰悅',
         },
 
-        {
-          img: require('./work/web/12.吾界.png'),
-          type: 'web',
-          link: 'https://wj.h35.tw/',
-          title: '吾界',
-        },
 
         {
           img: require('./work/web/13.新碩鼎和.png'),

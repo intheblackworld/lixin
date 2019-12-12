@@ -52,7 +52,7 @@
   line-height: 2;
   letter-spacing: 0.11em;
   text-align: center;
-  color: #ed6d34;
+  color: #ccc;
   z-index: 10;
   text-shadow: 0px 0px 0.3em #13212e,-1px -1px 0.3em #13212e,-1px 1px 0.3em #13212e,1px 1px 0.3em #13212e,1px -1px 0.3em #13212e;
 }
@@ -76,7 +76,7 @@
 }
 
 @media screen and (max-width: 767px) {
-
+.title{font-size:8.5vw}
 }
 </style>
 <script>

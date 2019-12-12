@@ -96,7 +96,7 @@
   line-height: 2;
   letter-spacing: 0.11em;
   text-align: center;
-  color: #000000;
+  color: #666;
 }
 
 .bg-top {
@@ -213,7 +213,7 @@
     height: calc(100vh - 63px);
   }
   .bg {
-    height: calc(100vh - 63px);
+    height:130vw;
   }
 
   .device {
@@ -234,22 +234,22 @@
   }
 
   .title {
-    font-size: 45.5px;
+    font-size: 8.5vw;
     left: auto;
     right: auto;
     margin: 0 auto;
     width: 100vw;
     text-align: center;
-    top: 25%;
+    top: 12%;
   }
 
   .mobile-scale {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    transform: scale(1.6) translate(7%, 3%);
+    transform: scale(1.8) translate(7%, 10%);
     transform-origin: bottom;
   }
 }

@@ -262,7 +262,7 @@
   font-style: normal;
   letter-spacing: 0.11em;
   text-align: left;
-  color: #ed6d34;
+  color: #ccc;
   position: absolute;
   left: 0;
   right: 0;
@@ -737,7 +737,7 @@ svg {
     min-height: 100vh;
   }
   .page-title {
-    font-size: 32px;
+    font-size:8.5vw;
   }
 
   .pie-chart {
