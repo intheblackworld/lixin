@@ -2,11 +2,11 @@
   <div :class="`navigation ${isFix ? 'fix' : ''}`">
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
-        <div class="nav">
-          <icon class="logoC" :data="logoC" @click="$router.push('/')" />
+        <div :class="`nav ${isOpen ? 'open' : ''}`">
+          <icon class="logo" :data="logo" @click="$router.push('/')" />
           <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
           <div class="menu" @click="toggleSidebar">
-            <font-awesome-icon icon="bars" />
+            <span class="menu_icon"></span>
           </div>
           <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
           <ul :class="`navlist ${isOpen ? 'open' : ''}`">
@@ -53,7 +53,7 @@
 
 <script>
 import { isMobile, isTablet } from '@/utils'
-import logo from '@/assets/svg/logo-w.svg'
+import logo from '@/assets/svg/logo-top.svg'
 import logoC from '@/assets/svg/logo.svg'
 
 export default {
@@ -203,6 +203,18 @@ export default {
     fill: url(#SVGID_14_);
   }
 }
+
+.logo {
+    fill: #999;
+  .st0 {
+    fill: #999;
+    transition: all 0.3s;
+  }
+  .st1 {
+    fill: #ec6d34;
+    transition: all 0.3s;
+  }
+}
 @media only screen and (max-width: 767px) {
   .logoC {
     width: 150px;
@@ -213,7 +225,6 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/style/variableColor.scss';
 @import '../assets/style/variableDefault.scss';
-
 .navigation {
   background-color: $nav_bg;
   background-image: $nav_bg;
@@ -273,7 +284,6 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.3s;
-  fill: #fff;
 }
 
 .mask {
@@ -465,11 +475,58 @@ export default {
   .menu {
     display: block;
     position: absolute;
-    right: 15px;
-    width: 18px;
+    right: 35px;
+    width: 25px;
 
     svg {
       color: #333;
+    }
+  }
+
+  .menu_icon,
+  .menu_icon::before,
+  .menu_icon::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    background-color: #999;
+    content: '';
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s;
+    transition-property: top, transform;
+    top: 0;
+  }
+  .menu_icon {
+    transition: all 0s 0.3s;
+    text-indent: -9999px;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+    margin-top: -2px;
+  }
+  .menu_icon::before {
+    transform: translate(0, 200%);
+  }
+
+  .menu_icon::after {
+    transform: translate(0, -200%);
+  }
+  .open {
+    .logo {
+    }
+    .menu_icon {
+      background: none;
+    }
+    .menu_icon::before {
+      background-color: #999;
+      transform: translate(0, 0) rotate(45deg);
+    }
+
+    .menu_icon::after {
+      background-color: #999;
+      transform: translate(0, 0) rotate(-45deg);
     }
   }
 
@@ -485,35 +542,36 @@ export default {
     transition: all 0.3s ease-in;
     display: block;
     transform: translateX(40%);
+    border-top: 1px solid #ddd;
 
     li {
-      height: 50px;
-      margin-bottom: 5px;
+      height: 70px;
     }
 
     .link {
       color: #666;
-      height: 50px;
       width: 100%;
-      font-size: 17px;
-      margin-top: 10px;
+      font-size: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
       display: none;
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #ddd;
 
       img,
       span {
         display: block;
       }
-      span {
-        line-height: 16px;
-      }
 
       img {
         width: calc(100vw * 200 / 1920);
         height: auto;
-        margin-right: -10px;
+       // margin-right: -10px;
+      }
+      &:hover {
+        color: #000;
+        background-color: rgba(0, 0, 0, 0.1);
       }
     }
 
@@ -524,7 +582,6 @@ export default {
       .link {
         display: flex;
         justify-content: center;
-        color: #fff;
         span {
           white-space: nowrap;
         }
@@ -536,17 +593,18 @@ export default {
   }
 
   .mask {
-    width: 100vw;
-    top: 60px;
+    display: block;
+    width: 0;
+    top: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: #f2f2f2;
     position: fixed;
     z-index: 110;
-    height: calc(100vh - #{60px});
+    height: 100vh;
     opacity: 0;
     transition: all 0.3s ease-in;
+    z-index: -1;
     &.open {
-      display: block;
       width: 100vw;
       opacity: 1;
     }

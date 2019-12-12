@@ -171,6 +171,7 @@ export default {
   }
 }
 .logo {
+    fill: #fff;
   .st0 {
     fill: #ffffff77;
     transition: all 0.3s;
@@ -211,7 +212,6 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.3s;
-  fill: #fff;
 }
 
 .navigation {

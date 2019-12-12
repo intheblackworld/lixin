@@ -222,7 +222,7 @@
       }
 
       .mask-subtitle {
-        font-size: 10px;
+        font-size: 0.46em;
         font-weight: bold;
         font-stretch: normal;
         font-style: normal;
@@ -241,13 +241,14 @@
       }
 
       .mask-btn {
-        width: 120px;
-        height: 35px;
+        font-size: 13px;
+        width: 10em;
+        height: 2.7em;
         display: flex;
         align-items: center;
         justify-content: center;
         background: #fff;
-        border-radius: 5px;
+        border-radius: 0.4em;
         margin: 0 auto;
         margin-top: -100px;
         transition: all 0.5s ease;
@@ -260,7 +261,7 @@
         .btn-border {
           width: 100%;
           height: 100%;
-          border-radius: 5px;
+          border-radius: 0.4em;
           border: 1px solid #fff;
           position: absolute;
           // transform: translate(0px, 0px);
@@ -269,12 +270,12 @@
         }
 
         h3 {
-          font-size: 13px;
+          font-size: 1em;
           font-weight: bold;
           font-stretch: normal;
           font-style: normal;
-          line-height: 1.15;
-          letter-spacing: 0.65px;
+          line-height: 1.6;
+          letter-spacing: 0.05em;
           text-align: center;
           color: #ed6d34;
         }
@@ -444,7 +445,7 @@
   .work-top {
     width: 90vw;
     .title {
-      font-size: 55px;
+      font-size: 13vw;line-height: 1;
     }
     .line {
       display: none;
@@ -464,6 +465,18 @@
     width: 90vw;
     .work-item {
       max-width: 100%;
+      .mask{
+        .mask-title{
+          font-size:40px;
+        }
+        .mask-line{
+          height: 100px;
+          margin-top: -100px;
+        }
+        .mask-btn{
+          font-size: 16px;
+        }
+      }
     }
   }
 

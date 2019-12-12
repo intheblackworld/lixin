@@ -1,7 +1,7 @@
 <template>
   <div class="section7">
-    <div class="title" v-if="isMobile">服務客戶</div>
     <div class="bg fullscreen">
+    <div class="title">服務客戶</div>
       <div class="container">
         <div class="logo" v-for="(logo, index) in logoList" :key="`logo${index}`">
           <img
@@ -13,12 +13,14 @@
           />
         </div>
       </div>
-      <div :class="`slide-next ${isShowDetail ? 'hide' : ''}`" @click="slideNext">
+     <!--
+      <div  v-if="isMobile" :class="`slide-next ${isShowDetail ? 'hide' : ''}`" @click="slideNext">
         <img src="./s6/next_w.png" alt />
       </div>
-      <div :class="`slide-prev ${isShowDetail ? 'hide' : ''}`" @click="slidePrev">
+      <div  v-if="isMobile" :class="`slide-prev ${isShowDetail ? 'hide' : ''}`" @click="slidePrev">
         <img src="./s6/next_w.png" alt />
       </div>
+      -->
     </div>
   </div>
 </template>
@@ -35,6 +37,22 @@
   justify-content: center;
 }
 
+.title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 20%;
+  transform: translateY(-50%);
+  font-size: 45px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: 0.11em;
+  text-align: center;
+  color: #ed6d34;
+}
 .container {
   width: 1140px;
   height: 260px;
@@ -151,7 +169,7 @@
 
 @media screen and (max-width: 767px) {
   .container {
-    width: 100vw;
+    width: 90vw;
     justify-content: center;
     .logo {
       width: 50%;
@@ -161,13 +179,13 @@
   .section7 {
     position: relative;
     > .fullscreen {
-      height: calc(100vw * (432 / 375)) !important;
+      height: 150vw !important;
     }
   }
 
   .title {
     color: #ed6d34;
-    font-size: 31px;
+    font-size: 8vw;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -176,7 +194,7 @@
     text-align: center;
     position: absolute;
     z-index: 3;
-    top: 3vh;
+    top: 25vw;
     left: 0;
     right: 0;
     margin: 0 auto;

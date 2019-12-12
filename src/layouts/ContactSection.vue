@@ -107,7 +107,7 @@
 }
 
 .info-item {
-  margin-bottom: 55px;
+  margin-bottom: 30px;
   text-align: left;
 }
 

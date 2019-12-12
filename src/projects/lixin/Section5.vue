@@ -428,7 +428,6 @@
   }
 
   .work-title {
-    margin-top: 30px;
   }
 }
 
@@ -470,7 +469,7 @@
     }
 
     .title {
-      font-size: 31px;
+      font-size: 8vw;
       margin-top: 30px;
       margin-left: calc(100vw * (30 / 375));
     }
@@ -480,7 +479,6 @@
     }
 
     .work-title {
-      margin-top: 30px;
       margin-left: calc(100vw * (30 / 375));
     }
 

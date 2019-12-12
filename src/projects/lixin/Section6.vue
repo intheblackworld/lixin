@@ -564,6 +564,7 @@
   position: relative;
   transition: all 1s;
   transition-delay: 1s;
+  font-size: 20px;
 
   > div {
     height: 100%;
@@ -572,7 +573,8 @@
 
   .text-item {
     height: 100%;
-    line-height: 1.6;position: relative;
+    line-height: 1.6;
+    position: relative;
     &.active {
       .title{
         opacity: 1;
@@ -603,7 +605,6 @@
 
 .subtitle {
   // font-family: 'noto_regular';
-  font-size: 20px;
   font-weight:bold;
   margin:1em 0 0.4em;
   color: #000;
@@ -613,7 +614,6 @@
 }
 
 .desc {
-  font-size: 1em;
   line-height: 2em;
   letter-spacing: 3px;
   color: #585858;
@@ -782,20 +782,20 @@
     margin-top: 20px;
     height: auto;
     padding-bottom: 30px;
+    font-size:16px;
 
     .title {
-      font-size: 31px;
+      font-size:8vw;
       opacity: 1;
     }
 
     .subtitle {
-      font-size: 15px;
+      font-size: 20px;
       margin-bottom: 1em;
       opacity: 1;
     }
 
     .desc {
-      font-size: 16px;
       opacity: 1;
     }
   }
