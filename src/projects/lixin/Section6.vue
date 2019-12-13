@@ -549,8 +549,8 @@
     }
 
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 10px;
+    right: 17px;
   }
 }
 
@@ -681,11 +681,11 @@
 }
 
 .slide-next {
-  right: 0;
+  right: 17px;
 }
 
 .slide-prev {
-  left: 0;
+  left: 17px;
 
   img {
     transform: rotate(180deg);
@@ -913,10 +913,12 @@ export default {
       }
       this.detailIndex = index
       this.isShowDetail = true
+      document.querySelector('html').style.overflow = 'hidden'
     },
 
     closeDetail() {
       this.isShowDetail = false
+      document.querySelector('html').style.overflow = 'auto'
     },
 
     playVideo(index) {
