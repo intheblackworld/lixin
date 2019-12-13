@@ -4,43 +4,65 @@
     <SideNavigation v-if="isSide" />
     <WorkNavigation v-else theme="white" />
     <WorkSection />
-    <div class="work-footer">
-      <img src="../projects/lixin/work/背景角圖.jpg" alt="" class="corner-img" v-if="!isMobile">
+    <div class="work-footer" id="contact">
+      <img src="../projects/lixin/work/背景角圖.jpg" alt class="corner-img" v-if="!isMobile" />
       <div class="work-info">
         <div class="info-row">
-        <div class="info-item">
+          <div class="info-item" @click="showMapDialog">
             <div class="icon"></div>
-          <div class="desc" @click="showMAP">台北市中山區建國北路二段65號4樓</div>
-        </div>
-        <div class="info-item">
+            <div class="desc">{{info.address}}</div>
+          </div>
+          <div class="info-item" @click="showEmailDialog">
             <div class="icon"></div>
-          <div class="desc" @click="showEmail">service@lixin.com.tw</div>
-        </div>
-        <div class="info-item">
+            <div class="desc">{{info.email}}</div>
+          </div>
+          <div class="info-item" @click="showCallDialog">
             <div class="icon"></div>
-          <div class="desc" @click="showCallDialog">02-2500-0818</div>
-        </div>
+            <div class="desc">{{info.phone}}</div>
+          </div>
         </div>
         <div class="info-row">
           <div class="info-item">
             <icon class="logo" :data="logo" />
           </div>
           <div class="info-item">
-            <div class="info-name">
-              © 2019 立炘數位行銷有限公司
-            </div>
+            <div class="info-name">© 2019 立炘數位行銷有限公司</div>
           </div>
         </div>
       </div>
     </div>
+    <el-dialog
+      title
+      :visible.sync="isShowMapDialog"
+      :width="isMobile ? '90%' : '480px'"
+      :modal-append-to-body="false"
+    >
+      <MapDialog :link="info.googleLink" :address="info.address" />
+    </el-dialog>
+    <el-dialog
+      title
+      :visible.sync="isShowCallDialog"
+      :width="isMobile ? '90%' : '480px'"
+      :modal-append-to-body="false"
+    >
+      <CallDialog :phone="info.phone" />
+    </el-dialog>
+    <el-dialog
+      title
+      :visible.sync="isShowEmailDialog"
+      :width="isMobile ? '90%' : '480px'"
+      :modal-append-to-body="false"
+    >
+      <EmailDialog :email="info.email" />
+    </el-dialog>
     <!-- <div id="section8">
       <Section8 />
     </div>
     <div id="section9">
       <Section9 />
-    </div> -->
+    </div>-->
     <!-- <ContactSection />
-    <Footer /> -->
+    <Footer />-->
     <!-- <MobileNav /> -->
   </div>
 </template>
@@ -74,37 +96,38 @@
   position: relative;
   z-index: 2;
   display: flex;
-  align-items:stretch;
+  align-items: stretch;
   flex-wrap: wrap;
   line-height: 1.6;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .info-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction:column;
+  flex-direction: column;
 }
 
 .info-item {
   display: flex;
   align-items: center;
   width: 430px;
-  .icon{
+  cursor: pointer;
+  .icon {
     display: block;
     width: 1.2em;
     height: 1px;
     background: currentcolor;
     vertical-align: middle;
     margin: 0 0.5em 0 0;
-  transition:all 0.3s; 
+    transition: all 0.3s;
   }
   &:hover {
-    color: #FC0;
-  .icon{
-    width: 1.5em;
-  }
+    color: #fc0;
+    .icon {
+      width: 1.5em;
+    }
   }
 }
 
@@ -152,7 +175,7 @@
   line-height: 1.19;
   letter-spacing: 1.76px;
   text-align: left;
-  color: rgba(255, 255, 255, .85);
+  color: rgba(255, 255, 255, 0.85);
   margin-top: 35px;
 }
 
@@ -212,12 +235,14 @@
 // @ is an alias to /src
 import WorkNavigation from '@/layouts/WorkNavigation.vue'
 import SideNavigation from '@/layouts/SideNavigation.vue'
-// import ContactSection from '@/layouts/ContactSection.vue'
-// import MobileNav from '@/layouts/MobileNav.vue'
+import CallDialog from '@/components/Dialog/Call'
+import MapDialog from '@/components/Dialog/Map'
+import EmailDialog from '@/components/Dialog/Email'
 import gtm from '@/mixins/gtm.js'
 import WorkSection from '@/projects/lixin/WorkSection.vue'
 import logo from '@/assets/svg/logo-w.svg'
 import { isMobile, isTablet } from '@/utils'
+import info from '@/info'
 // import Section1 from '@/projects/lixin/Section1.vue'
 // import Section2 from '@/projects/lixin/Section2.vue'
 // import Section3 from '@/projects/lixin/Section3.vue'
@@ -235,6 +260,10 @@ export default {
   components: {
     WorkNavigation,
     SideNavigation,
+
+    CallDialog,
+    MapDialog,
+    EmailDialog,
     // ContactSection,
     // MobileNav,
     // Section1,
@@ -255,12 +284,28 @@ export default {
       isSide: false,
       isMobile,
       logo,
+      info,
+      isShowCallDialog: false,
+      isShowMapDialog: false,
+      isShowEmailDialog: false,
     }
   },
 
   methods: {
     onDone() {
       console.log('done')
+    },
+
+    showCallDialog() {
+      this.isShowCallDialog = true
+    },
+
+    showMapDialog() {
+      this.isShowMapDialog = true
+    },
+
+    showEmailDialog() {
+      this.isShowEmailDialog = true
     },
   },
 }

@@ -20,7 +20,7 @@
         hoverMode="grab"
         :clickEffect="true"
         clickMode="push"
-      ></vue-particles> -->
+      ></vue-particles>-->
     </div>
   </div>
 </template>
@@ -54,7 +54,8 @@
   text-align: center;
   color: #ccc;
   z-index: 10;
-  text-shadow: 0px 0px 0.3em #13212e,-1px -1px 0.3em #13212e,-1px 1px 0.3em #13212e,1px 1px 0.3em #13212e,1px -1px 0.3em #13212e;
+  text-shadow: 0px 0px 0.3em #13212e, -1px -1px 0.3em #13212e,
+    -1px 1px 0.3em #13212e, 1px 1px 0.3em #13212e, 1px -1px 0.3em #13212e;
 }
 
 #canvas {
@@ -76,7 +77,9 @@
 }
 
 @media screen and (max-width: 767px) {
-.title{font-size:8.5vw}
+  .title {
+    font-size: 8.5vw;
+  }
 }
 </style>
 <script>
@@ -175,8 +178,10 @@ export default {
       ]
       window.addEventListener('mousemove', function(event) {
         mouse.x = event.pageX
-        mouse.y =
-          event.pageY - document.querySelector('.mediaPartner').offsetTop
+        if (document.querySelector('.mediaPartner')) {
+          mouse.y =
+            event.pageY - document.querySelector('.mediaPartner').offsetTop
+        }
       })
       window.addEventListener('resize', function() {
         canvas.width = window.innerWidth * ratio
@@ -194,7 +199,7 @@ export default {
         circleArray.push(new Circle(x, y, dx, dy, radius))
       }
 
-      [
+      ;[
         // '01',
         'apple',
         'cn',

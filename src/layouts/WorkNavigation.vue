@@ -3,7 +3,7 @@
     <div class="layout-container-fluid nav-container">
       <div class="layout-container nav-container">
         <div :class="`nav ${isOpen ? 'open' : ''}`">
-          <icon class="logo" :data="logo" @click="$router.push('/')" />
+          <icon class="logoC" :data="logo" @click="$router.push('/')" />
           <!-- <img class="logo" src="@/assets/img/nav-logo.png" alt /> -->
           <div class="menu" @click="toggleSidebar">
             <span class="menu_icon"></span>
@@ -11,28 +11,28 @@
           <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
           <ul :class="`navlist ${isOpen ? 'open' : ''}`">
             <li
-              v-show="item.section"
-              :key="item.name"
+              :key="`item-${index}`"
               v-scroll-to="{ element: `#${item.section}`, offset: offset }"
-              v-for="item in list"
-              class="flex-ac"
-              @click="toggleSidebar"
+              v-for="(item, index) in list"
+              :class="`flex-ac`"
+              @click="handleClick(item)"
             >
               <span :class="`link color`">
+                <img v-if="item.reverseImgSrc" :src="item.reverseImgSrc" alt />
                 <span>
                   <div class="title">{{ item.name }}</div>
                   <span class="subTitle">{{ item.subTitle }}</span>
                 </span>
               </span>
             </li>
-            <li
+            <!-- <li
               v-show="item.link"
               :key="`link-${item.name}`"
               v-for="item in list"
               class="flex-ac link-item"
               @click="
                 item.outLink
-                  ? (window.location.href = item.outLink)
+                  ? (window.open(item.outLink))
                   : $router.push(item.link)
               "
             >
@@ -43,7 +43,7 @@
                   <span class="subTitle">{{ item.subTitle }}</span>
                 </span>
               </span>
-            </li>
+            </li>-->
           </ul>
         </div>
       </div>
@@ -81,7 +81,7 @@ export default {
           name: '聯絡我們',
           imgSrc: '',
           subTitle: '',
-          section: '2',
+          section: 'contact',
           svgSrc: '',
         },
         {
@@ -89,6 +89,7 @@ export default {
           imgSrc: '',
           subTitle: '',
           link: ' https://www.104.com.tw/company/1a2x6bkhg2',
+          outLink: ' https://www.104.com.tw/company/1a2x6bkhg2',
           svgSrc: '',
         },
         {
@@ -137,7 +138,6 @@ export default {
 
   methods: {
     handleScroll() {
-      console.log('window height', window.innerHeight)
       if (window.scrollY > window.innerHeight + 50) {
         this.isFix = true
       } else {
@@ -146,6 +146,16 @@ export default {
     },
     toggleSidebar() {
       this.isOpen = !this.isOpen
+    },
+
+    handleClick(item) {
+      if (item.section) {
+        this.toggleSidebar()
+      } else if (item.link && !item.outLink) {
+        this.$router.push(item.link)
+      } else if (item.link && item.outLink) {
+        window.open(item.outLink)
+      }
     },
   },
 }
@@ -163,58 +173,59 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.3s;
-  fill: #9d9997;
+  fill: #999;
   cursor: pointer;
   .st0 {
-    fill: #9d9997;
+    fill: #999;
   }
   .st1 {
-    opacity: 0.64;
-  }
-  .st2 {
-    clip-path: url(#SVGID_3_);
-  }
-  .st3 {
-    clip-path: url(#SVGID_4_);
-    fill: url(#SVGID_5_);
-  }
-  .st4 {
-    clip-path: url(#SVGID_6_);
-  }
-  .st5 {
-    clip-path: url(#SVGID_7_);
-    fill: url(#SVGID_8_);
-  }
-  .st6 {
-    clip-path: url(#SVGID_9_);
-  }
-  .st7 {
-    clip-path: url(#SVGID_10_);
-    fill: url(#SVGID_11_);
-  }
-  .st8 {
     fill: #ec6d34;
+    transition: all 0.3s;
   }
-  .st9 {
-    clip-path: url(#SVGID_12_);
-  }
-  .st10 {
-    clip-path: url(#SVGID_13_);
-    fill: url(#SVGID_14_);
-  }
+  // .st2 {
+  //   clip-path: url(#SVGID_3_);
+  // }
+  // .st3 {
+  //   clip-path: url(#SVGID_4_);
+  //   fill: url(#SVGID_5_);
+  // }
+  // .st4 {
+  //   clip-path: url(#SVGID_6_);
+  // }
+  // .st5 {
+  //   clip-path: url(#SVGID_7_);
+  //   fill: url(#SVGID_8_);
+  // }
+  // .st6 {
+  //   clip-path: url(#SVGID_9_);
+  // }
+  // .st7 {
+  //   clip-path: url(#SVGID_10_);
+  //   fill: url(#SVGID_11_);
+  // }
+  // .st8 {
+  //   fill: #ec6d34;
+  // }
+  // .st9 {
+  //   clip-path: url(#SVGID_12_);
+  // }
+  // .st10 {
+  //   clip-path: url(#SVGID_13_);
+  //   fill: url(#SVGID_14_);
+  // }
 }
 
-.logo {
-    fill: #999;
-  .st0 {
-    fill: #999;
-    transition: all 0.3s;
-  }
-  .st1 {
-    fill: #ec6d34;
-    transition: all 0.3s;
-  }
-}
+// .logo {
+//     fill: #999;
+//   .st0 {
+//     fill: #999;
+//     transition: all 0.3s;
+//   }
+//   .st1 {
+//     fill: #ec6d34;
+//     transition: all 0.3s;
+//   }
+// }
 @media only screen and (max-width: 767px) {
   .logoC {
     width: 150px;
@@ -567,7 +578,7 @@ export default {
       img {
         width: calc(100vw * 200 / 1920);
         height: auto;
-       // margin-right: -10px;
+        margin-right: 0px;
       }
       &:hover {
         color: #000;

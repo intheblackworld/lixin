@@ -6,7 +6,7 @@
           <icon class="logo" :data="logo" />
         </div -->
         <div :class="`nav ${isOpen ? 'open' : ''}`">
-          <div @click="$router.push('/')">
+          <div v-scroll-to="{ element: `#section1`, offset: offset }">
             <icon v-if="theme === 'white'" class="logoC" :data="logoC" />
             <icon v-else class="logo" :data="logo" />
           </div>
@@ -18,15 +18,15 @@
           <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
           <ul :class="`navlist ${isOpen ? 'open' : ''}`">
             <li
-              v-show="item.section"
-              :key="item.name"
+              :key="`item-${index}`"
               v-scroll-to="{ element: `#${item.section}`, offset: offset }"
-              v-for="item in list"
+              v-for="(item, index) in list"
               class="flex-ac"
-              @click="toggleSidebar"
+              @click="handleClick(item)"
             >
               <span :class="`link ${theme === 'white' ? 'color' : ''}`">
-                <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+                <img v-if="!isMobile && item.imgSrc" :src="item.imgSrc" alt />
+                <img v-if="isMobile  && item.reverseImgSrc" :src="item.reverseImgSrc" alt />
                 <span>
                   <div class="title">{{ item.name }}</div>
                   <span class="subTitle">{{ item.subTitle }}</span>
@@ -34,25 +34,26 @@
               </span>
             </li>
 
-            <li
+            <!-- <li
               v-show="item.link"
               :key="`link-${item.name}`"
               v-for="item in list"
               class="flex-ac"
               @click="
                 item.outLink
-                  ? (window.location.href = item.outLink)
+                  ? (window.open(item.outLink))
                   : $router.push(item.link)
               "
             >
               <span class="link">
-                <img v-if="item.imgSrc" :src="item.imgSrc" alt />
+                <img v-if="!isMobile && item.imgSrc" :src="item.imgSrc" alt />
+                <img v-if="isMobile  && item.reverseImgSrc" :src="item.reverseImgSrc" alt />
                 <span>
                   <div class="title">{{ item.name }}</div>
                   <span class="subTitle">{{ item.subTitle }}</span>
                 </span>
               </span>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -115,6 +116,15 @@ export default {
     toggleSidebar() {
       this.isOpen = !this.isOpen
     },
+    handleClick(item) {
+      if (item.section) {
+        this.toggleSidebar()
+      } else if (item.link && !item.outLink) {
+        this.$router.push(item.link)
+      } else if (item.link && item.outLink) {
+        window.open(item.outLink)
+      }
+    },
   },
 }
 </script>
@@ -136,7 +146,7 @@ export default {
     fill: #9d9997;
   }
   .st1 {
-    opacity: 0.64;
+    // opacity: 0.64;
   }
   .st2 {
     clip-path: url(#SVGID_3_);
@@ -489,7 +499,7 @@ export default {
       img {
         width: calc(100vw * 200 / 1920);
         height: auto;
-        // margin-right: -10px;
+        margin-right: 0px;
       }
       &:hover {
         color: #000;

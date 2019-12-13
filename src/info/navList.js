@@ -2,7 +2,6 @@ export default [
   {
     name: "作品集",
     imgSrc: "",
-
     subTitle: "",
     section: "",
     svgSrc: "",

@@ -34,7 +34,7 @@
             <img src="./s5/next.png" alt class="next" />
           </div>
         </div>
-        <div class="link" @click="$router.push('/works?type=video')">
+        <div class="link" @click="window.open('https://www.youtube.com/channel/UChwYvwlnfXs_PTJMUdyR2Eg')">
           <span>看更多影片</span>
           <span class="line-arrow"></span>
         </div>
@@ -568,6 +568,7 @@ export default {
       play,
       isMobile,
       isDialogShow: false,
+      window,
       swiperOption: {
         slidesPerView: 1,
         spaceBetween: 0,

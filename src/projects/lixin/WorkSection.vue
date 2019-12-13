@@ -50,7 +50,7 @@
         <img src="./s5/close.png" alt />
       </div>
       <div class="dialog-content">
-        <iframe width="560" height="315" :src="iframeLink" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" :src="link" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
     <div class="work-line"></div>
@@ -445,7 +445,8 @@
   .work-top {
     width: 90vw;
     .title {
-      font-size: 13vw;line-height: 1;
+      font-size: 13vw;
+      line-height: 1;
     }
     .line {
       display: none;
@@ -465,15 +466,15 @@
     width: 90vw;
     .work-item {
       max-width: 100%;
-      .mask{
-        .mask-title{
-          font-size:40px;
+      .mask {
+        .mask-title {
+          font-size: 40px;
         }
-        .mask-line{
+        .mask-line {
           height: 100px;
           margin-top: -100px;
         }
-        .mask-btn{
+        .mask-btn {
           font-size: 16px;
         }
       }
@@ -505,7 +506,7 @@ export default {
       isTablet,
       play,
       isShowDialog: false,
-      iframeLink: '',
+      link: '',
       filterType: 'web',
       window,
       workList: [
@@ -529,7 +530,6 @@ export default {
           link: 'https://sfdy.h35.tw/',
           title: '幸福大院',
         },
-
 
         {
           img: require('./work/web/4.一日林板新.png'),
@@ -591,7 +591,6 @@ export default {
           link: 'https://fy.h35.tw/',
           title: '三發丰悅',
         },
-
 
         {
           img: require('./work/web/13.新碩鼎和.png'),
@@ -670,15 +669,19 @@ export default {
       this.filterType = 'video'
     }
 
-    this.window.scrollTo(0, 0) 
+    this.window.scrollTo(0, 0)
   },
 
   methods: {
     showDialog(type, link) {
       // this.$refs[`dialogVideo${index}`].src = this.slideList[this.slideIndex].video
       // this.$refs[`dialogVideo${index}`].play()
-      this.iframeLink = link
-      this.isShowDialog = true
+      if (type === 'web') {
+        this.window.open(link)
+      } else {
+        this.link = link
+        this.isShowDialog = true
+      }
     },
 
     closeDialog() {

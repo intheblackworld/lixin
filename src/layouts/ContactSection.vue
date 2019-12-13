@@ -3,17 +3,17 @@
     <div class="container">
       <div>
         <div class="title">聯絡我們</div>
-        <div class="info-item" @click="showMAP">
+        <div class="info-item" @click="showMapDialog">
             <div class="icon"></div>
-          <div class="desc">台北市中山區建國北路二段65號4樓</div>
+          <div class="desc">{{info.address}}</div>
         </div>
-        <div class="info-item" @click="showEmail">
+        <div class="info-item" @click="showEmailDialog">
             <div class="icon"></div>
-          <div class="desc">service@lixin.com.tw</div>
+          <div class="desc">{{info.email}}</div>
         </div>
         <div class="info-item" @click="showCallDialog">
             <div class="icon"></div>
-          <div class="desc">02-2500-0818</div>
+          <div class="desc">{{info.phone}}</div>
         </div>
       </div>
       <div>
@@ -50,9 +50,15 @@
     </div>
     <!-- <Order /> -->
     <!-- <HouseInfo /> -->
+    <el-dialog title :visible.sync="isShowMapDialog" :width="isMobile ? '90%' : '480px'" :modal-append-to-body="false">
+      <MapDialog :link="info.googleLink" :address="info.address" />
+    </el-dialog>
     <el-dialog title :visible.sync="isShowCallDialog" :width="isMobile ? '90%' : '480px'" :modal-append-to-body="false">
         <CallDialog :phone="info.phone" />
       </el-dialog>
+      <el-dialog title :visible.sync="isShowEmailDialog" :width="isMobile ? '90%' : '480px'" :modal-append-to-body="false">
+      <EmailDialog :email="info.email" />
+    </el-dialog>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -241,9 +247,11 @@
 </style>
 
 <script>
-import Order from '@/components/Order.vue'
-import HouseInfo from '@/components/HouseInfo.vue'
+// import Order from '@/components/Order.vue'
+// import HouseInfo from '@/components/HouseInfo.vue'
 import CallDialog from '@/components/Dialog/Call'
+import MapDialog from '@/components/Dialog/Map'
+import EmailDialog from '@/components/Dialog/Email'
 import { isMobile, isTablet } from '@/utils'
 import VueRecaptcha from 'vue-recaptcha'
 import info from '@/info'
@@ -251,9 +259,11 @@ import info from '@/info'
 export default {
   name: 'contactSection',
   components: {
-    Order,
-    HouseInfo,
+    // Order,
+    // HouseInfo,
     CallDialog,
+    MapDialog,
+    EmailDialog,
     VueRecaptcha,
   },
 
@@ -270,6 +280,8 @@ export default {
       },
       isSubmit: false,
       isShowCallDialog: false,
+      isShowMapDialog: false,
+      isShowEmailDialog: false,
       isVerify: false, // google 機器人驗證
       info,
       hasName: false,
@@ -295,6 +307,15 @@ export default {
     showCallDialog() {
       this.isShowCallDialog = true
     },
+
+    showMapDialog() {
+      this.isShowMapDialog = true
+    },
+
+    showEmailDialog() {
+      this.isShowEmailDialog = true
+    },
+
 
     handleName(string) {
       if (string.length > 0) {
