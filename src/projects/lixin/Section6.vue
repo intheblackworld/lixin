@@ -767,11 +767,24 @@
     height: 40px;
     top: calc(100vw * (138 / 375));
   }
+
+  .slide-next {
+    right: 0;
+  }
+
+  .slide-prev {
+    left: 0;
+  }
   .right {
     position: static;
     height: auto;
     left: 0;
     display: block;
+  }
+
+  .detail .close {
+    right: 0;
+    top: 0;
   }
 
   .content {
@@ -913,12 +926,16 @@ export default {
       }
       this.detailIndex = index
       this.isShowDetail = true
-      document.querySelector('html').style.overflow = 'hidden'
+      if (!this.isMobile) {
+        document.querySelector('html').style.overflow = 'hidden'
+      }
     },
 
     closeDetail() {
       this.isShowDetail = false
-      document.querySelector('html').style.overflow = 'auto'
+      if (!this.isMobile) {
+        document.querySelector('html').style.overflow = 'auto'
+      }
     },
 
     playVideo(index) {
