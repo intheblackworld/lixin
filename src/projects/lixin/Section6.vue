@@ -33,16 +33,14 @@
       <div :class="`right ${isShowDetail ? 'showDetail' : ''}`">
         <div class="content">
           <div class="text">
-            <div :style="`transform: translateY(${-100 * slideIndex}%)`">
-              <div
-                :class="`text-item ${slideIndex === index ? 'active' : ''}`"
-                v-for="(slide, index) in slideList"
-                :key="`slide-${index}`"
-              >
-                <div class="title">{{slide.title}}</div>
-                <div class="subtitle">{{slide.subtitle}}</div>
-                <div class="desc">{{slide.desc}}</div>
-              </div>
+            <div
+              :class="`text-item ${slideIndex === index ? 'active' : ''}`"
+              v-for="(slide, index) in slideList"
+              :key="`slide-${index}`"
+            >
+              <div class="title">{{slide.title}}</div>
+              <div class="subtitle">{{slide.subtitle}}</div>
+              <div class="desc">{{slide.desc}}</div>
             </div>
           </div>
           <div
@@ -343,7 +341,7 @@
 }
 
 .left-bg {
-  background:#444;
+  background: #444;
   /* background: url('./s6/work_bg.jpg'); */
   background-size: 100% 100%;
   position: relative;
@@ -370,13 +368,14 @@
   // transform: translateY(0%);
   width: 100%;
   height: 100%;
-  transition: all 1.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
 
   > img,
   > video {
@@ -429,20 +428,20 @@
   }
 
   &.active {
-    animation: up 1.2s ease-in-out 0s forwards;
+    opacity: 1;
     z-index: 9;
   }
 }
 
-@keyframes up {
-  0% {
-    top: 100%;
-  }
+// @keyframes up {
+//   0% {
+//     top: 100%;
+//   }
 
-  100% {
-    top: 0;
-  }
-}
+//   100% {
+//     top: 0;
+//   }
+// }
 .content {
   position: relative;
   transition: all 1s;
@@ -498,17 +497,17 @@
   }
 
   .detail-content {
-    display: none;
+    opacity: 0;
 
     &.active {
-      display: block;
+      opacity: 1;
     }
   }
 
   .detail-img {
     width: 100%;
     margin: 0 auto;
-    margin:1em 0 1.2em 0;
+    margin: 1em 0 1.2em 0;
   }
   .detail-title {
     font-size: 30px;
@@ -568,48 +567,38 @@
 
   > div {
     height: 100%;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
   .text-item {
     height: 100%;
     line-height: 1.6;
-    position: relative;
+    position: absolute;
+    top: 0;
+    opacity: 0;
     &.active {
-      .title{
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .subtitle,
-      .desc {
-        opacity: 1;
-        transform: translateY(0px);
-      }
+      opacity: 1;
     }
   }
 }
 
 .title {
   // font-family: 'noto_regular';
-  /* font-size: calc(100vw * (44 / 1920)); */ 
-  font-size:45.5px;
+  /* font-size: calc(100vw * (44 / 1920)); */
+  font-size: 45.5px;
   line-height: 1.5em;
   letter-spacing: 3px;
-  font-weight:bold;
-  margin-bottom:0;
+  font-weight: bold;
+  margin-bottom: 0;
   color: #666;
-  transition: all 0.3s ease-in;
-  opacity: 0;
   transform: translateY(10px);
 }
 
 .subtitle {
   // font-family: 'noto_regular';
-  font-weight:bold;
-  margin:1em 0 0.4em;
+  font-weight: bold;
+  margin: 1em 0 0.4em;
   color: #ec6d34;
-  transition: all 0.7s ease-in;
-  opacity: 0;
   transform: translateY(15px);
   letter-spacing: 0.02em;
 }
@@ -618,8 +607,6 @@
   line-height: 2em;
   letter-spacing: 0.02em;
   color: #585858;
-  transition: all 0.9s ease-in;
-  opacity: 0;
   transform: translateY(20px);
   font-size: 0.9em;
 }
@@ -797,16 +784,16 @@
     margin-top: 20px;
     height: auto;
     padding-bottom: 30px;
-    font-size:16px;
+    font-size: 16px;
 
     .title {
-      font-size:8vw;
+      font-size: 8vw;
       opacity: 1;
     }
 
     .subtitle {
       font-size: 20px;
-      margin:0.5em 0 0.5em;
+      margin: 0.5em 0 0.5em;
       opacity: 1;
     }
 
