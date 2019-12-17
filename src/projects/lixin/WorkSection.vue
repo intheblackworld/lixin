@@ -27,13 +27,13 @@
             </div>
           </div>
           <div v-if="item.type === 'web'" class="web-item">
-            <div class="mask">
+            <div class="mask pointer" @click="showDialog(item.type, item.link)">
               <h3 class="mask-title">
                 {{item.title}}
                 <h3 class="mask-subtitle">PROJECT</h3>
               </h3>
               <div class="mask-line"></div>
-              <div class="mask-btn" @click="showDialog(item.type, item.link)">
+              <div class="mask-btn">
                 <h3>VIEW</h3>
                 <div class="btn-border"></div>
               </div>
@@ -180,6 +180,10 @@
 
   .work-row {
     margin-left: -30px;
+  }
+
+  .pointer {
+    cursor: pointer;
   }
 
   .work-item {
