@@ -222,6 +222,7 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 .navigation {

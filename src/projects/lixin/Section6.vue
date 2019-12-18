@@ -280,6 +280,9 @@
             <div class="detail-subtitle">4個月全棟100%完銷</div>
             <img src="./s6/detail5-item-4.png" alt class="detail-img" />
           </div>
+          <div class="close bottom" @click="closeDetail">
+            <img src="./s5/close.png" alt />
+          </div>
         </div>
       </div>
       <div :class="`slide-next ${isShowDetail ? 'hide' : ''}`" @click="slideNext">
@@ -497,10 +500,10 @@
   }
 
   .detail-content {
-    opacity: 0;
+    display: none;
 
     &.active {
-      opacity: 1;
+      display: block;
     }
   }
 
@@ -825,6 +828,15 @@
     .close {
       width: 60px;
       height: 60px;
+      right: 20px;
+
+      &.bottom {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        position: relative;
+        float: right;
+      }
     }
 
     &.open {
