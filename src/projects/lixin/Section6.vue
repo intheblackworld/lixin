@@ -20,6 +20,7 @@
         <div
           v-for="(slide, index) in slideList"
           :key="`img-${index}`"
+          @click="checkDetail(slideIndex)"
           :class="`item-img ${slideIndex === index ? 'active' : ''}`"
         >
           <img v-if="slide.img" :src="slide.img" alt />
@@ -162,6 +163,7 @@
         <div
           v-for="(slide, index) in slideList"
           :key="`img-${index}`"
+          @click="checkDetail(slideIndex)"
           :class="`item-img ${slideIndex === index ? 'active' : ''}`"
         >
           <img v-if="slide.img" :src="slide.img" alt />
@@ -378,6 +380,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   opacity: 0;
 
   > img,
@@ -884,7 +887,7 @@ export default {
           title: '打造超吸晴的網站 — 博悅',
           subtitle: '興富發建設-博悅',
           desc: '藉由動態影片塑造品牌形象，呈現產品風格，打造吸睛的網站。',
-          video: require('./s6/item-img-3.mp4'),
+          img: require('./s6/item-img-3.jpg'),
         },
         {
           title: '用影音傳遞對的訊息 — 金城舞2',
@@ -898,7 +901,7 @@ export default {
           subtitle: '海沃創意行銷-欣璞綻',
           desc:
             '網路素材交叉測試、精準廣告投放、追蹤數據並即時優化、調整行銷方向。',
-          iframe: `${window.location.href}300x600.html`,
+          img: require('./s6/item-img-5.jpg'),
         },
       ],
     }
