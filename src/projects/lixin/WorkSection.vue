@@ -192,6 +192,7 @@
     margin: 15px 0 15px 30px;
     overflow: hidden;
     transition: all 0.3s;
+    flex: 1 1 auto;
 
     &.no-padding {
       padding: 0;
@@ -516,112 +517,112 @@ export default {
       workList: [
         // web
         {
-          img: require('./work/web/1.博悅.jpg'),
+          img: require('./work/web/01.博悅.jpg'),
           type: 'web',
           link: 'https://by1.h35.tw/',
           title: '博悅',
         },
         {
-          img: require('./work/web/2.德友藏.png'),
+          img: require('./work/web/02.德友藏.jpg'),
           type: 'web',
-          link: 'https://dyc.h35.tw/',
+          link: 'https://dyc1.h35.tw/',
           title: '德友藏',
         },
 
         {
-          img: require('./work/web/5.幸福大院.png'),
+          img: require('./work/web/03.幸福大院.jpg'),
           type: 'web',
           link: 'https://sfdy.h35.tw/',
           title: '幸福大院',
         },
 
         {
-          img: require('./work/web/4.一日林板新.png'),
+          img: require('./work/web/04.築禾交響院.jpg'),
           type: 'web',
-          link: 'https://star.h35.tw/',
-          title: '一日林板新活動官網',
+          link: 'https://jh.h35.tw/',
+          title: '築禾交響院',
         },
         {
-          img: require('./work/web/3.大學墅.jpg'),
+          img: require('./work/web/05.大學墅.jpg'),
           type: 'web',
           link: 'https://dss.h35.tw/',
           title: '大學墅',
         },
 
         {
-          img: require('./work/web/6.築禾交響院.png'),
+          img: require('./work/web/06.頤昌耘萃.jpg'),
           type: 'web',
-          link: 'https://jh.h35.tw/',
-          title: '築禾交響院',
+          link: 'https://yt.h35.tw/',
+          title: '頤昌耘萃',
         },
 
         {
-          img: require('./work/web/7.越那山.png'),
-          type: 'web',
-          link: 'https://yns.h35.tw/',
-          title: '越那山',
-        },
-        {
-          img: require('./work/web/12.吾界.png'),
-          type: 'web',
-          link: 'https://wj.h35.tw/',
-          title: '吾界',
-        },
-
-        {
-          img: require('./work/web/8.立瑾醞.jpg'),
+          img: require('./work/web/07.立謹醞.jpg'),
           type: 'web',
           link: 'https://stm.h35.tw/',
           title: '立謹醞',
         },
-
         {
-          img: require('./work/web/9.蘭桂坊.png'),
+          img: require('./work/web/08.一日林板新活動官網.jpg'),
           type: 'web',
-          link: 'https://lkf.h35.tw/',
-          title: '蘭桂坊',
+          link: 'https://star.h35.tw/',
+          title: '一日林板新活動官網',
         },
 
         {
-          img: require('./work/web/10.心天畝.png'),
+          img: require('./work/web/09.堅山謙仰.jpg'),
           type: 'web',
-          link: 'https://stm.h35.tw/',
-          title: '心天畝',
+          link: 'https://j-shan.h35.tw/',
+          title: '堅山謙仰',
         },
 
         {
-          img: require('./work/web/11.三發丰悅.png'),
-          type: 'web',
-          link: 'https://fy.h35.tw/',
-          title: '三發丰悅',
-        },
-
-        {
-          img: require('./work/web/13.新碩鼎和.png'),
+          img: require('./work/web/10.新碩鼎和.jpg'),
           type: 'web',
           link: 'https://xs.h35.tw/',
           title: '新碩鼎和',
         },
 
         {
-          img: require('./work/web/14.帝璽.jpg'),
+          img: require('./work/web/11.帝璽.jpg'),
           type: 'web',
           link: 'https://ds.h35.tw/',
           title: '帝璽',
         },
 
         {
-          img: require('./work/web/15.png'),
+          img: require('./work/web/12.長虹天際.jpg'),
           type: 'web',
           link: 'https://cht.h35.tw/',
           title: '長虹天際',
         },
 
         {
-          img: require('./work/web/16.悅成功活動官網.png'),
+          img: require('./work/web/13.越那山.jpg'),
           type: 'web',
-          link: 'https://ycg.h35.tw/event/',
-          title: '悅成功活動官網 ',
+          link: 'https://yns.h35.tw/',
+          title: '越那山',
+        },
+
+        {
+          img: require('./work/web/14.蘭桂坊.jpg'),
+          type: 'web',
+          link: 'https://lkf.h35.tw/',
+          title: '蘭桂坊',
+        },
+
+        {
+          img: require('./work/web/15.吾界.jpg'),
+          type: 'web',
+          link: 'https://wj.h35.tw/',
+          title: '吾界',
+        },
+
+        {
+          img: require('./work/web/16.心天畝.jpg'),
+          type: 'web',
+          link: 'https://stm.h35.tw/',
+          title: '心天畝 ',
         },
 
         // video
