@@ -145,6 +145,7 @@
   overflow: hidden;
   position: relative;
   z-index: 2;
+  min-height:calc(17.1vw + 540px);
 }
 
 .VideoBg {
@@ -167,7 +168,8 @@
 
 .content {
   width: calc(100vw * 567 / 1440);
-  height: calc(100vh * 450 / 796);
+  //height: calc(100vh * 450 / 796);
+  height:480px;
  background: rgba(255, 255, 255, 0.8);
   right: calc(100vw * 112 / 1440);
   top: calc(100vw * 136 / 796);
