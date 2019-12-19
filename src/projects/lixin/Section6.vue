@@ -806,6 +806,15 @@
     .desc {
       opacity: 1;
     }
+
+    .text-item {
+      opacity: 1;
+      position: relative;
+
+      &.active {
+
+      }
+    }
   }
 
   .button {
