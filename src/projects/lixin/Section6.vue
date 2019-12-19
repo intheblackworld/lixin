@@ -806,6 +806,15 @@
     .desc {
       opacity: 1;
     }
+
+    .text-item {
+      opacity: 1;
+      position: relative;
+
+      &.active {
+
+      }
+    }
   }
 
   .button {
@@ -898,7 +907,7 @@ export default {
         },
         {
           title: '四個月完銷的秘密 — 欣璞綻',
-          subtitle: '海沃創意行銷-欣璞綻',
+          subtitle: '甲山林廣告-欣璞綻',
           desc:
             '網路素材交叉測試、精準廣告投放、追蹤數據並即時優化、調整行銷方向。',
           img: require('./s6/item-img-5.jpg'),
