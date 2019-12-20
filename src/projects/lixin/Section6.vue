@@ -41,7 +41,7 @@
             >
               <div class="title">{{slide.title}}</div>
               <div class="subtitle">{{slide.subtitle}}</div>
-              <div class="desc">{{slide.desc}}</div>
+              <div class="desc" v-html="slide.desc"></div>
             </div>
           </div>
           <div
@@ -181,7 +181,7 @@
               <div class="text-item">
                 <div class="title">{{slideList[slideIndex].title}}</div>
                 <div class="subtitle">{{slideList[slideIndex].subtitle}}</div>
-                <div class="desc">{{slideList[slideIndex].desc}}</div>
+                <div class="desc" v-html="slideList[slideIndex].desc"></div>
               </div>
             </div>
           </div>
@@ -623,7 +623,7 @@
   width: 12em;
   height: 4em;
   border: 1px solid;
-  border-color: #3f3f3f;
+  border-color: #333;
   color: #000;
   border-radius: 3px;
   text-align: center;
@@ -632,14 +632,15 @@
   /* font-family: 'AvantGarde_Thin'; */
   /* font-weight: bold; */
   letter-spacing: 2px;
-  transition: box-shadow 0.5s, color 0.5s, opacity 1s, border-color 0s;
+  transition: box-shadow 0.5s, color 0.5s, opacity 1s, border-color .3s;
   transition-timing-function: ease-in-out;
-  box-shadow: inset 0 0 0 0 #3f3f3f;
+  box-shadow: inset 0 0 0 0 #ed6d34;
   cursor: pointer;
   opacity: 1;
 
   &:hover {
-    box-shadow: inset -200px 0 0 0 #3f3f3f;
+    box-shadow: inset -200px 0 0 0 #ed6d34;
+  border-color: #ed6d34;
     color: #fff;
   }
 
@@ -671,6 +672,10 @@
   &.hide {
     opacity: 0;
   }
+  &:hover {
+  background-color: #e40;
+  }
+
 }
 
 .slide-next {
@@ -883,7 +888,7 @@ export default {
         {
           title: '用議題打破行銷思維 — 林板新',
           subtitle: '海沃創意行銷-新板巨星',
-          desc: '搭上選舉順風車，包裝「良好新候選人」創造議題。',
+          desc: '行銷策略結合選舉議題，將建案包裝為『新候選人』<br />在網路上引發熱烈討論，充滿創意的行銷手法成功吸引大眾關注。<br />整波行銷活動執行，成功造就極大的轉換以及知名度。',
           img: require('./s6/item-img-1.jpg'),
         },
         {

@@ -205,6 +205,7 @@
   color: #ffffff;
   cursor: pointer;
   overflow: hidden;
+  transition: all 0.5s;
   &::before {
     content: '';
     width: 40%;
@@ -224,6 +225,9 @@
     opacity: .7;
   }
 
+  &:hover{
+  background-color: #e40;
+  }
   &:hover::before {
     opacity: 1;
     width: 90%;
