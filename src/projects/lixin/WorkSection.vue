@@ -18,9 +18,9 @@
     <div class="work-container">
       <div class="work-row flex" v-for="(row, rowIndex) in workRow" :key="`row-${rowIndex}`">
         <div :class="`work-item relative no-padding`" v-for="item in row" :key="`item-${item.img}`">
-          <div v-if="item.type === 'video'" class="video-item">
+          <div v-if="item.type === 'video'" class="video-item" @click="showDialog(item.type, item.link)">
             <div class="play-group reverse">
-              <icon class="play" :data="play" @click="showDialog(item.type, item.link)" />
+              <icon class="play" :data="play" />
             </div>
             <div class="work-content relative">
               <img :src="item.img" alt class="work-img" />
