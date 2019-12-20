@@ -39,8 +39,9 @@
               v-for="(slide, index) in slideList"
               :key="`slide-${index}`"
             >
-              <div class="title">{{slide.title}}</div>
+              <div class="title" v-html="slide.title"></div>
               <div class="subtitle">{{slide.subtitle}}</div>
+              <div class="product">{{slide.product}}</div>
               <div class="desc" v-html="slide.desc"></div>
             </div>
           </div>
@@ -179,9 +180,10 @@
           <div class="text">
             <div>
               <div class="text-item">
-                <div class="title">{{slideList[slideIndex].title}}</div>
+                <div class="title" v-html="slideList[slideIndex].title"></div>
                 <div class="subtitle">{{slideList[slideIndex].subtitle}}</div>
-                <div class="desc" v-html="slideList[slideIndex].desc"></div>
+                <div class="product">{{slideList[slideIndex].product}}</div>
+                <div class="desc" v-html="slideList[slideIndex].descm"></div>
               </div>
             </div>
           </div>
@@ -591,29 +593,34 @@
 .title {
   // font-family: 'noto_regular';
   /* font-size: calc(100vw * (44 / 1920)); */
-  font-size: 45.5px;
+  font-size: 2.25em;
   line-height: 1.5em;
-  letter-spacing: 3px;
+  letter-spacing:0.1em;
   font-weight: bold;
   margin-bottom: 0;
-  color: #666;
-  transform: translateY(10px);
+  color: #000;
 }
 
 .subtitle {
   // font-family: 'noto_regular';
+  font-weight:normal;
+  margin: 0em 0 0.4em;
+  color: #666;
+  letter-spacing: 0.02em;
+}
+.product {
+  // font-family: 'noto_regular';
   font-weight: bold;
   margin: 1em 0 0.4em;
   color: #ec6d34;
-  transform: translateY(15px);
   letter-spacing: 0.02em;
+  font-size: 1.15em;
 }
 
 .desc {
   line-height: 2em;
   letter-spacing: 0.02em;
   color: #585858;
-  transform: translateY(20px);
   font-size: 0.9em;
 }
 
@@ -795,19 +802,15 @@
     margin-top: 20px;
     height: auto;
     padding-bottom: 30px;
-    font-size: 16px;
+      font-size:4.2vw;
 
     .title {
-      font-size: 8vw;
       opacity: 1;
+      font-size:2em;
+    letter-spacing: 0.05em;
     }
 
-    .subtitle {
-      font-size: 20px;
-      margin: 0.5em 0 0.5em;
-      opacity: 1;
-    }
-
+    
     .desc {
       opacity: 1;
     }
@@ -886,35 +889,43 @@ export default {
       detailIndex: 0,
       slideList: [
         {
-          title: '用議題打破行銷思維 — 林板新',
-          subtitle: '海沃創意行銷-新板巨星',
-          desc: '行銷策略結合選舉議題，將建案包裝為『新候選人』<br />在網路上引發熱烈討論，充滿創意的行銷手法成功吸引大眾關注。<br />整波行銷活動執行，成功造就極大的轉換以及知名度。',
+          title: '用議題打破行銷思維',
+          subtitle: '運用行銷策略，讓廣告效益再提升',
+          product: '海沃創意行銷-新板巨星',
+          desc: '行銷策略結合選舉議題，將建案包裝為『新候選人』<br />在網路上引發熱烈討論，充滿創意的行銷手法成功吸引大眾關注。<br />整波行銷活動執行，成功造就極大的賞屋人潮以及知名度。',
+          descm: '行銷策略結合選舉議題，將建案包裝為『新候選人』，在網路上引發熱烈討論，充滿創意的行銷手法成功吸引大眾關注。<br />整波行銷活動執行，成功造就極大的賞屋人潮以及知名度。',
           img: require('./s6/item-img-1.jpg'),
         },
         {
-          title: '善用網紅行銷 — 一個屋簷下 - 木曜四超玩',
-          subtitle: '海沃創意行銷-一個屋簷下',
+          title: '善用網紅行銷',
+          subtitle: '運用行銷策略，讓廣告效益再提升',
+          product: '海沃創意行銷-一個屋簷下',
           desc: '與網紅合作並舉辦線上抽獎，替活動創造高度關注。',
+          descm: '與網紅合作並舉辦線上抽獎，替活動創造高度關注。',
           img: require('./s6/item-img-2.jpg'),
         },
         {
-          title: '打造超吸晴的網站 — 博悅',
-          subtitle: '興富發建設-博悅',
+          title: '打造超吸晴的網站',
+          subtitle: '運用行銷策略，讓廣告效益再提升',
+          product: '興富發建設-博悅',
           desc: '藉由動態影片塑造品牌形象，呈現產品風格，打造吸睛的網站。',
+          descm: '藉由動態影片塑造品牌形象，呈現產品風格，打造吸睛的網站。',
           img: require('./s6/item-img-3.jpg'),
         },
         {
-          title: '用影音傳遞對的訊息 — 金城舞2',
+          title: '用影音傳遞對的訊息',
           subtitle: '甲山林機構-金城舞2',
-          desc:
-            '用影音達到深度溝通，打造全面式的行銷體驗。即使是廣告影片，也要讓民眾看得舒服且有趣，發揮影音的高互動特性。',
+          product: '甲山林機構-金城舞2',
+          desc: '用影音達到深度溝通，打造全面式的行銷體驗。即使是廣告影片，也要讓民眾看得舒服且有趣，發揮影音的高互動特性。',
+          descm: '用影音達到深度溝通，打造全面式的行銷體驗。即使是廣告影片，也要讓民眾看得舒服且有趣，發揮影音的高互動特性。',
           img: require('./s6/item-img-4.jpg'),
         },
         {
-          title: '四個月完銷的秘密 — 欣璞綻',
+          title: '四個月完銷的秘密',
           subtitle: '甲山林廣告-欣璞綻',
-          desc:
-            '網路素材交叉測試、精準廣告投放、追蹤數據並即時優化、調整行銷方向。',
+          product: '甲山林廣告-欣璞綻',
+          desc: '網路素材交叉測試、精準廣告投放、追蹤數據並即時優化、調整行銷方向。',
+          descm: '網路素材交叉測試、精準廣告投放、追蹤數據並即時優化、調整行銷方向。',
           img: require('./s6/item-img-5.jpg'),
         },
       ],
