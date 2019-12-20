@@ -194,6 +194,7 @@
     overflow: hidden;
     transition: all 0.3s;
     flex: 1 1 auto;
+    cursor: pointer;
 
     &.no-padding {
       padding: 0;
