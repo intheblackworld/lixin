@@ -24,6 +24,7 @@
             </div>
             <div class="work-content relative">
               <img :src="item.img" alt class="work-img" />
+              <div class="work-title">{{item.title}}</div>
             </div>
           </div>
           <div v-if="item.type === 'web'" class="web-item">
@@ -61,7 +62,7 @@
 .play-group.reverse {
   cursor: pointer;
   .st0 {
-    fill: #fff !important;
+    fill: #ffffff !important;
     transition: all 0.3s;
   }
 
@@ -164,7 +165,7 @@
   width: 67px;
   height: 67px;
   z-index: 1;
-  opacity: 0;
+  opacity: 0.8;
   transition: all 0.3s;
 
   svg {
@@ -289,11 +290,13 @@
 
     &:hover {
       .video-item {
-        opacity: 0.6;
+        transition: all 0.3s;
+        //opacity: 0.6;
         .play-group {
-          opacity: 1;
+          opacity:0;
         }
       }
+      .work-title{background: rgba(0, 0, 0, 0.8);}
 
       .web-item {
         .mask {
@@ -334,6 +337,8 @@
     color: #fff;
     font-weight: bold;
     font-size: 20px;
+    transition: all 0.3s;
+    background: rgba(0,0,0,0.5);
   }
 }
 
@@ -517,109 +522,109 @@ export default {
       workList: [
         // web
         {
-          img: require('./work/web/01.博悅.jpg'),
+          img: require('./work/web/01.jpg'),
           type: 'web',
           link: 'https://by1.h35.tw/',
           title: '博悅',
         },
         {
-          img: require('./work/web/02.德友藏.jpg'),
+          img: require('./work/web/02.jpg'),
           type: 'web',
           link: 'https://dyc1.h35.tw/',
           title: '德友藏',
         },
 
         {
-          img: require('./work/web/03.幸福大院.jpg'),
+          img: require('./work/web/03.jpg'),
           type: 'web',
           link: 'https://sfdy.h35.tw/',
           title: '幸福大院',
         },
 
         {
-          img: require('./work/web/04.築禾交響院.jpg'),
+          img: require('./work/web/04.jpg'),
           type: 'web',
           link: 'https://jh.h35.tw/',
           title: '築禾交響院',
         },
         {
-          img: require('./work/web/05.大學墅.jpg'),
+          img: require('./work/web/05.jpg'),
           type: 'web',
           link: 'https://dss.h35.tw/',
           title: '大學墅',
         },
 
         {
-          img: require('./work/web/06.頤昌耘萃.jpg'),
+          img: require('./work/web/06.jpg'),
           type: 'web',
           link: 'https://yt.h35.tw/',
           title: '頤昌耘萃',
         },
 
         {
-          img: require('./work/web/07.立謹醞.jpg'),
+          img: require('./work/web/07.jpg'),
           type: 'web',
           link: 'https://stm.h35.tw/',
           title: '立謹醞',
         },
         {
-          img: require('./work/web/08.一日林板新活動官網.jpg'),
+          img: require('./work/web/08.jpg'),
           type: 'web',
           link: 'https://star.h35.tw/',
           title: '一日林板新活動官網',
         },
 
         {
-          img: require('./work/web/09.堅山謙仰.jpg'),
+          img: require('./work/web/09.jpg'),
           type: 'web',
           link: 'https://j-shan.h35.tw/',
           title: '堅山謙仰',
         },
 
         {
-          img: require('./work/web/10.新碩鼎和.jpg'),
+          img: require('./work/web/10.jpg'),
           type: 'web',
           link: 'https://xs.h35.tw/',
           title: '新碩鼎和',
         },
 
         {
-          img: require('./work/web/11.帝璽.jpg'),
+          img: require('./work/web/11.jpg'),
           type: 'web',
           link: 'https://ds.h35.tw/',
           title: '帝璽',
         },
 
         {
-          img: require('./work/web/12.長虹天際.jpg'),
+          img: require('./work/web/12.jpg'),
           type: 'web',
           link: 'https://cht.h35.tw/',
           title: '長虹天際',
         },
 
         {
-          img: require('./work/web/13.越那山.jpg'),
+          img: require('./work/web/13.jpg'),
           type: 'web',
           link: 'https://yns.h35.tw/',
           title: '越那山',
         },
 
         {
-          img: require('./work/web/14.蘭桂坊.jpg'),
+          img: require('./work/web/14.jpg'),
           type: 'web',
           link: 'https://lkf.h35.tw/',
           title: '蘭桂坊',
         },
 
         {
-          img: require('./work/web/15.吾界.jpg'),
+          img: require('./work/web/15.jpg'),
           type: 'web',
           link: 'https://wj.h35.tw/',
           title: '吾界',
         },
 
         {
-          img: require('./work/web/16.心天畝.jpg'),
+          img: require('./work/web/16.jpg'),
           type: 'web',
           link: 'https://stm.h35.tw/',
           title: '心天畝 ',
@@ -627,25 +632,286 @@ export default {
 
         // video
         {
-          img: require('./work/video/1.百變型男(原圖).jpg'),
+          img: require('./work/video/1.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/gghgcTwO3Qg',
+          title: '新潤A18｜早知道 ',
+        },
+        {
+          img: require('./work/video/2.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/g7MKeVT_RuI',
+          title: '新碩鼎和 ｜百年家族 ',
+        },
+        {
+          img: require('./work/video/3.jpg'),
           type: 'video',
           link: 'https://www.youtube.com/embed/ymVSwCt__MQ',
+          title: '金城舞2｜百變型男 ',
         },
         {
-          img: require('./work/video/2.愛要及時.jpg'),
-          type: 'video',
-          link: 'https://www.youtube.com/embed/xLdvfhpks0c',
-        },
-        {
-          img: require('./work/video/3.競選造勢大會.jpg'),
+          img: require('./work/video/4.jpg'),
           type: 'video',
           link: 'https://www.youtube.com/embed/uMDcyCV3qgQ',
+          title: '新板巨星｜競選 ',
         },
-
         {
-          img: require('./work/video/4.寄人籬下.jpg'),
+          img: require('./work/video/5.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/_i8jxM7NwmM',
+          title: '新碩鼎和｜最強安全感的家 ',
+        },
+        {
+          img: require('./work/video/6.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/xLdvfhpks0c',
+          title: '新板巨星｜愛要及時 ',
+        },
+        {
+          img: require('./work/video/7.jpg'),
           type: 'video',
           link: 'https://www.youtube.com/embed/FXFaryfVMLM',
+          title: '幸福莊園｜寄人籬下 ',
+        },
+        {
+          img: require('./work/video/8.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/ybf3gDABxPI',
+          title: '德友藏｜ 品牌精神 ',
+        },
+        {
+          img: require('./work/video/9.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/bAZhCZANipY',
+          title: '德友極｜日本職人精神  ',
+        },
+        {
+          img: require('./work/video/10.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/GINkJA25OSc',
+          title: '幸福莊園｜澎湃公設 ',
+        },
+        {
+          img: require('./work/video/11.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/AB63HCTIeHg',
+          title: '幸福莊園｜ 一日幸福 ',
+        },
+        {
+          img: require('./work/video/12.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/2aRqK6uwMt4',
+          title: '新潤A18｜時尚生活 ',
+        },
+        {
+          img: require('./work/video/13.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/tPXSAfasRBA',
+          title: '蘭桂坊｜我們的生活 ',
+        },
+        {
+          img: require('./work/video/14.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/KS6VQhOEWLI',
+          title: '心天畝｜林蔭秘境 ',
+        },
+        {
+          img: require('./work/video/15.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/hc5wha2BYv0',
+          title: '長虹天際 | 形象篇 ',
+        },
+        {
+          img: require('./work/video/16.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/DS35xFF9ybs',
+          title: '裸心納景 ',
+        },
+        {
+          img: require('./work/video/17.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/sT4x6xII7gI',
+          title: '新板巨星｜空拍 ',
+        },
+        {
+          img: require('./work/video/18.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/w593EAieCnw',
+          title: '新板巨星｜以房養老，準備趁早 ',
+        },
+        {
+          img: require('./work/video/19.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/qWE6nlKQ-4Q',
+          title: '新板巨星｜小資購屋 ',
+        },
+        {
+          img: require('./work/video/20.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/nKfCDBTw',
+          title: '新板巨星｜老孫家的鐘 ',
+        },
+        {
+          img: require('./work/video/21.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/e6Q3s4ZLb2c',
+          title: '新板巨星｜求學道路 ',
+        },
+        {
+          img: require('./work/video/22.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/WoAsWBxMvkg',
+          title: '新板巨星｜落葉歸根 ',
+        },
+        {
+          img: require('./work/video/23.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/xSZOeqp9JnA',
+          title: '新板巨星｜都市農耕 ',
+        },
+        {
+          img: require('./work/video/24.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/YpLkKAhUsI',
+          title: '新板巨星｜名牌生活 ',
+        },
+        {
+          img: require('./work/video/25.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/RanzJCKiiu8',
+          title: '新板巨星｜不再搬家 ',
+        },
+        {
+          img: require('./work/video/26.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/KmQK2cPRHPw',
+          title: '新板巨星｜汪星人 ',
+        },
+        {
+          img: require('./work/video/27.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/96j2jqZtIu8',
+          title: '土城日月光｜家庭證言 ',
+        },
+        {
+          img: require('./work/video/28.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/BB6XOQX1ccI',
+          title: '土城日月光｜親子證言 ',
+        },
+        {
+          img: require('./work/video/29.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/PrNC5YAX6hc',
+          title: '德友極｜通勤時間 ',
+        },
+        {
+          img: require('./work/video/30.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/iykY3YxXRmU',
+          title: '景上川｜萬華訪談 ',
+        },
+        {
+          img: require('./work/video/31.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/3cOEaDlcRqI',
+          title: '希望城市｜三個願望 ',
+        },
+        {
+          img: require('./work/video/32.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/xLKhnIMJWfI',
+          title: 'SKY1｜藝術人生 ',
+        },
+        {
+          img: require('./work/video/33.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/TbixUARTDT0',
+          title: 'SKY1｜更懂珍惜 ',
+        },
+        {
+          img: require('./work/video/34.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/mS_68sMHixA',
+          title: 'SKY1｜空拍 ',
+        },
+        {
+          img: require('./work/video/35.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/Rv6oAI5D62w',
+          title: '超級花園｜同鄰不同居 ',
+        },
+        {
+          img: require('./work/video/36.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/dWIik0v7_aA',
+          title: '超級花園｜娘娘駕到 ',
+        },
+        {
+          img: require('./work/video/37.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/oTrJUdk-asc',
+          title: '超級花園｜生活的轉變 ',
+        },
+        {
+          img: require('./work/video/38.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/rHPUvOB1NtU',
+          title: '超級城市｜租不如買 ',
+        },
+        {
+          img: require('./work/video/39.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/it0B2YMRxeU',
+          title: '超級城市｜生活機能 ',
+        },
+        {
+          img: require('./work/video/40.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/1ccNdkpdFuI',
+          title: '超級城市｜親子 ',
+        },
+        {
+          img: require('./work/video/41.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/Lzl_eC0ITOk',
+          title: '超級城市｜家人換屋 ',
+        },
+        {
+          img: require('./work/video/42.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/Q92jLT0IAzE',
+          title: '隱苑｜紀錄證言 ',
+        },
+        {
+          img: require('./work/video/43.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/wICFeixSTog',
+          title: '隱苑｜RAP溫刀勒拎厝邊 ',
+        },
+        {
+          img: require('./work/video/44.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/gh63Umm3F9w',
+          title: '隱苑｜生活機能 ',
+        },
+        {
+          img: require('./work/video/45.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/NrmLPaJE88o',
+          title: '布拉諾花園｜遊吟詩人 ',
+        },
+        {
+          img: require('./work/video/46.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/gn5LxP8-LEw',
+          title: '布拉諾花園｜世外生活型態 ',
+        },
+        {
+          img: require('./work/video/47.jpg'),
+          type: 'video',
+          link: 'https://www.youtube.com/embed/h_7AFSWrPjU',
+          title: '布拉諾花園｜生活機能',
         },
       ],
     }

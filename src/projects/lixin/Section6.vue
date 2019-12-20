@@ -593,20 +593,23 @@
 .title {
   // font-family: 'noto_regular';
   /* font-size: calc(100vw * (44 / 1920)); */
-  font-size: 2.25em;
+  font-size: 2.24em;
   line-height: 1.5em;
   letter-spacing:0.1em;
   font-weight: bold;
   margin-bottom: 0;
-  color: #000;
+  color: #666;
+  text-align: justify;
 }
 
 .subtitle {
   // font-family: 'noto_regular';
   font-weight:normal;
   margin: 0em 0 0.4em;
-  color: #666;
+  color: #000;
   letter-spacing: 0.02em;
+  font-size: 1.05em;
+  text-align: justify;
 }
 .product {
   // font-family: 'noto_regular';
@@ -615,6 +618,7 @@
   color: #ec6d34;
   letter-spacing: 0.02em;
   font-size: 1.15em;
+  text-align: justify;
 }
 
 .desc {
@@ -622,6 +626,7 @@
   letter-spacing: 0.02em;
   color: #585858;
   font-size: 0.9em;
+  text-align: justify;
 }
 
 .button {
@@ -802,8 +807,7 @@
     margin-top: 20px;
     height: auto;
     padding-bottom: 30px;
-      font-size:4.2vw;
-
+    font-size:4.2vw;width: 19.2em;
     .title {
       opacity: 1;
       font-size:2em;
