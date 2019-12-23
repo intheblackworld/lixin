@@ -594,7 +594,7 @@ export default {
           title: '新碩鼎和｜百年家族',
           name: '新聯陽實業股份有限公司',
           desc: '傳承百年的感動<br />延續家族的幸福',
-          video: require('./s5/video/1新碩鼎和.mp4'),
+          video: 'https://i.imgur.com/MqbyrWU.mp4',
           img: require('./s5/img/1.jpg'),
         },
         {
@@ -602,7 +602,7 @@ export default {
           name: '海沃創意行銷',
           desc:
             '小熊多多為什麼不開心？<br />他說：常常在搬家，搬來搬去都是別人的家‥',
-          video: require('./s5/video/2不再搬家.mp4'),
+          video: 'https://i.imgur.com/6elOHFf.mp4',
           img: require('./s5/img/2.jpg'),
         },
         {
@@ -610,7 +610,7 @@ export default {
           name: '海悅廣告股份有限公司',
           desc:
             '用一樣的錢換一個屬於自己的窩<br />大台北門牌，這次買得起<br />開除房東做自己!!',
-          video: require('./s5/video/3幸福莊園-寄人籬下0716.mp4'),
+          video: 'https://i.imgur.com/yJsBWRS.mp4',
           img: require('./s5/img/3.jpg'),
         },
         {
@@ -618,21 +618,21 @@ export default {
           name: '海沃創意行銷',
           desc:
             '汪星人不說，但汪星人都懂。<br />金窩銀窩，都不如有自己溫馨的窩，來聽聽汪星人怎麼說',
-          video: require('./s5/video/4狗.mp4'),
+          video: 'https://i.imgur.com/Kp5cQSY.mp4',
           img: require('./s5/img/4.jpg'),
         },
         {
           title: '新板巨星｜愛要及時',
           name: '海沃創意行銷',
           desc: '給爸媽最即時的溫暖',
-          video: require('./s5/video/6愛要即時.mp4'),
+          video: 'https://i.imgur.com/KKHTVmY.mp4',
           img: require('./s5/img/5.jpg'),
         },
         {
           title: '金城舞2｜百變型男',
           name: '甲山林機構',
           desc: '最熱銷的百變型男<br />都住最熱銷的金城舞2',
-          video: require('./s5/video/5金城舞2.mp4'),
+          video: 'https://i.imgur.com/XWg9fRo.mp4',
           img: require('./s5/img/6.jpg'),
         },
         {
@@ -640,7 +640,7 @@ export default {
           name: '海沃創意行銷',
           desc:
             '我們有多久，不敢擁抱成家的夢想<br />其實夢想，不一定要到很遠的地方<br />支持努力圓夢的你',
-          video: require('./s5/video/7林板新.mp4'),
+          video: 'https://i.imgur.com/O6jvijd.mp4',
           img: require('./s5/img/7.jpg'),
         },
       ],

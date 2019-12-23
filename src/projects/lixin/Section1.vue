@@ -11,7 +11,7 @@
         <div class="title typing">用對的策略 做對的行銷</div>
         <!-- <div class="type">LIXIN DIGITAL</div> -->
       </div>
-      <video-bg autoplay="autoplay" :sources="[require('./s1/video.mp4')]" :isFix="false"></video-bg>
+      <video-bg autoplay="autoplay" :sources="['https://i.imgur.com/dObjCEY.mp4']" :isFix="false"></video-bg>
     </div>
   </div>
 </template>
