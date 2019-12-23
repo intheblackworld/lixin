@@ -39,9 +39,10 @@
               v-for="(slide, index) in slideList"
               :key="`slide-${index}`"
             >
-              <div class="title">{{slide.title}}</div>
+              <div class="title" v-html="slide.title"></div>
               <div class="subtitle">{{slide.subtitle}}</div>
-              <div class="desc">{{slide.desc}}</div>
+              <div class="product">{{slide.product}}</div>
+              <div class="desc" v-html="slide.desc"></div>
             </div>
           </div>
           <div
@@ -179,9 +180,10 @@
           <div class="text">
             <div>
               <div class="text-item">
-                <div class="title">{{slideList[slideIndex].title}}</div>
+                <div class="title" v-html="slideList[slideIndex].title"></div>
                 <div class="subtitle">{{slideList[slideIndex].subtitle}}</div>
-                <div class="desc">{{slideList[slideIndex].desc}}</div>
+                <div class="product">{{slideList[slideIndex].product}}</div>
+                <div class="desc" v-html="slideList[slideIndex].descm"></div>
               </div>
             </div>
           </div>
@@ -591,30 +593,40 @@
 .title {
   // font-family: 'noto_regular';
   /* font-size: calc(100vw * (44 / 1920)); */
-  font-size: 45.5px;
+  font-size: 2.24em;
   line-height: 1.5em;
-  letter-spacing: 3px;
+  letter-spacing:0.1em;
   font-weight: bold;
   margin-bottom: 0;
   color: #666;
-  transform: translateY(10px);
+  text-align: justify;
 }
 
 .subtitle {
   // font-family: 'noto_regular';
+  font-weight:normal;
+  margin: 0em 0 0.4em;
+  color: #000;
+  letter-spacing: 0.02em;
+  font-size: 1.05em;
+  text-align: justify;
+}
+.product {
+  // font-family: 'noto_regular';
   font-weight: bold;
   margin: 1em 0 0.4em;
   color: #ec6d34;
-  transform: translateY(15px);
   letter-spacing: 0.02em;
+  font-size: 1.15em;
+  text-align: justify;
 }
 
 .desc {
   line-height: 2em;
   letter-spacing: 0.02em;
   color: #585858;
-  transform: translateY(20px);
   font-size: 0.9em;
+  text-align: justify;
 }
 
 .button {
@@ -623,7 +635,7 @@
   width: 12em;
   height: 4em;
   border: 1px solid;
-  border-color: #3f3f3f;
+  border-color: #333;
   color: #000;
   border-radius: 3px;
   text-align: center;
@@ -632,14 +644,15 @@
   /* font-family: 'AvantGarde_Thin'; */
   /* font-weight: bold; */
   letter-spacing: 2px;
-  transition: box-shadow 0.5s, color 0.5s, opacity 1s, border-color 0s;
+  transition: box-shadow 0.5s, color 0.5s, opacity 1s, border-color .3s;
   transition-timing-function: ease-in-out;
-  box-shadow: inset 0 0 0 0 #3f3f3f;
+  box-shadow: inset 0 0 0 0 #ed6d34;
   cursor: pointer;
   opacity: 1;
 
   &:hover {
-    box-shadow: inset -200px 0 0 0 #3f3f3f;
+    box-shadow: inset -200px 0 0 0 #ed6d34;
+  border-color: #ed6d34;
     color: #fff;
   }
 
@@ -671,6 +684,10 @@
   &.hide {
     opacity: 0;
   }
+  &:hover {
+  background-color: #e40;
+  }
+
 }
 
 .slide-next {
@@ -790,19 +807,14 @@
     margin-top: 20px;
     height: auto;
     padding-bottom: 30px;
-    font-size: 16px;
-
+    font-size:4.2vw;width: 19.2em;
     .title {
-      font-size: 8vw;
       opacity: 1;
+      font-size:2em;
+    letter-spacing: 0.05em;
     }
 
-    .subtitle {
-      font-size: 20px;
-      margin: 0.5em 0 0.5em;
-      opacity: 1;
-    }
-
+    
     .desc {
       opacity: 1;
     }
@@ -881,35 +893,43 @@ export default {
       detailIndex: 0,
       slideList: [
         {
-          title: '用議題打破行銷思維 — 林板新',
-          subtitle: '海沃創意行銷-新板巨星',
-          desc: '搭上選舉順風車，包裝「良好新候選人」創造議題。',
+          title: '用議題打破行銷思維',
+          subtitle: '運用行銷策略，讓廣告效益再提升',
+          product: '海沃創意行銷-新板巨星',
+          desc: '行銷策略結合選舉議題，將建案包裝為『新候選人』<br />在網路上引發熱烈討論，充滿創意的行銷手法成功吸引大眾關注。<br />整波行銷活動執行，成功造就極大的賞屋人潮以及知名度。',
+          descm: '行銷策略結合選舉議題，將建案包裝為『新候選人』，在網路上引發熱烈討論，充滿創意的行銷手法成功吸引大眾關注。<br />整波行銷活動執行，成功造就極大的賞屋人潮以及知名度。',
           img: require('./s6/item-img-1.jpg'),
         },
         {
-          title: '善用網紅行銷 — 一個屋簷下 - 木曜四超玩',
-          subtitle: '海沃創意行銷-一個屋簷下',
-          desc: '與網紅合作並舉辦線上抽獎，替活動創造高度關注。',
+          title: '用消費者熟悉的語言',
+          subtitle: '透過網紅，以消費者熟悉的方式溝通',
+          product: '海沃創意行銷-一個屋簷下',
+          desc: '利用網紅的人氣，有效的增加品牌的曝光度<br />與網紅合作並在社群舉辦抽獎，替活動創造高度關注。<br />藉此吸引消費者詢問的可能性，更加強品牌與消費者之間的互動關係。',
+          descm: '利用網紅的人氣，有效的增加品牌的曝光度，與網紅合作並在社群舉辦抽獎，替活動創造高度關注。<br />藉此吸引消費者詢問的可能性，更加強品牌與消費者之間的互動關係。',
           img: require('./s6/item-img-2.jpg'),
         },
         {
-          title: '打造超吸晴的網站 — 博悅',
-          subtitle: '興富發建設-博悅',
-          desc: '藉由動態影片塑造品牌形象，呈現產品風格，打造吸睛的網站。',
+          title: '打造超吸晴的網站',
+          subtitle: '吸引高消費者目光，留下寶貴的客戶',
+          product: '興富發建設-博悅',
+          desc: '網站如同接待中心，每個個案都有屬於自己的風貌<br />藉動態影片塑造品牌形象，呈現產品風格，提升產品價值。<br />提高潛力消費者前往賞屋意願。',
+          descm: '網站如同接待中心，每個個案都有屬於自己的風貌，藉動態影片塑造品牌形象，呈現產品風格，提升產品價值。<br />提高潛力消費者前往賞屋意願。',
           img: require('./s6/item-img-3.jpg'),
         },
         {
-          title: '用影音傳遞對的訊息 — 金城舞2',
-          subtitle: '甲山林機構-金城舞2',
-          desc:
-            '用影音達到深度溝通，打造全面式的行銷體驗。即使是廣告影片，也要讓民眾看得舒服且有趣，發揮影音的高互動特性。',
+          title: '用影音傳遞對的訊息',
+          subtitle: '用影音深度溝通，打造影音行銷體驗',
+          product: '甲山林機構-金城舞2',
+          desc: '用生動的影音故事傳遞品牌訊息，讓消費者記住產品特點<br />讓消費者能完整接收到廣告訊息，同步達成高完整觀看的廣告成效。<br />創意的影音廣告，讓品牌發揮最大的影響力觸動每名消費者。',
+          descm: '用生動的影音故事傳遞品牌訊息，讓消費者記住產品特點，讓消費者能完整接收到廣告訊息，同步達成高完整觀看的廣告成效。<br />創意的影音廣告，讓品牌發揮最大的影響力觸動每名消費者。',
           img: require('./s6/item-img-4.jpg'),
         },
         {
-          title: '四個月完銷的秘密 — 欣璞綻',
-          subtitle: '甲山林廣告-欣璞綻',
-          desc:
-            '網路素材交叉測試、精準廣告投放、追蹤數據並即時優化、調整行銷方向。',
+          title: '四個月完銷的秘密',
+          subtitle: '找出潛藏在網海中的精準受眾',
+          product: '甲山林機構-欣璞綻',
+          desc: '藉由廣告投放數據，擷取出最有價值的資訊<br />觀察素材的表現不斷優化、調整策略方向，不斷測試和分析。<br />透過數據，精準觸及目標受眾，找到自己的消費者。',
+          descm: '藉由廣告投放數據，擷取出最有價值的資訊，觀察素材的表現不斷優化、調整策略方向，不斷測試和分析。<br />透過數據，精準觸及目標受眾，找到自己的消費者。',
           img: require('./s6/item-img-5.jpg'),
         },
       ],

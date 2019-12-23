@@ -39,7 +39,7 @@
           <el-input v-model="form.title" type="textarea" :rows="1" placeholder="我想詢問廣告內容"></el-input>
           <el-input v-model="form.msg" type="textarea" :rows="4" placeholder="詢問內容"></el-input>
         </div>
-        <div style="margin: 0 auto 15px">
+        <div style="margin: 0 auto 15px;/* transform: scale(0.7); */">
           <vue-recaptcha :sitekey="info.recaptcha_site_key_v2"
           @verify="isVerify = true"
           style="display:flex;justify-content: center;"
@@ -205,6 +205,7 @@
   color: #ffffff;
   cursor: pointer;
   overflow: hidden;
+  transition: all 0.5s;
   &::before {
     content: '';
     width: 40%;
@@ -222,8 +223,17 @@
 
   &.disabled {
     opacity: .7;
+    cursor:auto;
+  }
+  &.disabled::before{display: none;
+  }
+  &.disabled:hover{
+  background-color: #ed6d34;
   }
 
+  &:hover{
+  background-color: #e40;
+  }
   &:hover::before {
     opacity: 1;
     width: 90%;
