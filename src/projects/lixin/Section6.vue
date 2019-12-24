@@ -48,7 +48,7 @@
           <div
             :class="`button ${isShowDetail ? 'hide' : ''}`"
             @click="checkDetail(slideIndex)"
-          >DETAIL</div>
+          >MORE</div>
         </div>
         <div :class="`detail ${isShowDetail ? 'open' : ''}`">
           <div class="close" @click="closeDetail">
@@ -675,30 +675,33 @@
   position: absolute;
   cursor: pointer;
   z-index: 12;
-  transition: all 1s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   img {
     width: 30%;
+    position: relative;
   }
 
   &.hide {
     opacity: 0;
   }
-  &:hover {
-  background-color: #e40;
-  }
-
+  &:hover{ 
+  background-color: #ee3300;
+    img {animation:slide-next-img 0.5s ease-in infinite alternate}
+    }
 }
 
 .slide-next {
-  right: 17px;
+  right:17px;
 }
 
 .slide-prev {
+  transform: rotate(180deg);
   left: 17px;
-
-  img {
-    transform: rotate(180deg);
+}
+@keyframes slide-next-img {
+  to {
+    margin-left: 10px;
   }
 }
 

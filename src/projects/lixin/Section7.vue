@@ -13,14 +13,12 @@
           />
         </div>
       </div>
-     <!--
-      <div  v-if="isMobile" :class="`slide-next ${isShowDetail ? 'hide' : ''}`" @click="slideNext">
+      <div :class="`slide-next ${isShowDetail ? 'hide' : ''}`" @click="slideNext">
         <img src="./s6/next_w.png" alt />
       </div>
-      <div  v-if="isMobile" :class="`slide-prev ${isShowDetail ? 'hide' : ''}`" @click="slidePrev">
+      <div  :class="`slide-prev ${isShowDetail ? 'hide' : ''}`" @click="slidePrev">
         <img src="./s6/next_w.png" alt />
       </div>
-      -->
     </div>
   </div>
 </template>
@@ -32,7 +30,6 @@
   display: flex;
   z-index: 2;
   background: url('./s7/bg.png');
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -87,29 +84,35 @@
   position: absolute;
   cursor: pointer;
   z-index: 12;
-  transition: all 1s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   img {
     width: 30%;
+    position: relative;
   }
 
   &.hide {
     opacity: 0;
   }
+  &:hover{ 
+  background-color: #ee3300;
+    img {animation:slide-next-img 0.5s ease-in infinite alternate}
+    }
 }
 
 .slide-next {
-  right: 0;
+  right:17px;
 }
 
 .slide-prev {
-  left: 0;
-
-  img {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
+  left: 17px;
+}
+@keyframes slide-next-img {
+  to {
+    margin-left: 10px;
   }
 }
-
 .dialog {
   position: fixed;
   width: 100vw;

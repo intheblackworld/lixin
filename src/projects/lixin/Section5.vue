@@ -34,7 +34,7 @@
             <img src="./s5/next.png" alt class="next" />
           </div>
         </div>
-        <div class="link" @click="window.open('https://www.youtube.com/channel/UChwYvwlnfXs_PTJMUdyR2Eg')">
+        <div class="link" @click="window.open('https://www.youtube.com/channel/UChwYvwlnfXs_PTJMUdyR2Eg/videos')">
           <span>看更多影片</span>
           <span class="line-arrow"></span>
         </div>
@@ -98,10 +98,10 @@
       </div>
     </div>
     <div class="dialog" v-show="isDialogShow">
+      <div class="dialog-content">
       <div class="close" @click="closeVideoDialog">
         <img src="./s5/close.png" alt />
       </div>
-      <div class="dialog-content">
         <video playsinline loop controls :muted="true" ref="dialogVideo">
           <source :src="slideList[slideIndex].video" />
         </video>
@@ -378,15 +378,17 @@
   z-index: 90;
 
   .dialog-content {
-    width: 90vw;
+    width: 150vh;
     height: 90vh;
+    max-width: 90vw;
+    max-height: 51vw;
     position: absolute;
     margin: 0 auto;
     left: 0;
     right: 0;
     top: 50%;
     transform: translateY(-50%) !important;
-    background: #fff;
+    background: #000;
 
     video {
       outline: none;
@@ -405,7 +407,7 @@
 
     position: fixed;
     top: 30px;
-    right: 30px;
+    right:-50px;
   }
 }
 
@@ -578,6 +580,7 @@ export default {
         allowSlidePrev: true,
         allowSlideNext: true,
         centeredSlides: true,
+        threshold : 20,
         // autoplay: {
         //   delay: 2500,
         //   disableOnInteraction: false,
@@ -611,7 +614,7 @@ export default {
           title: '幸福莊園｜寄人籬下',
           name: '海悅廣告股份有限公司',
           desc:
-            '用一樣的錢換一個屬於自己的窩<br />大台北門牌，這次買得起<br />開除房東做自己!!',
+            '用一樣的錢換一個屬於自己的窩<br />大台北門牌，這次買得起，開除房東做自己!!',
           video: 'https://i.imgur.com/yJsBWRS.mp4',
           img: require('./s5/img/3.jpg'),
         },
@@ -641,7 +644,7 @@ export default {
           title: '新板巨星｜競選',
           name: '海沃創意行銷',
           desc:
-            '我們有多久，不敢擁抱成家的夢想<br />其實夢想，不一定要到很遠的地方<br />支持努力圓夢的你',
+            '我們有多久，不敢擁抱成家的夢想<br />其實夢想，不一定要到很遠的地方',
           video: 'https://i.imgur.com/O6jvijd.mp4',
           img: require('./s5/img/7.jpg'),
         },
