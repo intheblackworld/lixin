@@ -380,7 +380,7 @@
   .dialog-content {
     width: 150vh;
     height: 90vh;
-    max-width: 90vw;
+    max-width: calc(100vw - 200px);
     max-height: 51vw;
     position: absolute;
     margin: 0 auto;
@@ -524,6 +524,7 @@
     .dialog-content {
       width: 100vw;
       height: auto;
+      max-width:100vw;
       z-index: 100;
       background: transparent;
     }
@@ -537,8 +538,8 @@
       }
 
       position: fixed;
-      top: 25vh;
-      right: 10px;
+      top: -45px;
+      right: 20px;
       z-index: 100;
     }
   }
