@@ -68,7 +68,7 @@
             <div
               class="detail-desc"
             >將建案「新板巨星」包裝成「林板新」，搭配政見「落實居住正義」，成功在媒體及民眾都聚焦於政治時，引起民眾好奇心，創造大量點擊率及良好曝光成效，搭配精準的廣告投放，促成亮眼 的銷售成績。</div>
-            <img src="./s6/detail1-item-3.png" alt class="detail-img" />
+            <img src="./s6/detail1-item-3.png" alt class="detail-img" /><p>圖取自今日新聞稿圖<br />https://reurl.cc/jzAD2</p>
           </div>
           <!-- 區塊二 -->
           <div :class="`detail-content ${detailIndex === 1 ? 'active' : ''}`">
@@ -121,7 +121,7 @@
               避開以往傳統的廣告影片形式，提升觀看度與知名度，我們將影片內容主軸與案名「金城舞」作結合，三個閨蜜在大聊每位型男的優點，同時也暗喻了建案產品的優勢。
             </div>
             <img src="./s6/detail4-item-2.jpg" alt class="detail-img" />
-            <img src="./s6/detail2-item-3.jpg" alt class="detail-img" />
+            <img src="./s6/detail4-item-3.png" alt class="detail-img" />
             <div
               class="detail-desc"
             >影片決勝的關鍵在前五秒和掌握四項要點：創意的主題、吸睛的開場、準確的長度、適合的背景音樂，即使是廣告影片，也要讓民眾看得舒服且有趣，發揮影音的高互動特性，成功與民眾進行深度溝通。</div>
@@ -513,7 +513,7 @@
   }
 
   .detail-img {
-    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     margin: 1em 0 1.2em 0;
   }
