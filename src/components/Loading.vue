@@ -29,7 +29,7 @@
   }
 
   &.none {
-    display: none;
+    animation: hide 1s ease 0s forwards;
   }
 
   @keyframes hide {

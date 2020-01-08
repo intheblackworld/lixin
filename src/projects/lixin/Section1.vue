@@ -18,8 +18,9 @@
 
 <style lang="scss" scoped>
 .bg {
-  // background: url('./s1/bg.jpg');
+  background: #ed6d34 url('./s1/bg_b.png');
   background-size: cover;
+  background-position: center center;
   position: relative;
   overflow: hidden;
   z-index: 3;
@@ -29,6 +30,8 @@
 .VideoBg {
   width: 100vw;
   height: 100% !important;
+  opacity: 0;
+  animation: op 1s 2s ease forwards;
   video {
     // position: fixed;
     z-index: 2;
@@ -44,8 +47,15 @@
   background: url('./s1/bg.png');
   background-size: cover;
   background-position: center center;
+  opacity: 0;
+  animation: op 0.5s 1s ease forwards;
   // mix-blend-mode: screen;
   // position: fixed;
+}
+@keyframes op {
+   to {
+  opacity: 1;
+   }
 }
 
 .title {
@@ -117,12 +127,19 @@
 /* 螢幕尺寸標準 */
 /* 平板尺寸 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  
+.bg {
+  background-image: url('./s1/tbg_b.png'); 
+  }
   .mask {
     background-image: url('./s1/tbg.png');
   }
 }
 
 @media screen and (max-width: 767px) {
+.bg {
+  background-image: url('./s1/mobg_b.png'); 
+  }
  .no-padding-top {
     padding-top: 0;
 

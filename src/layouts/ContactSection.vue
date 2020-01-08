@@ -3,7 +3,7 @@
     <div class="container">
       <div>
         <div class="title">聯絡我們</div>
-        <div class="info-item" @click="showMapDialog">
+        <div class="info-item">
             <div class="icon"></div>
           <div class="desc">{{info.address}}</div>
         </div>
