@@ -3,8 +3,8 @@
     <!-- img="./bg.jpg" -->
     <div class="fullscreen bg">
       <div class="mask" v-if="isMobile">
-        <div class="title typing" v-show="showFirst">用對的策略</div>
-        <div class="title typing" v-show="showSecond">做對的行銷</div>
+        <div class="title typing">用對的策略</div>
+        <div class="title typing">做對的行銷</div>
         <!-- <div class="type">LIXIN DIGITAL</div> -->
       </div>
       <div class="mask" v-else>
@@ -31,7 +31,7 @@
   width: 100vw;
   height: 100% !important;
   opacity: 0;
-  animation: op 1s 4s ease forwards;
+  animation: op 1s 3s ease forwards;
   video {
     // position: fixed;
     z-index: 2;
@@ -48,7 +48,7 @@
   background-size: cover;
   background-position: center center;
   opacity: 0;
-  animation: op 0.5s 3s ease forwards;
+  animation: op 0.5s 2s ease forwards;
   // mix-blend-mode: screen;
   // position: fixed;
 }
@@ -79,8 +79,9 @@
   white-space: nowrap;
   overflow: hidden;
   width: 0;opacity: 1;
- animation: typing 5s 6s steps(5) infinite;
+ animation: typing 5s 4s steps(5) infinite;
 }
+
 
 @keyframes typing {
   0% {
@@ -157,28 +158,31 @@
   }
 
   .typing {
-    width: 290px;
-  }
-
-  .typing {
-    width: 290px;
+    width: 0;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 2s 6s steps(5) infinite;
+    animation: typing_m 4s steps(5) infinite;
+    animation-delay: 4s;
+    &:nth-child(2){animation-delay: 6s;}
   }
 
-  @keyframes typing {
+  @keyframes typing_m {
     0% {
-      width: 0;
+      width: 0;opacity: 1;
     }
 
-    60% {
+    30% {
       width: 240px;
     }
-
-    100% {
-      width: 240px;
-    }
+  45% {
+    width: 240px;opacity: 1;
+  }
+  50% {
+    width: 240px;opacity: 0;
+  }
+  100% {
+    width: 240px;opacity: 0;
+  }
   }
 
 }
@@ -203,13 +207,13 @@ export default {
     }
   },
 
-  methods: {},
+  //methods: {},
 
-  mounted() {
-    setInterval(() => {
-      this.showFirst = !this.showFirst
-      this.showSecond = !this.showSecond
-    }, 2000)
-  },
+ // mounted() {
+  //  setInterval(() => {
+  //    this.showFirst = !this.showFirst
+  //    this.showSecond = !this.showSecond
+  //  }, 2000)
+  //},
 }
 </script>
