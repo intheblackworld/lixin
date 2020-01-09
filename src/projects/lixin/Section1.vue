@@ -31,7 +31,7 @@
   width: 100vw;
   height: 100% !important;
   opacity: 0;
-  animation: op 1s 2s ease forwards;
+  animation: op 1s 4s ease forwards;
   video {
     // position: fixed;
     z-index: 2;
@@ -48,7 +48,7 @@
   background-size: cover;
   background-position: center center;
   opacity: 0;
-  animation: op 0.5s 1s ease forwards;
+  animation: op 0.5s 3s ease forwards;
   // mix-blend-mode: screen;
   // position: fixed;
 }
@@ -76,10 +76,10 @@
 }
 
 .typing {
-  width: 5.2em;
   white-space: nowrap;
   overflow: hidden;
- animation: typing 5s steps(5) infinite;
+  width: 0;opacity: 1;
+ animation: typing 5s 6s steps(5) infinite;
 }
 
 @keyframes typing {
@@ -164,7 +164,7 @@
     width: 290px;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 2s steps(5) infinite;
+    animation: typing 2s 6s steps(5) infinite;
   }
 
   @keyframes typing {
