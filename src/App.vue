@@ -29,7 +29,7 @@ export default {
   },
 
   created() {
-    window.addEventListener('DOMContentLoaded', (event) => {
+    window.addEventListener('load', (event) => {
       this.load = false
     })
   },
