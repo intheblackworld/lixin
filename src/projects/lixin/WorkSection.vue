@@ -548,13 +548,14 @@ export default {
           link: 'https://jh.h35.tw/',
           title: '築禾交響院',
         },
-        {
-          img: require('./work/web/05.jpg'),
-          type: 'web',
-          link: 'https://dss.h35.tw/',
-          title: '大學墅',
-        },
 
+
+        {
+          img: require('./work/web/18.jpg'),
+          type: 'web',
+          link: 'https://fs.h35.tw/',
+          title: '京城鳳翔 ',
+        },
         {
           img: require('./work/web/06.jpg'),
           type: 'web',
@@ -568,13 +569,13 @@ export default {
           link: 'https://stm.h35.tw/',
           title: '立謹醞',
         },
-        {
-          img: require('./work/web/08.jpg'),
-          type: 'web',
-          link: 'https://star.h35.tw/',
-          title: '一日林板新活動官網',
-        },
 
+        {
+          img: require('./work/web/20.jpg'),
+          type: 'web',
+          link: 'https://ycfy.h35.tw/event/',
+          title: '頤昌豐岳 ',
+        },
         {
           img: require('./work/web/09.jpg'),
           type: 'web',
@@ -604,6 +605,33 @@ export default {
         },
 
         {
+          img: require('./work/web/17.jpg'),
+          type: 'web',
+          link: 'https://east.h35.tw/',
+          title: '大道東 ',
+        },
+        {
+          img: require('./work/web/05.jpg'),
+          type: 'web',
+          link: 'https://dss.h35.tw/',
+          title: '大學墅',
+        },
+
+        {
+          img: require('./work/web/19.jpg'),
+          type: 'web',
+          link: 'https://wh.h35.tw/event/',
+          title: '達欣・信義文華 ',
+        },
+
+        {
+          img: require('./work/web/08.jpg'),
+          type: 'web',
+          link: 'https://star.h35.tw/',
+          title: '一日林板新活動官網',
+        },
+
+        {
           img: require('./work/web/13.jpg'),
           type: 'web',
           link: 'https://yns.h35.tw/',
@@ -629,34 +657,6 @@ export default {
           type: 'web',
           link: 'https://stm.h35.tw/',
           title: '心天畝 ',
-        },
-
-        {
-          img: require('./work/web/17.jpg'),
-          type: 'web',
-          link: 'https://east.h35.tw/',
-          title: '大道東 ',
-        },
-
-        {
-          img: require('./work/web/18.jpg'),
-          type: 'web',
-          link: 'https://fs.h35.tw/',
-          title: '京城鳳翔 ',
-        },
-
-        {
-          img: require('./work/web/19.jpg'),
-          type: 'web',
-          link: 'https://wh.h35.tw/event/',
-          title: '達欣・信義文華 ',
-        },
-
-        {
-          img: require('./work/web/20.jpg'),
-          type: 'web',
-          link: 'https://ycfy.h35.tw/event/',
-          title: '頤昌豐岳 ',
         },
 
         // video
