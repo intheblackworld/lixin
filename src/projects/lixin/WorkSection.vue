@@ -607,7 +607,7 @@ export default {
           img: require('./work/web/13.jpg'),
           type: 'web',
           link: 'https://yns.h35.tw/',
-          title: '越那山',
+          title: '北大樂馥',
         },
 
         {
@@ -629,6 +629,34 @@ export default {
           type: 'web',
           link: 'https://stm.h35.tw/',
           title: '心天畝 ',
+        },
+
+        {
+          img: require('./work/web/17.jpg'),
+          type: 'web',
+          link: 'https://east.h35.tw/',
+          title: '大道東 ',
+        },
+
+        {
+          img: require('./work/web/18.jpg'),
+          type: 'web',
+          link: 'https://fs.h35.tw/',
+          title: '京城鳳翔 ',
+        },
+
+        {
+          img: require('./work/web/19.jpg'),
+          type: 'web',
+          link: 'https://wh.h35.tw/event/',
+          title: '達欣・信義文華 ',
+        },
+
+        {
+          img: require('./work/web/20.jpg'),
+          type: 'web',
+          link: 'https://ycfy.h35.tw/event/',
+          title: '頤昌豐岳 ',
         },
 
         // video

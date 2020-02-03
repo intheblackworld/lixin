@@ -229,12 +229,12 @@ export default {
         {
           src: require('./s4/img1.jpg'),
           name: '東南側3D外觀示意',
-          desc: '建築展翅 越那山<br />向上開展的建築立框；載著夢想飛越鳶山',
+          desc: '建築展翅 北大樂馥<br />向上開展的建築立框；載著夢想飛越鳶山',
         },
         {
           src: require('./s4/img2.jpg'),
           name: '東南側3D外觀示意',
-          desc: '建築展翅 越那山<br />向上開展的建築立框；載著夢想飛越鳶山',
+          desc: '建築展翅 北大樂馥<br />向上開展的建築立框；載著夢想飛越鳶山',
         },
         {
           src: require('./s4/img3.jpg'),
