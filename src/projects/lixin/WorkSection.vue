@@ -536,7 +536,7 @@ export default {
         },
 
         {
-          img: require('./work/web/03.jpg'),
+          img: require('./work/web/03.gif'),
           type: 'web',
           link: 'https://sfdy.h35.tw/',
           title: '幸福大院',
@@ -603,13 +603,6 @@ export default {
           link: 'https://cht.h35.tw/',
           title: '長虹天際',
         },
-
-        {
-          img: require('./work/web/17.jpg'),
-          type: 'web',
-          link: 'https://east.h35.tw/',
-          title: '大道東 ',
-        },
         {
           img: require('./work/web/05.jpg'),
           type: 'web',
@@ -617,6 +610,13 @@ export default {
           title: '大學墅',
         },
 
+
+        {
+          img: require('./work/web/17.jpg'),
+          type: 'web',
+          link: 'https://east.h35.tw/',
+          title: '大道東 ',
+        },
         {
           img: require('./work/web/19.jpg'),
           type: 'web',
@@ -632,7 +632,7 @@ export default {
         },
 
         {
-          img: require('./work/web/13.jpg'),
+          img: require('./work/web/13.gif'),
           type: 'web',
           link: 'https://yns.h35.tw/',
           title: '北大樂馥',
