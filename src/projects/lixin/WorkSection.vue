@@ -560,7 +560,7 @@ export default {
         {
           img: require('./work/web/20.jpg'),
           type: 'web',
-          link: 'https://ycfy.h35.tw/event/',
+          link: 'https://ycfy1.h35.tw/event/',
           title: '頤昌豐岳 ',
         },
         {
@@ -573,7 +573,7 @@ export default {
         {
           img: require('./work/web/07.jpg'),
           type: 'web',
-          link: 'https://stm.h35.tw/',
+          link: 'https://lju.h35.tw/',
           title: '立謹醞',
         },
         {
