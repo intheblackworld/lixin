@@ -24,7 +24,7 @@
 </template>
 <style lang="scss" scoped>
 .bg {
-  background-size: cover;
+  // background-size: cover;
   position: relative;
   overflow: hidden;
   display: flex;

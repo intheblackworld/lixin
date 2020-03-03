@@ -62,7 +62,9 @@ Vue.use(ElementUI)
 Vue.use(VueScrollTo)
 
 // 提升效能套件
-Vue.use(VueLazyload)
+Vue.use(VueLazyload, {
+  loading: require('./projects/lixin/loadinfo.gif'),
+})
 // Vue.use(infiniteScroll)
 
 Vue.use(VueParticles)
