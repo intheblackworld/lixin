@@ -1,7 +1,7 @@
 <template>
   <div class="section1">
     <!-- img="./bg.jpg" -->
-    <div class="fullscreen bg">
+    <div class="fullscreen bg" v-lazy:background-image="require('./s1/bg_b.png')">
       <div class="mask" v-if="isMobile">
         <div class="title typing">用對的策略</div>
         <div class="title typing">做對的行銷</div>
@@ -18,13 +18,12 @@
 
 <style lang="scss" scoped>
 .bg {
-  background: #ed6d34 url('./s1/bg_b.png');
+  background-color: #ed6d34;
   background-size: cover;
   background-position: center center;
   position: relative;
   overflow: hidden;
   z-index: 3;
-  // position: fixed;
 }
 
 .VideoBg {
@@ -33,7 +32,6 @@
   opacity: 0;
   animation: op 1s 3s ease forwards;
   video {
-    // position: fixed;
     z-index: 2;
   }
 }

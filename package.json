@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "report": "vue-cli-service build --report",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -43,10 +44,13 @@
     "@vue/eslint-config-standard": "^4.0.0",
     "@yzfe/vue-svgicon-loader": "^1.0.0-alpha.0",
     "babel-eslint": "^10.0.1",
+    "babel-plugin-component": "^1.1.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-infinite-scroll": "^2.0.2",
     "vue-template-compiler": "^2.6.10"
   }
 }

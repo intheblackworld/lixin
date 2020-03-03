@@ -3,18 +3,19 @@
     <!-- img="./bg.jpg" -->
     <div class="bg">
       <img
-        src="./s2/bg.jpg"
+        src=""
         alt
         class="bg-img"
+        v-lazy="require('./s2/bg.jpg')"
         data-aos="fade"
         data-aos-delay="400"
         data-aos-duration="1500"
       />
       <!-- 區塊1 -->
-      <div class="fullscreen">
+      <div class="fullscreen" data-aos="fade" data-aos-delay="400">
         <div class="page-title">服務內容</div>
         <div class="pie-chart">
-          <img src="./s2/pie.png" alt class="pie-bg" ref="pie" />
+          <img alt class="pie-bg" ref="pie" v-lazy="require('./s2/pie.png')" />
           <div class="overlay">
             <div class="web" @mouseenter="handlePie(0)"></div>
             <div class="video" @mouseenter="handlePie(1)"></div>
@@ -47,71 +48,6 @@
           />
         </transition-group>
       </div>
-      <!-- 區塊2 -->
-      <!-- <div class="container">
-        <div class="page-title white">立炘數位</div>
-        <div class="animate-block">
-          <div class="animate-icon-bing">
-            <img src="./s2/s2-2/icon/bing.png" alt />
-          </div>
-          <div class="animate-icon-fb">
-            <img src="./s2/s2-2/icon/fb.png" alt />
-          </div>
-          <div class="animate-icon-ga">
-            <img src="./s2/s2-2/icon/ga.png" alt />
-          </div>
-          <div class="animate-icon-gmb">
-            <img src="./s2/s2-2/icon/gmb.png" alt />
-          </div>
-          <div class="animate-icon-gtm">
-            <img src="./s2/s2-2/icon/gtm.png" alt />
-          </div>
-          <div class="animate-icon-ig">
-            <img src="./s2/s2-2/icon/ig.png" alt />
-          </div>
-          <div class="animate-icon-line">
-            <img src="./s2/s2-2/icon/line.png" alt />
-          </div>
-          <div class="animate-icon-stripe">
-            <img src="./s2/s2-2/icon/stripe.png" alt />
-          </div>
-          <div class="animate-icon-yahoo">
-            <img src="./s2/s2-2/icon/yahoo.png" alt />
-          </div>
-          <div class="animate-icon-yt">
-            <img src="./s2/s2-2/icon/yt.png" alt />
-          </div>
-        </div>
-        <carousel-3d
-          ref="mycarousel"
-          :width="isMobile ? window.innerWidth * (638 / 750) : window.innerWidth * (width / 1920)"
-          :height="isMobile ?window.innerWidth * (468 / 750) : window.innerWidth * (height / 1920)"
-          :perspective="0"
-          :autoplay="true"
-          :autoplayTimeout="4000"
-          :disable3d="isMobile ? true : false"
-          :border="0"
-          :display="3"
-          :space="isMobile ? 'auto' : 'auto'"
-          data-aos="fade"
-          data-aos-delay="200"
-        >
-          <slide
-            v-for="(slide, index) in slideList"
-            :index="index"
-            :key="slide.img"
-            class="video-slide"
-          >
-            <img
-            src="./s3/play_btn.png"
-            alt
-            :class="`play-btn absolute-c ${slide.isPlay ? 'hide' : ''}`"
-            @click="handlePlay(index)"
-            />
-            <img :src="slide.img" :class="`video-img ${slide.isPlay ? 'hide' : ''}`" />
-          </slide>
-        </carousel-3d>
-      -->
       </div>
       <div class="star1 comet"></div>
       <div class="star2 comet"></div>

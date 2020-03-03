@@ -1,9 +1,9 @@
 <template>
   <div class="section4">
     <div class="bg">
-      <img src="./s4/bg.jpg" alt class="bg-img mobile-bg" />
+      <img v-lazy="require('./s4/bg.jpg')" alt class="bg-img mobile-bg" />
       <div class="title">響應式設計</div>
-      <div class="mobile-scale"><img src="./s4/device.png" alt class="bg-img device" />
+      <div class="mobile-scale"><img v-lazy="require('./s4/device.png')" alt class="bg-img device" />
       <swiper
         :options="swiperOption"
         swiper-no-swiping
@@ -17,7 +17,7 @@
           :key="slide.src_mac"
           class="item"
         >
-          <img :src="slide.src_mac" :class="`item-img`" />
+          <img v-lazy="slide.src_mac" :class="`item-img`" />
         </swiper-slide>
       </swiper>
       <swiper :options="swiperOption" swiper-no-swiping class="tablet-container">
@@ -27,7 +27,7 @@
           :key="slide.src_tablet"
           class="item"
         >
-          <img :src="slide.src_tablet" :class="`item-img`" />
+          <img v-lazy="slide.src_tablet" :class="`item-img`" />
         </swiper-slide>
       </swiper>
       <swiper :options="swiperOption" swiper-no-swiping class="phone-container">
@@ -37,7 +37,7 @@
           :key="slide.src_phone"
           class="item"
         >
-          <img :src="slide.src_phone" :class="`item-img`" />
+          <img v-lazy="slide.src_phone" :class="`item-img`" />
         </swiper-slide>
       </swiper>
       </div>

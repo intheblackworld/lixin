@@ -9,16 +9,22 @@ import '@/assets/style/global.scss'
 /* 全局配置 https://blog.csdn.net/FireBird_one/article/details/80295229 */
 import config from './lib/config.js'
 
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
 import VueScrollTo from 'vue-scrollto' // scroll 錨點
+
+// 提升效能套件
 import VueLazyload from 'vue-lazyload' // 圖片 lazy load
-import VueScrollReveal from 'vue-scroll-reveal'
-import VuePhotoZoomPro from 'vue-photo-zoom-pro'
+import infiniteScroll from 'vue-infinite-scroll' // 如果有外部數據需要抓才用得到
 
 import VueParticles from 'vue-particles'
 
+// Icon
 import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+  faFacebookMessenger,
+  faFacebookF
+} from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueSvgIcon from 'vue-svgicon'
 import {
   faBars,
   faTimes,
@@ -30,12 +36,9 @@ import {
 import AOS from '@/lib/aos/src/js/aos'
 import 'aos/dist/aos.css'
 
-import {
-  faFacebookMessenger,
-  faFacebookF
-} from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import VueSvgIcon from 'vue-svgicon'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import './plugins/element.js'
 
 // AOS.init()
 
@@ -47,8 +50,6 @@ library.add(faFacebookMessenger)
 library.add(faFacebookF)
 library.add(faMapMarkerAlt)
 
-Vue.use(VuePhotoZoomPro)
-
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(VueSvgIcon, {
@@ -59,8 +60,10 @@ Vue.use(config)
 
 Vue.use(ElementUI)
 Vue.use(VueScrollTo)
+
+// 提升效能套件
 Vue.use(VueLazyload)
-Vue.use(VueScrollReveal)
+// Vue.use(infiniteScroll)
 
 Vue.use(VueParticles)
 

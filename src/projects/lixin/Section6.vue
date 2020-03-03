@@ -2,7 +2,7 @@
   <div :class="`section6 ${isShowDetail ? 'showDetail' : ''}`">
     <div class="dialog" v-show="isShowDialog">
       <div class="close" @click="closeDialog(slideIndex)">
-        <img src="./s5/close.png" alt />
+        <img v-lazy="require('./s5/close.png')" alt />
       </div>
       <div class="dialog-content">
         <video playsinline loop controls :muted="true" :ref="`dialogVideo${slideIndex}`">
@@ -23,7 +23,7 @@
           @click="checkDetail(slideIndex)"
           :class="`item-img ${slideIndex === index ? 'active' : ''}`"
         >
-          <img v-if="slide.img" :src="slide.img" alt />
+          <img v-if="slide.img" v-lazy="slide.img" alt />
           <video v-else-if="slide.video" :src="slide.video"></video>
           <div v-if="slide.video" class="play-group">
             <icon class="play" :data="play" @click="playVideo(index)" />
@@ -56,7 +56,7 @@
           </div>
           <!-- 區塊一 -->
           <div :class="`detail-content ${detailIndex === 0 ? 'active' : ''}`">
-            <img src="./s6/detail1-item-1.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail1-item-1.jpg')" alt class="detail-img" />
             <div class="detail-title">任務</div>
             <div class="detail-desc">趕搭選舉熱潮，建案化身為候選人「林板新」登場，在網路上創造話題，引起民眾好奇心，創造大量點擊率及良好曝光成效。</div>
             <div class="detail-title">策略</div>
@@ -64,31 +64,31 @@
             <div
               class="detail-desc"
             >其實這位神祕候選人不是人名，而是位在新北市樹林、板橋、新莊交會的地區，簡稱「林板新特區」，充滿創意的行銷議題手法成功吸引大眾關注</div>
-            <img src="./s6/detail1-item-2.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail1-item-2.jpg')" alt class="detail-img" />
             <div
               class="detail-desc"
             >將建案「新板巨星」包裝成「林板新」，搭配政見「落實居住正義」，成功在媒體及民眾都聚焦於政治時，引起民眾好奇心，創造大量點擊率及良好曝光成效，搭配精準的廣告投放，促成亮眼 的銷售成績。</div>
-            <img src="./s6/detail1-item-3.png" alt class="detail-img" /><p>圖取自今日新聞稿圖<br />https://reurl.cc/jzAD2</p>
+            <img v-lazy="require('./s6/detail1-item-3.png')" alt class="detail-img" /><p>圖取自今日新聞稿圖<br />https://reurl.cc/jzAD2</p>
           </div>
           <!-- 區塊二 -->
           <div :class="`detail-content ${detailIndex === 1 ? 'active' : ''}`">
-            <img src="./s6/detail2-item-1.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail2-item-1.jpg')" alt class="detail-img" />
             <div class="detail-title">任務</div>
             <div class="detail-desc">吸引網友目光並將線上流量導入線下活動。透過網紅的參與，結合活動與網友們互動，找出實際有效名單，成功促成轉換。</div>
             <div class="detail-title">策略</div>
             <div class="detail-subtitle">與網紅合作並舉辦線上抽獎，替活動創造高度關注。</div>
-            <img src="./s6/detail2-item-2.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail2-item-2.jpg')" alt class="detail-img" />
             <div
               class="detail-desc"
             >與《木曜4超玩》合作，透過網紅的參與，獲得更多的網路聲量。不僅能為專案增添正面形象，也增加了民眾信任感。將線上流量成功導入線下，找網紅結合活動與網友們互動，找出實際有效名單，成功促成轉換。</div>
-            <img src="./s6/detail2-item-3.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail2-item-3.jpg')" alt class="detail-img" />
             <div
               class="detail-desc"
             >一個熱鬧的活動，當然不能少了活動網站的架設，利用鮮艷明亮的色彩，搭配當紅的流行用語，不僅增添活潑感，也營造了輕鬆喜悅的氛圍，讓參與活動更加速擴散及分享！</div>
           </div>
           <!-- 區塊三 -->
           <div :class="`detail-content ${detailIndex === 2 ? 'active' : ''}`">
-            <img src="./s6/detail3-item-1.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail3-item-1.jpg')" alt class="detail-img" />
             <div class="detail-title">任務</div>
             <div class="detail-desc">
               量身打造網站，吸睛也吸金。
@@ -101,14 +101,14 @@
             <div
               class="detail-desc"
             >與《木曜4超玩》合作，透過網紅的參與，獲得更多的網路聲量。不僅能為專案增添正面形象，也增加了民眾信任感。將線上流量成功導入線下，找網紅結合活動與網友們互動，找出實際有效名單，成功促成轉換。</div>
-            <img src="./s6/detail3-item-2.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail3-item-2.jpg')" alt class="detail-img" />
             <div
               class="detail-desc"
             >一個熱鬧的活動，當然不能少了活動網站的架設，利用鮮艷明亮的色彩，搭配當紅的流行用語，不僅增添活潑感，也營造了輕鬆喜悅的氛圍，讓參與活動更加速擴散及分享！</div>
           </div>
           <!-- 區塊四 -->
           <div :class="`detail-content ${detailIndex === 3 ? 'active' : ''}`">
-            <img src="./s6/detail4-item-1.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail4-item-1.jpg')" alt class="detail-img" />
             <div class="detail-title">任務</div>
             <div class="detail-desc">
               用影音達到深度溝通，打造全面式的行銷體驗。
@@ -120,15 +120,15 @@
               利用趣味、吸睛的主題，將產品資訊正確傳遞給消費者
               避開以往傳統的廣告影片形式，提升觀看度與知名度，我們將影片內容主軸與案名「金城舞」作結合，三個閨蜜在大聊每位型男的優點，同時也暗喻了建案產品的優勢。
             </div>
-            <img src="./s6/detail4-item-2.jpg" alt class="detail-img" />
-            <img src="./s6/detail4-item-3.png" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail4-item-2.jpg')" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail4-item-3.png')" alt class="detail-img" />
             <div
               class="detail-desc"
             >影片決勝的關鍵在前五秒和掌握四項要點：創意的主題、吸睛的開場、準確的長度、適合的背景音樂，即使是廣告影片，也要讓民眾看得舒服且有趣，發揮影音的高互動特性，成功與民眾進行深度溝通。</div>
           </div>
           <!-- 區塊五 -->
           <div :class="`detail-content ${detailIndex === 4 ? 'active' : ''}`">
-            <img src="./s6/detail5-item-1.png" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail5-item-1.png')" alt class="detail-img" />
             <div class="detail-title">任務</div>
             <div class="detail-desc">有效發揮數位行銷，實際提升轉換率。我們透過策略擬定、素材呈現、數據分析，找到精準受眾，創造亮眼的銷售成績。</div>
             <div class="detail-title">策略</div>
@@ -136,22 +136,22 @@
             <div
               class="detail-desc"
             >瞭解建案資訊，研討擬定一份專屬此案的數位行銷策略，在不同管道（Yahoo、Google、Facebook及數位媒體）的表現訴求、廣告預算比重分配，找出最適合該案的策略方向。</div>
-            <img src="./s6/detail5-item-2.png" alt class="detail-img" />
-            <img src="./s6/detail5-item-3.png" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail5-item-2.png')" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail5-item-3.png')" alt class="detail-img" />
             <div
               class="detail-desc"
             >每週即時提供數據分析，觀察素材的表現，進而不斷優化、調整策略方向，不斷測試和分析，找到精準受眾，我們透過策略擬定、素材呈現、數據分析，創造亮眼的銷售成績。</div>
             <div class="detail-title">成果</div>
             <div class="detail-subtitle">4個月全棟100%完銷</div>
-            <img src="./s6/detail5-item-4.png" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail5-item-4.png')" alt class="detail-img" />
           </div>
         </div>
       </div>
       <div :class="`slide-next ${isShowDetail ? 'hide' : ''}`" @click="slideNext">
-        <img src="./s6/next_w.png" alt />
+        <img v-lazy="require('./s6/next_w.png')" alt />
       </div>
       <div :class="`slide-prev ${isShowDetail ? 'hide' : ''}`" @click="slidePrev">
-        <img src="./s6/next_w.png" alt />
+        <img v-lazy="require('./s6/next_w.png')" alt />
       </div>
     </div>
     <div class="bg fullscreen" v-if="isMobile">
@@ -167,7 +167,7 @@
           @click="checkDetail(slideIndex)"
           :class="`item-img ${slideIndex === index ? 'active' : ''}`"
         >
-          <img v-if="slide.img" :src="slide.img" alt />
+          <img v-if="slide.img" v-lazy="slide.img" alt />
           <video v-else-if="slide.video" :src="slide.video"></video>
           <div v-if="slide.video" class="play-group">
             <icon class="play" :data="play" @click="playVideo(index)" />
@@ -191,11 +191,11 @@
         </div>
         <div :class="`detail ${isShowDetail ? 'open' : ''}`">
           <div class="close" @click="closeDetail">
-            <img src="./s5/close.png" alt />
+            <img v-lazy="require('./s5/close.png')" alt />
           </div>
           <!-- 區塊一 -->
           <div :class="`detail-content ${detailIndex === 0 ? 'active' : ''}`">
-            <img src="./s6/detail1-item-1.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail1-item-1.jpg')" alt class="detail-img" />
             <div class="detail-title">任務</div>
             <div class="detail-desc">趕搭選舉熱潮，建案化身為候選人「林板新」登場，在網路上創造話題，引起民眾好奇心，創造大量點擊率及良好曝光成效。</div>
             <div class="detail-title">策略</div>
@@ -203,31 +203,31 @@
             <div
               class="detail-desc"
             >其實這位神祕候選人不是人名，而是位在新北市樹林、板橋、新莊交會的地區，簡稱「林板新特區」，充滿創意的行銷議題手法成功吸引大眾關注</div>
-            <img src="./s6/detail1-item-2.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail1-item-2.jpg')" alt class="detail-img" />
             <div
               class="detail-desc"
             >將建案「新板巨星」包裝成「林板新」，搭配政見「落實居住正義」，成功在媒體及民眾都聚焦於政治時，引起民眾好奇心，創造大量點擊率及良好曝光成效，搭配精準的廣告投放，促成亮眼 的銷售成績。</div>
-            <img src="./s6/detail1-item-3.png" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail1-item-3.png')" alt class="detail-img" />
           </div>
           <!-- 區塊二 -->
           <div :class="`detail-content ${detailIndex === 1 ? 'active' : ''}`">
-            <img src="./s6/detail2-item-1.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail2-item-1.jpg')" alt class="detail-img" />
             <div class="detail-title">任務</div>
             <div class="detail-desc">吸引網友目光並將線上流量導入線下活動。透過網紅的參與，結合活動與網友們互動，找出實際有效名單，成功促成轉換。</div>
             <div class="detail-title">策略</div>
             <div class="detail-subtitle">與網紅合作並舉辦線上抽獎，替活動創造高度關注。</div>
-            <img src="./s6/detail2-item-2.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail2-item-2.jpg')" alt class="detail-img" />
             <div
               class="detail-desc"
             >與《木曜4超玩》合作，透過網紅的參與，獲得更多的網路聲量。不僅能為專案增添正面形象，也增加了民眾信任感。將線上流量成功導入線下，找網紅結合活動與網友們互動，找出實際有效名單，成功促成轉換。</div>
-            <img src="./s6/detail2-item-3.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail2-item-3.jpg')" alt class="detail-img" />
             <div
               class="detail-desc"
             >一個熱鬧的活動，當然不能少了活動網站的架設，利用鮮艷明亮的色彩，搭配當紅的流行用語，不僅增添活潑感，也營造了輕鬆喜悅的氛圍，讓參與活動更加速擴散及分享！</div>
           </div>
           <!-- 區塊三 -->
           <div :class="`detail-content ${detailIndex === 2 ? 'active' : ''}`">
-            <img src="./s6/detail3-item-1.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail3-item-1.jpg')" alt class="detail-img" />
             <div class="detail-title">任務</div>
             <div class="detail-desc">
               量身打造網站，吸睛也吸金。
@@ -240,14 +240,14 @@
             <div
               class="detail-desc"
             >與《木曜4超玩》合作，透過網紅的參與，獲得更多的網路聲量。不僅能為專案增添正面形象，也增加了民眾信任感。將線上流量成功導入線下，找網紅結合活動與網友們互動，找出實際有效名單，成功促成轉換。</div>
-            <img src="./s6/detail3-item-2.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail3-item-2.jpg')" alt class="detail-img" />
             <div
               class="detail-desc"
             >一個熱鬧的活動，當然不能少了活動網站的架設，利用鮮艷明亮的色彩，搭配當紅的流行用語，不僅增添活潑感，也營造了輕鬆喜悅的氛圍，讓參與活動更加速擴散及分享！</div>
           </div>
           <!-- 區塊四 -->
           <div :class="`detail-content ${detailIndex === 3 ? 'active' : ''}`">
-            <img src="./s6/detail4-item-1.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail4-item-1.jpg')" alt class="detail-img" />
             <div class="detail-title">任務</div>
             <div class="detail-desc">
               用影音達到深度溝通，打造全面式的行銷體驗。
@@ -259,15 +259,15 @@
               利用趣味、吸睛的主題，將產品資訊正確傳遞給消費者
               避開以往傳統的廣告影片形式，提升觀看度與知名度，我們將影片內容主軸與案名「金城舞」作結合，三個閨蜜在大聊每位型男的優點，同時也暗喻了建案產品的優勢。
             </div>
-            <img src="./s6/detail4-item-2.jpg" alt class="detail-img" />
-            <img src="./s6/detail2-item-3.jpg" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail4-item-2.jpg')" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail2-item-3.jpg')" alt class="detail-img" />
             <div
               class="detail-desc"
             >影片決勝的關鍵在前五秒和掌握四項要點：創意的主題、吸睛的開場、準確的長度、適合的背景音樂，即使是廣告影片，也要讓民眾看得舒服且有趣，發揮影音的高互動特性，成功與民眾進行深度溝通。</div>
           </div>
           <!-- 區塊五 -->
           <div :class="`detail-content ${detailIndex === 4 ? 'active' : ''}`">
-            <img src="./s6/detail5-item-1.png" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail5-item-1.png')" alt class="detail-img" />
             <div class="detail-title">任務</div>
             <div class="detail-desc">有效發揮數位行銷，實際提升轉換率。我們透過策略擬定、素材呈現、數據分析，找到精準受眾，創造亮眼的銷售成績。</div>
             <div class="detail-title">策略</div>
@@ -275,17 +275,17 @@
             <div
               class="detail-desc"
             >瞭解建案資訊，研討擬定一份專屬此案的數位行銷策略，在不同管道（Yahoo、Google、Facebook及數位媒體）的表現訴求、廣告預算比重分配，找出最適合該案的策略方向。</div>
-            <img src="./s6/detail5-item-2.png" alt class="detail-img" />
-            <img src="./s6/detail5-item-3.png" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail5-item-2.png')" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail5-item-3.png')" alt class="detail-img" />
             <div
               class="detail-desc"
             >每週即時提供數據分析，觀察素材的表現，進而不斷優化、調整策略方向，不斷測試和分析，找到精準受眾，我們透過策略擬定、素材呈現、數據分析，創造亮眼的銷售成績。</div>
             <div class="detail-title">成果</div>
             <div class="detail-subtitle">4個月全棟100%完銷</div>
-            <img src="./s6/detail5-item-4.png" alt class="detail-img" />
+            <img v-lazy="require('./s6/detail5-item-4.png')" alt class="detail-img" />
           </div>
           <div class="close bottom" @click="closeDetail">
-            <img src="./s5/close.png" alt />
+            <img v-lazy="require('./s5/close.png')" alt />
           </div>
         </div>
       </div>

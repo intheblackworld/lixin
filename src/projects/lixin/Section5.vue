@@ -28,10 +28,10 @@
 
         <div class="slide-btn">
           <div class="left-btn" slot="button-prev">
-            <img src="./s5/next.png" alt class="prev" />
+            <img v-lazy="require('./s5/next.png')" alt class="prev" />
           </div>
           <div class="right-btn" slot="button-next">
-            <img src="./s5/next.png" alt class="next" />
+            <img v-lazy="require('./s5/next.png')" alt class="next" />
           </div>
         </div>
         <div class="link" @click="window.open('https://www.youtube.com/channel/UChwYvwlnfXs_PTJMUdyR2Eg/videos')">
@@ -44,7 +44,7 @@
         :sources="[slideList[0].video, slideList[1].video, slideList[2].video, slideList[3].video, slideList[4].video, slideList[5].video, slideList[6].video]"
         :slideIndex="slideIndex"
       ></video-bg>
-      <div class="line-bg"></div>
+      <div class="line-bg" v-lazy:background-image="require('./s5/bg.png')"></div>
       <div class="progress-bar">
         <div
           class="bar"
@@ -53,13 +53,8 @@
       </div>
     </div>
     <div class="bg fullscreen" v-if="isMobile">
-      <img :src="slideList[slideIndex].img" alt class="mobile-video-img" />
-      <img src="./s5/img/icon.png" alt class="play-icon" @click="showVideoDialog(slideIndex)" />
-      <!-- <video-bg
-        autoplay="autoplay"
-        :sources="[slideList[0].video, slideList[1].video, slideList[2].video, slideList[3].video, slideList[4].video, slideList[5].video, slideList[6].video]"
-        :slideIndex="slideIndex"
-      ></video-bg>-->
+      <img v-lazy="slideList[slideIndex].img" alt class="mobile-video-img" />
+      <img v-lazy="require('./s5/img/icon.png')" alt class="play-icon" @click="showVideoDialog(slideIndex)" />
       <div class="content">
         <div class="title">我們的作品</div>
         <swiper
@@ -84,10 +79,10 @@
         <div class="flex">
           <div class="slide-btn">
             <div class="left-btn" slot="button-prev">
-              <img src="./s5/next.png" alt class="prev" />
+              <img v-lazy="require('./s5/next.png')" alt class="prev" />
             </div>
             <div class="right-btn" slot="button-next">
-              <img src="./s5/next.png" alt class="next" />
+              <img v-lazy="require('./s5/next.png')" alt class="next" />
             </div>
           </div>
           <div class="link" @click="$router.push('works?type=video')">
@@ -100,7 +95,7 @@
     <div class="dialog" v-show="isDialogShow">
       <div class="dialog-content">
       <div class="close" @click="closeVideoDialog">
-        <img src="./s5/close.png" alt />
+        <img v-lazy="require('./s5/close.png')" alt />
       </div>
         <video playsinline loop controls :muted="true" ref="dialogVideo">
           <source :src="slideList[slideIndex].video" />

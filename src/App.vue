@@ -14,6 +14,7 @@
 <script>
 import AstrictMask from '@/components/AstrictMask'
 import Loading from '@/components/Loading.vue'
+import config from '@/lib/aos/src/js/aos-config'
 
 export default {
   name: 'App',
@@ -29,9 +30,12 @@ export default {
   },
 
   created() {
-    window.addEventListener('load', (event) => {
+    setTimeout(() => {
       this.load = false
-    })
+    }, 300);
+    // window.addEventListener(config.startEvent, (event) => {
+      
+    // })
   },
 }
 </script>

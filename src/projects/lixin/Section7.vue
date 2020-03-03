@@ -1,11 +1,11 @@
 <template>
   <div class="section7">
-    <div class="bg fullscreen">
+    <div class="bg fullscreen" v-lazy:background-image="require('./s7/bg.png')">
     <div class="title">服務客戶</div>
       <div class="container">
         <div class="logo" v-for="(logo, index) in logoList" :key="`logo${index}`">
           <img
-            :src="logo"
+            v-lazy="logo"
             alt
             data-aos="flip-left"
             :data-aos-delay="0 + 100 * index"
@@ -29,7 +29,6 @@
   overflow: hidden;
   display: flex;
   z-index: 2;
-  background: url('./s7/bg.png');
   align-items: center;
   justify-content: center;
 }

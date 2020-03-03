@@ -2,25 +2,8 @@
   <div class="section3 mediaPartner">
     <!-- img="./bg.jpg" -->
     <div class="bg">
-      <div class="title">媒體購買</div>
-      <canvas id="canvas" ref="canvas" :width="window.width" :height="window.width * (625 / 1440)"></canvas>
-      <!-- <vue-particles
-        color="#999"
-        :particleOpacity="0.7"
-        :particlesNumber="120"
-        shapeType="circle"
-        :particleSize="2"
-        linesColor="#999"
-        :linesWidth="0"
-        :lineLinked="false"
-        :lineOpacity="0"
-        :linesDistance="0"
-        :moveSpeed="4"
-        :hoverEffect="true"
-        hoverMode="grab"
-        :clickEffect="true"
-        clickMode="push"
-      ></vue-particles>-->
+      <div class="title" data-aos="zoom-in" data-aos-delay="600">媒體購買</div>
+      <canvas data-aos="fade" data-aos-delay="400" id="canvas" ref="canvas" :width="window.width" :height="window.width * (625 / 1440)"></canvas>
     </div>
   </div>
 </template>
