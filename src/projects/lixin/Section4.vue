@@ -54,7 +54,7 @@
 
 <style lang="scss" scoped>
 .bg {
-  // background: url('./s1/bg.jpg');
+  background-color: #fff;
   background-size: cover;
   position: relative;
   overflow: hidden;
