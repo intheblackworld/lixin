@@ -17,7 +17,7 @@
           :key="slide.src_mac"
           class="item"
         >
-          <img v-lazy="slide.src_mac" :class="`item-img`" />
+          <img :src="slide.src_mac" :class="`item-img`" />
         </swiper-slide>
       </swiper>
       <swiper :options="swiperOption" swiper-no-swiping class="tablet-container">
@@ -27,7 +27,7 @@
           :key="slide.src_tablet"
           class="item"
         >
-          <img v-lazy="slide.src_tablet" :class="`item-img`" />
+          <img :src="slide.src_tablet" :class="`item-img`" />
         </swiper-slide>
       </swiper>
       <swiper :options="swiperOption" swiper-no-swiping class="phone-container">
@@ -37,7 +37,7 @@
           :key="slide.src_phone"
           class="item"
         >
-          <img v-lazy="slide.src_phone" :class="`item-img`" />
+          <img :src="slide.src_phone" :class="`item-img`" />
         </swiper-slide>
       </swiper>
       </div>

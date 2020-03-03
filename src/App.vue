@@ -30,12 +30,9 @@ export default {
   },
 
   created() {
-    setTimeout(() => {
+    window.addEventListener(config.startEvent, (event) => {
       this.load = false
-    }, 300);
-    // window.addEventListener(config.startEvent, (event) => {
-      
-    // })
+    })
   },
 }
 </script>
