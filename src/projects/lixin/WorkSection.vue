@@ -548,6 +548,18 @@ export default {
           link: 'https://jh.h35.tw/',
           title: '築禾交響院',
         },
+        {
+          img: require('./work/web/21.jpg'),
+          type: 'web',
+          link: 'https://dunnanhowhow.h35.tw/',
+          title: '敦南好好',
+        },
+        {
+          img: require('./work/web/22.gif'),
+          type: 'web',
+          link: 'https://ycfy1.h35.tw/',
+          title: '頤昌豐岳官網',
+        },
 
 
         {
@@ -558,23 +570,10 @@ export default {
         },
 
         {
-          img: require('./work/web/20.jpg'),
-          type: 'web',
-          link: 'https://ycfy1.h35.tw/event/',
-          title: '頤昌豐岳 ',
-        },
-        {
           img: require('./work/web/06.jpg'),
           type: 'web',
           link: 'https://yt.h35.tw/',
           title: '頤昌耘萃',
-        },
-
-        {
-          img: require('./work/web/07.jpg'),
-          type: 'web',
-          link: 'https://lju.h35.tw/',
-          title: '立謹醞',
         },
         {
           img: require('./work/web/09.jpg'),
@@ -624,6 +623,19 @@ export default {
           title: '達欣・信義文華 ',
         },
 
+
+        {
+          img: require('./work/web/07.jpg'),
+          type: 'web',
+          link: 'https://lju.h35.tw/',
+          title: '立謹醞',
+        },
+        {
+          img: require('./work/web/20.jpg'),
+          type: 'web',
+          link: 'https://ycfy1.h35.tw/event/',
+          title: '頤昌豐岳活動',
+        },
         {
           img: require('./work/web/08.jpg'),
           type: 'web',
