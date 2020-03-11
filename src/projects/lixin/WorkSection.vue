@@ -23,7 +23,7 @@
               <icon class="play" :data="play" />
             </div>
             <div class="work-content relative">
-              <img :src="item.img" alt class="work-img" />
+              <img v-lazy="item.img" alt class="work-img" />
               <div class="work-title">{{item.title}}</div>
             </div>
           </div>
@@ -40,7 +40,7 @@
               </div>
             </div>
             <div class="work-content relative">
-              <img :src="item.img" alt class="work-img" />
+              <img v-lazy="item.img" alt class="work-img" />
             </div>
           </div>
         </div>
