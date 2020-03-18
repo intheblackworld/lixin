@@ -523,25 +523,29 @@ export default {
       workList: [
         // web
         {
-          img: require('./work/web/01.jpg'),
+          img: require('./work/web/21.jpg'),
           type: 'web',
-          link: 'https://by1.h35.tw/',
-          title: '博悅',
+          link: 'https://dunnanhowhow.h35.tw/',
+          title: '敦南好好',
         },
         {
-          img: require('./work/web/02.jpg'),
+          img: require('./work/web/24.jpg'),
           type: 'web',
-          link: 'https://dyc1.h35.tw/',
-          title: '德友藏',
+          link: 'https://wh.h35.tw/',
+          title: '達欣・信義文華 官網',
         },
-
         {
           img: require('./work/web/03.gif'),
           type: 'web',
           link: 'https://sfdy.h35.tw/',
           title: '幸福大院',
         },
-
+        {
+          img: require('./work/web/18.jpg'),
+          type: 'web',
+          link: 'https://fs.h35.tw/',
+          title: '京城鳳翔 ',
+        },
         {
           img: require('./work/web/04.jpg'),
           type: 'web',
@@ -549,31 +553,22 @@ export default {
           title: '築禾交響院',
         },
         {
-          img: require('./work/web/21.jpg'),
-          type: 'web',
-          link: 'https://dunnanhowhow.h35.tw/',
-          title: '敦南好好',
-        },
-        {
           img: require('./work/web/22.gif'),
           type: 'web',
-          link: 'https://ycfy1.h35.tw/',
+          link: 'https://ycfy.h35.tw/',
           title: '頤昌豐岳官網',
         },
-
-
         {
-          img: require('./work/web/18.jpg'),
+          img: require('./work/web/23.jpg'),
           type: 'web',
-          link: 'https://fs.h35.tw/',
-          title: '京城鳳翔 ',
+          link: 'https://lsbj.h35.tw/',
+          title: '聯上鉑金',
         },
-
         {
-          img: require('./work/web/06.jpg'),
+          img: require('./work/web/01.jpg'),
           type: 'web',
-          link: 'https://yt.h35.tw/',
-          title: '頤昌耘萃',
+          link: 'https://by1.h35.tw/',
+          title: '博悅',
         },
         {
           img: require('./work/web/09.jpg'),
@@ -581,19 +576,59 @@ export default {
           link: 'https://j-shan.h35.tw/',
           title: '堅山謙仰',
         },
-
         {
           img: require('./work/web/10.jpg'),
           type: 'web',
           link: 'https://xs.h35.tw/',
           title: '新碩鼎和',
         },
-
         {
           img: require('./work/web/11.jpg'),
           type: 'web',
           link: 'https://ds.h35.tw/',
           title: '帝璽',
+        },
+        {
+          img: require('./work/web/17.jpg'),
+          type: 'web',
+          link: 'https://east.h35.tw/',
+          title: '大道東 ',
+        },
+        {
+          img: require('./work/web/19.jpg'),
+          type: 'web',
+          link: 'https://wh1.h35.tw/event/',
+          title: '達欣・信義文華 活動',
+        },
+        {
+          img: require('./work/web/20.jpg'),
+          type: 'web',
+          link: 'https://ycfy1.h35.tw/event/',
+          title: '頤昌豐岳活動',
+        },
+        {
+          img: require('./work/web/06.jpg'),
+          type: 'web',
+          link: 'https://yt.h35.tw/',
+          title: '頤昌耘萃',
+        },
+        {
+          img: require('./work/web/07.jpg'),
+          type: 'web',
+          link: 'https://lju.h35.tw/',
+          title: '立謹醞',
+        },
+        {
+          img: require('./work/web/13.gif'),
+          type: 'web',
+          link: 'https://yns.h35.tw/',
+          title: '北大樂馥',
+        },
+        {
+          img: require('./work/web/02.jpg'),
+          type: 'web',
+          link: 'https://dyc1.h35.tw/',
+          title: '德友藏',
         },
 
         {
@@ -611,44 +646,12 @@ export default {
 
 
         {
-          img: require('./work/web/17.jpg'),
-          type: 'web',
-          link: 'https://east.h35.tw/',
-          title: '大道東 ',
-        },
-        {
-          img: require('./work/web/19.jpg'),
-          type: 'web',
-          link: 'https://wh.h35.tw/event/',
-          title: '達欣・信義文華 ',
-        },
-
-
-        {
-          img: require('./work/web/07.jpg'),
-          type: 'web',
-          link: 'https://lju.h35.tw/',
-          title: '立謹醞',
-        },
-        {
-          img: require('./work/web/20.jpg'),
-          type: 'web',
-          link: 'https://ycfy1.h35.tw/event/',
-          title: '頤昌豐岳活動',
-        },
-        {
           img: require('./work/web/08.jpg'),
           type: 'web',
           link: 'https://star.h35.tw/',
           title: '一日林板新活動官網',
         },
 
-        {
-          img: require('./work/web/13.gif'),
-          type: 'web',
-          link: 'https://yns.h35.tw/',
-          title: '北大樂馥',
-        },
 
         {
           img: require('./work/web/14.jpg'),
