@@ -9,9 +9,10 @@
       </div>
       <div class="mask" v-else>
         <div class="title typing">用對的策略 做對的行銷</div>
+        <img src="./s1/60x8.gif" alt class="img logo" data-aos="fade" data-aos-delay="900" />
         <!-- <div class="type">LIXIN DIGITAL</div> -->
       </div>
-      <video-bg autoplay="autoplay" :sources="['https://i.imgur.com/dObjCEY.mp4']" :isFix="false"></video-bg>
+      <video-bg v-if="isMobile" autoplay="autoplay" :sources="['https://i.imgur.com/dObjCEY.mp4']" :isFix="false"></video-bg>
     </div>
   </div>
 </template>
@@ -26,6 +27,7 @@
   z-index: 3;
 }
 
+.logo{position: relative;top:50%;margin:0 auto;width: 76%;}
 .VideoBg {
   width: 100vw;
   height: 100% !important;
@@ -42,7 +44,7 @@
   position: absolute;
   z-index: 2;
   box-shadow: -2.1px 3.4px 8px 0 rgba(0, 0, 0, 0.08);
-  background: url('./s1/bg.png');
+  //background: url('./s1/bg.png');
   background-size: cover;
   background-position: center center;
   opacity: 0;
