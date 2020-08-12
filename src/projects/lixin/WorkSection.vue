@@ -523,16 +523,34 @@ export default {
       workList: [
         // web
         {
-          img: require('./work/web/21.jpg'),
+          img: require('./work/web/25.gif'),
           type: 'web',
-          link: 'https://dunnanhowhow.h35.tw/',
-          title: '敦南好好',
+          link: 'https://cyfh.h35.tw/',
+          title: '全陽豐會',
+        },
+        {
+          img: require('./work/web/26.jpg'),
+          type: 'web',
+          link: 'https://cs.h35.tw/',
+          title: '合矩青山',
+        },
+        {
+          img: require('./work/web/27.jpg'),
+          type: 'web',
+          link: 'https://jyly.h35.tw/',
+          title: '佳元臨沂',
         },
         {
           img: require('./work/web/24.jpg'),
           type: 'web',
           link: 'https://wh.h35.tw/',
           title: '達欣・信義文華 官網',
+        },
+        {
+          img: require('./work/web/21.jpg'),
+          type: 'web',
+          link: 'https://dunnanhowhow.h35.tw/',
+          title: '敦南好好',
         },
         {
           img: require('./work/web/03.gif'),
