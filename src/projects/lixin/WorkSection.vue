@@ -546,30 +546,7 @@ export default {
           link: 'https://wh.h35.tw/',
           title: '達欣・信義文華 官網',
         },
-        {
-          img: require('./work/web/30.jpg'),
-          type: 'web',
-          link: 'https://yu.h35.tw/',
-          title: '詠喆',
-        },
-        {
-          img: require('./work/web/28.jpg'),
-          type: 'web',
-          link: 'https://shinarc.com.tw/',
-          title: '鑫建築團隊',
-        },
-        {
-          img: require('./work/web/29.jpg'),
-          type: 'web',
-          link: 'https://sc.h35.tw/',
-          title: '拾秋',
-        },
-        {
-          img: require('./work/web/34.jpg'),
-          type: 'web',
-          link: 'https://yb.h35.tw/',
-          title: '央北鑫建築',
-        },
+
         {
           img: require('./work/web/31.jpg'),
           type: 'web',
@@ -583,17 +560,18 @@ export default {
           title: 'The View',
         },
         {
-          img: require('./work/web/33.jpg'),
+          img: require('./work/web/29.jpg'),
           type: 'web',
-          link: 'https://tm.h35.tw/',
-          title: '天母自在',
+          link: 'https://sc.h35.tw/',
+          title: '拾秋',
         },
         {
-          img: require('./work/web/36.jpg'),
+          img: require('./work/web/04.jpg'),
           type: 'web',
-          link: 'https://ra.h35.tw/',
-          title: '瑞安自在',
+          link: 'https://jh.h35.tw/',
+          title: '築禾交響院',
         },
+
         {
           img: require('./work/web/21.jpg'),
           type: 'web',
@@ -607,6 +585,31 @@ export default {
           title: '敦南學府',
         },
         {
+          img: require('./work/web/33.jpg'),
+          type: 'web',
+          link: 'https://tm.h35.tw/',
+          title: '天母自在',
+        },
+        {
+          img: require('./work/web/36.jpg'),
+          type: 'web',
+          link: 'https://ra.h35.tw/',
+          title: '瑞安自在',
+        },
+
+        {
+          img: require('./work/web/30.jpg'),
+          type: 'web',
+          link: 'https://yu.h35.tw/',
+          title: '詠喆',
+        },
+        {
+          img: require('./work/web/34.jpg'),
+          type: 'web',
+          link: 'https://yb.h35.tw/',
+          title: '央北鑫建築',
+        },
+        {
           img: require('./work/web/22.gif'),
           type: 'web',
           link: 'https://ycfy.h35.tw/',
@@ -618,6 +621,57 @@ export default {
           link: 'https://ycpy.h35.tw/',
           title: '頤昌璞岳',
         },
+
+        {
+          img: require('./work/web/43.jpg'),
+          type: 'web',
+          link: 'https://ms.h35.tw/',
+          title: '美術皇居',
+        },
+        {
+          img: require('./work/web/18.jpg'),
+          type: 'web',
+          link: 'https://fs.h35.tw/',
+          title: '京城鳳翔 ',
+        },
+        {
+          img: require('./work/web/23.jpg'),
+          type: 'web',
+          link: 'https://lsbj.h35.tw/',
+          title: '聯上鉑金',
+        },
+        {
+          img: require('./work/web/42.jpg'),
+          type: 'web',
+          link: 'https://lsht.h35.tw/',
+          title: '聯上海棠',
+        },
+
+        {
+          img: require('./work/web/03.gif'),
+          type: 'web',
+          link: 'https://sfdy.h35.tw/',
+          title: '幸福大院',
+        },
+        {
+          img: require('./work/web/44.jpg'),
+          type: 'web',
+          link: 'https://yc.h35.tw/',
+          title: '漾CITY',
+        },
+        {
+          img: require('./work/web/45.jpg'),
+          type: 'web',
+          link: 'https://sdj.h35.tw/',
+          title: '上東京',
+        },
+        {
+          img: require('./work/web/01.jpg'),
+          type: 'web',
+          link: 'https://by1.h35.tw/',
+          title: '博悅',
+        },
+
         {
           img: require('./work/web/38.jpg'),
           type: 'web',
@@ -642,59 +696,12 @@ export default {
           link: 'https://jhuyi.h35.tw/',
           title: '築億築藝',
         },
+
         {
-          img: require('./work/web/03.gif'),
+          img: require('./work/web/16.jpg'),
           type: 'web',
-          link: 'https://sfdy.h35.tw/',
-          title: '幸福大院',
-        },
-        {
-          img: require('./work/web/18.jpg'),
-          type: 'web',
-          link: 'https://fs.h35.tw/',
-          title: '京城鳳翔 ',
-        },
-        {
-          img: require('./work/web/23.jpg'),
-          type: 'web',
-          link: 'https://lsbj.h35.tw/',
-          title: '聯上鉑金',
-        },
-        {
-          img: require('./work/web/42.jpg'),
-          type: 'web',
-          link: 'https://lsht.h35.tw/',
-          title: '聯上海棠',
-        },
-        {
-          img: require('./work/web/43.jpg'),
-          type: 'web',
-          link: 'https://ms.h35.tw/',
-          title: '美術皇居',
-        },
-        {
-          img: require('./work/web/44.jpg'),
-          type: 'web',
-          link: 'https://yc.h35.tw/',
-          title: '漾CITY',
-        },
-        {
-          img: require('./work/web/45.jpg'),
-          type: 'web',
-          link: 'https://sdj.h35.tw/',
-          title: '上東京',
-        },
-        {
-          img: require('./work/web/01.jpg'),
-          type: 'web',
-          link: 'https://by1.h35.tw/',
-          title: '博悅',
-        },
-        {
-          img: require('./work/web/04.jpg'),
-          type: 'web',
-          link: 'https://jh.h35.tw/',
-          title: '築禾交響院',
+          link: 'https://stm.h35.tw/',
+          title: '心天畝 ',
         },
         {
           img: require('./work/web/09.jpg'),
@@ -714,6 +721,7 @@ export default {
           link: 'https://ds.h35.tw/',
           title: '帝璽',
         },
+
         {
           img: require('./work/web/17.jpg'),
           type: 'web',
@@ -738,6 +746,7 @@ export default {
           link: 'https://yt.h35.tw/',
           title: '頤昌耘萃',
         },
+
         {
           img: require('./work/web/07.jpg'),
           type: 'web',
@@ -756,7 +765,6 @@ export default {
           link: 'https://dyc1.h35.tw/',
           title: '德友藏',
         },
-
         {
           img: require('./work/web/05.jpg'),
           type: 'web',
@@ -764,22 +772,18 @@ export default {
           title: '大學墅',
         },
 
-
         {
           img: require('./work/web/08.jpg'),
           type: 'web',
           link: 'https://star.h35.tw/',
           title: '一日林板新活動官網',
         },
-
-
         {
           img: require('./work/web/14.jpg'),
           type: 'web',
-          link: 'https://lkf.h35.tw/',
+          link: 'https://lkf1.h35.tw/',
           title: '蘭桂坊',
         },
-
         {
           img: require('./work/web/15.jpg'),
           type: 'web',
@@ -793,12 +797,14 @@ export default {
           title: '長虹天際',
         },
 
+      /*
         {
-          img: require('./work/web/16.jpg'),
+          img: require('./work/web/28.jpg'),
           type: 'web',
-          link: 'https://stm.h35.tw/',
-          title: '心天畝 ',
+          link: 'https://shinarc.com.tw/',
+          title: '鑫建築團隊',
         },
+        */
 
         // video
         {
