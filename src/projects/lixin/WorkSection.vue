@@ -523,16 +523,16 @@ export default {
       workList: [
         // web
         {
-          img: require('./work/web/25.gif'),
-          type: 'web',
-          link: 'https://cyfh.h35.tw/',
-          title: '全陽豐會',
-        },
-        {
           img: require('./work/web/26.jpg'),
           type: 'web',
           link: 'https://cs.h35.tw/',
           title: '合矩青山',
+        },
+        {
+          img: require('./work/web/25.gif'),
+          type: 'web',
+          link: 'https://cyfh.h35.tw/',
+          title: '全陽豐會',
         },
         {
           img: require('./work/web/27.jpg'),
