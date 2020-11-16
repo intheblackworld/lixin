@@ -571,6 +571,30 @@ export default {
           link: 'https://jh.h35.tw/',
           title: '築禾交響院',
         },
+        {
+          img: require('./work/web/47.jpg'),
+          type: 'web',
+          link: 'https://hsy.h35.tw/',
+          title: '厚陞園',
+        },
+        {
+          img: require('./work/web/49.jpg'),
+          type: 'web',
+          link: 'https://blly.h35.tw/',
+          title: '八里龍躍',
+        },
+        {
+          img: require('./work/web/50.gif'),
+          type: 'web',
+          link: 'https://wop.h35.tw/',
+          title: '太子峰雲',
+        },
+        {
+          img: require('./work/web/53.jpg'),
+          type: 'web',
+          link: 'https://jy.h35.tw/',
+          title: '築億丰盛',
+        },
 
         {
           img: require('./work/web/21.jpg'),
@@ -616,7 +640,7 @@ export default {
           title: '頤昌豐岳官網',
         },
         {
-          img: require('./work/web/35.jpg'),
+          img: require('./work/web/54.jpg'),
           type: 'web',
           link: 'https://ycpy.h35.tw/',
           title: '頤昌璞岳',
@@ -645,6 +669,30 @@ export default {
           type: 'web',
           link: 'https://lsht.h35.tw/',
           title: '聯上海棠',
+        },
+        {
+          img: require('./work/web/51.jpg'),
+          type: 'web',
+          link: 'https://cf.h35.tw/',
+          title: '春福采采',
+        },
+        {
+          img: require('./work/web/48.jpg'),
+          type: 'web',
+          link: 'https://syw.h35.tw/',
+          title: '星玥灣',
+        },
+        {
+          img: require('./work/web/55.jpg'),
+          type: 'web',
+          link: 'https://cjl.h35.tw/',
+          title: '清景麟巴克禮',
+        },
+        {
+          img: require('./work/web/46.jpg'),
+          type: 'web',
+          link: 'https://jsjm.h35.tw/',
+          title: '中山直美',
         },
 
         {
