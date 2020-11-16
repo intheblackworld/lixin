@@ -578,10 +578,34 @@ export default {
           title: '厚陞園',
         },
         {
-          img: require('./work/web/49.jpg'),
+          img: require('./work/web/58.jpg'),
           type: 'web',
-          link: 'https://blly.h35.tw/',
-          title: '八里龍躍',
+          link: 'https://avc.h35.tw/',
+          title: '睿暘水漾',
+        },
+        {
+          img: require('./work/web/41.jpg'),
+          type: 'web',
+          link: 'https://jhuyi.h35.tw/',
+          title: '築億築藝',
+        },
+        {
+          img: require('./work/web/53.jpg'),
+          type: 'web',
+          link: 'https://jy.h35.tw/',
+          title: '築億丰盛',
+        },
+        {
+          img: require('./work/web/46.jpg'),
+          type: 'web',
+          link: 'https://jsjm.h35.tw/',
+          title: '中山直美',
+        },
+        {
+          img: require('./work/web/56.jpg'),
+          type: 'web',
+          link: 'https://jw.h35.tw/',
+          title: '京旺協奏曲',
         },
         {
           img: require('./work/web/50.gif'),
@@ -590,12 +614,11 @@ export default {
           title: '太子峰雲',
         },
         {
-          img: require('./work/web/53.jpg'),
+          img: require('./work/web/49.jpg'),
           type: 'web',
-          link: 'https://jy.h35.tw/',
-          title: '築億丰盛',
+          link: 'https://blly.h35.tw/',
+          title: '八里龍躍',
         },
-
         {
           img: require('./work/web/21.jpg'),
           type: 'web',
@@ -639,7 +662,7 @@ export default {
           link: 'https://ycfy.h35.tw/',
           title: '頤昌豐岳官網',
         },
-        {
+        { 
           img: require('./work/web/54.jpg'),
           type: 'web',
           link: 'https://ycpy.h35.tw/',
@@ -689,12 +712,11 @@ export default {
           title: '清景麟巴克禮',
         },
         {
-          img: require('./work/web/46.jpg'),
+          img: require('./work/web/57.jpg'),
           type: 'web',
-          link: 'https://jsjm.h35.tw/',
-          title: '中山直美',
+          link: 'https://casa.h35.tw/',
+          title: '信義CASA',
         },
-
         {
           img: require('./work/web/03.gif'),
           type: 'web',
@@ -737,12 +759,6 @@ export default {
           type: 'web',
           link: 'https://llcs.h35.tw/',
           title: '朗朗城心',
-        },
-        {
-          img: require('./work/web/41.jpg'),
-          type: 'web',
-          link: 'https://jhuyi.h35.tw/',
-          title: '築億築藝',
         },
 
         {
