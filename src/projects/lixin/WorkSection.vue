@@ -537,7 +537,7 @@ export default {
         {
           img: require('./work/web/jiman.jpg'),
           type: 'web',
-          link: 'https://jiman.h35.tw/',
+          link: 'https://jiman.debang.tw/',
           title: '自慢藏',
         },
         {
@@ -631,6 +631,18 @@ export default {
           title: '太陽帝國',
         },
         {
+          img: require('./work/web/56.jpg'),
+          type: 'web',
+          link: 'https://jw.h35.tw/',
+          title: '京旺協奏曲',
+        },
+        {
+          img: require('./work/web/jysj.jpg'),
+          type: 'web',
+          link: '#',
+          title: '佳元松江',
+        },
+        {
           img: require('./work/web/dunnanhowhow.jpg'),
           type: 'web',
           link: 'https://dunnanhowhow.h35.tw/',
@@ -665,6 +677,18 @@ export default {
           type: 'web',
           link: 'https://tsi.h35.tw/',
           title: '天空之邑',
+        },
+        {
+          img: require('./work/web/h25.gif'),
+          type: 'web',
+          link: 'https://h25.h35.tw/',
+          title: '中正h25',
+        },
+        {
+          img: require('./work/web/58.jpg'),
+          type: 'web',
+          link: 'https://avc.h35.tw/',
+          title: '睿暘水漾',
         },
         {
           img: require('./work/web/hg.jpg'),
@@ -786,37 +810,6 @@ export default {
           link: 'https://wop.h35.tw/',
           title: '太子峰雲',
         },
-        {
-          img: require('./work/web/58.jpg'),
-          type: 'web',
-          link: 'https://avc.h35.tw/',
-          title: '睿暘水漾',
-        },
-        {
-          img: require('./work/web/56.jpg'),
-          type: 'web',
-          link: 'https://jw.h35.tw/',
-          title: '京旺協奏曲',
-        },
-        {
-          img: require('./work/web/h25.gif'),
-          type: 'web',
-          link: 'https://h25.h35.tw/',
-          title: '中正h25',
-        },
-        {
-          img: require('./work/web/jysj.jpg'),
-          type: 'web',
-          link: '#',
-          title: '佳元松江',
-        },
-        {
-          img: require('./work/web/56.jpg'),
-          type: 'web',
-          link: 'https://jw.h35.tw/',
-          title: '京旺協奏曲',
-        },
-
         {
           img: require('./work/web/43.jpg'),
           type: 'web',
