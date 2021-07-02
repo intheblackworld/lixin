@@ -522,6 +522,79 @@ export default {
       window,
       workList: [
         // web
+        
+        {
+          img: require('./work/web/top-happy.jpg'),
+          type: 'web',
+          link: 'https://top-happy.tw/',
+          title: '瀚鼎國際·創悅建設',
+        },
+        {
+          img: require('./work/web/aries.jpg'),
+          type: 'web',
+          link: 'https://aries-h35.tw/',
+          title: '牡羊座',
+        },
+        {
+          img: require('./work/web/ymsj.jpg'),
+          type: 'web',
+          link: 'https://ymsj.com.tw/',
+          title: '陽明山莊',
+        },
+        {
+          img: require('./work/web/dmh.jpg'),
+          type: 'web',
+          link: 'https://dm-h35.tw/',
+          title: '大安謙韵',
+        },
+        {
+          img: require('./work/web/ds.gif'),
+          type: 'web',
+          link: 'https://ds.goodteam.tw/',
+          title: '東瑩日光',
+        },
+        {
+          img: require('./work/web/fzg.jpg'),
+          type: 'web',
+          link: 'https://fzg.nvd.tw/',
+          title: '豐之谷',
+        },
+        {
+          img: require('./work/web/ab.gif'),
+          type: 'web',
+          link: 'https://ab.hai-wo.tw/',
+          title: '虹耀今采',
+        },
+        {
+          img: require('./work/web/jcs.jpg'),
+          type: 'web',
+          link: 'https://jcs-h35.tw/',
+          title: '大安謙韵',
+        },
+        {
+          img: require('./work/web/juuyi.jpg'),
+          type: 'web',
+          link: 'https://juuyi.h35.tw/',
+          title: '鈞驛行銷團隊',
+        },
+        {
+          img: require('./work/web/la.jpg'),
+          type: 'web',
+          link: 'https://la.h35.tw/',
+          title: '聯安開發‧欣聯安廣告',
+        },
+        {
+          img: require('./work/web/cby.jpg'),
+          type: 'web',
+          link: 'https://cby.tw/',
+          title: '春福年年',
+        },
+        {
+          img: require('./work/web/ypy.jpg'),
+          type: 'web',
+          link: 'https://ypy.tw/',
+          title: '嘉璟一品硯',
+        },
         {
           img: require('./work/web/kid.jpg'),
           type: 'web',
