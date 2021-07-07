@@ -521,8 +521,13 @@ export default {
       filterType: 'web',
       window,
       workList: [
-        // web
-        
+        // web 
+        {
+          img: require('./work/web/oh.jpg'),
+          type: 'web',
+          link: 'https://oh-h35.tw/',
+          title: '名軒海樂地',
+        },
         {
           img: require('./work/web/top-happy.jpg'),
           type: 'web',
@@ -598,7 +603,7 @@ export default {
         {
           img: require('./work/web/kid.jpg'),
           type: 'web',
-          link: 'https://kid.h35.tw/',
+          link: 'https://kid-h35.tw/',
           title: '遛樂KID',
         },
         {
@@ -619,6 +624,13 @@ export default {
           link: 'https://hsy.h35.tw/',
           title: '厚陞園',
         },
+      
+        {
+          img: require('./work/web/zm.jpg'),
+          type: 'web',
+          link: 'https://zm.h35.tw/',
+          title: '左岸玫瑰',
+        },
         {
           img: require('./work/web/debang.jpg'),
           type: 'web',
@@ -634,7 +646,7 @@ export default {
         {
           img: require('./work/web/lc.jpg'),
           type: 'web',
-          link: 'https://lc.h35.tw/',
+          link: 'https://lc-h35.tw/',
           title: '立瑾建築',
         },
         {
@@ -652,7 +664,7 @@ export default {
         {
           img: require('./work/web/sm.jpg'),
           type: 'web',
-          link: 'https://sm.h35.tw/',
+          link: 'https://sm-h35.tw/',
           title: '西門大院',
         },
         {
@@ -694,7 +706,7 @@ export default {
         {
           img: require('./work/web/jysj.jpg'),
           type: 'web',
-          link: 'https://sj.h35.tw/',
+          link: 'https://sj-h35.tw/',
           title: '佳元松江',
         },
         {
@@ -724,7 +736,7 @@ export default {
         {
           img: require('./work/web/ace.jpg'),
           type: 'web',
-          link: 'https://ace.h35.tw/',
+          link: 'https://ace.debang.tw/',
           title: '太陽帝國',
         },
         {
@@ -742,7 +754,7 @@ export default {
         {
           img: require('./work/web/jsjm.jpg'),
           type: 'web',
-          link: 'https://jsjm.h35.tw/',
+          link: 'https://jsjm-h35.tw/',
           title: '中山直美',
         },
         {
@@ -754,19 +766,19 @@ export default {
         {
           img: require('./work/web/tsi.jpg'),
           type: 'web',
-          link: 'https://tsi.h35.tw/',
+          link: 'https://tsi-h35.tw/',
           title: '天空之邑',
         },
         {
           img: require('./work/web/h25.gif'),
           type: 'web',
-          link: 'https://h25.h35.tw/',
+          link: 'https://h25.tw/',
           title: '中正h25',
         },
         {
           img: require('./work/web/hg.jpg'),
           type: 'web',
-          link: 'https://hg.h35.tw/',
+          link: 'https://hg-h35.tw/',
           title: '築藝海格',
         },
         {
@@ -778,7 +790,7 @@ export default {
         {
           img: require('./work/web/jy.jpg'),
           type: 'web',
-          link: 'https://jy.h35.tw/',
+          link: 'https://jy-h35.tw/',
           title: '築億丰盛',
         },
         {
@@ -820,7 +832,7 @@ export default {
         {
           img: require('./work/web/yj.jpg'),
           type: 'web',
-          link: 'https://yj.h35.tw/',
+          link: 'https://yj-h35.tw/',
           title: '明日城2怡家特區',
         },
         {
@@ -838,13 +850,13 @@ export default {
         {
           img: require('./work/web/tsy.jpg'),
           type: 'web',
-          link: 'https://tsy.h35.tw/',
+          link: 'https://tsy-h35.tw/',
           title: '翠松園',
         },
         {
           img: require('./work/web/sv.jpg'),
           type: 'web',
-          link: 'https://sv.h35.tw/',
+          link: 'https://sv-h35.tw/',
           title: '文華天際',
         },
         {
@@ -856,7 +868,7 @@ export default {
         {
           img: require('./work/web/wonder.jpg'),
           type: 'web',
-          link: 'https://wonder.h35.tw/',
+          link: 'https://wonder-h35.tw/',
           title: '聯悦臻',
         },
         {
@@ -928,7 +940,7 @@ export default {
         {
           img: require('./work/web/57.jpg'),
           type: 'web',
-          link: 'https://casa.h35.tw/',
+          link: 'https://casa-h35.tw/',
           title: '信義CASA',
         },
         {
@@ -965,7 +977,7 @@ export default {
         {
           img: require('./work/web/39.jpg'),
           type: 'web',
-          link: 'https://hy.h35.tw/',
+          link: 'https://hy-h35.tw/',
           title: '鴻苑',
         },
         {
