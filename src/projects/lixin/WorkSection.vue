@@ -574,7 +574,7 @@ export default {
           img: require('./work/web/jcs.jpg'),
           type: 'web',
           link: 'https://jcs-h35.tw/',
-          title: '大安謙韵',
+          title: '植春樹',
         },
         {
           img: require('./work/web/juuyi.jpg'),
