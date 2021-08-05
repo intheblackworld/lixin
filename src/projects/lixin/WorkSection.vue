@@ -523,6 +523,12 @@ export default {
       workList: [
         // web 
         {
+          img: require('./work/web/ifc.jpg'),
+          type: 'web',
+          link: 'https://ifc.syn.tw/',
+          title: '京城IFC',
+        },
+        {
           img: require('./work/web/oh.jpg'),
           type: 'web',
           link: 'https://oh-h35.tw/',
