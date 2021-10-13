@@ -125,7 +125,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、手機、 E-mail、居住城市、居住地區」是必填欄位',
+          '「姓名、手機、居住城市、居住地區」是必填欄位',
         ),
       })
     },
@@ -137,7 +137,7 @@ export default {
       if (
         !this.form.name ||
         !this.form.phone ||
-        !this.form.email ||
+        // !this.form.email ||
         !this.form.city ||
         !this.form.area
       ) {
