@@ -309,7 +309,7 @@ export default {
         message: h(
           'i',
           { style: 'color: #82191d' },
-          '「姓名、 信箱」是必填欄位',
+          '「姓名、 電話」是必填欄位',
         ),
       })
     },
@@ -360,7 +360,7 @@ export default {
       if (this.isSubmit) return
       if (!this.isVerify) return
       this.isSubmit = true
-      if (!this.form.name || !this.form.email) {
+      if (!this.form.name || !this.form.phone) {
         this.alertValidate()
         this.isSubmit = false
         return
