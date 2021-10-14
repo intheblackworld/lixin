@@ -522,12 +522,13 @@ export default {
       window,
       workList: [
         // web 
-        {
+    /*    {
           img: require('./work/web/ifc.jpg'),
           type: 'web',
           link: 'https://ifc.syn.tw/',
           title: '京城IFC',
         },
+        */
         {
           img: require('./work/web/oh.jpg'),
           type: 'web',
