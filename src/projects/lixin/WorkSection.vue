@@ -705,9 +705,16 @@ export default {
         {
           img: require('./work/web/jiman.jpg'),
           type: 'web',
-          link: 'https://jiman.debang.tw/',
+          link: 'https://jiman.h35.tw/',
           title: '自慢藏',
         },
+        /* 
+        {
+          img: require('./work/web/jiman.jpg'),
+          type: 'web',
+          link: 'https://jiman1.h35.tw/',
+          title: '自慢藏預告頁',
+        }, */
         {
           img: require('./work/web/hsy.jpg'),
           type: 'web',
