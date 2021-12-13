@@ -4,7 +4,7 @@
 #$case_code = "jw";特殊案使用
 $src =$_SERVER['SERVER_NAME']; 
 $case_code_test = substr(substr($src,0,strpos($src,'.')),-1);
-$case_code = substr($src,0,strpos($src,$case_code_test=='1'?'1':$case_code_test=='5'?'-':'.'));
+$case_code ='lixin';
 
 # PDO DB 連線 Start
     $pdo=new pdo('mysql:host=localhost;dbname=htw_web','htw','748aSgl5Ni');

@@ -854,6 +854,7 @@ export default {
       width: 813,
       height: 597,
       window: window,
+     /*
       slideList: [
         {
           img: require('./s2/s2-2/1.png'),
@@ -865,6 +866,7 @@ export default {
           img: require('./s2/s2-2/3.png'),
         },
       ],
+      */
     }
   },
   methods: {
