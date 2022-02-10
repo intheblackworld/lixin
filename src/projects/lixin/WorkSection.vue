@@ -555,7 +555,7 @@ export default {
         {
           img: require('./work/web/pjr.jpg'),
           type: 'web',
-          link: 'https://pjr1.h35.tw/',
+          link: 'https://case.hiyes.tw/pjavenue/',
           title: '璞真之道',
         },
         {
