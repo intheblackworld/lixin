@@ -541,6 +541,12 @@ export default {
           title: '達欣東匯',
         },
         {
+          img: require('./work/web/cc.gif'),
+          type: 'web',
+          link: 'https://cc.haiwo1.tw/',
+          title: '青青',
+        },
+        {
           img: require('./work/web/tye.jpg'),
           type: 'web',
           link: 'http://tye.tanyue.tw/',
@@ -551,12 +557,6 @@ export default {
           type: 'web',
           link: 'https://nina.yu-fong.tw/',
           title: '悅峰釀',
-        },
-        {
-          img: require('./work/web/cc.gif'),
-          type: 'web',
-          link: 'https://cc.haiwo1.tw/',
-          title: '青青',
         },
         {
           img: require('./work/web/ihome.jpg'),
@@ -604,7 +604,7 @@ export default {
           img: require('./work/web/ml.jpg'),
           type: 'web',
           link: 'https://ml.gden.tw/',
-          title: '米蘭花園',
+          title: 'MILANO茂德三重',
         },
         {
           img: require('./work/web/pjr.jpg'),
