@@ -577,6 +577,12 @@ export default {
           title: '泰舍至善元',
         },
         {
+          img: require('./work/web/ts.jpg'),
+          type: 'web',
+          link: 'https://ts-coming-demo.h65.tw',
+          title: '泰舍至善元預約頁',
+        },
+        {
           img: require('./work/web/yclj.jpg'),
           type: 'web',
           link: 'https://yclj.lgd.tw',
@@ -743,7 +749,7 @@ export default {
         {
           img: require('./work/web/dmh.jpg'),
           type: 'web',
-          link: 'https://dm-h35.tw',
+          link: 'https://dm-demo.h65.tw',
           title: '大安謙韵',
         },
         {
@@ -805,7 +811,7 @@ export default {
         {
           img: require('./work/web/kid.jpg'),
           type: 'web',
-          link: 'https://kid-h35.tw',
+          link: 'https://kid-demo.h65.tw/',
           title: '遛樂KID',
         },
         {
@@ -870,14 +876,12 @@ export default {
           link: 'https://lj.h35.tw',
           title: '連雲景粋',
         },
-        /*
         {
           img: require('./work/web/sm.jpg'),
           type: 'web',
-          link: 'https://sm-h35.tw',
+          link: 'https://sm-demo.h65.tw/',
           title: '西門大院',
         },
-        */
         {
           img: require('./work/web/dm.jpg'),
           type: 'web',
@@ -917,7 +921,7 @@ export default {
         {
           img: require('./work/web/jysj.jpg'),
           type: 'web',
-          link: 'https://sj-h35.tw',
+          link: 'https://sj-demo.h65.tw/',
           title: '佳元松江',
         },
         {
@@ -965,7 +969,7 @@ export default {
         {
           img: require('./work/web/jsjm.jpg'),
           type: 'web',
-          link: 'https://jsjm-h35.tw',
+          link: 'https://jsjm-demo.h65.tw/',
           title: '中山直美',
         },
         {
@@ -989,7 +993,7 @@ export default {
         {
           img: require('./work/web/hg.jpg'),
           type: 'web',
-          link: 'https://hg-h35.tw',
+          link: 'https://hg-demo.h65.tw/',
           title: '築藝海格',
         },
         {
@@ -1001,7 +1005,7 @@ export default {
         {
           img: require('./work/web/jy.jpg'),
           type: 'web',
-          link: 'https://jy-h35.tw',
+          link: 'https://jy-demo.h65.tw/',
           title: '築億丰盛',
         },
         {
@@ -1043,7 +1047,7 @@ export default {
         {
           img: require('./work/web/yj.jpg'),
           type: 'web',
-          link: 'https://yj-h35.tw',
+          link: 'https://yj-demo.h65.tw/',
           title: '明日城2怡家特區',
         },
         {
