@@ -193,7 +193,7 @@
     margin: 15px 0 15px 30px;
     overflow: hidden;
     transition: all 0.3s;
-    flex: 1 1 auto;
+    flex: 1 1 25%;
     cursor: pointer;
 
     &.no-padding {
@@ -528,7 +528,68 @@ export default {
           link: 'https://ifc.syn.tw',
           title: '京城IFC',
         },
-        */{
+        */
+        {
+          img: require('./work/web/cang-m.jpg'),
+          type: 'web',
+          link: 'https://cang-m.tw/',
+          title: '藏美建設官網',
+        },
+        {
+          img: require('./work/web/ar.jpg'),
+          type: 'web',
+          link: 'https://ar.ytfs.tw/',
+          title: '岳泰峰碩',
+        },
+        {
+          img: require('./work/web/ros.jpg'),
+          type: 'web',
+          link: 'https://ros.ssgd.tw/',
+          title: '首璽官邸',
+        },
+        {
+          img: require('./work/web/ruo.jpg'),
+          type: 'web',
+          link: 'https://ruo.waterfront.tw/',
+          title: '若水岸',
+        },
+        {
+          img: require('./work/web/gramercy3.jpg'),
+          type: 'web',
+          link: 'https://gramercy3.com/',
+          title: '碧澄三',
+        },
+        {
+          img: require('./work/web/gramercy2.jpg'),
+          type: 'web',
+          link: 'https://gramercy2.com/',
+          title: '碧澄二',
+        },
+        {
+          img: require('./work/web/gramercy1.jpg'),
+          type: 'web',
+          link: 'https://gramercy1.com/',
+          title: '碧澄一',
+        },
+        {
+          img: require('./work/web/wsy.jpg'),
+          type: 'web',
+          link: 'https://wsy.chengo.tw/',
+          title: '文學苑',
+        },
+        {
+          img: require('./work/web/wv.jpg'),
+          type: 'web',
+          link: 'https://wv.debang.tw/',
+          title: '伴月灣',
+        },
+        {
+          img: require('./work/web/renai.jpg'),
+          type: 'web',
+          link: 'https://renai.shiu.tw/',
+          title: '仁愛旭',
+        },
+        {
           img: require('./work/web/cm.jpg'),
           type: 'web',
           link: 'https://cang-m.omdsd.tw',
@@ -571,7 +632,7 @@ export default {
           title: '光禾墅',
         },
         {
-          img: require('./work/web/ts.jpg'),
+          img: require('./work/web/ts1.jpg'),
           type: 'web',
           link: 'https://ts.jsyn.tw',
           title: '泰舍至善元',
