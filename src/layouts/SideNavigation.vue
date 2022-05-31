@@ -1,10 +1,10 @@
 <template>
   <div class="sideNav">
     <div class="nav relative">
-      <div class="menu" @click="toggleSidebar">
+   <!--   <div class="menu" @click="toggleSidebar">
         <img v-if="isOpen" src="@/projects/jh/s4/close.png" class="close" alt />
         <img v-else src="@/assets/img/menu-btn.png" alt />
-      </div>
+      </div> -->
       <div :class="`mask ${isOpen ? 'open' : ''}`" @click="toggleSidebar" />
       <ul :class="`navlist ${isOpen ? 'open' : ''}`">
         <li
@@ -129,7 +129,7 @@ export default {
   transition: all 0.3s ease-in;
   display: block;
   transform: translateX(40%);
-  background-image: url("./nav_bg.png");
+  // background-image: url("./nav_bg.png");
 
   li {
     height: 60px;

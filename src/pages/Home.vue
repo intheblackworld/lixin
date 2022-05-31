@@ -1,8 +1,8 @@
 <template>
   <div class="home no-padding-top">
     <div ref="gtmNoScript" />
-    <SideNavigation v-if="isSide" />
-    <Navigation v-else />
+    <!-- <SideNavigation v-if="isSide" />  -->
+    <Navigation v-if="!isSide"  />
     <div id="section1">
       <Section1 />
     </div>
@@ -43,7 +43,7 @@
 <script>
 // @ is an alias to /src
 import Navigation from '@/layouts/Navigation.vue'
-import SideNavigation from '@/layouts/SideNavigation.vue'
+// import SideNavigation from '@/layouts/SideNavigation.vue'
 import ContactSection from '@/layouts/ContactSection.vue'
 import gtm from '@/mixins/gtm.js'
 
@@ -61,7 +61,7 @@ export default {
   mixins: [gtm],
   components: {
     Navigation,
-    SideNavigation,
+    // SideNavigation,
     ContactSection,
     Section1,
     Section2,

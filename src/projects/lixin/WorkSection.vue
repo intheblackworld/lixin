@@ -190,7 +190,7 @@
   .work-item {
     // box-shadow: 0 0 2px 1px #666;
     // border-radius: 5px;
-    margin: 15px 0 15px 30px;
+    margin: 5px 0 5px 10px;
     overflow: hidden;
     transition: all 0.3s;
     flex: 1 1 25%;
@@ -528,7 +528,25 @@ export default {
           link: 'https://ifc.syn.tw',
           title: '京城IFC',
         },
+        {
+          img: require('./work/web/cang-m.jpg'),
+          type: 'web',
+          link: 'https://lyn.longying.tw/',
+          title: '龍瑩双和心',
+        },
+        {
+          img: require('./work/web/cang-m.jpg'),
+          type: 'web',
+          link: 'https://hbl.hai-wo.tw/',
+          title: '紅布朗花園',
+        },
         */
+        {
+          img: require('./work/web/tgoa.jpg'),
+          type: 'web',
+          link: 'https://cang-m.tw/',
+          title: '中悦美術花園',
+        },
         {
           img: require('./work/web/cang-m.jpg'),
           type: 'web',
@@ -541,12 +559,12 @@ export default {
           link: 'https://ar.ytfs.tw/',
           title: '岳泰峰碩',
         },
-        {
+      /*  {
           img: require('./work/web/ros.jpg'),
           type: 'web',
           link: 'https://ros.ssgd.tw/',
           title: '首璽官邸',
-        },
+        }, */ 
         {
           img: require('./work/web/ruo.jpg'),
           type: 'web',
@@ -664,7 +682,7 @@ export default {
         {
           img: require('./work/web/kp.jpg'),
           type: 'web',
-          link: 'https://kp.kingpark.tw',
+          link: 'https://kp-demo.h65.tw/',
           title: '京城king park',
         },
         {
@@ -804,7 +822,7 @@ export default {
         {
           img: require('./work/web/ymsj.jpg'),
           type: 'web',
-          link: 'https://ymsj.com.tw',
+          link: 'https://ymsj-demo.h65.tw/',
           title: '陽明山莊',
         },
         {
@@ -852,17 +870,17 @@ export default {
         {
           img: require('./work/web/cby.jpg'),
           type: 'web',
-          link: 'https://cby.tw',
+          link: '//cby-demo.h65.tw',
           title: '春福年年',
         },
-        /*
+        
         {
           img: require('./work/web/cby.jpg'),
           type: 'web',
-          link: '//cby-demo.h65.tw',
+          link: '//cby-coming-demo.h65.tw ',
           title: '春福年年<br>預告頁展示',
         },
-        */
+        
         {
           img: require('./work/web/ypy.jpg'),
           type: 'web',
@@ -946,7 +964,7 @@ export default {
         {
           img: require('./work/web/dm.jpg'),
           type: 'web',
-          link: 'https://dm.h35.tw',
+          link: 'https://dmfy-demo.h65.tw/',
           title: '東門馥寓',
         },
         {
@@ -1186,7 +1204,7 @@ export default {
         {
           img: require('./work/web/23.jpg'),
           type: 'web',
-          link: 'https://lsbj.h35.tw',
+          link: 'https://lsbj.h35.tw/demo/',
           title: '聯上鉑金',
         },
         {
