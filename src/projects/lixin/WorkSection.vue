@@ -544,7 +544,7 @@ export default {
         {
           img: require('./work/web/tgoa.jpg'),
           type: 'web',
-          link: 'https://cang-m.tw/',
+          link: 'https://tgoa.zhongyue.tw/',
           title: '中悦美術花園',
         },
         {
