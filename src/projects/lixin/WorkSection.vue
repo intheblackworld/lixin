@@ -589,12 +589,13 @@ export default {
           link: 'https://nsu.h-sin.tw/',
           title: '興世代',
         },
-        {
+      /*  {
           img: require('./work/web/mzsy.jpg'),
           type: 'web',
           link: 'https://mzsy.tw/',
           title: '明志書院',
         },
+        */
         {
           img: require('./work/web/stj.jpg'),
           type: 'web',
