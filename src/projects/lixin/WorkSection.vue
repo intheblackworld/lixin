@@ -542,6 +542,66 @@ export default {
         },
         */
         {
+          img: require('./work/web/zsgd.jpg'),
+          type: 'web',
+          link: 'https://zsgd.prosco.tw/',
+          title: '至善高第',
+        },
+        {
+          img: require('./work/web/rjs.gif'),
+          type: 'web',
+          link: 'https://rjs.rihe.tw/',
+          title: '日進學',
+        },
+        {
+          img: require('./work/web/ccfu.jpg'),
+          type: 'web',
+          link: 'https://ccfu.hita.tw/',
+          title: '青川馥',
+        },
+        {
+          img: require('./work/web/cyl.jpg'),
+          type: 'web',
+          link: 'https://cyl.changyaoli.tw/',
+          title: '長耀里',
+        },
+        {
+          img: require('./work/web/jyh.jpg'),
+          type: 'web',
+          link: 'https://jyh.zhongyue.tw/',
+          title: '耑悦',
+        },
+        {
+          img: require('./work/web/jia.jpg'),
+          type: 'web',
+          link: 'https://lovejia.tw/',
+          title: '戀JIA',
+        },
+        {
+          img: require('./work/web/yl.jpg'),
+          type: 'web',
+          link: 'https://yl.fong-shi.tw/',
+          title: '公園漾',
+        },
+        {
+          img: require('./work/web/nsu.jpg'),
+          type: 'web',
+          link: 'https://nsu.h-sin.tw/',
+          title: '興世代',
+        },
+        {
+          img: require('./work/web/mzsy.jpg'),
+          type: 'web',
+          link: 'https://mzsy.tw/',
+          title: '明志書院',
+        },
+        {
+          img: require('./work/web/stj.jpg'),
+          type: 'web',
+          link: 'https://stj.longyuan.tw/',
+          title: '心仝聚',
+        },
+        {
           img: require('./work/web/tgoa.jpg'),
           type: 'web',
           link: 'https://tgoa.zhongyue.tw/',
@@ -570,6 +630,12 @@ export default {
           type: 'web',
           link: 'https://ruo.waterfront.tw/',
           title: '若水岸',
+        },
+        {
+          img: require('./work/web/gramercy.jpg'),
+          type: 'web',
+          link: 'https://gramercy.com.tw/',
+          title: '襄澐建設',
         },
         {
           img: require('./work/web/gramercy3.jpg'),
