@@ -791,7 +791,7 @@ export default {
         {
           img: require('./work/web/tk.jpg'),
           type: 'web',
-          link: 'https://tk.da-li.tw',
+          link: 'https://tk-demo.h65.tw/',
           title: '達麗東京',
         },
         {
@@ -803,7 +803,7 @@ export default {
         {
           img: require('./work/web/pacific-dnls.jpg'),
           type: 'web',
-          link: 'https://pacific-dnls.uge.tw',
+          link: 'https://dnls-demo.h65.tw/',
           title: '敦南麗舍',
         },
         {
@@ -865,7 +865,7 @@ export default {
         {
           img: require('./work/web/ymsy.jpg'),
           type: 'web',
-          link: 'https://ymsy.syf.tw',
+          link: 'https://ymsy-demo.h65.tw/',
           title: '樹山丘',
         },
         {
