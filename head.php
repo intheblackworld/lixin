@@ -1,13 +1,16 @@
 <?php
-$case_code = 'lixin'; 
+// $src = $_SERVER['SERVER_NAME'];
+// $case_code = substr($src, 0, -7); // 砍掉後面七個字 .h35.tw -h35.tw
+$case_code = "jw"; // TODO
 $pdo = new pdo('mysql:host=localhost;dbname=htw_web', 'htw', '748aSgl5Ni');
 $pdo->exec("SET NAMES 'utf8'");
-$sql = "SELECT title,description,keyword FROM susers WHERE email = '" . $case_code . "'";
+$sql = "SELECT title,description,keyword,p0 FROM susers WHERE email = '" . $case_code . "'";
 $dataList = $pdo->query($sql)->fetchAll();
 $docTitle = $dataList[0]['title'];
 $siteName = $dataList[0]['title'];
 $docDesc = $dataList[0]['description'];
 $keyWords = $dataList[0]['keyword'];
+$fbDomain = $dataList[0]['p0'];
 $ogType = 'website';
 ?>
 <title><?php echo $docTitle; ?></title>
@@ -20,5 +23,8 @@ $ogType = 'website';
 <meta property="og:site_name" content="<?php echo $siteName; ?>" />
 <meta name="twitter:description" content="<?php echo $docDesc ?>" />
 <meta name="twitter:title" content="<?php echo $docTitle; ?>" />
-<meta itemprop="name" content="<?php echo $docTitle; ?>">
-<meta itemprop="description" content="<?php echo $docDesc ?>">
+<meta itemprop="name" content="<?php echo $docTitle; ?>" />
+<meta itemprop="description" content="<?php echo $docDesc ?>" />
+<?php if ($fbDomain) : ?>
+    <meta name='facebook-domain-verification' content="<?php echo $fbDomain ?>" />
+<?php endif; ?>

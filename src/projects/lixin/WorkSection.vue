@@ -809,7 +809,7 @@ export default {
         {
           img: require('./work/web/li.jpg'),
           type: 'web',
-          link: 'https://li.sunty.tw',
+          link: 'https://li-demo.h65.tw',
           title: '麗昇陽',
         },
         {
@@ -829,7 +829,7 @@ export default {
         {
           img: require('./work/web/chy.jpg'),
           type: 'web',
-          link: 'https://chy.syn.tw',
+          link: 'https://chy-coming-demo.h65.tw',
           title: '清景麟巴克禮PARK2',
         },
         {
@@ -853,13 +853,13 @@ export default {
         {
           img: require('./work/web/cfyd.jpg'),
           type: 'web',
-          link: 'https://cfyd.syn.tw',
+          link: 'https://cfyd-demo.h65.tw',
           title: '春福御邸',
         },
         {
           img: require('./work/web/fll.jpg'),
           type: 'web',
-          link: 'https://fll.han-sen.tw',
+          link: 'https://fll-demo.h65.tw',
           title: '富來樂',
         },
         {
@@ -907,7 +907,7 @@ export default {
         {
           img: require('./work/web/fzg.jpg'),
           type: 'web',
-          link: 'https://fzg.nvd.tw',
+          link: 'https://fzg-demo.h65.tw/',
           title: '豐之谷',
         },
         {
