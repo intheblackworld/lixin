@@ -767,7 +767,7 @@ export default {
         {
           img: require('./work/web/rss.jpg'),
           type: 'web',
-          link: 'https://rss.jod.tw',
+          link: 'https://rss-demo.h65.tw',
           title: '日勝幸福站',
         },
         {
@@ -785,7 +785,7 @@ export default {
         {
           img: require('./work/web/ymvilla.jpg'),
           type: 'web',
-          link: 'https://ymvilla.debang.tw',
+          link: 'https://ymvilla-demo.h65.tw',
           title: '陽明迴鄉',
         },
         {
@@ -867,6 +867,12 @@ export default {
           type: 'web',
           link: 'https://ymsy-demo.h65.tw/',
           title: '樹山丘',
+        },
+        {
+          img: require('./work/web/ryc.jpg'),
+          type: 'web',
+          link: 'https://ryc-demo.h65.tw/',
+          title: '睿暘沁',
         },
         {
           img: require('./work/web/oh.jpg'),
@@ -1435,13 +1441,12 @@ export default {
           link: 'https://star.h35.tw',
           title: '一日林板新活動官網',
         },
-        /*
         {
           img: require('./work/web/14.jpg'),
           type: 'web',
-          link: 'https://lkf1.h35.tw',
+          link: 'https://lkf-demo.h65.tw',
           title: '蘭桂坊',
-        },*/
+        },
         {
           img: require('./work/web/15.jpg'),
           type: 'web',
