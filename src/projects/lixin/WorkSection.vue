@@ -522,25 +522,198 @@ export default {
       window,
       workList: [
         // web 
-    /*    {
-          img: require('./work/web/ifc.jpg'),
+    /*    
+        */
+        {
+          img: require('./work/web/ssb.jpg'),
           type: 'web',
-          link: 'https://ifc.syn.tw',
-          title: '京城IFC',
+          link: 'https://ssb.hai-wo.tw',
+          title: '尚新板',
         },
         {
-          img: require('./work/web/cang-m.jpg'),
+          img: require('./work/web/onepark.jpg'),
+          type: 'web',
+          link: 'https://onepark.tw/',
+          title: '巴克禮onepark',
+        },
+        {
+          img: require('./work/web/jing-yan.jpg'),
+          type: 'web',
+          link: 'https://jing-yan.tw/',
+          title: '豐郡京硯',
+        },
+        {
+          img: require('./work/web/csyp.jpg'),
+          type: 'web',
+          link: 'https://csyp.tw/',
+          title: '誠鑫一品',
+        },
+        {
+          img: require('./work/web/mhsd2.jpg'),
+          type: 'web',
+          link: 'https://mhsd2.tw/',
+          title: '漫活時代2',
+        },
+        {
+          img: require('./work/web/gtcip.jpg'),
+          type: 'web',
+          link: 'https://gtcip.debang.tw/',
+          title: '雙橡園',
+        },
+        {
+          img: require('./work/web/ji-jhan.jpg'),
+          type: 'web',
+          link: 'https://ji-jhan.tw',
+          title: '極綻',
+        },
+        {
+          img: require('./work/web/yama.jpg'),
+          type: 'web',
+          link: 'https://zongda-yama.tw/',
+          title: '宗大敘山',
+        },
+        {
+          img: require('./work/web/aota.jpg'),
+          type: 'web',
+          link: 'https://zongda-aota.tw/',
+          title: '宗大青田',
+        },
+        {
+          img: require('./work/web/mori-architecture.jpg'),
+          type: 'web',
+          link: 'https://mori-architecture.tw/',
+          title: '研森',
+        },
+        {
+          img: require('./work/web/fong.jpg'),
+          type: 'web',
+          link: 'https://fong-guang.tw/',
+          title: '豐光',
+        },
+        {
+          img: require('./work/web/smilecastle.jpg'),
+          type: 'web',
+          link: 'https://smilecastle.tw/',
+          title: '微笑莊園',
+        },
+        {
+          img: require('./work/web/yjy.jpg'),
+          type: 'web',
+          link: 'https://yjy.tw/',
+          title: '御莊園',
+        },
+        {
+          img: require('./work/web/seav1.jpg'),
+          type: 'web',
+          link: 'https://seav1.debang.tw/',
+          title: '海揚V1',
+        },
+        {
+          img: require('./work/web/junyijst.jpg'),
+          type: 'web',
+          link: 'https://junyijst.tw/',
+          title: '景上汀',
+        },
+        {
+          img: require('./work/web/amei.jpg'),
+          type: 'web',
+          link: 'https://amei.skytower.tw/',
+          title: '艾美國際城',
+        },
+        {
+          img: require('./work/web/free.jpg'),
+          type: 'web',
+          link: 'https://free.towncity.tw/',
+          title: '自遊城',
+        },
+        {
+          img: require('./work/web/fll2.jpg'),
+          type: 'web',
+          link: 'https://fl.jimei.tw/',
+          title: '吉美富來',
+        },
+        {
+          img: require('./work/web/tj.jpg'),
+          type: 'web',
+          link: 'https://tj.tuojhen.tw/',
+          title: '泰嘉拓真',
+        },
+        {
+          img: require('./work/web/cjl.jpg'),
+          type: 'web',
+          link: 'https://cjl.worldwing.tw/',
+          title: '清景麟國家公園',
+        },
+        {
+          img: require('./work/web/cfanan.jpg'),
+          type: 'web',
+          link: 'https://cfanan.tw/',
+          title: '春福安安',
+        },
+        {
+          img: require('./work/web/cfyd2.jpg'),
+          type: 'web',
+          link: 'https://cfyd.tw/',
+          title: '春福御邸 正式頁',
+        },
+        {
+          img: require('./work/web/love-sunny.jpg'),
+          type: 'web',
+          link: 'https://love-sunny.tw/',
+          title: '樂晴',
+        },
+        {
+          img: require('./work/web/hr.jpg'),
+          type: 'web',
+          link: 'https://hr.home-hj.com.tw/',
+          title: '盛雲康寓',
+        },
+        {
+          img: require('./work/web/celebrity.jpg'),
+          type: 'web',
+          link: 'https://celebrity.mrf.tw/',
+          title: '清景麟 名人坊',
+        },
+        {
+          img: require('./work/web/vvs1.jpg'),
+          type: 'web',
+          link: 'https://vvs1.tw/',
+          title: 'VVS1',
+        },
+        {
+          img: require('./work/web/jacy.jpg'),
+          type: 'web',
+          link: 'https://jacy.com.tw/',
+          title: '佳昂家易',
+        },
+        {
+          img: require('./work/web/great-intersection.jpg'),
+          type: 'web',
+          link: 'https://great-intersection.tw/',
+          title: '勝麗交響曲',
+        },
+        {
+          img: require('./work/web/sy.jpg'),
+          type: 'web',
+          link: 'https://sy.nhc888.com.tw/',
+          title: '佳鋐首邑',
+        },
+        {
+          img: require('./work/web/lyn.jpg'),
           type: 'web',
           link: 'https://lyn.longying.tw/',
           title: '龍瑩双和心',
         },
         {
-          img: require('./work/web/cang-m.jpg'),
+          img: require('./work/web/hbl.jpg'),
           type: 'web',
           link: 'https://hbl.hai-wo.tw/',
           title: '紅布朗花園',
         },
-        */
+
+
+
+
         {
           img: require('./work/web/zsgd.jpg'),
           type: 'web',
@@ -607,6 +780,12 @@ export default {
           type: 'web',
           link: 'https://tgoa.zhongyue.tw/',
           title: '中悦美術花園',
+        },
+       {
+          img: require('./work/web/ifc.jpg'),
+          type: 'web',
+          link: 'https://ifc-demo.h65.tw',
+          title: '京城IFC',
         },
         {
           img: require('./work/web/cang-m.jpg'),
@@ -695,7 +874,7 @@ export default {
         {
           img: require('./work/web/tye.jpg'),
           type: 'web',
-          link: 'http://tye.tanyue.tw',
+          link: 'https://tye.tanyue.tw',
           title: '檀悅',
         },
         {
@@ -713,7 +892,7 @@ export default {
         {
           img: require('./work/web/ghs.jpg'),
           type: 'web',
-          link: 'https://ghs.h-sin.tw',
+          link: 'https://ghs-demo.h65.tw',
           title: '光禾墅',
         },
         {
@@ -761,7 +940,7 @@ export default {
         {
           img: require('./work/web/pjr.jpg'),
           type: 'web',
-          link: 'http://pjr-demo.h65.tw',
+          link: 'https://pjr-demo.h65.tw',
           title: '璞真之道',
         },
         {
@@ -779,7 +958,7 @@ export default {
         {
           img: require('./work/web/wlz.jpg'),
           type: 'web',
-          link: 'https://wlz.chinja.tw',
+          link: 'https://wlz-demo.h65.tw',
           title: '勤家璞真',
         },
         {
@@ -854,7 +1033,7 @@ export default {
           img: require('./work/web/cfyd.jpg'),
           type: 'web',
           link: 'https://cfyd-demo.h65.tw',
-          title: '春福御邸',
+          title: '春福御邸 預告展示',
         },
         {
           img: require('./work/web/fll.jpg'),
@@ -919,7 +1098,7 @@ export default {
         {
           img: require('./work/web/ab.gif'),
           type: 'web',
-          link: '//ab-demo.h65.tw',
+          link: 'https://ab-demo.h65.tw',
           title: '虹耀今采',
         },
         {
@@ -943,14 +1122,14 @@ export default {
         {
           img: require('./work/web/cby.jpg'),
           type: 'web',
-          link: '//cby-demo.h65.tw',
+          link: 'https://cby-demo.h65.tw',
           title: '春福年年',
         },
         
         {
           img: require('./work/web/cby.jpg'),
           type: 'web',
-          link: '//cby-coming-demo.h65.tw ',
+          link: 'https://cby-coming-demo.h65.tw ',
           title: '春福年年<br>預告頁展示',
         },
         
@@ -975,14 +1154,14 @@ export default {
         {
           img: require('./work/web/jiman.jpg'),
           type: 'web',
-          link: '//jiman-demo.h65.tw',
+          link: 'https://jiman-demo.h65.tw',
           title: '自慢藏',
         },
         /* 
         {
           img: require('./work/web/jiman.jpg'),
           type: 'web',
-          link: '//jiman-coming-demo.h65.tw',
+          link: 'https://jiman-coming-demo.h65.tw',
           title: '自慢藏預告頁',
         }, */
         {
@@ -1025,7 +1204,7 @@ export default {
         {
           img: require('./work/web/lj.jpg'),
           type: 'web',
-          link: 'https://lj.h35.tw',
+          link: 'https://lj-demo.h65.tw',
           title: '連雲景粋',
         },
         {
@@ -1043,19 +1222,19 @@ export default {
         {
           img: require('./work/web/sc.jpg'),
           type: 'web',
-          link: 'https://sc.h35.tw',
-          title: '拾邱',
+          link: 'https://sc-demo.h65.tw/',
+          title: '拾秋',
         },
         {
           img: require('./work/web/yb.jpg'),
           type: 'web',
-          link: 'https://yb.h35.tw',
+          link: 'https://yb-demo.h65.tw',
           title: '央北鑫建築',
         },
         {
           img: require('./work/web/yu.jpg'),
           type: 'web',
-          link: 'https://yu.h35.tw',
+          link: 'https://yu-demo.h65.tw',
           title: '詠喆',
         },
         {
@@ -1067,7 +1246,7 @@ export default {
         {
           img: require('./work/web/wh.jpg'),
           type: 'web',
-          link: 'https://wh.h35.tw',
+          link: 'https://wh-demo.h65.tw',
           title: '達欣・信義文華 官網',
         },
         {
@@ -1169,19 +1348,19 @@ export default {
         {
           img: require('./work/web/ycfy.gif'),
           type: 'web',
-          link: '//ycfy-demo.h65.tw',
+          link: 'https://ycfy-demo.h65.tw',
           title: '頤昌豐岳官網',
         },
         { 
           img: require('./work/web/ycpy.jpg'),
           type: 'web',
-          link: 'https://ycpy.h35.tw',
+          link: 'https://ycpy-demo.h65.tw',
           title: '頤昌璞岳',
         },
         { 
           img: require('./work/web/ycpy1.jpg'),
           type: 'web',
-          link: '//ycpy-coming-demo.h65.tw',
+          link: 'https://ycpy-coming-demo.h65.tw',
           title: '頤昌璞岳預告頁',
         },
         {
@@ -1235,7 +1414,7 @@ export default {
         {
           img: require('./work/web/wonder.jpg'),
           type: 'web',
-          link: '//wonder-demo.h65.tw',
+          link: 'https://wonder-demo.h65.tw',
           title: '聯悦臻',
         },
         {
@@ -1259,7 +1438,7 @@ export default {
         {
           img: require('./work/web/wop.gif'),
           type: 'web',
-          link: '//wop-demo.h65.tw',
+          link: 'https://wop-demo.h65.tw',
           title: '太子峰雲',
         },
         {
@@ -1319,22 +1498,21 @@ export default {
         {
           img: require('./work/web/44.jpg'),
           type: 'web',
-          link: 'https://yc.h35.tw',
+          link: 'https://yc-demo.h65.tw',
           title: '漾CITY',
         },
         {
           img: require('./work/web/45.jpg'),
           type: 'web',
-          link: 'https://sdj.h35.tw',
-          title: '上東京',
+          link: 'https://sdj-demo.h65.tw',
+          title: '達麗上東京',
         },
         {
           img: require('./work/web/01.jpg'),
           type: 'web',
-          link: '//by-demo.h65.tw',
+          link: 'https://by-demo.h65.tw',
           title: '博悅',
         },
-
         {
           img: require('./work/web/38.jpg'),
           type: 'web',
@@ -1396,10 +1574,9 @@ export default {
         {
           img: require('./work/web/20.jpg'),
           type: 'web',
-          link: '//ycfy-coming-demo.h65.tw',
+          link: 'https://ycfy-coming-demo.h65.tw',
           title: '頤昌豐岳活動',
         },
-
         /*
         {
           img: require('./work/web/06.jpg'),
@@ -1407,9 +1584,7 @@ export default {
           link: 'https://yt.h35.tw',
           title: '頤昌耘萃',
         },
-
         */
-
         {
           img: require('./work/web/07.jpg'),
           type: 'web',
@@ -1419,13 +1594,13 @@ export default {
         {
           img: require('./work/web/13.gif'),
           type: 'web',
-          link: 'https://yns.h35.tw',
+          link: 'https://yns-demo.h65.tw',
           title: '北大樂馥',
         },
         {
           img: require('./work/web/02.jpg'),
           type: 'web',
-          link: '//dyc-demo.h65.tw',
+          link: 'https://dyc-demo.h65.tw',
           title: '德友藏',
         },
         {
@@ -1459,7 +1634,6 @@ export default {
           link: 'https://cht.h35.tw',
           title: '長虹天際',
         },
-
       /*
         {
           img: require('./work/web/28.jpg'),
@@ -1468,7 +1642,6 @@ export default {
           title: '鑫建築團隊',
         },
         */
-
         // video
         {
           img: require('./work/video/1.jpg'),
