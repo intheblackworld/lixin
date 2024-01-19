@@ -45,7 +45,7 @@
           style="display:flex;justify-content: center;"
           ></vue-recaptcha>
         </div>
-        <div :class="`button ${isVerify ? '' : 'disabled'}`" @click="submit">GO!</div>
+        <button :class="`button ${isVerify ? '' : 'disabled'}`" @click="submit">GO!</button>
       </div>
     </div>
     <!-- <Order /> -->
