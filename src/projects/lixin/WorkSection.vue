@@ -13,6 +13,19 @@
           :class="`${filterType === 'web' ? 'active' : ''} btn web`"
           @click="changeFilterType('web')"
         ></div>
+        <div class="boxbtnall">
+      <span
+        :class="`${filterType === 'web' && filterType2 === '1' ? 'active' : ''} boxbtn`"
+        @click="changeFilterType('web','1')"
+      ></span>
+      <span
+        :class="`${filterType === 'web' && filterType2 === '2' ? 'active' : ''} boxbtn`"
+        @click="changeFilterType('web','2')"
+      ></span>
+      <span
+        :class="`${filterType === 'web' && filterType2 === '3' ? 'active' : ''} boxbtn`"
+        @click="changeFilterType('web','3')"
+      ></span></div>
       </div>
     </div>
     <div class="work-container">
@@ -27,7 +40,55 @@
               <div class="work-title">{{item.title}}</div>
             </div>
           </div>
-          <div v-if="item.type === 'web'" class="web-item">
+          <div v-if="item.type === 'web' && !item.type2" class="web-item">
+            <div class="mask pointer" @click="showDialog(item.type, item.link)">
+              <h3 class="mask-title">
+                <span v-html="item.title"></span>
+                <h3 class="mask-subtitle">PROJECT</h3>
+              </h3>
+              <div class="mask-line"></div>
+              <div class="mask-btn">
+                <h3>VIEW</h3>
+                <div class="btn-border"></div>
+              </div>
+            </div>
+            <div class="work-content relative">
+              <img v-lazy="item.img" alt class="work-img" />
+            </div>
+          </div>
+          <div v-if="item.type === 'web' && item.type2 === '1'" class="web-item">
+            <div class="mask pointer" @click="showDialog(item.type, item.link)">
+              <h3 class="mask-title">
+                <span v-html="item.title"></span>
+                <h3 class="mask-subtitle">PROJECT</h3>
+              </h3>
+              <div class="mask-line"></div>
+              <div class="mask-btn">
+                <h3>VIEW</h3>
+                <div class="btn-border"></div>
+              </div>
+            </div>
+            <div class="work-content relative">
+              <img v-lazy="item.img" alt class="work-img" />
+            </div>
+          </div>
+          <div v-if="item.type === 'web' && item.type2 === '2'" class="web-item">
+            <div class="mask pointer" @click="showDialog(item.type, item.link)">
+              <h3 class="mask-title">
+                <span v-html="item.title"></span>
+                <h3 class="mask-subtitle">PROJECT</h3>
+              </h3>
+              <div class="mask-line"></div>
+              <div class="mask-btn">
+                <h3>VIEW</h3>
+                <div class="btn-border"></div>
+              </div>
+            </div>
+            <div class="work-content relative">
+              <img v-lazy="item.img" alt class="work-img" />
+            </div>
+          </div>
+          <div v-if="item.type === 'web' && item.type2 === '3'" class="web-item">
             <div class="mask pointer" @click="showDialog(item.type, item.link)">
               <h3 class="mask-title">
                 <span v-html="item.title"></span>
@@ -121,9 +182,11 @@
     width: 154px;
     height: 77px;
     display: flex;
-
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: .5em;
     .btn {
-      width: 50%;
+      width: calc(50% - .25em);
       height: 100%;
       display: flex;
       align-items: center;
@@ -152,6 +215,14 @@
           color: #fff;
         }
       }
+    }
+    .boxbtnall{width: 100%;display: flex; justify-content: flex-end;
+    gap: .5em;
+    }
+    .boxbtn{
+      display: inline-block;
+      width: 1em;height: 1em;background: #0002;cursor: pointer;
+      &.active {background: #0003;}
     }
   }
 }
@@ -464,10 +535,10 @@
     }
 
     .filter-btns {
-      width: 130px;
+      width: 180px;
 
       .btn {
-        width: 65px;
+      //  width: 65px;
         height: 65px;
       }
     }
@@ -476,6 +547,7 @@
   .work-container {
     width: 90vw;
     .work-item {
+    margin: 5px 0 5px 0;
       max-width: 100%;
       .mask {
         .mask-title {
@@ -490,6 +562,9 @@
         }
       }
     }
+  .work-row {
+    margin-left: 0px;
+  }
   }
 
   .dialog {
@@ -519,158 +594,183 @@ export default {
       isShowDialog: false,
       link: '',
       filterType: 'web',
+      filterType2: null,
       window,
+    /*   type2: 1客製 2套版 3大型 */
       workList: [
         // web 
-    /*    
-        */
         {
           img: require('./work/web/hi.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://hi.siang.tw/',
           title: '幸福享享',
         },
         {
           img: require('./work/web/JPARK.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jpark.tw/',
           title: '聯碩Jpark',
         },
         {
           img: require('./work/web/da-ju.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://da-ju.tw/',
           title: '協勝大聚',
         },
         {
           img: require('./work/web/fongyi-huili.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://fongyi-huili.tw/',
           title: '豐邑匯禮',
         },
         {
           img: require('./work/web/shengeng13.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://shengeng13.tw',
           title: '深耕13',
         },
         {
           img: require('./work/web/dt.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://dt.fongshuo.tw/',
           title: '鼎藏豐碩',
         },
         {
           img: require('./work/web/mrjc.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://mrjc.mingrih.tw/',
           title: '鳴日之城',
         },
         {
           img: require('./work/web/bt.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://bt.baotai-mansion.tw/',
           title: '保泰一品',
         },
         {
           img: require('./work/web/sjsj.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://sjsj.sanjin.tw/',
           title: '三景三錦',
         },
         {
           img: require('./work/web/wsys.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://wsys.smilehouse.tw/',
           title: '微笑寓所',
         },
         {
           img: require('./work/web/hgjs.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://hgjs.timeless-forest.tw/',
           title: '恆合中山',
         },
         {
           img: require('./work/web/dajing.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://dajing.tw/',
           title: '佳鋐大境',
         },
         {
           img: require('./work/web/the-taurus.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://the-taurus.tw/',
           title: '金牛座',
         },
         {
           img: require('./work/web/dajia.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://dajia.tw/',
           title: '佳展大嘉',
         },
         {
           img: require('./work/web/nc-star.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://nc-star.tw/',
           title: '北城之星',
         },
         {
           img: require('./work/web/wen.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://wen.debang.tw',
           title: '文華苑',
         },
         {
           img: require('./work/web/riverpark.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://rv.riverpark.tw/',
           title: 'RiVER PARK',
         },
         {
           img: require('./work/web/sl.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://sl.slow-living.tw/',
           title: '宏璟青雲',
         },
         {
           img: require('./work/web/feng-jun.jpg'),
           type: 'web',
+          type2: '3',
           link: 'https://feng-jun.tw/',
           title: '豐郡建設',
         },
         {
           img: require('./work/web/ry2.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://ry2.botb.tw/',
           title: '如邑2',
         },
         {
           img: require('./work/web/victory.jpg'),
           type: 'web',
-          link: 'http://victory.cjl.tw/',
+          type2: '1',
+          link: 'https://victory.cjl.tw/',
           title: '清景麟長勝',
         },
         {
           img: require('./work/web/jiazan.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://jiazan.da-he.tw/',
           title: '佳瓚大賀',
         },
         {
           img: require('./work/web/guo.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://guo.jyu-sing.tw/',
           title: '國鉅興',
         },
         {
           img: require('./work/web/trypxinbeilinkou.jpg'),
           type: 'web',
+          type2: '3',
           link: 'https://trypxinbeilinkou.com/',
           title: '溫德姆酒店',
         },
         {
           img: require('./work/web/ss.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ss.shengsing.tw/',
           title: '勝興興站',
         },
@@ -678,6 +778,7 @@ export default {
         {
           img: require('./work/web/ting.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://ting.sin-yuan2.tw/',
           title: '長磯聽心苑2',
         },
@@ -685,318 +786,371 @@ export default {
         {
           img: require('./work/web/dreampark.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://dreampark.tw/',
           title: '清景麟夢公園',
         },
         {
           img: require('./work/web/smile-europe.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://smile-europe.tw/',
           title: '微笑歐洲',
         },
         {
           img: require('./work/web/trm.jpg'),
           type: 'web',
-          link: 'http://trm.wcjp.tw/',
+          type2: '2',
+          link: 'https://trm.wcjp.tw/',
           title: '萬企君品',
         },
         {
           img: require('./work/web/zenarchi-tianmu.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://zenarchi-tianmu.tw/',
           title: '展宜常閑',
         },
         {
           img: require('./work/web/fmcy.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://fmcy.tw/',
           title: '鳳鳴欣苑',
         },
         {
           img: require('./work/web/flyc.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://flyc.tw/',
           title: '富來御川',
         },
         {
           img: require('./work/web/green-road.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://green-road.tw/',
           title: '艾美綠河',
         },
         {
           img: require('./work/web/wl2.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://wl2.debang.tw/',
           title: '快樂王國2-理享城',
         },
         {
           img: require('./work/web/zhuomei.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://zhuomei.tw/',
           title: '鼎禾琢渼',
         },
         {
           img: require('./work/web/sigma.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://sigma.debang.tw/',
           title: '高大Σ計畫',
         },
         {
           img: require('./work/web/kcconstruction.jpg'),
           type: 'web',
+          type2: '3',
           link: 'https://kcconstruction.com.tw/',
           title: '光全建設',
         },
         {
           img: require('./work/web/meidi.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://meidi.com.tw/',
           title: '美地莊園',
         },
         {
           img: require('./work/web/dali-tianshi.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://dali-tianshi.tw/',
           title: '達麗天蒔',
         },
         {
           img: require('./work/web/rhine-river.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://rhine-river.tw/',
           title: '萊茵水花園',
         },
         {
           img: require('./work/web/shih-jhu.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://shih-jhu.tw/',
           title: '蒔築',
         },
         {
           img: require('./work/web/changyao-jia.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://changyao-jia.com.tw/',
           title: '長耀加',
         },
         {
           img: require('./work/web/cfks.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cfks.tw/',
           title: '春福開緒',
         },
         {
           img: require('./work/web/am-new-era.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://am-new-era.tw/',
           title: '艾美新時代',
         },
         {
           img: require('./work/web/tian-hui.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://tian-hui.tw',
           title: '天匯',
         },
         {
           img: require('./work/web/telin-zheli.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://telin-zheli.tw/',
           title: '德林哲里',
         },
         {
           img: require('./work/web/hpym.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://hongpu-yangming.com/',
           title: '宏普陽明',
         },
         {
           img: require('./work/web/zhuoyi.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://zhuoyi.tw',
           title: '鼎禾琢壹',
         },
         {
           img: require('./work/web/ssb.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://ssb.hai-wo.tw',
           title: '尚新板',
         },
         {
           img: require('./work/web/onepark.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://onepark.tw/',
           title: '巴克禮onepark',
         },
         {
           img: require('./work/web/jing-yan.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jing-yan.tw/',
           title: '豐郡京硯',
         },
         {
           img: require('./work/web/csyp.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://csyp.tw/',
           title: '誠鑫一品',
         },
         {
           img: require('./work/web/mhsd2.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://mhsd2.tw/',
           title: '漫活時代2',
         },
         {
           img: require('./work/web/gtcip.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://gtcip.debang.tw/',
           title: '雙橡園',
         },
         {
           img: require('./work/web/ji-jhan.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ji-jhan.tw',
           title: '極綻',
         },
         {
           img: require('./work/web/yama.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://zongda-yama.tw/',
           title: '宗大敘山',
         },
         {
           img: require('./work/web/aota.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://zongda-aota.tw/',
           title: '宗大青田',
         },
         {
           img: require('./work/web/mori-architecture.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://mori-architecture.tw/',
           title: '研森',
         },
         {
           img: require('./work/web/fong.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://fong-guang.tw/',
           title: '豐光',
         },
         {
           img: require('./work/web/smilecastle.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://smilecastle.tw/',
           title: '微笑莊園',
         },
         {
           img: require('./work/web/yjy.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://yjy.tw/',
           title: '御莊園',
         },
         {
           img: require('./work/web/seav1.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://seav1.debang.tw/',
           title: '海揚V1',
         },
         {
           img: require('./work/web/junyijst.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://junyijst.tw/',
           title: '景上汀',
         },
         {
           img: require('./work/web/amei.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://amei.skytower.tw/',
           title: '艾美國際城',
         },
         {
           img: require('./work/web/free.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://free.towncity.tw/',
           title: '自遊城',
         },
         {
           img: require('./work/web/fll2.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://fl.jimei.tw/',
           title: '吉美富來',
         },
         {
           img: require('./work/web/tj.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://tj.tuojhen.tw/',
           title: '泰嘉拓真',
         },
         {
           img: require('./work/web/cjl.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cjl.worldwing.tw/',
           title: '清景麟國家公園',
         },
         {
           img: require('./work/web/cfanan.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cfanan.tw/',
           title: '春福安安',
         },
         {
           img: require('./work/web/cfyd2.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cfyd.tw/',
           title: '春福御邸 正式頁',
         },
         {
           img: require('./work/web/love-sunny.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://love-sunny.tw/',
           title: '樂晴',
         },
         {
           img: require('./work/web/hr.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://hr.home-hj.com.tw/',
           title: '盛雲康寓',
         },
         {
           img: require('./work/web/celebrity.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://celebrity.mrf.tw/',
           title: '清景麟 名人坊',
         },
         {
           img: require('./work/web/vvs1.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://vvs1.tw/',
           title: 'VVS1',
         },
         {
           img: require('./work/web/jacy.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jacy.com.tw/',
           title: '佳昂家易',
         },
         {
           img: require('./work/web/great-intersection.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://great-intersection.tw/',
           title: '勝麗交響曲',
         },
         {
           img: require('./work/web/sy.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://sy.nhc888.com.tw/',
           title: '佳鋐首邑',
         },
         {
           img: require('./work/web/lyn.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://lyn.longying.tw/',
           title: '龍瑩双和心',
         },
         {
           img: require('./work/web/hbl.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://hbl.hai-wo.tw/',
           title: '紅布朗花園',
         },
@@ -1007,54 +1161,63 @@ export default {
         {
           img: require('./work/web/zsgd.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://zsgd.prosco.tw/',
           title: '至善高第',
         },
         {
           img: require('./work/web/rjs.gif'),
           type: 'web',
+          type2: '1',
           link: 'https://rjs.rihe.tw/',
           title: '日進學',
         },
         {
           img: require('./work/web/ccfu.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ccfu.hita.tw/',
           title: '青川馥',
         },
         {
           img: require('./work/web/cyl.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cyl.changyaoli.tw/',
           title: '長耀里',
         },
         {
           img: require('./work/web/jyh.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jyh.zhongyue.tw/',
           title: '耑悦',
         },
         {
           img: require('./work/web/jia.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://lovejia.tw/',
           title: '戀JIA',
         },
         {
           img: require('./work/web/yl.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://yl.fong-shi.tw/',
           title: '公園漾',
         },
         {
           img: require('./work/web/nsu.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://nsu.h-sin.tw/',
           title: '興世代',
         },
       /*  {
           img: require('./work/web/mzsy.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://mzsy.tw/',
           title: '明志書院',
         },
@@ -1062,228 +1225,266 @@ export default {
         {
           img: require('./work/web/stj.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://stj.longyuan.tw/',
           title: '心仝聚',
         },
         {
           img: require('./work/web/tgoa.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://tgoa.zhongyue.tw/',
           title: '中悦美術花園',
         },
        {
           img: require('./work/web/ifc.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ifc-demo.h65.tw',
           title: '京城IFC',
         },
         {
           img: require('./work/web/cang-m.jpg'),
           type: 'web',
+          type2: '3',
           link: 'https://cang-m.tw/',
           title: '藏美建設官網',
         },
         {
           img: require('./work/web/ar.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ar.ytfs.tw/',
           title: '岳泰峰碩',
         },
       /*  {
           img: require('./work/web/ros.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ros.ssgd.tw/',
           title: '首璽官邸',
         }, */ 
         {
           img: require('./work/web/ruo.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ruo.waterfront.tw/',
           title: '若水岸',
         },
         {
           img: require('./work/web/gramercy.jpg'),
           type: 'web',
+          type2: '3',
           link: 'https://gramercy.com.tw/',
           title: '襄澐建設',
         },
         {
           img: require('./work/web/gramercy3.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://gramercy3.com/',
           title: '碧澄三',
         },
         {
           img: require('./work/web/gramercy2.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://gramercy2.com/',
           title: '碧澄二',
         },
         {
           img: require('./work/web/gramercy1.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://gramercy1.com/',
           title: '碧澄一',
         },
         {
           img: require('./work/web/wsy.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://wsy.chengo.tw/',
           title: '文學苑',
         },
         {
           img: require('./work/web/wv.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://wv.debang.tw/',
           title: '伴月灣',
         },
         {
           img: require('./work/web/renai.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://renai.shiu.tw/',
           title: '仁愛旭',
         },
         {
           img: require('./work/web/cm.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cang-m.omdsd.tw',
           title: '藏美表參道',
         },
         {
           img: require('./work/web/dh.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://dh.dacin.tw',
           title: '達欣東匯',
         },
         {
           img: require('./work/web/cc.gif'),
           type: 'web',
+          type2: '1',
           link: 'https://cc.haiwo1.tw',
           title: '青青',
         },
         {
           img: require('./work/web/tye.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://tye.tanyue.tw',
           title: '檀悅',
         },
         {
           img: require('./work/web/nina.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://nina.yu-fong.tw',
           title: '悅峰釀',
         },
         {
           img: require('./work/web/ihome.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://ihome.yu-fong.tw',
           title: '悅峰iHOME',
         },
         {
           img: require('./work/web/ghs.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://ghs-demo.h65.tw',
           title: '光禾墅',
         },
         {
           img: require('./work/web/ts1.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ts.jsyn.tw',
           title: '泰舍至善元',
         },
         {
           img: require('./work/web/ts.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ts-coming-demo.h65.tw',
           title: '泰舍至善元預約頁',
         },
         {
           img: require('./work/web/yclj.jpg'),
           type: 'web',
+          type2: '2',
           link: 'https://yclj.lgd.tw',
           title: '宜誠樂聚',
         },
         {
           img: require('./work/web/bbb.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://bbb.debang.tw',
           title: '碧波白',
         },
         {
           img: require('./work/web/gp.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://gp.chyy.tw',
           title: '青茵悅',
         },
         {
           img: require('./work/web/kp.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://kp-demo.h65.tw/',
           title: '京城king park',
         },
         {
           img: require('./work/web/ml.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ml.gden.tw',
           title: 'MILANO茂德三重',
         },
         {
           img: require('./work/web/pjr.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://pjr-demo.h65.tw',
           title: '璞真之道',
         },
         {
           img: require('./work/web/rss.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://rss-demo.h65.tw',
           title: '日勝幸福站',
         },
         {
           img: require('./work/web/wl.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://wl.debang.tw',
           title: '快樂王國',
         },
         {
           img: require('./work/web/wlz.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://wlz-demo.h65.tw',
           title: '勤家璞真',
         },
         {
           img: require('./work/web/ymvilla.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ymvilla-demo.h65.tw',
           title: '陽明迴鄉',
         },
         {
           img: require('./work/web/tk.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://tk-demo.h65.tw/',
           title: '達麗東京',
         },
         {
           img: require('./work/web/ll.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ll.lianan.tw',
           title: '寶石心富町',
         },
         {
           img: require('./work/web/pacific-dnls.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://dnls-demo.h65.tw/',
           title: '敦南麗舍',
         },
         {
           img: require('./work/web/li.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://li-demo.h65.tw',
           title: '麗昇陽',
         },
         {
           img: require('./work/web/llcs.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://llcs.wten.tw',
           title: '朗朗誠心',
         },
@@ -1291,6 +1492,7 @@ export default {
         {
           img: require('./work/web/sunbird.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://sunbird.syn.tw',
           title: '向大師致敬',
         },
@@ -1298,120 +1500,140 @@ export default {
         {
           img: require('./work/web/chy.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://chy-coming-demo.h65.tw',
           title: '清景麟巴克禮PARK2',
         },
         {
           img: require('./work/web/jhan.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jhan.lc-h35.tw',
           title: '立瑾綻',
         },
         {
           img: require('./work/web/js.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://js.howan.tw',
           title: '宏貿臻璽',
         },
         {
           img: require('./work/web/jiou-yun.jpg'),
           type: 'web',
+          type2: '3',
           link: 'https://jiou-yun.tw',
           title: '久云建設官網',
         },
         {
           img: require('./work/web/cfyd.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cfyd-demo.h65.tw',
           title: '春福御邸 預告展示',
         },
         {
           img: require('./work/web/fll.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://fll-demo.h65.tw',
           title: '富來樂',
         },
         {
           img: require('./work/web/ymsy.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ymsy-demo.h65.tw/',
           title: '樹山丘',
         },
         {
           img: require('./work/web/ryc.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ryc-demo.h65.tw/',
           title: '睿暘沁',
         },
         {
           img: require('./work/web/oh.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://oh-h35.tw',
           title: '名軒海樂地',
         },
         {
           img: require('./work/web/top-happy.jpg'),
           type: 'web',
+          type2: '3',
           link: 'https://top-happy.tw',
           title: '瀚鼎國際·創悅建設',
         },
         {
           img: require('./work/web/aries.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://aries-h35.tw',
           title: '牡羊座',
         },
         {
           img: require('./work/web/ymsj.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ymsj-demo.h65.tw/',
           title: '陽明山莊',
         },
         {
           img: require('./work/web/dmh.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://dm-demo.h65.tw',
           title: '大安謙韵',
         },
         {
           img: require('./work/web/ds.gif'),
           type: 'web',
+          type2: '1',
           link: 'https://ds.goodteam.tw',
           title: '東瑩日光',
         },
         {
           img: require('./work/web/fzg.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://fzg-demo.h65.tw/',
           title: '豐之谷',
         },
         {
           img: require('./work/web/ab.gif'),
           type: 'web',
+          type2: '1',
           link: 'https://ab-demo.h65.tw',
           title: '虹耀今采',
         },
         {
           img: require('./work/web/jcs.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jcs-h35.tw',
           title: '植春樹',
         },
         {
           img: require('./work/web/juuyi.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://juuyi.h35.tw',
           title: '鈞驛行銷團隊',
         },
         {
           img: require('./work/web/la.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://la.h35.tw',
           title: '聯安開發‧欣聯安廣告',
         },
         {
           img: require('./work/web/cby.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cby-demo.h65.tw',
           title: '春福年年',
         },
@@ -1419,6 +1641,7 @@ export default {
         {
           img: require('./work/web/cby.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cby-coming-demo.h65.tw ',
           title: '春福年年<br>預告頁展示',
         },
@@ -1426,24 +1649,28 @@ export default {
         {
           img: require('./work/web/ypy.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ypy.tw',
           title: '嘉璟一品硯',
         },
         {
           img: require('./work/web/kid.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://kid-demo.h65.tw/',
           title: '遛樂KID',
         },
         {
           img: require('./work/web/dc.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://dc.h35.tw',
           title: '東城大境',
         },
         {
           img: require('./work/web/jiman.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jiman-demo.h65.tw',
           title: '自慢藏',
         },
@@ -1451,12 +1678,14 @@ export default {
         {
           img: require('./work/web/jiman.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jiman-coming-demo.h65.tw',
           title: '自慢藏預告頁',
         }, */
         {
           img: require('./work/web/hsy.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://hsy.h35.tw',
           title: '厚陞園',
         },
@@ -1464,360 +1693,420 @@ export default {
         {
           img: require('./work/web/zm.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://zm.h35.tw',
           title: '左岸玫瑰',
         },
         {
           img: require('./work/web/debang.jpg'),
           type: 'web',
+          type2: '3',
           link: 'https://debang.tw',
           title: '得邦廣告',
         },
         {
           img: require('./work/web/hh.jpg'),
           type: 'web',
+          type2: '3',
           link: 'https://hh.h35.tw',
           title: '立詠建設',
         },
         {
           img: require('./work/web/lc.jpg'),
           type: 'web',
+          type2: '3',
           link: 'https://lc-h35.tw',
           title: '立瑾建築',
         },
         {
           img: require('./work/web/liang-mao.jpg'),
           type: 'web',
+          type2: '3',
           link: 'https://liang-mao.tw',
           title: '梁茂建設',
         },
         {
           img: require('./work/web/lj.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://lj-demo.h65.tw',
           title: '連雲景粋',
         },
         {
           img: require('./work/web/sm.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://sm-demo.h65.tw/',
           title: '西門大院',
         },
         {
           img: require('./work/web/dm.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://dmfy-demo.h65.tw/',
           title: '東門馥寓',
         },
         {
           img: require('./work/web/sc.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://sc-demo.h65.tw/',
           title: '拾秋',
         },
         {
           img: require('./work/web/yb.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://yb-demo.h65.tw',
           title: '央北鑫建築',
         },
         {
           img: require('./work/web/yu.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://yu-demo.h65.tw',
           title: '詠喆',
         },
         {
           img: require('./work/web/jyly.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jyly.h35.tw',
           title: '佳元臨沂',
         },
         {
           img: require('./work/web/wh.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://wh-demo.h65.tw',
           title: '達欣・信義文華 官網',
         },
         {
           img: require('./work/web/jysj.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://sj-demo.h65.tw/',
           title: '佳元松江',
         },
         {
           img: require('./work/web/56.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jw.h35.tw',
           title: '京旺協奏曲',
         },
         {
           img: require('./work/web/cyfh.gif'),
           type: 'web',
+          type2: '1',
           link: 'https://cyfh.h35.tw',
           title: '全陽豐會',
         },
         {
           img: require('./work/web/cs.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cs.h35.tw',
           title: '合矩青山',
         },
         {
           img: require('./work/web/hoh.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://hoh.h35.tw',
           title: '神采飛洋',
         },
         {
           img: require('./work/web/ace.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ace.debang.tw',
           title: '太陽帝國',
         },
         {
           img: require('./work/web/58.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://avc.h35.tw',
           title: '睿暘水漾',
         },
         {
           img: require('./work/web/dunnanhowhow.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://dunnanhowhow.h35.tw',
           title: '敦南好好',
         },
         {
           img: require('./work/web/jsjm.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jsjm-demo.h65.tw/',
           title: '中山直美',
         },
         {
           img: require('./work/web/tv.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://tv.h35.tw',
           title: 'The View',
         },
         {
           img: require('./work/web/tsi.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://tsi-h35.tw',
           title: '天空之邑',
         },
         {
           img: require('./work/web/h25.gif'),
           type: 'web',
+          type2: '1',
           link: 'https://h25.tw',
           title: '中正h25',
         },
         {
           img: require('./work/web/hg.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://hg-demo.h65.tw/',
           title: '築藝海格',
         },
         {
           img: require('./work/web/jhuyi.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jhuyi.h35.tw',
           title: '築億築藝',
         },
         {
           img: require('./work/web/jy.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jy-demo.h65.tw/',
           title: '築億丰盛',
         },
         {
           img: require('./work/web/jh.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://jh.h35.tw',
           title: '築禾交響院',
         },
         {
           img: require('./work/web/ycfy.gif'),
           type: 'web',
+          type2: '1',
           link: 'https://ycfy-demo.h65.tw',
           title: '頤昌豐岳官網',
         },
         { 
           img: require('./work/web/ycpy.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ycpy-demo.h65.tw',
           title: '頤昌璞岳',
         },
         { 
           img: require('./work/web/ycpy1.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ycpy-coming-demo.h65.tw',
           title: '頤昌璞岳預告頁',
         },
         {
           img: require('./work/web/way.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://way.h35.tw',
           title: '立瑾Way',
         },
         {
           img: require('./work/web/tp.gif'),
           type: 'web',
+          type2: '1',
           link: 'https://tp.h35.tw',
           title: '悦讀綠森活',
         },
         {
           img: require('./work/web/yj.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://yj-demo.h65.tw/',
           title: '明日城2怡家特區',
         },
         {
           img: require('./work/web/we.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://we.h35.tw',
           title: 'WE時代',
         },
         {
           img: require('./work/web/blly.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://blly.h35.tw',
           title: '八里龍躍',
         },
         {
           img: require('./work/web/tsy.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://tsy-h35.tw',
           title: '翠松園',
         },
         {
           img: require('./work/web/sv.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://sv-h35.tw',
           title: '文華天際',
         },
         {
           img: require('./work/web/cy.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cy.h35.tw',
           title: '九陽盧登堡',
         },
         {
           img: require('./work/web/wonder.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://wonder-demo.h65.tw',
           title: '聯悦臻',
         },
         {
           img: require('./work/web/dnsf.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://dnsf.h35.tw',
           title: '敦南學府',
         },
         {
           img: require('./work/web/tm.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://tm.h35.tw',
           title: '天母自在',
         },
         {
           img: require('./work/web/ra.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ra.h35.tw',
           title: '瑞安自在',
         },/*  */
         {
           img: require('./work/web/wop.gif'),
           type: 'web',
+          type2: '1',
           link: 'https://wop-demo.h65.tw',
           title: '太子峰雲',
         },
         {
           img: require('./work/web/43.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ms.h35.tw',
           title: '美術皇居',
         },
         {
           img: require('./work/web/18.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://fs.h35.tw',
           title: '京城鳳翔 ',
         },
         {
           img: require('./work/web/23.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://lsbj.h35.tw/demo/',
           title: '聯上鉑金',
         },
         {
           img: require('./work/web/42.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://lsht.h35.tw',
           title: '聯上海棠',
         },
         {
           img: require('./work/web/51.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cf.h35.tw',
           title: '春福采采',
         },
         {
           img: require('./work/web/48.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://syw.h35.tw',
           title: '星玥灣',
         },
         {
           img: require('./work/web/55.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cjl.h35.tw',
           title: '清景麟巴克禮',
         },
         {
           img: require('./work/web/57.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://casa-h35.tw',
           title: '信義CASA',
         },
         {
           img: require('./work/web/03.gif'),
           type: 'web',
+          type2: '1',
           link: 'https://sfdy.h35.tw',
           title: '幸福大院',
         },
         {
           img: require('./work/web/44.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://yc-demo.h65.tw',
           title: '漾CITY',
         },
         {
           img: require('./work/web/45.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://sdj-demo.h65.tw',
           title: '達麗上東京',
         },
         {
           img: require('./work/web/01.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://by-demo.h65.tw',
           title: '博悅',
         },
         {
           img: require('./work/web/38.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ty.h35.tw',
           title: '泰御天鑄',
         },
         {
           img: require('./work/web/39.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://hy-h35.tw',
           title: '鴻苑',
         },
         {
           img: require('./work/web/40.gif'),
           type: 'web',
+          type2: '1',
           link: 'https://llcs.wten.tw/',
           title: '朗朗城心',
         },
@@ -1825,24 +2114,28 @@ export default {
         {
           img: require('./work/web/16.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://stm.h35.tw',
           title: '心天畝 ',
         },
         {
           img: require('./work/web/09.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://j-shan.h35.tw',
           title: '堅山謙仰',
         },
         {
           img: require('./work/web/10.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://xs.h35.tw',
           title: '新碩鼎和',
         },
         {
           img: require('./work/web/11.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ds.h35.tw',
           title: '帝璽',
         },
@@ -1850,6 +2143,7 @@ export default {
         {
           img: require('./work/web/17.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://east.h35.tw',
           title: '大道東 ',
         },
@@ -1857,6 +2151,7 @@ export default {
         {
           img: require('./work/web/19.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://wh1.h35.tw/event/',
           title: '達欣・信義文華 活動',
         },
@@ -1864,6 +2159,7 @@ export default {
         {
           img: require('./work/web/20.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://ycfy-coming-demo.h65.tw',
           title: '頤昌豐岳活動',
         },
@@ -1871,6 +2167,7 @@ export default {
         {
           img: require('./work/web/06.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://yt.h35.tw',
           title: '頤昌耘萃',
         },
@@ -1878,24 +2175,28 @@ export default {
         {
           img: require('./work/web/07.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://lju.h35.tw',
           title: '立謹醞',
         },
         {
           img: require('./work/web/13.gif'),
           type: 'web',
+          type2: '1',
           link: 'https://yns-demo.h65.tw',
           title: '北大樂馥',
         },
         {
           img: require('./work/web/02.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://dyc-demo.h65.tw',
           title: '德友藏',
         },
         {
           img: require('./work/web/05.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://dss.h35.tw',
           title: '大學墅',
         },
@@ -1903,24 +2204,28 @@ export default {
         {
           img: require('./work/web/08.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://star.h35.tw',
           title: '一日林板新活動官網',
         },
         {
           img: require('./work/web/14.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://lkf-demo.h65.tw',
           title: '蘭桂坊',
         },
         {
           img: require('./work/web/15.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://wj.h35.tw',
           title: '吾界',
         },
         {
           img: require('./work/web/12.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://cht.h35.tw',
           title: '長虹天際',
         },
@@ -1928,6 +2233,7 @@ export default {
         {
           img: require('./work/web/28.jpg'),
           type: 'web',
+          type2: '1',
           link: 'https://shinarc.com.tw',
           title: '鑫建築團隊',
         },
@@ -2233,10 +2539,13 @@ export default {
     },
 
     filterWorkList() {
-      return this.workList.filter(item => item.type === this.filterType)
+      if (this.filterType2) {
+        return this.workList.filter(item => item.type === this.filterType && item.type2 === this.filterType2);
+      } else {
+        return this.workList.filter(item => item.type === this.filterType);
+      }
     },
   },
-
   mounted() {
     if (this.$route.query.type === 'video') {
       this.filterType = 'video'
@@ -2262,8 +2571,10 @@ export default {
       // this.$refs[`dialogVideo${index}`].pause()
     },
 
-    changeFilterType(type) {
+    changeFilterType(type, type2 = null) {
       this.filterType = type
+      this.filterType2 = type2
+      console.log(filterType2);
     },
   },
 }
