@@ -24,7 +24,8 @@
     <div id="section7">
       <Section7 />
     </div>
-    <ContactSection />
+ <ContactSection /> 
+   <!-- <Order />  -->
     <Footer />
   </div>
 </template>
@@ -32,19 +33,11 @@
 <style>
 @import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
 </style>
-
-<style lang="scss" scoped>
-// #section1 {
-//   position: relative;
-//   z-index: 3;
-// }
-</style>
-
 <script>
 // @ is an alias to /src
 import Navigation from '@/layouts/Navigation.vue'
 // import SideNavigation from '@/layouts/SideNavigation.vue'
-import ContactSection from '@/layouts/ContactSection.vue'
+ import ContactSection from '@/layouts/ContactSection.vue'
 import gtm from '@/mixins/gtm.js'
 
 import Section1 from '@/projects/lixin/Section1.vue'
@@ -54,6 +47,7 @@ import Section4 from '@/projects/lixin/Section4.vue'
 import Section5 from '@/projects/lixin/Section5.vue'
 import Section6 from '@/projects/lixin/Section6.vue'
 import Section7 from '@/projects/lixin/Section7.vue'
+//import Order from '@/components/Order1.vue'
 import Footer from '@/layouts/Footer.vue'
 
 export default {
@@ -70,6 +64,7 @@ export default {
     Section5,
     Section6,
     Section7,
+    //Order,
     Footer,
   },
 
